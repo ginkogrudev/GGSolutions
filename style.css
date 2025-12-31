@@ -143,6 +143,78 @@ span,
   opacity: 1;
 }
 
+/* Специален Hero бутон с Mozi анимация */
+.btn-hero {
+  display: inline-block;
+  background-color: var(--pink);
+  color: #ffffff !important;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-radius: 1.25rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Плавна пружина */
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(255, 45, 85, 0.3);
+}
+
+/* Ефект при посочване (Hover) */
+.btn-hero:hover {
+  transform: translateY(-5px) scale(1.02); /* Леко повдигане */
+  box-shadow: 0 20px 40px rgba(255, 45, 85, 0.5);
+  filter: brightness(1.1);
+}
+
+/* Ефект при натискане (Active) - Перфектно за Mobile */
+.btn-hero:active {
+  transform: translateY(0) scale(0.96); /* Бутонът потъва физически */
+}
+
+/* Блясък, който преминава през бутона (Glow Shine) */
+.btn-hero::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(30deg);
+  transition: all 0.6s;
+}
+
+.btn-hero:hover::after {
+  left: 120%;
+}
+
+/* ВТОРИЧНИ БУТОНИ - GHOST GLOW ЕФЕКТ */
+.btn-secondary-action {
+  display: inline-block;
+  padding: 1.1rem 2.2rem;
+  font-weight: 900;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--pink) !important;
+  background-color: rgba(255, 45, 85, 0.05); /* Много фин розов нюанс */
+  border: 2px solid var(--pink);
+  border-radius: 1.25rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Hover: Бутонът се "запълва" и светва леко */
+.btn-secondary-action:hover {
+  background-color: var(--pink);
+  color: #ffffff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 45, 85, 0.3);
+}
+
+/* Active: Физическо потъване при натискане (съчетано с вибрацията) */
+.btn-secondary-action:active {
+  transform: translateY(0) scale(0.96);
+}
+
 /* Мобилна оптимизация */
 @media (max-width: 768px) {
   h1 {
