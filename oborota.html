@@ -32,15 +32,31 @@
     </style>
   </head>
   <body class="antialiased">
-    <nav class="sticky top-0 z-50 flex items-center justify-between p-6 mx-auto max-w-7xl glass">
-      <div class="flex items-center gap-3">
-        <span class="text-2xl">🐷</span>
-        <span class="text-xl font-black tracking-tighter uppercase">Oborota <span class="text-pink">4.0</span></span>
-      </div>
-      <div class="flex items-center gap-6">
-        <a href="#download" class="bg-pink px-4 py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest"
-          >Свали Сега</a
-        >
+    <nav class="sticky top-0 z-50 px-6 py-4 border-b glass border-white/5">
+      <div class="flex flex-col items-center justify-between max-w-6xl gap-4 mx-auto md:flex-row">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">🐷</span>
+          <a href="index.html" class="text-xl font-black tracking-tighter uppercase"
+            >GG <span class="text-pink">SOLUTIONS</span></a
+          >
+        </div>
+        <div class="flex items-center gap-6">
+          <a
+            href="index.html#about"
+            class="nav-link text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-pink transition"
+            >За Нас</a
+          >
+          <a
+            href="calculator.html"
+            class="nav-link text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-pink transition"
+            >Euro Calculator</a
+          >
+          <a
+            href="oborota.html"
+            class="nav-link text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-pink transition"
+            >Oborota App</a
+          >
+        </div>
       </div>
     </nav>
 
@@ -175,28 +191,30 @@
       </div>
     </section>
 
-    <footer class="py-20 text-center border-t border-white/5">
-      <div class="max-w-md mx-auto mb-10">
-        <h4 class="mb-4 font-black uppercase">Черпи една бира 🍺</h4>
-        <p class="px-6 mb-6 text-sm text-white-500">
-          Oborota е проект на **Гинко Грудев**. Правя това, за да подкрепя българските предприемачи. Ако ти е полезно,
-          подкрепи ме в Revolut!
-        </p>
-        <a
-          href="https://revolut.me/ginkogrudev"
-          target="_blank"
-          class="inline-flex items-center gap-2 px-10 py-4 font-black text-black transition rounded-full bg-pink hover:bg-pink hover:text-white"
-        >
-          <span>ПОЧЕРПИ В REVOLUT</span>
-        </a>
-      </div>
-      <div class="flex flex-col items-center gap-4 text-gray-700">
-        <p class="text-[10px] uppercase tracking-[0.6em]">© 2025 GG SOLUTIONS | YAMBOL</p>
-        <a
-          href="https://github.com/ginkogrudev/GGSolutions"
-          class="text-[10px] font-bold border border-white/10 px-3 py-1 rounded hover:text-white transition"
-          >VIEW SOURCE CODE</a
-        >
+    <footer class="px-6 py-20 border-t border-white/5 bg-zinc-950/50">
+      <div class="max-w-6xl mx-auto text-center md:text-left">
+        <div class="grid items-center grid-cols-1 gap-12 mb-16 md:grid-cols-2">
+          <div>
+            <div class="mb-4 text-2xl font-black uppercase">GG <span class="text-pink">SOLUTIONS</span></div>
+            <p class="text-xs tracking-[0.3em] text-gray-500 uppercase mb-6">
+              Дигитални инструменти за българския бизнес
+            </p>
+            <a
+              href="https://revolut.me/ginko"
+              target="_blank"
+              class="inline-flex items-center gap-3 px-8 py-4 font-black text-white transition shadow-lg bg-pink rounded-2xl hover:scale-105 shadow-pink/20"
+            >
+              <span>ПОЧЕРПИ ЕДНА БИРА 🍺</span>
+            </a>
+          </div>
+          <div class="flex flex-col items-center gap-6 md:items-end">
+            <div class="flex gap-8 text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase">
+              <a href="https://github.com/ginkogrudev/GGSolutions" class="hover:text-pink">Source Code</a>
+              <a href="mailto:contact@ggsolutions.bg" class="hover:text-pink">Контакт</a>
+            </div>
+            <p class="text-[10px] text-gray-700 uppercase tracking-[0.4em]">© 2026 GG SOLUTIONS | YAMBOL, BULGARIA</p>
+          </div>
+        </div>
       </div>
     </footer>
   </body>

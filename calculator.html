@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GG Solutions | Твоят Приятел в Технологичната Джунгла</title>
+    <title>Euro Calc | GG Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
     <style>
@@ -11,6 +11,7 @@
         font-family: 'Montserrat', sans-serif;
         background-color: #000000;
         color: #ffffff;
+        scroll-behavior: smooth;
       }
       .text-pink {
         color: #ff2d55;
@@ -18,91 +19,127 @@
       .bg-pink {
         background-color: #ff2d55;
       }
-      .border-pink {
-        border-color: #ff2d55;
+      .glass {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+      }
+      .nav-link {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #9ca3af;
+        transition: color 0.3s;
+      }
+      .nav-link:hover {
+        color: #ff2d55;
       }
     </style>
   </head>
   <body class="antialiased">
-    <section class="flex flex-col items-center justify-center min-h-screen px-6 text-center">
+    <nav class="sticky top-0 z-50 px-6 py-4 border-b glass border-white/5">
+      <div class="flex flex-col items-center justify-between max-w-6xl gap-4 mx-auto md:flex-row">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">🐷</span>
+          <a href="index.html" class="text-xl font-black tracking-tighter uppercase"
+            >GG <span class="text-pink">SOLUTIONS</span></a
+          >
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="index.html#about" class="nav-link">За Нас</a>
+          <a href="calculator.html" class="nav-link text-pink">Euro Calculator</a>
+          <a href="oborota.html" class="nav-link">Oborota App</a>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="flex flex-col items-center justify-center min-h-[70vh] px-6 text-center border-b border-white/5 bg-zinc-950/20"
+    >
       <div class="mb-8">
-        <div class="flex items-center justify-center w-24 h-24 border-2 bg-zinc-900 rounded-3xl border-pink-500/30">
-          <span class="text-4xl">🐷</span>
+        <div
+          class="flex items-center justify-center w-24 h-24 border-2 bg-zinc-900 rounded-3xl border-pink/30 shadow-[0_0_30px_rgba(255,45,85,0.1)]"
+        >
+          <span class="text-4xl">💶</span>
         </div>
       </div>
 
-      <h1 class="mb-4 text-4xl font-black tracking-tighter uppercase md:text-6xl">
+      <h1 class="mb-4 text-5xl font-black leading-none tracking-tighter uppercase md:text-7xl">
         Спрете да смятате <br />
         <span class="text-pink">на ум!</span>
       </h1>
 
-      <p class="max-w-xl mb-10 text-lg text-gray-400 md:text-xl">
+      <p class="max-w-xl mb-12 text-lg text-gray-400 md:text-xl">
         Най-бързият начин за преход към Еврото. Професионален инструмент за българския бизнес. Офлайн, точно и за
         секунди.
       </p>
 
-      <div class="flex flex-col w-full max-w-md gap-4 sm:flex-row">
+      <div class="flex flex-col justify-center w-full max-w-md gap-4 sm:flex-row">
         <a
-          href="/calculator"
-          class="px-8 py-4 font-bold text-center text-white transition-transform bg-pink rounded-xl hover:scale-105"
+          href="/oborota-web"
+          class="px-12 py-5 font-black text-center text-white transition-all bg-pink rounded-2xl hover:scale-105 shadow-[0_0_20px_rgba(255,45,85,0.3)]"
         >
           ИЗПОЛЗВАЙ БЕЗПЛАТНО
         </a>
       </div>
     </section>
 
-    <section class="max-w-5xl px-6 py-20 mx-auto">
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <div class="p-8 border bg-zinc-900/50 rounded-3xl border-white/5">
-          <div class="mb-4 text-3xl text-pink">⚡</div>
-          <h3 class="mb-2 text-xl font-bold uppercase">1.5 Секунди</h3>
-          <p class="text-gray-400">Сметнете цена, ресто и превод в една стъпка. По-бързо от всеки държавен сайт.</p>
+    <section class="max-w-6xl px-6 py-24 mx-auto">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div class="p-8 transition border bg-zinc-900/30 rounded-3xl border-white/10 hover:border-pink/40">
+          <div class="mb-4 text-3xl">⚡</div>
+          <h3 class="mb-2 text-lg font-black uppercase">1.5 Секунди</h3>
+          <p class="text-sm text-gray-400">Сметнете цена, ресто и превод в една стъпка. Без излишно бавене.</p>
         </div>
 
-        <div class="p-8 border bg-zinc-900/50 rounded-3xl border-white/5">
-          <div class="mb-4 text-3xl text-pink">⚖️</div>
-          <h3 class="mb-2 text-xl font-bold uppercase">Законен Курс</h3>
-          <p class="text-gray-400">
-            Фиксиран на <span class="font-bold text-white">1.95583</span>. Без грешки и без риск от глоби при проверка.
+        <div class="p-8 transition border bg-zinc-900/30 rounded-3xl border-white/10 hover:border-pink/40">
+          <div class="mb-4 text-3xl">⚖️</div>
+          <h3 class="mb-2 text-lg font-black uppercase">Законен Курс</h3>
+          <p class="text-sm text-gray-400">
+            Фиксиран на <span class="font-bold text-white">1.95583</span>. Гарантирана точност без риск от глоби.
           </p>
         </div>
 
-        <div class="p-8 border bg-zinc-900/50 rounded-3xl border-white/5">
-          <div class="mb-4 text-3xl text-pink">📵</div>
-          <h3 class="mb-2 text-xl font-bold uppercase">100% Офлайн</h3>
-          <p class="text-gray-400">Работи без интернет. На пазара или в склада – калкулаторът е винаги с вас.</p>
+        <div class="p-8 transition border bg-zinc-900/30 rounded-3xl border-white/10 hover:border-pink/40">
+          <div class="mb-4 text-3xl">📵</div>
+          <h3 class="mb-2 text-lg font-black uppercase">100% Офлайн</h3>
+          <p class="text-sm text-gray-400">
+            Работи без интернет. На пазара или в склада – калкулаторът е винаги с вас.
+          </p>
         </div>
 
-        <div class="p-8 border bg-zinc-900/50 rounded-3xl border-white/5">
-          <div class="mb-4 text-3xl text-pink">📳</div>
-          <h3 class="mb-2 text-xl font-bold uppercase">Физическа Връзка</h3>
-          <p class="text-gray-400">Вибрация при всеки клик за максимална сигурност независимост от условията.</p>
+        <div class="p-8 transition border bg-zinc-900/30 rounded-3xl border-white/10 hover:border-pink/40">
+          <div class="mb-4 text-3xl">📳</div>
+          <h3 class="mb-2 text-lg font-black uppercase">Feedback</h3>
+          <p class="text-sm text-gray-400">Вибрация при всеки клик за сигурност, че сте въвели сумата правилно.</p>
         </div>
       </div>
     </section>
 
-    <footer class="py-20 text-center border-t border-white/5">
-      <div class="max-w-md mx-auto mb-10">
-        <h4 class="mb-4 font-black uppercase">Черпи една бира 🍺</h4>
-        <p class="px-6 mb-6 text-sm text-white-500">
-          Oborota е проект на **Гинко Грудев**. Правя това, за да подкрепя българските предприемачи. Ако ти е полезно,
-          подкрепи ме в Revolut!
-        </p>
-        <a
-          href="https://revolut.me/ginkogrudev"
-          target="_blank"
-          class="inline-flex items-center gap-2 px-10 py-4 font-black text-black transition rounded-full bg-pink hover:bg-pink hover:text-white"
-        >
-          <span>ПОЧЕРПИ В REVOLUT</span>
-        </a>
-      </div>
-      <div class="flex flex-col items-center gap-4 text-gray-700">
-        <p class="text-[10px] uppercase tracking-[0.6em]">© 2025 GG SOLUTIONS | YAMBOL</p>
-        <a
-          href="https://github.com/ginkogrudev/GGSolutions"
-          class="text-[10px] font-bold border border-white/10 px-3 py-1 rounded hover:text-white transition"
-          >VIEW SOURCE CODE</a
-        >
+    <footer class="px-6 py-20 border-t border-white/5 bg-zinc-950/50">
+      <div class="max-w-6xl mx-auto text-center md:text-left">
+        <div class="grid items-center grid-cols-1 gap-12 mb-16 md:grid-cols-2">
+          <div>
+            <div class="mb-4 text-2xl font-black uppercase">GG <span class="text-pink">SOLUTIONS</span></div>
+            <p class="text-xs tracking-[0.3em] text-gray-500 uppercase mb-6">
+              Дигитални инструменти за българския бизнес
+            </p>
+            <a
+              href="https://revolut.me/ginko"
+              target="_blank"
+              class="inline-flex items-center gap-3 px-8 py-4 text-sm font-black text-white transition shadow-lg bg-pink rounded-2xl hover:scale-105 shadow-pink/20"
+            >
+              <span>ПОЧЕРПИ ЕДНА БИРА 🍺</span>
+            </a>
+          </div>
+          <div class="flex flex-col items-center gap-6 md:items-end">
+            <div class="flex gap-8 text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase">
+              <a href="https://github.com/ginkogrudev/GGSolutions" class="transition hover:text-pink">Source Code</a>
+              <a href="mailto:contact@ggsolutions.bg" class="transition hover:text-pink">Контакт</a>
+            </div>
+            <p class="text-[10px] text-gray-700 uppercase tracking-[0.4em]">© 2026 GG SOLUTIONS | YAMBOL, BULGARIA</p>
+          </div>
+        </div>
       </div>
     </footer>
   </body>
