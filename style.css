@@ -1,0 +1,95 @@
+/* GG SOLUTIONS - GLOBAL BRANDING 2026 */
+:root {
+  --pink: #ff2d55;
+  --pure-white: #ffffff;
+  --deep-blue-black: #05070a; /* Технологично черно-синьо */
+  --glass-blue: rgba(0, 117, 235, 0.05); /* Професионален син филтър */
+  --border-bright: rgba(255, 255, 255, 0.2);
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--deep-blue-black);
+  color: var(--pure-white);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Мощен "Mozi" Шрифт за заглавия */
+h1,
+h2,
+h3 {
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--pure-white);
+}
+
+/* Премахване на нечетливото сиво */
+p,
+span,
+.text-gray-400 {
+  color: var(--pure-white) !important;
+  opacity: 0.9;
+}
+
+/* Розовият бранд акцент */
+.text-pink {
+  color: var(--pink) !important;
+}
+.bg-pink {
+  background-color: var(--pink) !important;
+}
+
+/* Професионални "Стъклени" елементи със син оттенък */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--border-bright);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* Бутони с висок контраст (Boomer Friendly) */
+.btn-primary {
+  display: inline-block;
+  padding: 1.25rem 2.5rem;
+  font-weight: 900;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #ffffff;
+  background-color: var(--pink);
+  border-radius: 1.25rem;
+  transition: all 0.3s ease;
+  border: 2px solid var(--pink);
+  text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 45, 85, 0.4);
+}
+
+/* Навигация */
+.nav-link {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--pure-white);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 1rem;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--pink);
+}
+
+/* Мобилна оптимизация */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem !important;
+  }
+  .btn-primary {
+    width: 100%;
+  }
+}
