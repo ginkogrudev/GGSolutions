@@ -25,3 +25,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// GDPR & GOOGLE CONSENT MODE V2
+function acceptCookies() {
+  localStorage.setItem('cookieConsent', 'accepted');
+  document.getElementById('cookie-banner').classList.add('hidden');
+
+  // Казваме на Google, че имаме съгласие
+  gtag('consent', 'update', {
+    analytics_storage: 'granted',
+    ad_storage: 'granted',
+  });
+}
+
+function rejectCookies() {
+  localStorage.setItem('cookieConsent', 'rejected');
+  document.getElementById('cookie-banner').classList.add('hidden');
+}
+
+// Проверка при зареждане
+document.addEventListener('DOMContentLoaded', () => {
+  const consent = localStorage.getItem('cookieConsent');
+  if (!consent) {
+    document.getElementById('cookie-banner').classList.remove('hidden');
+  }
+});

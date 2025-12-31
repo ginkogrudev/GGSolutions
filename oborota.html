@@ -11,6 +11,18 @@
       function gtag() {
         dataLayer.push(arguments);
       }
+
+      // Начално състояние: Всичко е изключено (GDPR Friendly)
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+      });
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag('js', new Date());
 
       gtag('config', 'G-ТВОЯТ_ID');
@@ -200,6 +212,28 @@
         </div>
       </div>
     </footer>
+
+    <div
+      id="cookie-banner"
+      class="fixed bottom-6 left-6 right-6 z-[100] glass p-6 rounded-[2rem] border-pink/30 hidden animate-bounce-in"
+    >
+      <div class="flex flex-col items-center justify-between max-w-6xl gap-6 mx-auto md:flex-row">
+        <div class="text-left">
+          <p class="mb-1 text-xs font-black tracking-widest uppercase text-pink">Поверителност</p>
+          <p class="text-sm font-medium">Използваме анализи, за да подобрим калкулаторите за теб. Съгласен ли си? 🐷</p>
+        </div>
+        <div class="flex gap-4">
+          <button onclick="acceptCookies()" class="btn-primary !py-3 !px-8 !text-xs">ПРИЕМАМ</button>
+          <button
+            onclick="rejectCookies()"
+            class="text-[10px] font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition"
+          >
+            Отказ
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script src="app.js"></script>
   </body>
 </html>
