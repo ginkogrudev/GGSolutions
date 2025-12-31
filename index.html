@@ -17,38 +17,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <style>
-      body {
-        font-family: 'Montserrat', sans-serif;
-        background-color: #000000;
-        color: #ffffff;
-        scroll-behavior: smooth;
-      }
-      .text-pink {
-        color: #ff2d55;
-      }
-      .bg-pink {
-        background-color: #ff2d55;
-      }
-      .border-pink {
-        border-color: #ff2d55;
-      }
-      .glass {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(10px);
-      }
-      .nav-link {
-        font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: #9ca3af;
-        transition: color 0.3s;
-      }
-      .nav-link:hover {
-        color: #ff2d55;
-      }
-    </style>
   </head>
   <body class="antialiased">
     <nav class="sticky top-0 z-50 px-6 py-4 border-b glass border-white/5">
@@ -60,11 +28,7 @@
           >
         </div>
         <div class="flex items-center gap-6">
-          <a
-            href="index.html#about"
-            class="nav-link text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-pink transition"
-            >За Нас</a
-          >
+          <a href="index.html" class="nav-link active">За Нас</a>
           <a
             href="calculator.html"
             class="nav-link text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-pink transition"
@@ -81,7 +45,8 @@
 
     <section class="max-w-4xl px-6 py-24 mx-auto text-center">
       <h1 class="mb-6 text-5xl font-black leading-none tracking-tighter md:text-8xl">
-        ТЕХНОЛОГИЧНИЯТ <br />
+        <span class="text-pink text-outline">ГИНКО </span>
+        Твоят Технологичен <br />
         <span class="text-pink text-outline">СЪЮЗНИК.</span>
       </h1>
       <p class="max-w-2xl mx-auto mb-10 text-xl leading-relaxed text-gray-400">
@@ -91,7 +56,7 @@
       <div class="flex justify-center gap-4">
         <a
           href="#projects"
-          class="px-10 py-4 font-black text-black transition duration-300 bg-white rounded-2xl hover:bg-pink hover:text-white"
+          class="px-10 py-4 font-black text-white transition duration-300 bg-pink rounded-2xl hover:bg-pink hover:text-white"
         >
           РАЗГЛЕДАЙ ПРОЕКТИТЕ
         </a>
@@ -210,5 +175,6 @@
         </div>
       </div>
     </footer>
+    <script src="app.js"></script>
   </body>
 </html>

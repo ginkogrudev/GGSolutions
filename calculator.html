@@ -95,11 +95,18 @@
           </p>
 
           <div class="flex flex-col gap-4">
-            <a href="/oborota-web" class="btn-primary"> ПРОБВАЙ СЕГА (WEB) </a>
+            <a
+              href="/oborota-web"
+              onclick="gtag('event', 'use_web_app', {'app_name': 'Euro Calc'});"
+              class="btn-primary"
+            >
+              ПРОБВАЙ СЕГА (WEB)
+            </a>
+
             <a
               href="oborota.apk"
               onclick="gtag('event', 'download_apk', {'app_name': 'Euro Calc'});"
-              class="btn-secondary"
+              class="btn-primary"
             >
               ИЗТЕГЛИ APK (ANDROID)
             </a>
@@ -133,5 +140,6 @@
         </div>
       </div>
     </footer>
+    <script src="app.js"></script>
   </body>
 </html>
