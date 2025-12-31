@@ -96,7 +96,13 @@
 
           <div class="flex flex-col gap-4">
             <a href="/oborota-web" class="btn-primary"> ПРОБВАЙ СЕГА (WEB) </a>
-            <a href="oborota.apk" class="btn-secondary"> ИЗТЕГЛИ APK ЗА ANDROID </a>
+            <a
+              href="oborota.apk"
+              onclick="gtag('event', 'download_apk', {'app_name': 'Euro Calc'});"
+              class="btn-secondary"
+            >
+              ИЗТЕГЛИ APK (ANDROID)
+            </a>
           </div>
           <p class="text-[10px] text-gray-600 uppercase tracking-widest italic">
             * Напълно безплатно за всички български предприемачи.
