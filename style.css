@@ -225,6 +225,30 @@ span,
   filter: drop-shadow(0 0 10px var(--pink));
 }
 
+.pill-tab {
+  padding: 0.6rem 1.5rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 45, 85, 0.1);
+  color: white;
+  font-weight: 900;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.pill-tab.active {
+  background: var(--pink);
+  border-color: var(--pink);
+  box-shadow: 0 0 20px rgba(255, 45, 85, 0.4);
+}
+
+.pill-tab:hover:not(.active) {
+  border-color: var(--pink);
+  background: rgba(255, 45, 85, 0.1);
+}
+
 /* Мобилна оптимизация */
 @media (max-width: 768px) {
   h1 {

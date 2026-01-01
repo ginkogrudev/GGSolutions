@@ -135,6 +135,43 @@
       </div>
     </section>
 
+    <section class="max-w-6xl px-6 py-20 mx-auto">
+      <div class="flex justify-center gap-3 mb-12">
+        <button onclick="switchView('standard')" id="tab-standard" class="pill-tab active">Стандартен изглед</button>
+        <button onclick="switchView('graphs')" id="tab-graphs" class="pill-tab">Графики</button>
+        <button onclick="switchView('reports')" id="tab-reports" class="pill-tab">Отчети</button>
+      </div>
+
+      <div class="glass rounded-[3rem] p-8 md:p-12 border-pink/20 overflow-hidden">
+        <div id="view-content" class="flex flex-col items-center gap-12 transition-all duration-500 md:flex-row">
+          <div class="w-full md:w-1/2">
+            <img
+              id="view-img"
+              src="imgs/OborotaMainScreen.png"
+              alt="Oborota App"
+              class="rounded-3xl shadow-2xl border-4 border-black/50 mx-auto max-h-[500px] object-contain"
+            />
+          </div>
+
+          <div class="w-full space-y-6 md:w-1/2">
+            <h3 id="view-title" class="text-3xl italic font-black tracking-tighter uppercase">Стандартен изглед</h3>
+            <p id="view-desc" class="text-lg leading-relaxed opacity-80">
+              Всичко необходимо на един екран. Пресмятай ресто, следи наличности и превръщай Лева в Евро мигновено.
+            </p>
+            <ul id="view-list" class="space-y-4">
+              <li class="flex items-center gap-3 font-bold"><span class="text-pink">✔</span> Светкавични изчисления</li>
+              <li class="flex items-center gap-3 font-bold">
+                <span class="text-pink">✔</span> Дизайн за работа с една ръка
+              </li>
+              <li class="flex items-center gap-3 font-bold">
+                <span class="text-pink">✔</span> Поддръжка на баркод скенер
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="download" class="max-w-4xl px-6 py-24 mx-auto">
       <div class="glass p-12 rounded-[4rem] border-pink/30 text-center relative overflow-hidden">
         <h2 class="mb-4 text-4xl font-black uppercase">Вземи Oborota 4.0</h2>
