@@ -10,7 +10,6 @@ function hapticFeedback() {
     window.navigator.vibrate(50);
   }
 }
-
 /**
  * Инициализира автоматично тактилната обратна връзка
  * за всички важни бутони в приложението.
@@ -48,5 +47,38 @@ document.addEventListener('DOMContentLoaded', () => {
   const consent = localStorage.getItem('cookieConsent');
   if (!consent) {
     document.getElementById('cookie-banner').classList.remove('hidden');
+  }
+});
+
+// ФУНКЦИЯ ЗА АКТУАЛИЗИРАНЕ НА СЪГЛАСИЕТО
+function updateConsent(isAccepted) {
+  const status = isAccepted ? 'granted' : 'denied';
+
+  // Подаваме избора на Google
+  gtag('consent', 'update', {
+    analytics_storage: status,
+    ad_storage: status,
+    ad_user_data: status,
+    ad_personalization: status,
+  });
+
+  // Запазваме избора в браузъра, за да не питаме пак
+  localStorage.setItem('gg_consent', isAccepted ? 'accepted' : 'rejected');
+
+  // Скриваме банера
+  const banner = document.getElementById('cookie-banner');
+  if (banner) banner.classList.add('hidden');
+}
+
+// ПРОВЕРКА ПРИ ЗАРЕЖДАНЕ
+document.addEventListener('DOMContentLoaded', () => {
+  const consent = localStorage.getItem('gg_consent');
+  const banner = document.getElementById('cookie-banner');
+
+  if (!consent && banner) {
+    banner.classList.remove('hidden');
+  } else if (consent === 'accepted') {
+    // Ако вече е прието, потвърждаваме статуса за текущата сесия
+    updateConsent(true);
   }
 });

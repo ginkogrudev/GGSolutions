@@ -4,28 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GG Solutions | Твоят Технологичен Съюзник</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ТВОЯТ_ID"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSSHL2D8TJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
 
-      // Начално състояние: Всичко е изключено (GDPR Friendly)
+      // 2. Consent Mode v2 (Задължително за ЕС)
       gtag('consent', 'default', {
         analytics_storage: 'denied',
         ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500,
       });
-    </script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
 
+      // 3. Конфигурация
+      gtag('js', new Date());
       gtag('config', 'G-ТВОЯТ_ID');
     </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
