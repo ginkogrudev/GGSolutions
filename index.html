@@ -21,9 +21,9 @@
         wait_for_update: 500,
       });
 
-      // 3. Конфигурация
+      // 3. Конфигурация - Вече с правилния ID
       gtag('js', new Date());
-      gtag('config', 'G-ТВОЯТ_ID');
+      gtag('config', 'G-GSSHL2D8TJ');
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -182,20 +182,21 @@
         </div>
       </div>
     </footer>
+
     <div
       id="cookie-banner"
-      class="fixed bottom-6 left-6 right-6 z-[100] glass p-6 rounded-[2rem] border-pink/30 hidden animate-bounce-in"
+      class="fixed bottom-6 left-6 right-6 z-[100] glass p-6 rounded-[2rem] border-pink/30 hidden"
     >
       <div class="flex flex-col items-center justify-between max-w-6xl gap-6 mx-auto md:flex-row">
         <div class="text-left">
-          <p class="mb-1 text-xs font-black tracking-widest uppercase text-pink">Поверителност</p>
-          <p class="text-sm font-medium">Използваме анализи, за да подобрим калкулаторите за теб. Съгласен ли си? 🐷</p>
+          <p class="text-pink font-black uppercase text-[10px] tracking-[0.3em] mb-1">Privacy First</p>
+          <p class="text-sm font-medium">Използваме анализи за по-добро изживяване. Съгласен ли си? 🐷</p>
         </div>
-        <div class="flex gap-4">
-          <button onclick="acceptCookies()" class="btn-primary !py-3 !px-8 !text-xs">ПРИЕМАМ</button>
+        <div class="flex items-center gap-4">
+          <button onclick="updateConsent(true)" class="btn-primary !py-3 !px-8 !text-xs">ПРИЕМАМ</button>
           <button
-            onclick="rejectCookies()"
-            class="text-[10px] font-bold uppercase tracking-widest opacity-50 hover:opacity-100 transition"
+            onclick="updateConsent(false)"
+            class="text-[10px] font-bold uppercase opacity-50 hover:opacity-100 transition"
           >
             Отказ
           </button>
