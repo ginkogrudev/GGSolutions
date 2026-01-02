@@ -82,3 +82,46 @@ document.addEventListener('DOMContentLoaded', () => {
     updateConsent(true);
   }
 });
+
+function startCountdown() {
+  // Крайна дата: 1 февруари 2026, 00:00:00
+  const deadline = new Date('Feb 1, 2026 00:00:00').getTime();
+
+  const x = setInterval(function () {
+    const now = new Date().getTime();
+    const distance = deadline - now;
+
+    // Изчисления за дни, часове, минути
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    // Визуализация в HTML
+    document.getElementById('days').innerText = days.toString().padStart(2, '0');
+    document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+    document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+
+    // Ако времето изтече
+    if (distance < 0) {
+      clearInterval(x);
+      document.querySelector('.timer-block').innerHTML = 'КРАЙ';
+    }
+  }, 1000);
+}
+
+// Стартирай при зареждане
+document.addEventListener('DOMContentLoaded', startCountdown);
+
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        pink: '#ff2d55',
+        dark: '#0a0a0a',
+      },
+      boxShadow: {
+        'pink-neon': '0 0 20px rgba(255, 45, 85, 0.4)',
+      },
+    },
+  },
+};

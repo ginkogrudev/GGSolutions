@@ -249,6 +249,68 @@ span,
   background: rgba(255, 45, 85, 0.1);
 }
 
+.timer-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+  text-shadow: 0 0 15px rgba(255, 45, 85, 0.5);
+}
+
+@media (min-width: 768px) {
+  .timer-number {
+    font-size: 5rem;
+  }
+}
+
+.timer-label {
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--pink);
+  opacity: 0.8;
+}
+
+.timer-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Розови числа с неонов ефект */
+.timer-number-pink {
+  display: block;
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--pink); /* Вече са розови! */
+  line-height: 1;
+  text-shadow: 0 0 25px rgba(255, 45, 85, 0.6);
+}
+
+@media (min-width: 768px) {
+  .timer-number-pink {
+    font-size: 6.5rem;
+  }
+}
+
+/* Чисто бели етикети вместо сиви */
+.timer-label-white {
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: #ffffff; /* Без повече сиво! */
+  margin-top: 10px;
+}
+
+.timer-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Мобилна оптимизация */
 @media (max-width: 768px) {
   h1 {

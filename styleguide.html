@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GG Solutions | Design System & Styleguide</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              pink: '#ff2d55',
+              dark: '#0a0a0a',
+            },
+            boxShadow: {
+              'pink-neon': '0 0 20px rgba(255, 45, 85, 0.4)',
+              'pink-heavy': '0 0 40px rgba(255, 45, 85, 0.6)',
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background-color: #0a0a0a;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 45, 85, 0.2);
+      }
+      .section-label {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+      }
+    </style>
+  </head>
+  <body class="p-8 md:p-20">
+    <header class="pb-10 mb-20 text-center border-b border-pink/20 md:text-left">
+      <h1 class="text-6xl italic font-black tracking-tighter text-white uppercase md:text-8xl">
+        Style<span class="text-pink">guide</span>
+      </h1>
+      <p class="text-pink font-black uppercase tracking-[0.5em] mt-4">GG Solutions Ecosystem v1.0</p>
+    </header>
+
+    <div class="grid grid-cols-1 gap-16 lg:grid-cols-12">
+      <aside class="space-y-12 lg:col-span-3">
+        <section>
+          <h3 class="mb-6 text-xs font-black tracking-widest uppercase text-pink">Brand Colors</h3>
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-pink shadow-pink-neon"></div>
+              <div>
+                <p class="text-sm font-black uppercase">Pink</p>
+                <p class="text-[10px] opacity-50">#FF2D55</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 border rounded-xl bg-dark border-white/10"></div>
+              <div>
+                <p class="text-sm font-black uppercase">Dark</p>
+                <p class="text-[10px] opacity-50">#0A0A0A</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3 class="mb-6 text-xs font-black tracking-widest uppercase text-pink">Typography</h3>
+          <div class="space-y-4 italic tracking-tighter uppercase">
+            <p class="text-4xl leading-none font-900">Montserrat Black</p>
+            <p class="text-xl font-bold tracking-normal uppercase opacity-80">Montserrat Bold</p>
+            <p class="text-sm tracking-normal normal-case opacity-60">
+              Montserrat Regular (Standard prose text for descriptions)
+            </p>
+          </div>
+        </section>
+      </aside>
+
+      <main class="space-y-24 lg:col-span-9">
+        <section id="buttons">
+          <h2 class="text-xs font-black uppercase tracking-[0.4em] text-white/30 mb-8 border-l-2 border-pink pl-4">
+            Buttons & Interactions
+          </h2>
+          <div class="flex flex-wrap items-center gap-8">
+            <div class="space-y-4 text-center">
+              <a
+                href="#"
+                class="inline-block px-12 py-5 text-lg font-black !text-white transition bg-pink rounded-2xl hover:scale-105 shadow-pink-neon"
+              >
+                PRIMARY CTA
+              </a>
+              <p class="text-[9px] opacity-40 uppercase font-bold">bg-pink | shadow-pink-neon</p>
+            </div>
+
+            <div class="space-y-4 text-center">
+              <a
+                href="#"
+                class="inline-block px-10 py-5 text-center text-sm font-black !text-white transition border-2 border-pink bg-pink/10 rounded-2xl hover:bg-pink hover:shadow-pink-neon"
+              >
+                SECONDARY PORTAL
+              </a>
+              <p class="text-[9px] opacity-40 uppercase font-bold">border-pink | bg-pink/10</p>
+            </div>
+
+            <div class="flex gap-2 p-2 border rounded-full bg-white/5 border-white/10">
+              <button class="px-6 py-2 bg-pink rounded-full text-[10px] font-black uppercase">Active</button>
+              <button class="px-6 py-2 hover:bg-white/10 rounded-full text-[10px] font-black uppercase">Default</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="cards">
+          <h2 class="text-xs font-black uppercase tracking-[0.4em] text-white/30 mb-8 border-l-2 border-pink pl-4">
+            Containers
+          </h2>
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+            <div class="glass p-10 rounded-[3rem] space-y-4">
+              <div class="flex items-center justify-center w-10 h-10 italic font-black rounded-lg bg-pink/20 text-pink">
+                GG
+              </div>
+              <h3 class="text-2xl italic font-black tracking-tighter uppercase">Glassmorphism Card</h3>
+              <p class="text-sm leading-relaxed opacity-70">
+                Standard container for Oborota and Calculator features. Always use 3rem border radius for that "App"
+                feel.
+              </p>
+            </div>
+
+            <div class="bg-dark border-2 border-pink p-10 rounded-[3rem] text-center shadow-pink-heavy">
+              <p class="text-pink font-black text-[10px] tracking-widest mb-4">TIMER STYLE</p>
+              <div class="mb-2 text-5xl italic tracking-tighter font-900 text-pink">30 : 07 : 42</div>
+              <p class="text-[10px] uppercase font-bold opacity-60">Pink Neon Shadows Enabled</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="assets">
+          <h2 class="text-xs font-black uppercase tracking-[0.4em] text-white/30 mb-8 border-l-2 border-pink pl-4">
+            Icons & Brands
+          </h2>
+          <div class="flex items-center gap-12">
+            <div class="text-center">
+              <div class="mb-4 select-none text-7xl">🐷</div>
+              <p class="text-[10px] font-black opacity-40">MAIN PIGGY LOGO</p>
+            </div>
+            <div class="text-center">
+              <div class="mb-4 text-6xl italic font-black select-none text-pink">€</div>
+              <p class="text-[10px] font-black opacity-40">CURRENCY ACCENT</p>
+            </div>
+            <div class="text-center">
+              <div class="text-6xl italic font-black tracking-tighter uppercase select-none text-white/10">
+                GG Solutions
+              </div>
+              <p class="text-[10px] font-black opacity-40">WORDMARK LOGO</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="pt-10 mt-32 text-center border-t border-white/5">
+      <p class="text-[10px] font-black uppercase tracking-[1em] opacity-20">WAR TIME READY • 2026</p>
+    </footer>
+  </body>
+</html>
