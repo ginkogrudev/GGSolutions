@@ -132,49 +132,67 @@
       </div>
     </section>
 
-    <section class="max-w-6xl px-6 py-24 mx-auto border-t border-white/5">
-      <div class="grid items-center grid-cols-1 gap-12 md:grid-cols-2">
-        <div class="relative group">
-          <div
-            class="absolute -inset-1 bg-pink rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition"
-          ></div>
-          <div class="relative glass p-2 rounded-[2.5rem]">
+    <section class="max-w-7xl px-6 py-24 mx-auto border-t border-white/5">
+      <div class="flex flex-col items-center gap-16 md:flex-row md:justify-between lg:gap-24">
+        <div class="w-full md:w-1/2 flex justify-center">
+          <div class="relative">
+            <div class="absolute inset-0 bg-pink/10 blur-[120px] rounded-full"></div>
+
             <img
-              src="imgs/Euro_Calculator_Home_Screen.JPG"
-              alt="Euro Calc App"
-              class="rounded-[2rem] w-full shadow-2xl"
+              src="imgs/DemoCalc.png"
+              alt="Piggy Calc Demo"
+              class="relative w-full max-w-[320px] md:max-w-[420px] h-auto rounded-[2.5rem] shadow-[0_30px_60px_-15px_rgba(255,45,85,0.3)] border border-white/5 transition-all duration-500"
             />
           </div>
         </div>
 
-        <div class="space-y-8">
-          <h2 class="text-4xl font-black leading-tight uppercase md:text-5xl">
-            Готови ли сте за <br /><span class="text-pink">промяната?</span>
-          </h2>
-          <p class="text-lg text-gray-400">
-            Вземете пълната мощ на калкулатора директно в джоба си. Без чакане, без реклами.
-          </p>
+        <div class="w-full md:w-1/2 space-y-10">
+          <div class="space-y-6">
+            <h2 class="text-5xl md:text-7xl font-black leading-tight uppercase italic tracking-tighter">
+              Готови ли сте за <br />
+              <span class="text-pink drop-shadow-pink-neon">промяната?</span>
+            </h2>
 
-          <div class="flex flex-col gap-4">
+            <p class="text-xl text-white font-medium opacity-90 max-w-lg leading-relaxed">
+              Вземете пълната мощ на калкулатора директно в джоба си.
+              <span class="text-pink">Без чакане, без реклами.</span>
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-4 max-w-md">
             <a
-              href="/oborota-web"
+              href="https://ginkogrudev.github.io/EuroCalculator/"
               onclick="gtag('event', 'use_web_app', {'app_name': 'Euro Calc'});"
-              class="btn-primary"
+              class="btn-primary px-12 py-6 text-center text-xl font-black !text-white transition bg-pink rounded-2xl hover:bg-[#ff1e47] shadow-pink-neon"
             >
               ПРОБВАЙ СЕГА (WEB)
             </a>
 
             <a
-              href="oborota.apk"
+              href="https://github.com/ginkogrudev/EuroCalculator/releases/download/v1.0.2/app-release.apk"
               onclick="gtag('event', 'download_apk', {'app_name': 'Euro Calc'});"
-              class="btn-primary"
+              class="btn-primary px-12 py-6 text-center text-xl font-black !text-white transition bg-pink rounded-2xl border-2 border-white/10 hover:border-pink/50 shadow-pink-neon"
             >
               ИЗТЕГЛИ APK (ANDROID)
             </a>
           </div>
-          <p class="text-[10px] text-gray-600 uppercase tracking-widest italic">
-            * Напълно безплатно за всички български предприемачи.
-          </p>
+
+          <div class="space-y-4 pt-4">
+            <div class="flex items-center gap-3">
+              <div class="flex items-center justify-center w-6 h-6 rounded-full bg-pink/20 border border-pink/40">
+                <span class="text-pink text-xs font-black">✓</span>
+              </div>
+              <p class="text-[11px] text-white font-black uppercase tracking-[0.3em]">
+                100% Сигурно & Проверено от GG Solutions
+              </p>
+            </div>
+            <p
+              class="text-[10px] text-pink font-bold uppercase tracking-widest italic leading-relaxed opacity-70 border-l-2 border-pink/30 pl-4"
+            >
+              * Ако телефонът ви предупреди за сигурност, изберете "Download anyway". <br />
+              Приложението е разработено специално за българските предприемачи.
+            </p>
+          </div>
         </div>
       </div>
     </section>
