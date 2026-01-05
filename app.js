@@ -12,6 +12,22 @@ function toggleMenu() {
   body.style.overflow = isHidden ? 'auto' : 'hidden';
 }
 
+const scriptURL = "https://script.google.com/macros/s/AKfycbwlA4QYr91HrqR8mJC_mSg0ZVlZKlc2dLXCO2uDg8gNWw29l9XdRgp_gXUJCgcahE4wIw/exec";
+const form = document.getElementById('emailForm');
+const msg = document.getElementById('responseMsg');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  hapticFeedback(); // Използваме твоята функция за вибрация
+
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then((response) => {
+      form.classList.add('hidden');
+      msg.classList.remove('hidden');
+    })
+    .catch((error) => console.error('Error!', error.message));
+});
+
 /**
  * HAPTIC FEEDBACK - Тактилно потвърждение за Android
  */
