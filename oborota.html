@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oborota 4.0 | Тефтера с парите само,че в телефона</title>
+    <title>ОБОРОТА | Тефтера с парите само,че в телефона ти</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐷</text></svg>"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSSHL2D8TJ"></script>
     <script>
@@ -29,26 +33,23 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="antialiased">
-    <nav class="sticky top-0 z-50 px-6 py-4 border-b glass border-white/5">
-      <div class="flex flex-col items-center justify-between max-w-6xl gap-4 mx-auto md:flex-row">
-        <div class="flex items-center gap-3">
-          <span class="text-2xl">🐷</span>
-          <a href="index.html" class="text-xl font-black tracking-tighter uppercase"
-            >GG <span class="text-pink">SOLUTIONS</span></a
-          >
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <span class="text-2xl piggy-logo">🐷</span>
+          <span class="font-black uppercase text-white group-hover:text-pink transition-colors">
+            GG <span class="text-pink">Solutions</span>
+          </span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link">НАЧАЛО</a>
+          <a href="calculator.html" class="nav-link">PIGGY КАЛКУЛАТОР</a>
+          <a href="oborota.html" class="nav-link active">ОБОРОТА APP</a>
         </div>
-        <div class="flex items-center gap-6">
-          <a
-            href="index.html"
-            class="nav-link text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-pink transition"
-            >Начало</a
-          >
-          <a
-            href="calculator.html"
-            class="nav-link text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-pink transition"
-            >Euro Calculator</a
-          >
-          <a href="oborota.html" class="nav-link active">Oborota App</a>
+
+        <div class="md:hidden">
+          <span class="text-2xl piggy-logo">🐷</span>
         </div>
       </div>
     </nav>
@@ -71,12 +72,12 @@
       <div class="flex flex-col justify-center gap-6 sm:flex-row">
         <a
           href="#download"
-          class="px-12 py-5 text-lg font-black text-white transition bg-pink rounded-2xl hover:scale-105 shadow-[0_0_20px_rgba(255,45,85,0.4)]"
+          class="restricted px-12 py-5 text-lg font-black text-white transition bg-pink rounded-2xl btn-coming-soon hover:scale-105 shadow-[0_0_20px_rgba(255,45,85,0.4)]"
           >ИЗТЕГЛИ APK</a
         >
         <a
           href="/oborota-web"
-          class="px-12 py-5 text-lg font-black text-white transition border bg-white/5 border-white/10 rounded-2xl hover:bg-white/10"
+          class="px-12 py-5 text-lg font-black text-white transition border bg-white/5 border-white/10 btn-coming-soon rounded-2xl hover:bg-white/10"
           >ПРОБВАЙ ДЕМО</a
         >
       </div>
@@ -184,7 +185,7 @@
           <div class="w-full space-y-4 text-left md:w-auto">
             <a
               href="oborota.apk"
-              class="flex items-center justify-center w-full gap-4 px-10 py-5 font-black text-white transition bg-pink rounded-2xl hover:bg-white hover:text-black"
+              class="flex items-center justify-center w-full gap-4 px-10 py-5 font-black text-white transition bg-pink rounded-2xl hover:bg-white hover:text-black btn-coming-soon"
             >
               <span>ИЗТЕГЛИ СЕГА</span>
               <span class="text-2xl">📥</span>

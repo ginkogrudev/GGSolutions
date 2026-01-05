@@ -311,6 +311,43 @@ span,
   align-items: center;
 }
 
+.btn-neon-secondary {
+  display: inline-block;
+  padding: 1.25rem 2.5rem;
+  font-weight: 900;
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--pink) !important;
+  background-color: rgba(255, 45, 85, 0.05); /* Леко розов филтър */
+  border: 3px solid var(--pink); /* По-дебела и ярка рамка */
+  border-radius: 1.25rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-transform: uppercase;
+  /* Външно и вътрешно неоново сияние */
+  box-shadow: 0 0 15px rgba(255, 45, 85, 0.2), inset 0 0 10px rgba(255, 45, 85, 0.1);
+}
+
+.btn-neon-secondary:hover {
+  background-color: var(--pink);
+  color: #ffffff !important;
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(255, 45, 85, 0.5);
+}
+
+.btn-neon-secondary:active {
+  transform: scale(0.96);
+}
+
+.btn-coming-soon {
+  background-color: #27272a !important; /* Тъмно сиво / Zinc-800 */
+  color: #71717a !important; /* Сив текст */
+  border-color: #3f3f46 !important;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
 /* Мобилна оптимизация */
 @media (max-width: 768px) {
   h1 {

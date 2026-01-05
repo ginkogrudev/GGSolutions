@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Euro Calc | GG Solutions</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐷</text></svg>"
+    />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSSHL2D8TJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -29,169 +33,132 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="antialiased">
-    <nav class="sticky top-0 z-50 px-6 py-4 border-b glass border-white/5">
-      <div class="flex flex-col items-center justify-between max-w-6xl gap-4 mx-auto md:flex-row">
-        <div class="flex items-center gap-3">
-          <span class="text-2xl">🐷</span>
-          <a href="index.html" class="text-xl font-black tracking-tighter uppercase"
-            >GG <span class="text-pink">SOLUTIONS</span></a
-          >
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <span class="text-2xl piggy-logo">🐷</span>
+          <span class="font-black uppercase text-white group-hover:text-pink transition-colors">
+            GG <span class="text-pink">Solutions</span>
+          </span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link">НАЧАЛО</a>
+          <a href="calculator.html" class="nav-link active">PIGGY КАЛКУЛАТОР</a>
+          <a href="oborota.html" class="nav-link">ОБОРОТА APP</a>
         </div>
-        <div class="flex items-center gap-6">
-          <a href="index.html" class="nav-link">Начало</a>
-          <a href="calculator.html" class="nav-link active">Euro Calculator</a>
-          <a href="oborota.html" class="nav-link">Oborota App</a>
+
+        <div class="md:hidden">
+          <span class="text-2xl piggy-logo">🐷</span>
         </div>
       </div>
     </nav>
 
-    <section class="flex flex-col items-center justify-center min-h-[60vh] px-6 text-center bg-zinc-950/20">
-      <div class="p-6 mb-8 glass rounded-3xl border-pink/30">
-        <span class="text-4xl">💶</span>
-      </div>
-      <h1 class="mb-4 text-5xl md:text-7xl">Спрете да смятате <br /><span class="text-pink">на ум!</span></h1>
-      <p class="max-w-xl mb-12 text-lg text-gray-400">
-        Най-бързият начин за преход към Еврото. Професионален инструмент за българския бизнес. Офлайн, точно и за
-        секунди.
-      </p>
-    </section>
-
-    <section class="max-w-6xl px-6 py-20 mx-auto">
-      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-        <div class="p-8 transition glass rounded-3xl hover:border-pink/40">
-          <div class="mb-4 text-3xl">⚡</div>
-          <h3>1.5 Секунди</h3>
-          <p class="text-sm text-gray-400">Сметнете цена, ресто и превод в една стъпка.</p>
-        </div>
-        <div class="p-8 transition glass rounded-3xl hover:border-pink/40">
-          <div class="mb-4 text-3xl">⚖️</div>
-          <h3>Законен Курс</h3>
-          <p class="text-sm text-gray-400">Фиксиран на <span class="font-bold text-white">1.95583</span>.</p>
-        </div>
-        <div class="p-8 transition glass rounded-3xl hover:border-pink/40">
-          <div class="mb-4 text-3xl">📵</div>
-          <h3>100% Офлайн</h3>
-          <p class="text-sm text-gray-400">Работи без интернет. Винаги с вас.</p>
-        </div>
-        <div class="p-8 transition glass rounded-3xl hover:border-pink/40">
-          <div class="mb-4 text-3xl">📳</div>
-          <h3>Feedback</h3>
-          <p class="text-sm text-gray-400">Вибрация за потвърждение на всеки клик.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="px-6 py-20">
-      <div
-        class="max-w-5xl mx-auto glass rounded-[3.5rem] border-pink/40 p-12 text-center relative overflow-hidden shadow-[0_20px_50px_rgba(255,45,85,0.15)]"
-      >
-        <div class="absolute -top-24 -left-24 w-64 h-64 bg-pink/5 rounded-full blur-[100px]"></div>
-
-        <div class="flex flex-col items-center mb-10">
-          <div
-            class="flex items-center justify-center w-16 h-16 mb-6 border bg-pink/20 rounded-2xl border-pink/30 animate-pulse"
-          >
-            <span class="text-3xl font-black text-pink">€</span>
-          </div>
-          <p class="text-pink font-black uppercase text-xs tracking-[0.5em] mb-4">Внимание: Остават броени дни</p>
-          <h2 class="text-4xl italic font-black leading-tight tracking-tighter text-white uppercase md:text-6xl">
-            Ние вече ползваме евро, а ти?
-          </h2>
-        </div>
-
-        <div class="flex justify-center gap-6 mb-12 md:gap-12">
-          <div class="timer-block">
-            <span id="days" class="timer-number-pink">30</span>
-            <span class="timer-label-white">Дни</span>
-          </div>
-          <div class="timer-block">
-            <span id="hours" class="timer-number-pink">07</span>
-            <span class="timer-label-white">Часа</span>
-          </div>
-          <div class="timer-block">
-            <span id="minutes" class="timer-number-pink">42</span>
-            <span class="timer-label-white">Мин</span>
-          </div>
-        </div>
-
-        <div class="space-y-8">
-          <p class="text-lg italic font-medium text-white opacity-100 md:text-xl">
-            След края на януари цените в лева ще бъдат история. Бъди подготвен. 🐷
-          </p>
-
-          <div class="flex justify-center">
-            <a
-              href="#euro-calc"
-              class="btn-primary px-16 py-6 text-xl font-black !text-white transition bg-pink rounded-2xl hover:scale-105 shadow-[0_0_30px_rgba(255,45,85,0.5)] flex items-center gap-4"
-            >
-              <span>ЗАПОЧНИ СЕГА</span>
-              <span class="text-2xl">→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="max-w-7xl px-6 py-24 mx-auto border-t border-white/5">
-      <div class="flex flex-col items-center gap-16 md:flex-row md:justify-between lg:gap-24">
-        <div class="w-full md:w-1/2 flex justify-center">
-          <div class="relative">
-            <div class="absolute inset-0 bg-pink/10 blur-[120px] rounded-full"></div>
-
+    <section class="relative min-h-[90vh] flex items-center justify-center px-6 py-8 md:py-16 mx-auto overflow-hidden">
+      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 max-w-6xl w-full">
+        <div class="w-full md:w-2/5 flex justify-center order-1 md:order-2">
+          <div class="relative group">
+            <div class="absolute inset-0 bg-pink/20 blur-[60px] md:blur-[100px] rounded-full"></div>
             <img
               src="imgs/DemoCalc.png"
-              alt="Piggy Calc Demo"
-              class="relative w-full max-w-[320px] md:max-w-[420px] h-auto rounded-[2.5rem] shadow-[0_30px_60px_-15px_rgba(255,45,85,0.3)] border border-white/5 transition-all duration-500"
+              class="relative w-full max-w-[220px] sm:max-w-[280px] md:max-w-[380px] drop-shadow-pink-neon transition-transform duration-500 hover:scale-105"
+              alt="Piggy Calc"
             />
           </div>
         </div>
 
-        <div class="w-full md:w-1/2 space-y-10">
-          <div class="space-y-6">
-            <h2 class="text-5xl md:text-7xl font-black leading-tight uppercase italic tracking-tighter">
-              Готови ли сте за <br />
-              <span class="text-pink drop-shadow-pink-neon">промяната?</span>
-            </h2>
+        <div class="w-full md:w-3/5 space-y-6 text-center md:text-left order-2 md:order-1">
+          <h1
+            class="text-[11vw] sm:text-[9vw] md:text-8xl font-black uppercase italic leading-[0.9] md:leading-[0.85] tracking-tighter"
+          >
+            <span class="text-white">СМЯТАЙ ЛЕВА</span><br />
+            <span class="text-white">ИЛИ ЕВРО С</span>
+            <br />
+            <span class="text-pink drop-shadow-pink-neon">РОЗОВИЯ</span><br />
+            <span class="text-white">КАЛКУЛАТОР.</span>
+          </h1>
 
-            <p class="text-xl text-white font-medium opacity-90 max-w-lg leading-relaxed">
-              Вземете пълната мощ на калкулатора директно в джоба си.
-              <span class="text-pink">Без чакане, без реклами.</span>
+          <div
+            class="flex flex-col md:flex-row md:flex-wrap justify-center md:justify-start gap-y-3 md:gap-x-6 font-black text-lg md:text-xl uppercase tracking-widest italic border-t border-white/10 pt-6"
+          >
+            <p class="flex items-center justify-center md:justify-start gap-2">
+              <span class="text-white">БЕЗ</span> <span class="text-pink">ДРАМИ.</span>
+            </p>
+            <p class="flex items-center justify-center md:justify-start gap-2">
+              <span class="text-white">БЕЗ</span> <span class="text-pink">ИЗМАМИ.</span>
+            </p>
+            <p class="flex items-center justify-center md:justify-start gap-2">
+              <span class="text-white">БЕЗ</span> <span class="text-pink">РЕКЛАМИ.</span>
             </p>
           </div>
 
-          <div class="flex flex-col gap-4 max-w-md">
+          <div class="flex flex-col sm:flex-row gap-6 pt-4">
+            <a href="oborota.apk" class="btn-hero px-10 py-5 text-xl text-center min-w-[260px]"
+              >ИЗТЕГЛИ ПРИЛОЖЕНИЕТО (APK)</a
+            >
+
             <a
               href="https://ginkogrudev.github.io/EuroCalculator/"
-              onclick="gtag('event', 'use_web_app', {'app_name': 'Euro Calc'});"
-              class="btn-primary px-12 py-6 text-center text-xl font-black !text-white transition bg-pink rounded-2xl hover:bg-[#ff1e47] shadow-pink-neon"
+              class="btn-neon-secondary px-10 py-5 text-xl text-center min-w-[260px]"
             >
               ПРОБВАЙ СЕГА (WEB)
             </a>
-
-            <a
-              href="https://github.com/ginkogrudev/EuroCalculator/releases/"
-              onclick="gtag('event', 'download_apk', {'app_name': 'Euro Calc'});"
-              class="btn-primary px-12 py-6 text-center text-xl font-black !text-white transition bg-pink rounded-2xl border-2 border-white/10 hover:border-pink/50 shadow-pink-neon"
-            >
-              ИЗТЕГЛИ APK (ANDROID)
-            </a>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="space-y-4 pt-4">
-            <div class="flex items-center gap-3">
-              <div class="flex items-center justify-center w-6 h-6 rounded-full bg-pink/20 border border-pink/40">
-                <span class="text-pink text-xs font-black">✓</span>
-              </div>
-              <p class="text-[11px] text-white font-black uppercase tracking-[0.3em]">
-                100% Сигурно & Проверено от GG Solutions
-              </p>
-            </div>
-            <p
-              class="text-[10px] text-pink font-bold uppercase tracking-widest italic leading-relaxed opacity-70 border-l-2 border-pink/30 pl-4"
-            >
-              * Ако телефонът ви предупреди за сигурност, изберете "Download anyway". <br />
-              Приложението е разработено специално за българските предприемачи.
+    <section class="max-w-6xl px-6 py-20 mx-auto border-t border-white/5">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter">
+          ЕДИН ИНСТРУМЕНТ. <span class="text-pink">ДВА СВЯТА.</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div
+          class="glass p-1 border border-white/10 rounded-[3rem] hover:border-pink/40 transition-all duration-500 group overflow-hidden relative"
+        >
+          <div class="p-10 flex flex-col h-full">
+            <span class="text-pink font-black text-xs tracking-[0.4em] uppercase mb-4">За теб</span>
+            <h3 class="text-4xl font-black uppercase italic mb-6">КЛИЕНТ МОД</h3>
+            <p class="text-white/70 text-lg mb-8 flex-grow">
+              Не позволявай на сложните сметки да развалят пазаруването ти. Виж точно колко трябва да платиш и колко
+              ресто да получиш, без да държиш опашката.
             </p>
+            <div class="flex items-center gap-4">
+              <div class="flex -space-x-2">
+                <div
+                  class="w-10 h-10 rounded-full border-2 border-zinc-900 bg-pink shadow-[0_0_15px_rgba(255,45,85,0.4)]"
+                ></div>
+                <div class="w-10 h-10 rounded-full border-2 border-zinc-900 bg-blue-500"></div>
+                <div class="w-10 h-10 rounded-full border-2 border-zinc-900 bg-emerald-500"></div>
+              </div>
+              <span class="text-[10px] font-black uppercase tracking-widest text-white/40">Избери своя цвят</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="glass p-1 border border-white/10 rounded-[3rem] hover:border-pink/40 transition-all duration-500 group relative"
+        >
+          <div class="p-10 flex flex-col h-full">
+            <span class="text-pink font-black text-xs tracking-[0.4em] uppercase mb-4">За бизнеса</span>
+            <h3 class="text-4xl font-black uppercase italic mb-6">БИЗНЕС МОД</h3>
+            <p class="text-white/70 text-lg mb-8 flex-grow">
+              Прецизност, която вдъхва доверие. Обслужвай клиенти в пъти по-бързо и елиминирай риска от грешки в оборота
+              при прехода към еврото.
+            </p>
+            <div class="flex gap-3">
+              <span
+                class="bg-white/5 px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-tighter border border-white/10"
+                >Haptic Feedback</span
+              >
+              <span
+                class="bg-white/5 px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-tighter border border-white/10"
+                >No Ads</span
+              >
+            </div>
           </div>
         </div>
       </div>

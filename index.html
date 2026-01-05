@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GG Solutions | Твоят Технологичен Съюзник</title>
-
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐷</text></svg>"
+    />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSSHL2D8TJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -31,26 +34,23 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="antialiased">
-    <nav class="sticky top-0 z-50 px-6 py-4 border-b glass border-white/5">
-      <div class="flex flex-col items-center justify-between max-w-6xl gap-4 mx-auto md:flex-row">
-        <div class="flex items-center gap-3">
-          <span class="text-2xl">🐷</span>
-          <a href="index.html" class="text-xl font-black tracking-tighter uppercase"
-            >GG <span class="text-pink">SOLUTIONS</span></a
-          >
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <span class="text-2xl piggy-logo">🐷</span>
+          <span class="font-black uppercase text-white group-hover:text-pink transition-colors">
+            GG <span class="text-pink">Solutions</span>
+          </span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link active">НАЧАЛО</a>
+          <a href="calculator.html" class="nav-link">PIGGY КАЛКУЛАТОР</a>
+          <a href="oborota.html" class="nav-link">ОБОРОТА APP</a>
         </div>
-        <div class="flex items-center gap-6">
-          <a href="index.html" class="nav-link active">За Нас</a>
-          <a
-            href="calculator.html"
-            class="nav-link text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-pink transition"
-            >Euro Calculator</a
-          >
-          <a
-            href="oborota.html"
-            class="nav-link text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-pink transition"
-            >Oborota App</a
-          >
+
+        <div class="md:hidden">
+          <span class="text-2xl piggy-logo">🐷</span>
         </div>
       </div>
     </nav>
@@ -95,18 +95,18 @@
         <div
           class="glass p-1 border border-white/10 rounded-[2.5rem] hover:border-pink/40 transition-all duration-500 group"
         >
-          <div class="p-10">
+          <div class="p-10 flex flex-col h-full">
             <div class="flex items-start justify-between mb-6">
               <span class="bg-pink text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter"
                 >Live Now</span
               >
-              <span class="text-3xl">💶</span>
+              <span class="text-3xl piggy-logo">💶</span>
             </div>
-            <h3 class="mb-4 text-4xl font-black uppercase">Euro Calc</h3>
-            <p class="mb-8 text-gray-400">
-              Сметнете прехода към Еврото за 1.5 секунди. Без нужда от интернет. Фиксиран курс и гарантирана точност.
+            <h3 class="mb-4 text-4xl font-black uppercase">Piggy калкулатор</h3>
+            <p class="mb-8 text-white/70 flex-grow">
+              Сметнете прехода към Еврото за 1.5 секунди. Без реклами. Фиксиран курс и гарантирана точност.
             </p>
-            <a href="calculator.html" class="btn-secondary-action"> ОТВОРИ КАЛКУЛАТОРА </a>
+            <a href="calculator.html" class="btn-secondary-action text-center"> ОТВОРИ КАЛКУЛАТОРА </a>
           </div>
         </div>
 
@@ -114,23 +114,16 @@
           id="oborota"
           class="glass p-1 border border-white/10 rounded-[2.5rem] hover:border-pink/40 transition-all duration-500 group"
         >
-          <div class="p-10">
+          <div class="p-10 flex flex-col h-full">
             <div class="flex items-start justify-between mb-6">
-              <span class="bg-pink text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter"
-                >New Release</span
-              >
-              <span class="text-3xl">📦</span>
+              <span class="bg-pink text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter">Beta</span>
+              <span class="text-3xl piggy-logo">📦</span>
             </div>
-            <h3 class="mb-4 text-4xl font-black uppercase">Oborota 4.0</h3>
-            <p class="mb-8 text-gray-400">
+            <h3 class="mb-4 text-4xl font-black uppercase">Oborota App</h3>
+            <p class="mb-8 text-white/70 flex-grow">
               Пълно финансово управление за малкия бизнес. Проследявай печалби, разходи и заплати директно от джоба си.
             </p>
-            <a
-              href="oborota.html"
-              class="w-full py-4 font-bold text-center text-white transition btn-secondary-action pink rounded-xl group-hover:bg-pink"
-            >
-              ИЗТЕГЛИ ПРИЛОЖЕНИЕТО
-            </a>
+            <a href="oborota.html" class="btn-secondary-action text-center"> ВИЖ ОБОРОТА </a>
           </div>
         </div>
       </div>
@@ -149,7 +142,7 @@
           <h3 class="mb-4 text-2xl font-black uppercase">Мисията на GG Solutions</h3>
           <p class="italic leading-relaxed text-gray-400">
             "Гледах как бизнесът се плаши от промените. Създадох GG Solutions, за да докажа, че технологиите могат да
-            бъдат приятел, а не враг в ерата на новата валута."
+            бъдат приятел на вашата печалба, а не враг"
           </p>
           <p class="mt-4 font-bold tracking-widest uppercase text-pink">— Гинко Грудев, Founder</p>
         </div>
