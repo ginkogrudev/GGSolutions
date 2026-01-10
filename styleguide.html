@@ -1,189 +1,39 @@
-/* GG SOLUTIONS - GLOBAL BRANDING 2026 (HSL SYSTEM) */
+<nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 nav-container justify-between">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <span class="text-2xl group-hover:scale-110 transition-transform">🐷</span>
+      <span class="font-[900] uppercase tracking-tighter text-xl text-white group-hover:text-pink transition-colors">
+        GG <span class="text-pink">Solutions</span>
+      </span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-xs font-[800] tracking-[0.15em] uppercase text-silver">
+      <a href="index.html" class="text-pink transition-colors">Начало</a>
+      <a href="calculator.html" class="hover:text-white transition-colors">Калкулатор</a>
+      <a href="oborota.html" class="hover:text-white transition-colors">Oborota</a>
+      <a href="30DayChallenge.html" class="hover:text-pink transition-colors flex items-center gap-2">
+        30-Day Challenge
+        <span class="bg-pink text-white text-[9px] px-1.5 py-0.5 rounded-full animate-pulse">BETA</span>
+      </a>
+    </div>
+    <button onclick="toggleMenu()" class="md:hidden text-white hover:text-pink transition">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
+      </svg>
+    </button>
+  </div>
+</nav>
 
-:root {
-  /* --- BRAND IDENTITY (PINK) --- */
-  /* Pink: #FF2D55 -> HSL(349, 100%, 59%) */
-  --p-h: 349;
-  --p-s: 100%;
-  --p-l: 59%;
-  
-  /* Съкращение за основния цвят */
-  --primary: var(--p-h), var(--p-s), var(--p-l); 
-
-  /* --- DARK THEME (DEFAULT) --- */
-  /* Backgrounds: Deep Blue-Black (Zinc-950 inspired) */
-  --bg-1: 240, 10%, 4%;   /* Основен фон (#09090b) */
-  --bg-2: 240, 6%, 10%;   /* Карти / Секции */
-  --bg-3: 240, 4%, 16%;   /* Hover състояния */
-
-  /* Text: Pure White bases */
-  --text-1: 0, 0%, 100%;  /* Заглавия (100% White) */
-  --text-2: 240, 5%, 84%; /* Параграфи (Light Gray) */
-  --text-muted: 240, 5%, 50%; /* Мета данни */
-
-  /* Borders & Dividers */
-  --border: 240, 4%, 20%;
-}
-
-/* --- LIGHT THEME (OVERRIDE) --- */
-/* Класът се добавя автоматично от JS */
-body.light-theme {
-  /* Backgrounds: Clean White/Gray */
-  --bg-1: 0, 0%, 98%;    /* Off-white */
-  --bg-2: 0, 0%, 100%;   /* Pure White Cards */
-  --bg-3: 240, 5%, 90%;  /* Hovers */
-
-  /* Text: High Contrast Dark */
-  --text-1: 240, 10%, 4%; /* Почти черно */
-  --text-2: 240, 4%, 30%; /* Тъмно сиво */
-  --text-muted: 240, 4%, 60%;
-
-  /* Borders */
-  --border: 240, 5%, 85%;
-}
-
-/* --- GLOBAL RESET & TYPOGRAPHY --- */
-body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: hsl(var(--bg-1));
-  color: hsl(var(--text-1));
-  line-height: 1.6;
-  scroll-behavior: smooth;
-  transition: background-color 0.4s ease, color 0.4s ease; /* Плавна смяна на темите */
-}
-
-h1, h2, h3, h4 {
-  font-weight: 900 !important;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  color: hsl(var(--text-1));
-}
-
-p, span, li {
-  color: hsl(var(--text-2));
-}
-
-/* --- UTILITY CLASSES (HSL BASED) --- */
-
-.text-pink { color: hsl(var(--primary)) !important; }
-.bg-pink { background-color: hsl(var(--primary)) !important; }
-
-/* DYNAMIC GLASS EFFECT 
-   Работи и на тъмно, и на светло, защото използва --text-1 за цвета на стъклото
-*/
-.glass {
-  background: hsla(var(--text-1), 0.03); /* 3% прозрачност на текста */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid hsla(var(--border), 0.5);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-}
-
-/* --- BUTTONS --- */
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.25rem 2.5rem;
-  font-weight: 900;
-  font-size: 1.1rem;
-  color: hsl(0, 0%, 100%) !important; /* Винаги бял текст */
-  background-color: hsl(var(--primary));
-  border: 2px solid hsl(var(--primary));
-  border-radius: 1.25rem;
-  text-transform: uppercase;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 10px 20px hsla(var(--primary), 0.3);
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px hsla(var(--primary), 0.5);
-}
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.25rem 2.5rem;
-  font-weight: 900;
-  font-size: 1.1rem;
-  /* Използваме цвета на текста, за да работи и на Dark, и на Light */
-  color: hsl(var(--text-1)) !important; 
-  background-color: transparent;
-  border: 2px solid hsla(var(--border), 1);
-  border-radius: 1.25rem;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.btn-secondary:hover {
-  border-color: hsl(var(--primary));
-  color: hsl(var(--primary)) !important;
-}
-
-/* Neon Secondary (За Web Demo бутона) */
-.btn-neon-secondary {
-  display: inline-block;
-  padding: 1.25rem 2.5rem;
-  font-weight: 900;
-  font-size: 1.1rem;
-  text-align: center;
-  color: hsl(var(--primary)) !important;
-  background-color: hsla(var(--primary), 0.05);
-  border: 2px solid hsl(var(--primary));
-  border-radius: 1.25rem;
-  text-transform: uppercase;
-  transition: all 0.3s;
-  box-shadow: 0 0 15px hsla(var(--primary), 0.2);
-}
-
-.btn-neon-secondary:hover {
-  background-color: hsl(var(--primary));
-  color: white !important;
-  box-shadow: 0 0 30px hsla(var(--primary), 0.6);
-}
-
-/* --- NAVIGATION --- */
-nav {
-  background: hsla(var(--bg-1), 0.8);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid hsla(var(--border), 0.5);
-}
-
-.nav-link {
-  font-size: 0.85rem;
-  font-weight: 900;
-  color: hsl(var(--text-1)) !important;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 0.5rem 1rem;
-  transition: 0.3s;
-  opacity: 0.7;
-}
-
-.nav-link:hover, .nav-link.active {
-  color: hsl(var(--primary)) !important;
-  opacity: 1;
-}
-
-/* --- ACCORDION & COMPONENTS --- */
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-}
-.accordion-item.active .accordion-content {
-  max-height: 500px; /* Достатъчно голямо число */
-}
-.accordion-item.active .icon {
-  transform: rotate(45deg);
-}
-
-/* Mobile Menu Overlay */
-#mobile-menu {
-  background-color: hsla(var(--bg-1), 0.98);
-}
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8"
+>
+  <button onclick="toggleMenu()" class="absolute top-8 right-8 text-white/50 uppercase text-xs tracking-widest">
+    Затвори ✕
+  </button>
+  <a href="index.html" class="text-3xl font-[900] uppercase italic text-pink">Начало</a>
+  <a href="calculator.html" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white">Калкулатор</a>
+  <a href="oborota.html" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white">Oborota App</a>
+  <a href="30DayChallenge.html" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white"
+    >30-Day Challenge</a
+  >
+</div>

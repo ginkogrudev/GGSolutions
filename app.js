@@ -123,6 +123,47 @@ function initInteractions() {
 /* -------------------------------------------------------------------------- */
 /* 4. FORMS                                                                   */
 /* -------------------------------------------------------------------------- */
+
+/* --- MODAL LOGIC --- */
+
+// Open the Modal
+window.openApplicationModal = function () {
+  const modal = document.getElementById('application-modal');
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden'; // Stop background scrolling
+};
+
+// Close the Modal
+window.closeApplicationModal = function () {
+  const modal = document.getElementById('application-modal');
+  modal.classList.add('hidden');
+  document.body.style.overflow = ''; // Restore scrolling
+};
+
+// Handle Form Submission (The Magic)
+window.handleFormSubmit = function (e) {
+  e.preventDefault(); // Stop page reload
+
+  const btn = document.getElementById('submit-btn');
+  const originalText = btn.innerText;
+
+  // 1. Show Loading State
+  btn.innerText = 'ОБРАБОТВАНЕ...';
+  btn.classList.add('opacity-75', 'cursor-wait');
+
+  // 2. Capture Data (Ready for Excel/Sheets later)
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData.entries());
+  console.log('Captured Lead:', data); // This is where we will hook up Google Sheets
+
+  // 3. Simulate Server Delay & Show Success
+  setTimeout(() => {
+    document.getElementById('piggy-form').classList.add('hidden');
+    document.getElementById('form-success').classList.remove('hidden');
+    // Optional: Send data to Google Sheets here
+  }, 1500);
+};
+
 function initForms() {
   // Cookie Banner
   if (!localStorage.getItem('gg_consent')) {
