@@ -137,7 +137,7 @@ window.handleFormSubmit = function (e) {
   // --- GOOGLE SHEETS CONNECTION ---
   // 👇 PASTE YOUR DEPLOYED GOOGLE SCRIPT URL BETWEEN THE QUOTES 👇
   const SCRIPT_URL =
-    'https://script.google.com/macros/s/AKfycbzJwe9JRMmshldmQMiN8ytQkcXw2DKMFaU4Fy6aN2amw_QfXhgGvPkWx-ecSqu992-Irg/exec';
+    'https://script.google.com/macros/s/AKfycbyWJiVVJqwTpZE8QWsbUK0xPhtO7wP_fMssBTpRim_F4w-VQpFofXm0YXDmNCOwign4ew/exec';
 
   fetch(SCRIPT_URL, {
     method: 'POST',
@@ -146,10 +146,18 @@ window.handleFormSubmit = function (e) {
     body: JSON.stringify(data),
   })
     .then(() => {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'generate_lead', {
+          event_category: 'Form',
+          event_label: 'Piggy_Application',
+          value: 100, // We assign a theoretical value (e.g., 100лв) to the lead
+        });
+      }
       // Success
       form.classList.add('hidden');
       document.getElementById('form-success').classList.remove('hidden');
     })
+
     .catch((error) => {
       console.error('Error!', error.message);
       btn.innerText = 'ГРЕШКА! ОПИТАЙ ОТНОВО';
