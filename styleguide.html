@@ -1,172 +1,189 @@
-<!DOCTYPE html>
-<html lang="bg">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GG Solutions | Design System & Styleguide</title>
+/* GG SOLUTIONS - GLOBAL BRANDING 2026 (HSL SYSTEM) */
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
+:root {
+  /* --- BRAND IDENTITY (PINK) --- */
+  /* Pink: #FF2D55 -> HSL(349, 100%, 59%) */
+  --p-h: 349;
+  --p-s: 100%;
+  --p-l: 59%;
+  
+  /* Съкращение за основния цвят */
+  --primary: var(--p-h), var(--p-s), var(--p-l); 
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              pink: '#ff2d55',
-              dark: '#0a0a0a',
-            },
-            boxShadow: {
-              'pink-neon': '0 0 20px rgba(255, 45, 85, 0.4)',
-              'pink-heavy': '0 0 40px rgba(255, 45, 85, 0.6)',
-            },
-          },
-        },
-      };
-    </script>
+  /* --- DARK THEME (DEFAULT) --- */
+  /* Backgrounds: Deep Blue-Black (Zinc-950 inspired) */
+  --bg-1: 240, 10%, 4%;   /* Основен фон (#09090b) */
+  --bg-2: 240, 6%, 10%;   /* Карти / Секции */
+  --bg-3: 240, 4%, 16%;   /* Hover състояния */
 
-    <style>
-      body {
-        background-color: #0a0a0a;
-        color: white;
-        font-family: 'Montserrat', sans-serif;
-      }
-      .glass {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(15px);
-        border: 1px solid rgba(255, 45, 85, 0.2);
-      }
-      .section-label {
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-      }
-    </style>
-  </head>
-  <body class="p-8 md:p-20">
-    <header class="pb-10 mb-20 text-center border-b border-pink/20 md:text-left">
-      <h1 class="text-6xl italic font-black tracking-tighter text-white uppercase md:text-8xl">
-        Style<span class="text-pink">guide</span>
-      </h1>
-      <p class="text-pink font-black uppercase tracking-[0.5em] mt-4">GG Solutions Ecosystem v1.0</p>
-    </header>
+  /* Text: Pure White bases */
+  --text-1: 0, 0%, 100%;  /* Заглавия (100% White) */
+  --text-2: 240, 5%, 84%; /* Параграфи (Light Gray) */
+  --text-muted: 240, 5%, 50%; /* Мета данни */
 
-    <div class="grid grid-cols-1 gap-16 lg:grid-cols-12">
-      <aside class="space-y-12 lg:col-span-3">
-        <section>
-          <h3 class="mb-6 text-xs font-black tracking-widest uppercase text-pink">Brand Colors</h3>
-          <div class="space-y-4">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-pink shadow-pink-neon"></div>
-              <div>
-                <p class="text-sm font-black uppercase">Pink</p>
-                <p class="text-[10px] opacity-50">#FF2D55</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 border rounded-xl bg-dark border-white/10"></div>
-              <div>
-                <p class="text-sm font-black uppercase">Dark</p>
-                <p class="text-[10px] opacity-50">#0A0A0A</p>
-              </div>
-            </div>
-          </div>
-        </section>
+  /* Borders & Dividers */
+  --border: 240, 4%, 20%;
+}
 
-        <section>
-          <h3 class="mb-6 text-xs font-black tracking-widest uppercase text-pink">Typography</h3>
-          <div class="space-y-4 italic tracking-tighter uppercase">
-            <p class="text-4xl leading-none font-900">Montserrat Black</p>
-            <p class="text-xl font-bold tracking-normal uppercase opacity-80">Montserrat Bold</p>
-            <p class="text-sm tracking-normal normal-case opacity-60">
-              Montserrat Regular (Standard prose text for descriptions)
-            </p>
-          </div>
-        </section>
-      </aside>
+/* --- LIGHT THEME (OVERRIDE) --- */
+/* Класът се добавя автоматично от JS */
+body.light-theme {
+  /* Backgrounds: Clean White/Gray */
+  --bg-1: 0, 0%, 98%;    /* Off-white */
+  --bg-2: 0, 0%, 100%;   /* Pure White Cards */
+  --bg-3: 240, 5%, 90%;  /* Hovers */
 
-      <main class="space-y-24 lg:col-span-9">
-        <section id="buttons">
-          <h2 class="text-xs font-black uppercase tracking-[0.4em] text-white/30 mb-8 border-l-2 border-pink pl-4">
-            Buttons & Interactions
-          </h2>
-          <div class="flex flex-wrap items-center gap-8">
-            <div class="space-y-4 text-center">
-              <a
-                href="#"
-                class="inline-block px-12 py-5 text-lg font-black !text-white transition bg-pink rounded-2xl hover:scale-105 shadow-pink-neon"
-              >
-                PRIMARY CTA
-              </a>
-              <p class="text-[9px] opacity-40 uppercase font-bold"> bg-pink | shadow-pink-neon</p>
-            </div>
+  /* Text: High Contrast Dark */
+  --text-1: 240, 10%, 4%; /* Почти черно */
+  --text-2: 240, 4%, 30%; /* Тъмно сиво */
+  --text-muted: 240, 4%, 60%;
 
-            <div class="space-y-4 text-center">
-              <a
-                href="#"
-                class="inline-block px-10 py-5 text-center text-sm font-black !text-white transition border-2 border-pink bg-pink/10 rounded-2xl hover:bg-pink hover:shadow-pink-neon"
-              >
-                SECONDARY PORTAL
-              </a>
-              <p class="text-[9px] opacity-40 uppercase font-bold">border-pink | bg-pink/10</p>
-            </div>
+  /* Borders */
+  --border: 240, 5%, 85%;
+}
 
-            <div class="flex gap-2 p-2 border rounded-full bg-white/5 border-white/10">
-              <button class="px-6 py-2 bg-pink rounded-full text-[10px] font-black uppercase">Active</button>
-              <button class="px-6 py-2 hover:bg-white/10 rounded-full text-[10px] font-black uppercase">Default</button>
-            </div>
-          </div>
-        </section>
+/* --- GLOBAL RESET & TYPOGRAPHY --- */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: hsl(var(--bg-1));
+  color: hsl(var(--text-1));
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  transition: background-color 0.4s ease, color 0.4s ease; /* Плавна смяна на темите */
+}
 
-        <section id="cards">
-          <h2 class="text-xs font-black uppercase tracking-[0.4em] text-white/30 mb-8 border-l-2 border-pink pl-4">
-            Containers
-          </h2>
-          <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-            <div class="glass p-10 rounded-[3rem] space-y-4">
-              <div class="flex items-center justify-center w-10 h-10 italic font-black rounded-lg bg-pink/20 text-pink">
-                GG
-              </div>
-              <h3 class="text-2xl italic font-black tracking-tighter uppercase">Glassmorphism Card</h3>
-              <p class="text-sm leading-relaxed opacity-70">
-                Standard container for Oborota and Calculator features. Always use 3rem border radius for that "App"
-                feel.
-              </p>
-            </div>
+h1, h2, h3, h4 {
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: hsl(var(--text-1));
+}
 
-            <div class="bg-dark border-2 border-pink p-10 rounded-[3rem] text-center shadow-pink-heavy">
-              <p class="text-pink font-black text-[10px] tracking-widest mb-4">TIMER STYLE</p>
-              <div class="mb-2 text-5xl italic tracking-tighter font-900 text-pink">30 : 07 : 42</div>
-              <p class="text-[10px] uppercase font-bold opacity-60">Pink Neon Shadows Enabled</p>
-            </div>
-          </div>
-        </section>
+p, span, li {
+  color: hsl(var(--text-2));
+}
 
-        <section id="assets">
-          <h2 class="text-xs font-black uppercase tracking-[0.4em] text-white/30 mb-8 border-l-2 border-pink pl-4">
-            Icons & Brands
-          </h2>
-          <div class="flex items-center gap-12">
-            <div class="text-center">
-              <div class="mb-4 select-none text-7xl">🐷</div>
-              <p class="text-[10px] font-black opacity-40">MAIN PIGGY LOGO</p>
-            </div>
-            <div class="text-center">
-              <div class="mb-4 text-6xl italic font-black select-none text-pink">€</div>
-              <p class="text-[10px] font-black opacity-40">CURRENCY ACCENT</p>
-            </div>
-            <div class="text-center">
-              <div class="text-6xl italic font-black tracking-tighter uppercase select-none text-white/10">
-                GG Solutions
-              </div>
-              <p class="text-[10px] font-black opacity-40">WORDMARK LOGO</p>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
+/* --- UTILITY CLASSES (HSL BASED) --- */
 
-    <footer class="pt-10 mt-32 text-center border-t border-white/5">
-      <p class="text-[10px] font-black uppercase tracking-[1em] opacity-20">WAR TIME READY • 2026</p>
-    </footer>
-  </body>
-</html>
+.text-pink { color: hsl(var(--primary)) !important; }
+.bg-pink { background-color: hsl(var(--primary)) !important; }
+
+/* DYNAMIC GLASS EFFECT 
+   Работи и на тъмно, и на светло, защото използва --text-1 за цвета на стъклото
+*/
+.glass {
+  background: hsla(var(--text-1), 0.03); /* 3% прозрачност на текста */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsla(var(--border), 0.5);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* --- BUTTONS --- */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 2.5rem;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: hsl(0, 0%, 100%) !important; /* Винаги бял текст */
+  background-color: hsl(var(--primary));
+  border: 2px solid hsl(var(--primary));
+  border-radius: 1.25rem;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 20px hsla(var(--primary), 0.3);
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px hsla(var(--primary), 0.5);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 2.5rem;
+  font-weight: 900;
+  font-size: 1.1rem;
+  /* Използваме цвета на текста, за да работи и на Dark, и на Light */
+  color: hsl(var(--text-1)) !important; 
+  background-color: transparent;
+  border: 2px solid hsla(var(--border), 1);
+  border-radius: 1.25rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  border-color: hsl(var(--primary));
+  color: hsl(var(--primary)) !important;
+}
+
+/* Neon Secondary (За Web Demo бутона) */
+.btn-neon-secondary {
+  display: inline-block;
+  padding: 1.25rem 2.5rem;
+  font-weight: 900;
+  font-size: 1.1rem;
+  text-align: center;
+  color: hsl(var(--primary)) !important;
+  background-color: hsla(var(--primary), 0.05);
+  border: 2px solid hsl(var(--primary));
+  border-radius: 1.25rem;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  box-shadow: 0 0 15px hsla(var(--primary), 0.2);
+}
+
+.btn-neon-secondary:hover {
+  background-color: hsl(var(--primary));
+  color: white !important;
+  box-shadow: 0 0 30px hsla(var(--primary), 0.6);
+}
+
+/* --- NAVIGATION --- */
+nav {
+  background: hsla(var(--bg-1), 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid hsla(var(--border), 0.5);
+}
+
+.nav-link {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: hsl(var(--text-1)) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 1rem;
+  transition: 0.3s;
+  opacity: 0.7;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: hsl(var(--primary)) !important;
+  opacity: 1;
+}
+
+/* --- ACCORDION & COMPONENTS --- */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+.accordion-item.active .accordion-content {
+  max-height: 500px; /* Достатъчно голямо число */
+}
+.accordion-item.active .icon {
+  transform: rotate(45deg);
+}
+
+/* Mobile Menu Overlay */
+#mobile-menu {
+  background-color: hsla(var(--bg-1), 0.98);
+}

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30-Day Growth Case Study | GG Solutions</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSSHL2D8TJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-GSSHL2D8TJ');
+    </script>
+  </head>
+
+  <body class="antialiased overflow-x-hidden">
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5 transition-all duration-300">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <span class="text-2xl piggy-logo group-hover:scale-110 transition-transform">🐷</span>
+          <span class="font-black uppercase group-hover:text-pink transition-colors brand-text">
+            GG <span class="text-pink">Solutions</span>
+          </span>
+        </a>
+
+        <div id="desktop-links" class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link">НАЧАЛО</a>
+
+          <a href="30DayClientsChallenge.html" class="nav-link relative group flex items-center gap-2">
+            <span class="font-black text-pink hover:scale-105 transition-transform">30-DAY CHALLENGE</span>
+            <span class="bg-pink text-white text-[9px] px-1.5 py-0.5 rounded-full font-black animate-pulse">BETA</span>
+          </a>
+
+          <a href="calculator.html" class="nav-link">PIGGY КАЛКУЛАТОР</a>
+          <a href="oborota.html" class="nav-link">ОБОРОТА APP</a>
+
+          <div id="theme-pill" class="ml-4"></div>
+        </div>
+
+        <button onclick="toggleMenu()" class="md:hidden flex items-center gap-2">
+          <span class="text-[10px] font-black tracking-widest opacity-50">МЕНЮ</span>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center space-y-10"
+    >
+      <button onclick="toggleMenu()" class="absolute top-8 right-8 text-white/50 uppercase text-xs tracking-widest">
+        Затвори ✕
+      </button>
+      <a href="index.html" class="mobile-link text-3xl font-black uppercase italic text-white/40 hover:text-pink"
+        >НАЧАЛО</a
+      >
+
+      <a
+        href="30DayClientsChallenge.html"
+        class="mobile-link text-3xl font-black uppercase italic text-pink flex items-center gap-3"
+      >
+        30-DAY CHALLENGE <span class="bg-pink text-white text-xs px-2 py-1 rounded-full">BETA</span>
+      </a>
+
+      <a href="calculator.html" class="mobile-link text-3xl font-black uppercase italic text-white/40 hover:text-pink"
+        >PIGGY КАЛКУЛАТОР</a
+      >
+      <a href="oborota.html" class="mobile-link text-3xl font-black uppercase italic text-white/40 hover:text-pink"
+        >ОБОРОТА APP</a
+      >
+    </div>
+
+    <section
+      class="min-h-screen flex items-center justify-center px-6 relative py-24 border-b"
+      style="border-color: hsla(var(--border), 0.3)"
+    >
+      <div class="max-w-5xl mx-auto text-center relative z-10 pt-10">
+        <div class="max-w-md mx-auto mb-10">
+          <div class="flex justify-between text-[10px] font-black uppercase tracking-widest mb-2 opacity-80">
+            <span>Свободни места за Януари</span>
+            <span class="text-pink animate-pulse">САМО 2 ОСТАВАТ</span>
+          </div>
+          <div class="h-4 w-full bg-[hsl(var(--bg-card))] rounded-full border border-[hsl(var(--border))] p-1">
+            <div
+              class="h-full w-[60%] bg-pink rounded-full shadow-[0_0_15px_hsla(var(--accent),0.6)] relative overflow-hidden"
+            >
+              <div class="absolute top-0 bottom-0 right-0 w-1 bg-white/50 blur-[1px]"></div>
+            </div>
+          </div>
+          <div class="flex justify-between text-[9px] font-bold uppercase tracking-widest mt-1 opacity-40">
+            <span>0</span>
+            <span>3 Заети</span>
+            <span>5 (Max)</span>
+          </div>
+        </div>
+
+        <h1 class="text-6xl md:text-8xl font-black uppercase italic leading-[0.9] tracking-tighter mb-8">
+          3-5 НОВИ КЛИЕНТА.<br />
+          <span class="text-pink">ОТ ИНТЕРНЕТ.</span><br />
+          ЗА 30 ДНИ.
+        </h1>
+
+        <p class="text-lg md:text-2xl font-medium opacity-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+          "Не искаш ли най-накрая ти да си бизнесът, който
+          <span class="font-black italic text-pink">отказва поръчки</span>, защото графикът е пълен?"
+        </p>
+
+        <div class="flex flex-col items-center gap-4">
+          <button
+            onclick="document.getElementById('offer-section').scrollIntoView({behavior: 'smooth'})"
+            class="btn-primary px-10 py-5 text-xl shadow-pink animate-pulse"
+          >
+            ВИЖ ОФЕРТАТА ⬇️
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-6">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-center text-3xl font-black uppercase italic mb-12">
+          ЗАЩО ТИ ТРЯБВА <span class="text-pink">СИСТЕМА?</span>
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8 items-stretch">
+          <div class="p-8 rounded-[2rem] border-2 border-dashed border-white-500/30 bg-black/5 opacity-80 relative">
+            <div
+              class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase"
+            >
+              Старият начин
+            </div>
+            <h3 class="text-xl font-white uppercase italic mb-6 text-white-500 decoration-line-through text-center">
+              Тефтери и хвърчащи листи
+            </h3>
+            <ul class="space-y-4 text-sm font-bold uppercase tracking-wider text-white-500">
+              <li class="flex gap-3">❌ Чакаш клиентите да дойдат</li>
+              <li class="flex gap-3">❌ Пускаш пост във Facebook и се молиш</li>
+              <li class="flex gap-3">❌ Сваляш цени, без ясна идея как да печелиш повече</li>
+              <li class="flex gap-3">❌ Нямаш идея как изглежда маржа ти за днес,седмицата или месеца</li>
+            </ul>
+          </div>
+
+          <div
+            class="glass p-8 rounded-[2rem] border-pink shadow-[0_0_30px_hsla(var(--accent),0.15)] relative transform md:-translate-y-4 bg-[hsl(var(--bg-card))]"
+            style="border-width: 2px"
+          >
+            <div
+              class="absolute -top-4 left-1/2 -translate-x-1/2 bg-pink text-white text-[10px] font-black px-3 py-1 rounded-full uppercase shadow-lg"
+            >
+              Новият начин
+            </div>
+            <h3 class="text-xl font-black uppercase italic mb-6 text-pink text-center">GG СИСТЕМАТА</h3>
+            <ul class="space-y-4 text-sm font-bold uppercase tracking-wider">
+              <li class="flex gap-3 items-center"><span class="text-xl">✅</span> Клиентите идват на врата ти</li>
+              <li class="flex gap-3 items-center">
+                <span class="text-xl">✅</span> Телефона вече звъни а не се чудиш кой е следващия тик ток
+              </li>
+              <li class="flex gap-3 items-center"><span class="text-xl">✅</span> Продаваш на цената която искаш</li>
+              <li class="flex gap-3 items-center">
+                <span class="text-xl">✅</span> Пълен календар за 30 дни.Автоматично записване на часове напред
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-6">
+      <h2 class="text-center text-4xl font-black uppercase italic mb-12">
+        РЕАЛНИ <span class="text-pink">РЕЗУЛТАТИ</span>
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="glass p-8 rounded-[2rem] border-2 border-pink shadow-lg transform md:-translate-y-4">
+          <div class="text-pink font-black text-xs mb-2 uppercase tracking-widest">Най-добро представяне</div>
+          <h3 class="text-2xl font-black mb-4">MIGHTY BOXES</h3>
+          <div class="space-y-3 mb-6">
+            <div class="flex justify-between border-b border-white/10 pb-2">
+              <span class="opacity-60 uppercase text-[10px] font-bold">Запитвания</span>
+              <span class="font-black text-pink">17 ОБАЖДАНИЯ</span>
+            </div>
+            <div class="flex justify-between border-b border-white/10 pb-2">
+              <span class="opacity-60 uppercase text-[10px] font-bold">Резултат</span>
+              <span class="font-black text-pink">1 ИЗПРАТЕНА ФАКТУРА</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="opacity-60 uppercase text-[10px] font-bold">Период</span>
+              <span class="font-bold uppercase text-[10px]">Първи 30 дни</span>
+            </div>
+          </div>
+          <p class="text-xs opacity-70 italic">Постигнато напълно по време на "Free Plan" периода.</p>
+        </div>
+
+        <div class="glass p-8 rounded-[2rem]">
+          <h3 class="text-2xl font-black mb-4 uppercase">ПРИ ТАНЯ</h3>
+          <p class="text-sm opacity-80 mb-6">Най-голям обем от сурови данни и клиентски интерес в реално време.</p>
+          <div class="bg-pink/10 p-4 rounded-xl border border-pink/20">
+            <span class="text-pink font-black uppercase text-xs tracking-tighter italic">High Volume Case</span>
+          </div>
+        </div>
+
+        <div class="glass p-8 rounded-[2rem]">
+          <h3 class="text-2xl font-black mb-4 uppercase">SUNGLASSES</h3>
+          <p class="text-sm opacity-80 mb-6">
+            Валидиране на продукта и генериране на поръчки чрез автоматизирана фуния.
+          </p>
+          <div class="bg-pink/10 p-4 rounded-xl border border-pink/20">
+            <span class="text-pink font-black uppercase text-xs tracking-tighter italic">E-commerce Validation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 px-6">
+      <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
+        <div class="w-full md:w-1/2 flex justify-center">
+          <div
+            class="w-48 h-64 glass flex items-center justify-center rounded-xl border-2 border-pink rotate-[-5deg] hover:rotate-0 transition duration-500 shadow-[0_0_30px_hsla(var(--accent),0.2)] bg-[hsl(var(--bg-card))]"
+          >
+            <div class="text-center">
+              <div class="text-4xl mb-2">📄</div>
+              <div class="font-black uppercase text-xl leading-none">FREE<br />CHECKLIST</div>
+              <div class="text-[10px] uppercase tracking-widest mt-2 opacity-60">PDF DOWNLOAD</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 text-center md:text-left">
+          <div class="inline-block bg-pink text-white text-[10px] font-black px-2 py-1 rounded-md uppercase mb-4">
+            Подарък
+          </div>
+          <h3 class="text-3xl font-black uppercase italic mb-4">НЕ СИ ГОТОВ ДА ЗАПОЧНЕШ?</h3>
+          <p class="text-sm opacity-70 mb-6 font-medium">
+            Вземи нашия безплатен списък:
+            <strong>"5-те неща, които трябва да оправиш в бизнеса си, преди да пуснеш реклама".</strong> Ще ти го
+            изпратим веднага.
+          </p>
+
+          <form id="leadMagnetForm" class="flex flex-col gap-3">
+            <input
+              type="email"
+              name="email"
+              placeholder="Твоят Email адрес..."
+              class="w-full p-4 rounded-xl font-bold"
+              required
+            />
+            <button type="submit" class="btn-primary w-full py-4 text-sm">ИЗПРАТИ МИ СПИСЪКА (PDF)</button>
+          </form>
+          <p
+            id="leadMagnetSuccess"
+            class="hidden text-pink font-bold text-xs mt-3 uppercase tracking-widest bg-pink/10 p-2 rounded text-center"
+          >
+            ✅ Изпратено! Провери пощата си след 1 минута.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="offer-section" class="py-24 px-6 relative overflow-hidden">
+      <div class="absolute inset-0 bg-pink/5 skew-y-3 transform origin-bottom-right z-0"></div>
+
+      <div class="max-w-lg mx-auto relative z-10">
+        <div
+          class="glass p-10 rounded-[3.5rem] mb-12 border-pink relative bg-[hsl(var(--bg-card))]"
+          style="border-width: 2px"
+        >
+          <div
+            class="absolute -top-5 left-1/2 -translate-x-1/2 bg-pink text-white px-6 py-2 rounded-full font-black uppercase text-xs tracking-widest shadow-lg animate-pulse"
+          >
+            САМО 2 СВОБОДНИ МЕСТА
+          </div>
+
+          <p class="text-xs font-bold uppercase tracking-widest opacity-40 mb-2">СТАНДАРТНА ЦЕНА</p>
+          <p class="text-3xl font-black line-through opacity-30 mb-8 decoration-pink">3,000 ЛВ.</p>
+
+          <p class="text-xs font-bold uppercase tracking-widest text-pink mb-2">
+            ЦЕНА ЗА ПЪРВИТЕ 5 БИЗНЕСА В ЯМБОЛ <br />
+            ДО КРАЯ НА ЯНУАРИ
+          </p>
+          <div class="text-8xl font-black text-pink tracking-tighter mb-4">0.00 <span class="text-3xl">ЛВ.</span></div>
+
+          <ul class="inline-block text-left space-y-4 font-bold uppercase text-[12px] tracking-tight">
+            <li>🚀 Setup на Meta/Google реклами</li>
+            <li>📱 Sales Страница (Conversion)</li>
+            <li>🤝 Скриптове за затваряне</li>
+          </ul>
+
+          <button onclick="openApplicationModal()" class="btn-primary w-full py-6 text-2xl shadow-pink">
+            КАНДИДАТСТВАЙ СЕГА ⚡
+          </button>
+          <p class="text-[10px] opacity-50 uppercase tracking-widest mt-4 text-center">
+            * Покриваш само своя рекламен бюджет
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div id="application-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-6">
+      <div class="absolute inset-0 bg-black/95 backdrop-blur-md" onclick="closeApplicationModal()"></div>
+
+      <div
+        class="glass p-8 md:p-10 rounded-[2.5rem] w-full max-w-md relative z-10"
+        style="background-color: hsl(var(--bg-main))"
+      >
+        <button
+          onclick="closeApplicationModal()"
+          class="absolute top-6 right-6 opacity-50 hover:opacity-100 font-bold text-xl"
+        >
+          ✕
+        </button>
+
+        <h3 class="text-3xl font-black uppercase italic mb-2">Кандидатстване</h3>
+        <p class="text-[10px] font-bold uppercase tracking-widest opacity-50 mb-8 text-pink">
+          Проверка за съвместимост
+        </p>
+
+        <form id="qualifyForm" class="space-y-4">
+          <div>
+            <label class="text-[10px] font-bold uppercase tracking-widest opacity-70 pl-2">Бизнес</label>
+            <input
+              type="text"
+              name="business"
+              placeholder="Име на бизнеса..."
+              class="w-full p-4 rounded-xl font-bold"
+              required
+            />
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="text-[10px] font-bold uppercase tracking-widest opacity-70 pl-2">Email</label>
+              <input type="email" name="email" placeholder="@" class="w-full p-4 rounded-xl font-bold" required />
+            </div>
+            <div>
+              <label class="text-[10px] font-bold uppercase tracking-widest opacity-70 pl-2">Телефон</label>
+              <input type="tel" name="phone" placeholder="08..." class="w-full p-4 rounded-xl font-bold" required />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

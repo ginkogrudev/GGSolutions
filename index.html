@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="bg" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GG Solutions | Твоят Технологичен Съюзник</title>
+    <title>GG Solutions | 30-Day Growth Consultancy</title>
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐷</text></svg>"
     />
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSSHL2D8TJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
-
-      // 2. Consent Mode v2 (Задължително за ЕС)
       gtag('consent', 'default', {
         analytics_storage: 'denied',
         ad_storage: 'denied',
@@ -23,34 +22,61 @@
         ad_personalization: 'denied',
         wait_for_update: 500,
       });
-
-      // 3. Конфигурация - Вече с правилния ID
       gtag('js', new Date());
       gtag('config', 'G-GSSHL2D8TJ');
     </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* Fluid Typography for Headlines */
+      .fluid-text {
+        font-size: clamp(2.5rem, 8vw, 6rem);
+      }
+      .glass-panel {
+        background: rgba(24, 24, 27, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+    </style>
   </head>
-  <body class="antialiased">
-    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
-      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+  <body class="antialiased bg-black text-white selection:bg-pink selection:text-white">
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-6 nav-container justify-between">
         <a href="index.html" class="flex items-center gap-3 group">
-          <span class="text-2xl piggy-logo">🐷</span>
-          <span class="font-black uppercase text-white group-hover:text-pink transition-colors"
-            >GG <span class="text-pink">Solutions</span></span
+          <span class="text-2xl group-hover:scale-110 transition-transform">🐷</span>
+          <span
+            class="font-[900] uppercase tracking-tighter text-xl text-white group-hover:text-pink transition-colors"
           >
+            GG <span class="text-pink">Solutions</span>
+          </span>
         </a>
-
-        <div id="desktop-links" class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="nav-link">НАЧАЛО</a>
-          <a href="calculator.html" class="nav-link">PIGGY КАЛКУЛАТОР</a>
-          <a href="oborota.html" class="nav-link">ОБОРОТА APP</a>
+        <div class="hidden md:flex items-center gap-8 text-xs font-[800] tracking-[0.15em] uppercase text-silver">
+          <a href="index.html" class="hover:text-white transition-colors">Начало</a>
+          <a href="calculator.html" class="text-white">Калкулатор</a>
+          <a href="30DayClientsChallenge.html" class="hover:text-pink transition-colors flex items-center gap-2">
+            30-Day Challenge
+            <span class="bg-pink text-white text-[9px] px-1.5 py-0.5 rounded-full animate-pulse">BETA</span>
+          </a>
+          <button
+            onclick="document.body.classList.toggle('light-theme')"
+            class="opacity-50 hover:opacity-100 transition p-2"
+          >
+            🌗
+          </button>
         </div>
-
-        <button onclick="toggleMenu()" class="md:hidden text-white flex items-center gap-2">
-          <span class="text-[10px] font-black tracking-widest opacity-50">МЕНЮ</span>
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button onclick="toggleMenu()" class="md:hidden text-white hover:text-pink transition">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
           </svg>
         </button>
@@ -59,161 +85,207 @@
 
     <div
       id="mobile-menu"
-      class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center space-y-10"
+      class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8"
     >
       <button onclick="toggleMenu()" class="absolute top-8 right-8 text-white/50 uppercase text-xs tracking-widest">
         Затвори ✕
       </button>
-      <a href="index.html" class="mobile-link text-3xl font-black uppercase italic text-white/40 hover:text-pink"
-        >НАЧАЛО</a
+      <a href="#the-deal" onclick="toggleMenu()" class="text-4xl font-[900] uppercase italic hover:text-pink"
+        >Сделката</a
       >
-      <a href="calculator.html" class="mobile-link text-3xl font-black uppercase italic text-white/40 hover:text-pink"
-        >PIGGY КАЛКУЛАТОР</a
+      <a href="#portfolio" onclick="toggleMenu()" class="text-4xl font-[900] uppercase italic hover:text-pink"
+        >Портфолио</a
       >
-      <a href="oborota.html" class="mobile-link text-3xl font-black uppercase italic text-white/40 hover:text-pink"
-        >ОБОРОТА APP</a
-      >
+      <a href="30DayClientsChallenge.html" class="text-4xl font-[900] uppercase italic text-pink">30-Day Challenge</a>
     </div>
 
-    <section class="max-w-4xl px-6 py-24 mx-auto text-center">
-      <h1 class="mb-6 text-5xl font-black leading-none tracking-tighter md:text-8xl">
-        <span class="text-pink text-outline">ГИНКО </span>
-        Твоят Технологичен <br />
-        <span class="text-pink text-outline">СЪЮЗНИК.</span>
-      </h1>
-      <p class="max-w-2xl mx-auto mb-10 text-xl leading-relaxed text-gray-400">
-        Помагаме на българския бизнес да навигира в прехода към Еврото с инструменти, които са бързи, точни и напълно
-        безплатни.
-      </p>
-      <div class="flex justify-center gap-4">
-        <a
-          href="#projects"
-          class="px-10 py-4 font-black text-white transition duration-300 btn-hero bg-pink rounded-2xl hover:bg-pink hover:text-white"
-        >
-          РАЗГЛЕДАЙ ПРОЕКТИТЕ
-        </a>
-      </div>
-    </section>
-
-    <div class="flex justify-center gap-8 py-8 border-y border-white/5 bg-zinc-900/20">
-      <a
-        href="https://github.com/ginkogrudev"
-        target="_blank"
-        class="text-gray-500 transition hover:text-pink uppercase text-[10px] font-bold tracking-widest"
-        >GitHub</a
-      >
-      <a
-        href="https://revolut.me/ginkogrudev"
-        target="_blank"
-        class="text-gray-500 transition hover:text-pink uppercase text-[10px] font-bold tracking-widest"
-        >Support</a
-      >
-    </div>
-
-    <section id="projects" class="max-w-6xl px-6 py-20 mx-auto">
-      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-        <div
-          class="glass p-1 border border-white/10 rounded-[2.5rem] hover:border-pink/40 transition-all duration-500 group"
-        >
-          <div class="p-10 flex flex-col h-full">
-            <div class="flex items-start justify-between mb-6">
-              <span class="bg-pink text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter"
-                >Live Now</span
-              >
-              <span class="text-3xl piggy-logo">💶</span>
-            </div>
-            <h3 class="mb-4 text-4xl font-black uppercase">Piggy калкулатор</h3>
-            <p class="mb-8 text-white/70 flex-grow">
-              Сметнете прехода към Еврото за 1.5 секунди. Без реклами. Фиксиран курс и гарантирана точност.
-            </p>
-            <a href="calculator.html" class="btn-secondary-action text-center"> ОТВОРИ КАЛКУЛАТОРА </a>
-          </div>
-        </div>
-
-        <div
-          id="oborota"
-          class="glass p-1 border border-white/10 rounded-[2.5rem] hover:border-pink/40 transition-all duration-500 group"
-        >
-          <div class="p-10 flex flex-col h-full">
-            <div class="flex items-start justify-between mb-6">
-              <span class="bg-pink text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter">Beta</span>
-              <span class="text-3xl piggy-logo">📦</span>
-            </div>
-            <h3 class="mb-4 text-4xl font-black uppercase">Oborota App</h3>
-            <p class="mb-8 text-white/70 flex-grow">
-              Пълно финансово управление за малкия бизнес. Проследявай печалби, разходи и заплати директно от джоба си.
-            </p>
-            <a href="oborota.html" class="btn-secondary-action text-center"> ВИЖ ОБОРОТА </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="max-w-4xl px-6 py-20 mx-auto">
+    <section class="relative pt-40 pb-20 px-6 overflow-hidden">
       <div
-        class="flex flex-col md:flex-row items-center gap-12 bg-zinc-900/30 p-10 rounded-[3rem] border border-white/5"
-      >
-        <div
-          class="flex items-center justify-center w-40 h-40 overflow-hidden border-2 rounded-full bg-zinc-800 border-pink shrink-0"
-        >
-          <span class="text-5xl">🐷</span>
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-pink/20 blur-[120px] rounded-full pointer-events-none z-0"
+      ></div>
+
+      <div class="relative z-10 max-w-5xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full border border-pink/30 bg-pink/10">
+          <span class="w-2 h-2 rounded-full bg-pink animate-pulse"></span>
+          <span class="text-[10px] font-bold uppercase tracking-widest text-pink"
+            >Приемам 3 нови клиента за Февруари</span
+          >
         </div>
-        <div>
-          <h3 class="mb-4 text-2xl font-black uppercase">Мисията на GG Solutions</h3>
-          <p class="italic leading-relaxed text-gray-400">
-            "Гледах как бизнесът се плаши от промените. Създадох GG Solutions, за да докажа, че технологиите могат да
-            бъдат приятел на вашата печалба, а не враг"
-          </p>
-          <p class="mt-4 font-bold tracking-widest uppercase text-pink">— Гинко Грудев, Founder</p>
+
+        <h1 class="fluid-text font-[900] leading-[0.9] tracking-tighter mb-8">
+          30 ДНИ.<br />
+          ПОВЕЧЕ КЛИЕНТИ.<br />
+          <span class="text-pink text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600"
+            >БЕЗ РИСК.</span
+          >
+        </h1>
+
+        <p class="max-w-2xl mx-auto text-xl text-gray-400 leading-relaxed mb-10 font-medium">
+          Аз оптимизирам процесите и технологиите ти за 30 дни.
+          <span class="text-white font-bold block mt-2">Ако не видиш резултат — не плащаш нищо.</span>
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="#emailForm"
+            class="px-8 py-5 bg-pink text-white font-[800] text-lg rounded-xl hover:scale-105 transition shadow-[0_0_30px_rgba(236,72,153,0.3)] uppercase tracking-wide"
+          >
+            Кандидатствай Сега
+          </a>
+          <a
+            href="#the-deal"
+            class="px-8 py-5 glass-panel text-white font-[800] text-lg rounded-xl hover:bg-white/10 transition uppercase tracking-wide"
+          >
+            Каква е уловката?
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="max-w-md mx-auto px-6 py-10 text-center">
-      <h3 class="text-sm font-black uppercase tracking-widest mb-4 text-pink">Научи първи кога стартираме ОБОРОТА</h3>
-      <form id="emailForm" class="flex flex-col gap-3">
-        <input
-          type="email"
-          name="email"
-          placeholder="Твоят имейл..."
-          required
-          class="bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-pink transition text-white"
-        />
-        <button
-          type="submit"
-          class="bg-pink text-white font-black py-4 rounded-xl hover:scale-105 transition shadow-pink-neon"
-        >
-          ЗАПИШИ МЕ
-        </button>
-      </form>
-      <p id="responseMsg" class="mt-4 text-xs font-bold text-gray-500 hidden uppercase tracking-widest">
-        Благодарим! Ще се свържем с теб. 🐷
-      </p>
+    <section id="the-deal" class="py-24 px-6 border-y border-white/5 bg-zinc-900/30">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-4xl md:text-5xl font-[900] uppercase leading-none mb-6">
+              Каква е <span class="text-pink">Уловката?</span>
+            </h2>
+            <div class="space-y-6 text-gray-400 text-lg">
+              <p>Знам как звучи. "Твърде хубаво, за да е истина". Ето как стоят нещата:</p>
+              <p>
+                В момента валидирам нов процес за растеж ("30-Day Growth Cycle"). Имам нужда от успешни кейс стъдита, не
+                от бързи пари.
+              </p>
+              <p class="border-l-4 border-pink pl-6 italic text-white font-bold">
+                Цената, която плащаш, е твоята брутално честна обратна връзка.
+              </p>
+              <p>
+                Аз ти давам своята експертиза и време. Ти ми даваш ежеседмичен отчет какво работи и какво не. Така аз
+                ставам по-добър, а ти получаваш система за растеж.
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div
+              class="glass-panel p-6 rounded-2xl flex gap-6 items-center hover:border-pink/50 transition duration-500"
+            >
+              <div class="text-5xl font-[900] text-white/10">01</div>
+              <div>
+                <h3 class="text-xl font-bold uppercase text-white">Одит & План</h3>
+                <p class="text-sm text-gray-400 mt-1">Анализираме дупките в бизнеса ти за 48 часа.</p>
+              </div>
+            </div>
+            <div
+              class="glass-panel p-6 rounded-2xl flex gap-6 items-center hover:border-pink/50 transition duration-500"
+            >
+              <div class="text-5xl font-[900] text-pink/20">02</div>
+              <div>
+                <h3 class="text-xl font-bold uppercase text-white">Екзекуция</h3>
+                <p class="text-sm text-gray-400 mt-1">Внедрявам инструменти, автоматизации и фунии.</p>
+              </div>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl flex gap-6 items-center border-pink/30 bg-pink/5">
+              <div class="text-5xl font-[900] text-pink">03</div>
+              <div>
+                <h3 class="text-xl font-bold uppercase text-pink">Feedback Loop</h3>
+                <p class="text-sm text-gray-300 mt-1">Ти ми казваш резултатите. Ние оптимизираме.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <footer class="px-6 py-20 border-t border-white/5 bg-zinc-950/50">
-      <div class="max-w-6xl mx-auto text-center md:text-left">
-        <div class="grid items-center grid-cols-1 gap-12 mb-16 md:grid-cols-2">
-          <div>
-            <div class="mb-4 text-2xl font-black uppercase">GG <span class="text-pink">SOLUTIONS</span></div>
-            <p class="text-xs tracking-[0.3em] text-gray-500 uppercase mb-6">
-              Дигитални инструменти за българския бизнес
+    <section id="portfolio" class="py-24 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-[900] uppercase tracking-widest mb-4">Трак Рекърд</h2>
+        <p class="text-gray-500">Инструментите, които вече работят за българския бизнес.</p>
+      </div>
+
+      <div class="glass-panel rounded-[3rem] p-2 md:p-4 border border-white/10">
+        <div class="grid md:grid-cols-2 gap-4">
+          <div
+            class="relative group overflow-hidden rounded-[2.5rem] bg-zinc-900 p-8 md:p-12 transition-all hover:bg-zinc-800"
+          >
+            <div class="flex justify-between items-start mb-8">
+              <span class="text-4xl">💶</span>
+              <span class="text-xs font-bold uppercase border border-white/20 px-3 py-1 rounded-full">Live Tool</span>
+            </div>
+            <h3 class="text-3xl font-[900] uppercase mb-4 group-hover:text-pink transition-colors">Piggy Калкулатор</h3>
+            <p class="text-gray-400 mb-8 leading-relaxed">
+              Специализиран инструмент за прехода към Еврото. Използван от стотици потребители за моментални и точни
+              превалутирания без излишен шум.
             </p>
             <a
-              href="https://revolut.me/ginkogrudev"
-              target="_blank"
-              class="inline-flex items-center gap-3 px-8 py-4 font-black text-white transition shadow-lg bg-pink rounded-2xl hover:scale-105 shadow-pink/20"
+              href="calculator.html"
+              class="inline-block text-xs font-[900] uppercase tracking-widest border-b border-pink pb-1 hover:text-pink transition"
             >
-              <span>ПОЧЕРПИ ЕДНА БИРА 🍺</span>
+              Виж Инструмента &toea;
             </a>
           </div>
-          <div class="flex flex-col items-center gap-6 md:items-end">
-            <div class="flex gap-8 text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase">
-              <a href="https://github.com/ginkogrudev/GGSolutions" class="hover:text-pink">Source Code</a>
-              <a href="mailto:contact@ggsolutions.bg" class="hover:text-pink">Контакт</a>
+
+          <div
+            class="relative group overflow-hidden rounded-[2.5rem] bg-zinc-900 p-8 md:p-12 transition-all hover:bg-zinc-800"
+          >
+            <div class="flex justify-between items-start mb-8">
+              <span class="text-4xl">📦</span>
+              <span class="text-xs font-bold uppercase bg-pink text-white px-3 py-1 rounded-full">Coming Soon</span>
             </div>
-            <p class="text-[10px] text-gray-700 uppercase tracking-[0.4em]">© 2026 GG SOLUTIONS | YAMBOL, BULGARIA</p>
+            <h3 class="text-3xl font-[900] uppercase mb-4 group-hover:text-pink transition-colors">Oborota App</h3>
+            <p class="text-gray-400 mb-8 leading-relaxed">
+              Цялостна система за финансово управление на малък бизнес. Печалби, разходи и склад - всичко в едно мобилно
+              приложение.
+            </p>
+            <a
+              href="oborota.html"
+              class="inline-block text-xs font-[900] uppercase tracking-widest border-b border-pink pb-1 hover:text-pink transition"
+            >
+              Виж Прототипа &toea;
+            </a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-xl mx-auto px-6 py-20 text-center">
+      <h3 class="text-sm font-[900] uppercase tracking-[0.3em] mb-8 text-pink animate-pulse">
+        Готов ли си за предизвикателството?
+      </h3>
+      <div class="glass-panel p-8 rounded-3xl">
+        <h2 class="text-2xl font-bold mb-2">Запиши час за консултация</h2>
+        <p class="text-gray-400 text-sm mb-6">Ще се свържа с теб, за да видим дали си подходящ за 30-дневния спринт.</p>
+
+        <form id="emailForm" class="flex flex-col gap-4">
+          <input
+            type="email"
+            name="email"
+            placeholder="Твоят имейл..."
+            required
+            class="bg-black/50 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-pink transition text-white placeholder-gray-600"
+          />
+          <button
+            type="submit"
+            class="bg-pink text-white font-[900] py-4 rounded-xl hover:bg-pink/90 transition shadow-lg shadow-pink/20 uppercase tracking-widest"
+          >
+            Искам Повече Клиенти
+          </button>
+        </form>
+        <p id="responseMsg" class="mt-4 text-xs font-bold text-green-400 hidden uppercase tracking-widest">
+          Заявката е приета! Очаквай имейл скоро. 🐷
+        </p>
+      </div>
+    </section>
+
+    <footer class="px-6 py-12 border-t border-white/5 bg-zinc-950">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div>
+          <div class="text-xl font-[900] uppercase">GG <span class="text-pink">SOLUTIONS</span></div>
+          <p class="text-[10px] tracking-[0.3em] text-gray-600 uppercase mt-2">Design. Build. Grow.</p>
+        </div>
+
+        <div class="flex gap-8 text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase">
+          <a href="https://github.com/ginkogrudev" target="_blank" class="hover:text-pink transition">GitHub</a>
+          <a href="mailto:contact@ggsolutions.bg" class="hover:text-pink transition">Email Me</a>
         </div>
       </div>
     </footer>
@@ -228,7 +300,12 @@
           <p class="text-sm font-medium">Използваме анализи за по-добро изживяване. Съгласен ли си? 🐷</p>
         </div>
         <div class="flex items-center gap-4">
-          <button onclick="updateConsent(true)" class="btn-primary !py-3 !px-8 !text-xs">ПРИЕМАМ</button>
+          <button
+            onclick="updateConsent(true)"
+            class="bg-pink text-white px-6 py-2 rounded-lg text-xs font-bold uppercase hover:scale-105 transition"
+          >
+            ПРИЕМАМ
+          </button>
           <button
             onclick="updateConsent(false)"
             class="text-[10px] font-bold uppercase opacity-50 hover:opacity-100 transition"
@@ -238,6 +315,7 @@
         </div>
       </div>
     </div>
+
     <script src="app.js"></script>
   </body>
 </html>

@@ -33,29 +33,64 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="antialiased">
-    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
-      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-6 nav-container justify-between">
         <a href="index.html" class="flex items-center gap-3 group">
-          <span class="text-2xl piggy-logo">🐷</span>
-          <span class="font-black uppercase text-white group-hover:text-pink transition-colors"
-            >GG <span class="text-pink">Solutions</span></span
+          <span class="text-2xl group-hover:scale-110 transition-transform">🐷</span>
+          <span
+            class="font-[900] uppercase tracking-tighter text-xl text-white group-hover:text-pink transition-colors"
           >
+            GG <span class="text-pink">Solutions</span>
+          </span>
         </a>
-
-        <div id="desktop-links" class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="nav-link">НАЧАЛО</a>
-          <a href="calculator.html" class="nav-link">PIGGY КАЛКУЛАТОР</a>
-          <a href="oborota.html" class="nav-link">ОБОРОТА APP</a>
+        <div class="hidden md:flex items-center gap-8 text-xs font-[800] tracking-[0.15em] uppercase text-silver">
+          <a href="index.html" class="hover:text-white transition-colors">Начало</a>
+          <a href="calculator.html" class="text-white">Калкулатор</a>
+          <a href="30DayClientsChallenge.html" class="hover:text-pink transition-colors flex items-center gap-2">
+            30-Day Challenge
+            <span class="bg-pink text-white text-[9px] px-1.5 py-0.5 rounded-full animate-pulse">BETA</span>
+          </a>
+          <button
+            onclick="document.body.classList.toggle('light-theme')"
+            class="opacity-50 hover:opacity-100 transition p-2"
+          >
+            🌗
+          </button>
         </div>
-
-        <button onclick="toggleMenu()" class="md:hidden text-white flex items-center gap-2">
-          <span class="text-[10px] font-black tracking-widest opacity-50">МЕНЮ</span>
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button onclick="toggleMenu()" class="md:hidden text-white hover:text-pink transition">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
           </svg>
         </button>
       </div>
     </nav>
+
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center space-y-10"
+    >
+      <button onclick="toggleMenu()" class="absolute top-8 right-8 text-white/50 uppercase text-xs tracking-widest">
+        Затвори ✕
+      </button>
+      <a href="index.html" class="mobile-link text-3xl font-black uppercase italic text-white/40 hover:text-pink"
+        >НАЧАЛО</a
+      >
+
+      <a
+        href="30DayClientsChallenge.html"
+        class="mobile-link text-3xl font-black uppercase italic text-pink flex items-center gap-3"
+      >
+        30-DAY CHALLENGE <span class="bg-pink text-white text-xs px-2 py-1 rounded-full">BETA</span>
+      </a>
+
+      <a href="calculator.html" class="mobile-link text-3xl font-black uppercase italic text-white/40 hover:text-pink"
+        >PIGGY КАЛКУЛАТОР</a
+      >
+      <a href="oborota.html" class="mobile-link text-3xl font-black uppercase italic text-white/40 hover:text-pink"
+        >ОБОРОТА APP</a
+      >
+    </div>
 
     <div
       id="mobile-menu"
@@ -117,12 +152,21 @@
             <a
               href="https://github.com/ginkogrudev/EuroCalculator/releases/tag/v1.0.1"
               class="btn-hero px-10 py-5 text-xl text-center min-w-[260px]"
-              >ИЗТЕГЛИ ПРИЛОЖЕНИЕТО (APK)</a
+              onclick="gtag('event', 'conversion', { 
+      'event_category': 'Download', 
+      'event_label': 'APK Download' 
+    });"
             >
+              ИЗТЕГЛИ ПРИЛОЖЕНИЕТО (APK)
+            </a>
 
             <a
               href="https://ginkogrudev.github.io/EuroCalculator/"
               class="btn-neon-secondary px-10 py-5 text-xl text-center min-w-[260px]"
+              onclick="gtag('event', 'conversion', { 
+      'event_category': 'Engagement', 
+      'event_label': 'Live Demo Web' 
+    });"
             >
               ПРОБВАЙ СЕГА (WEB)
             </a>

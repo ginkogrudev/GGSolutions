@@ -1,359 +1,105 @@
-/* GG SOLUTIONS - GLOBAL BRANDING 2026 */
+/* GG SOLUTIONS - PURE DARK (LEAN VERSION) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  --pink: #ff2d55;
-  --pure-white: #ffffff;
-  --deep-blue-black: #05070a; /* Технологично черно-синьо */
-  --glass-blue: rgba(0, 117, 235, 0.05); /* Професионален син филтър */
-  --border-bright: rgba(255, 255, 255, 0.2);
+  /* --- BRAND IDENTITY --- */
+  --p-h: 349;
+  --p-s: 100%;
+  --p-l: 59%;
+  --primary: var(--p-h) var(--p-s) var(--p-l);
+
+  /* --- DARK THEME ONLY --- */
+  --bg-1: 240 10% 4%; /* Deepest Black */
+  --bg-2: 240 6% 11%; /* Card Background (Slightly lighter) */
+
+  /* HIGH CONTRAST TEXT */
+  --text-1: 0 0% 100%; /* Pure White (Headings) */
+  --text-2: 240 5% 85%; /* Platinum (Body - Super Readable) */
+  --text-muted: 240 5% 50%;
+
+  --border: 0 0% 100%;
 }
 
+/* --- GLOBAL STYLES --- */
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: var(--deep-blue-black);
-  color: var(--pure-white);
-  line-height: 1.6;
-  scroll-behavior: smooth;
+  background-color: hsl(var(--bg-1));
+  color: hsl(var(--text-1));
+  overflow-x: hidden; /* Prevents scrollbar jumping */
 }
 
-/* Мощен "Mozi" Шрифт за заглавия */
 h1,
 h2,
-h3 {
-  font-weight: 900 !important;
+h3,
+h4 {
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
-  color: var(--pure-white);
+  letter-spacing: -0.03em; /* Tighter letter spacing for punchy look */
+  color: hsl(var(--text-1));
 }
 
-/* Премахване на нечетливото сиво */
 p,
-span,
-.text-gray-400 {
-  color: var(--pure-white) !important;
-  opacity: 0.9;
+li {
+  color: hsl(var(--text-2));
+  font-weight: 500;
+  line-height: 1.6;
 }
 
-/* Розовият бранд акцент */
 .text-pink {
-  color: var(--pink) !important;
+  color: hsl(var(--primary)) !important;
 }
 .bg-pink {
-  background-color: var(--pink) !important;
+  background-color: hsl(var(--primary)) !important;
 }
 
-/* Професионални "Стъклени" елементи със син оттенък */
+/* NAVBAR CONSISTENCY */
+.nav-container {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+/* PREMIUM GLASS EFFECT */
 .glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(15px);
-  border: 1px solid var(--border-bright);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+  background: hsla(var(--bg-2) / 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsla(var(--border) / 0.1);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5); /* Deep shadow */
 }
 
-/* Бутони с висок контраст (Boomer Friendly) */
+/* --- BUTTONS --- */
 .btn-primary {
-  display: inline-block;
-  padding: 1.25rem 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 900;
-  font-size: 1.1rem;
-  text-align: center;
-  color: #ffffff;
-  background-color: var(--pink);
-  border-radius: 1.25rem;
-  transition: all 0.3s ease;
-  border: 2px solid var(--pink);
+  color: white !important;
+  background-color: hsl(var(--primary));
+  border-radius: 1rem;
   text-transform: uppercase;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 20px hsla(var(--primary) / 0.4); /* Neon Glow */
 }
 
 .btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(255, 45, 85, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px hsla(var(--primary) / 0.6);
 }
 
-/* Навигация */
-.nav-link {
-  font-size: 0.85rem;
-  font-weight: 900;
-  color: var(--pure-white);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 0.5rem 1rem;
-  transition: 0.3s;
-}
-
-.nav-link:hover {
-  color: var(--pink);
-}
-
-.btn-primary {
-  display: inline-block;
-  padding: 1.25rem 2.5rem;
-  font-weight: 900;
-  font-size: 1.1rem;
-  text-align: center;
-  color: #ffffff !important;
-  background-color: var(--pink);
-  border: 2px solid var(--pink);
-  border-radius: 1.25rem;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  box-shadow: 0 10px 20px rgba(255, 45, 85, 0.2);
-}
-
-.btn-secondary {
-  display: inline-block;
-  padding: 1.25rem 2.5rem;
-  font-weight: 900;
-  font-size: 1.1rem;
-  text-align: center;
-  color: var(--pink) !important; /* Розов текст за акцент */
-  background-color: transparent;
-  border: 2px solid var(--pink); /* Розова рамка вместо сива */
-  border-radius: 1.25rem;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-}
-
-.btn-secondary:hover {
-  background-color: var(--pink);
-  color: #ffffff !important;
-  box-shadow: 0 10px 20px rgba(255, 45, 85, 0.2);
-}
-
-/* Навигационни линкове - По подразбиране са БЕЛИ за по-добра видимост */
-.nav-link {
-  font-size: 0.85rem;
-  font-weight: 900;
-  color: #ffffff !important; /* Чисто бяло */
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 0.5rem 1rem;
-  transition: 0.3s;
-  opacity: 0.7;
-}
-
-/* Ефектът за активната страница */
-.nav-link.active {
-  color: var(--pink) !important; /* Розово */
-  opacity: 1;
-  border-bottom: 2px solid var(--pink);
-}
-
-.nav-link:hover {
-  color: var(--pink) !important;
-  opacity: 1;
-}
-
-/* Специален Hero бутон с Mozi анимация */
-.btn-hero {
-  display: inline-block;
-  background-color: var(--pink);
-  color: #ffffff !important;
-  font-weight: 900;
-  text-transform: uppercase;
-  border-radius: 1.25rem;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Плавна пружина */
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(255, 45, 85, 0.3);
-}
-
-/* Ефект при посочване (Hover) */
-.btn-hero:hover {
-  transform: translateY(-5px) scale(1.02); /* Леко повдигане */
-  box-shadow: 0 20px 40px rgba(255, 45, 85, 0.5);
-  filter: brightness(1.1);
-}
-
-/* Ефект при натискане (Active) - Перфектно за Mobile */
-.btn-hero:active {
-  transform: translateY(0) scale(0.96); /* Бутонът потъва физически */
-}
-
-/* Блясък, който преминава през бутона (Glow Shine) */
-.btn-hero::after {
+/* --- GRID PATTERN (Subtle) --- */
+body::before {
   content: '';
-  position: absolute;
-  top: -50%;
-  left: -60%;
-  width: 20%;
-  height: 200%;
-  background: rgba(255, 255, 255, 0.2);
-  transform: rotate(30deg);
-  transition: all 0.6s;
-}
-
-.btn-hero:hover::after {
-  left: 120%;
-}
-
-/* ВТОРИЧНИ БУТОНИ - GHOST GLOW ЕФЕКТ */
-.btn-secondary-action {
-  display: inline-block;
-  padding: 1.1rem 2.2rem;
-  font-weight: 900;
-  font-size: 1rem;
-  text-align: center;
-  color: var(--pink) !important;
-  background-color: rgba(255, 45, 85, 0.05); /* Много фин розов нюанс */
-  border: 2px solid var(--pink);
-  border-radius: 1.25rem;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* Hover: Бутонът се "запълва" и светва леко */
-.btn-secondary-action:hover {
-  background-color: var(--pink);
-  color: #ffffff !important;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(255, 45, 85, 0.3);
-}
-
-/* Active: Физическо потъване при натискане (съчетано с вибрацията) */
-.btn-secondary-action:active {
-  transform: translateY(0) scale(0.96);
-}
-
-.piggy-logo {
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  display: inline-block;
-}
-
-.piggy-logo:hover {
-  transform: scale(1.2) rotate(10deg); /* Прасенцето се увеличава и накланя леко */
-  filter: drop-shadow(0 0 10px var(--pink));
-}
-
-.pill-tab {
-  padding: 0.6rem 1.5rem;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(255, 45, 85, 0.1);
-  color: white;
-  font-weight: 900;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-}
-
-.pill-tab.active {
-  background: var(--pink);
-  border-color: var(--pink);
-  box-shadow: 0 0 20px rgba(255, 45, 85, 0.4);
-}
-
-.pill-tab:hover:not(.active) {
-  border-color: var(--pink);
-  background: rgba(255, 45, 85, 0.1);
-}
-
-.timer-number {
-  display: block;
-  font-size: 3rem;
-  font-weight: 900;
-  color: #ffffff;
-  line-height: 1;
-  text-shadow: 0 0 15px rgba(255, 45, 85, 0.5);
-}
-
-@media (min-width: 768px) {
-  .timer-number {
-    font-size: 5rem;
-  }
-}
-
-.timer-label {
-  font-size: 0.8rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--pink);
-  opacity: 0.8;
-}
-
-.timer-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Розови числа с неонов ефект */
-.timer-number-pink {
-  display: block;
-  font-size: 4rem;
-  font-weight: 900;
-  color: var(--pink); /* Вече са розови! */
-  line-height: 1;
-  text-shadow: 0 0 25px rgba(255, 45, 85, 0.6);
-}
-
-@media (min-width: 768px) {
-  .timer-number-pink {
-    font-size: 6.5rem;
-  }
-}
-
-/* Чисто бели етикети вместо сиви */
-.timer-label-white {
-  font-size: 0.8rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  color: #ffffff; /* Без повече сиво! */
-  margin-top: 10px;
-}
-
-.timer-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.btn-neon-secondary {
-  display: inline-block;
-  padding: 1.25rem 2.5rem;
-  font-weight: 900;
-  font-size: 1.1rem;
-  text-align: center;
-  color: var(--pink) !important;
-  background-color: rgba(255, 45, 85, 0.05); /* Леко розов филтър */
-  border: 3px solid var(--pink); /* По-дебела и ярка рамка */
-  border-radius: 1.25rem;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  text-transform: uppercase;
-  /* Външно и вътрешно неоново сияние */
-  box-shadow: 0 0 15px rgba(255, 45, 85, 0.2), inset 0 0 10px rgba(255, 45, 85, 0.1);
-}
-
-.btn-neon-secondary:hover {
-  background-color: var(--pink);
-  color: #ffffff !important;
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 15px 35px rgba(255, 45, 85, 0.5);
-}
-
-.btn-neon-secondary:active {
-  transform: scale(0.96);
-}
-
-.btn-coming-soon {
-  background-color: #27272a !important; /* Тъмно сиво / Zinc-800 */
-  color: #71717a !important; /* Сив текст */
-  border-color: #3f3f46 !important;
-  cursor: not-allowed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
   pointer-events: none;
-  box-shadow: none !important;
-  transform: none !important;
-}
-
-/* Мобилна оптимизация */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem !important;
-  }
-  .btn-primary {
-    width: 100%;
-  }
+  z-index: -1;
 }

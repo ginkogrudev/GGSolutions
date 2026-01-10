@@ -1,101 +1,141 @@
-// GG SOLUTIONS - INTERACTION ENGINE 2026
+// GG SOLUTIONS - CORE ENGINE 2026 (FINAL CLEAN VERSION)
 
-/**
- * МОБИЛНО МЕНЮ - LOGIC
- * Превключва видимостта и спира скрола на тялото.
- */
-function toggleMenu() {
-  const menu = document.getElementById('mobile-menu');
-  const body = document.body;
-
-  const isHidden = menu.classList.toggle('hidden');
-  body.style.overflow = isHidden ? 'auto' : 'hidden';
-}
-
-const scriptURL = "https://script.google.com/macros/s/AKfycbwlA4QYr91HrqR8mJC_mSg0ZVlZKlc2dLXCO2uDg8gNWw29l9XdRgp_gXUJCgcahE4wIw/exec";
-const form = document.getElementById('emailForm');
-const msg = document.getElementById('responseMsg');
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  hapticFeedback(); // Използваме твоята функция за вибрация
-
-  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-    .then((response) => {
-      form.classList.add('hidden');
-      msg.classList.remove('hidden');
-    })
-    .catch((error) => console.error('Error!', error.message));
+document.addEventListener('DOMContentLoaded', () => {
+  initThemeSystem();
+  initNavigation();
+  initInteractions();
+  initForms();
 });
 
-/**
- * HAPTIC FEEDBACK - Тактилно потвърждение за Android
- */
-function hapticFeedback() {
-  if (window.navigator && window.navigator.vibrate) {
-    window.navigator.vibrate(50);
+/* -------------------------------------------------------------------------- */
+/* 1. THEME ENGINE (Dark / Light / Soft)                                      */
+/* -------------------------------------------------------------------------- */
+function initThemeSystem() {
+  const STORAGE_KEY = 'gg_theme_pref';
+  const pillContainer = document.getElementById('theme-pill');
+
+  // 1. Determine Theme (LocalStorage > Random A/B/C Test)
+  let theme = localStorage.getItem(STORAGE_KEY);
+
+  if (!theme) {
+    const rand = Math.random();
+    if (rand < 0.33) theme = 'dark';
+    else if (rand < 0.66) theme = 'light';
+    else theme = 'soft';
+
+    localStorage.setItem(STORAGE_KEY, theme);
+
+    // Track the experiment
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'experiment_impression', {
+        event_category: 'Theme_Test',
+        event_label: theme,
+      });
+    }
+  }
+
+  // 2. Apply Theme (Attributes for CSS)
+  document.documentElement.setAttribute('data-theme', theme);
+
+  // 3. Render the Switcher Pill (if container exists in Nav)
+  if (pillContainer) {
+    pillContainer.innerHTML = `
+            <div class="flex items-center gap-1 glass px-2 py-1 rounded-full transition-all duration-300">
+                <button onclick="setTheme('dark')" class="p-2 rounded-full hover:bg-white/10 transition text-lg ${
+                  theme === 'dark' ? 'opacity-100 scale-110' : 'opacity-40 grayscale'
+                }">🌑</button>
+                <button onclick="setTheme('light')" class="p-2 rounded-full hover:bg-white/10 transition text-lg ${
+                  theme === 'light' ? 'opacity-100 scale-110' : 'opacity-40 grayscale'
+                }">☀️</button>
+                <button onclick="setTheme('soft')" class="p-2 rounded-full hover:bg-white/10 transition text-lg ${
+                  theme === 'soft' ? 'opacity-100 scale-110' : 'opacity-40 grayscale'
+                }">🖊️</button>
+            </div>
+        `;
   }
 }
 
-/**
- * GDPR & GOOGLE CONSENT MODE V2
- */
-function updateConsent(isAccepted) {
-  const status = isAccepted ? 'granted' : 'denied';
+// Global function to switch manually
+window.setTheme = function (newTheme) {
+  localStorage.setItem('gg_theme_pref', newTheme);
+  document.documentElement.setAttribute('data-theme', newTheme);
+  initThemeSystem(); // Re-render pill to update active state
+};
 
-  if (typeof gtag === 'function') {
-    gtag('consent', 'update', {
-      analytics_storage: status,
-      ad_storage: status,
-      ad_user_data: status,
-      ad_personalization: status,
-    });
-  }
-
-  localStorage.setItem('gg_consent', isAccepted ? 'accepted' : 'rejected');
-  const banner = document.getElementById('cookie-banner');
-  if (banner) banner.classList.add('hidden');
-}
-
-/**
- * INITIALIZATION ON LOAD
- */
-document.addEventListener('DOMContentLoaded', () => {
-  // 1. АВТОМАТИЧНО ПОДЧЕРТАВАНЕ НА АКТИВНАТА СТРАНИЦА
-  // Взима текущия файл (напр. index.html)
+/* -------------------------------------------------------------------------- */
+/* 2. NAVIGATION LOGIC                                                        */
+/* -------------------------------------------------------------------------- */
+function initNavigation() {
   const path = window.location.pathname;
-  const currentPage = path.split('/').pop() || 'index.html';
+  const page = path.split('/').pop() || 'index.html';
 
-  const allLinks = document.querySelectorAll('.nav-link, .mobile-link');
+  const links = document.querySelectorAll('.nav-link, .mobile-link');
 
-  allLinks.forEach((link) => {
-    const linkHref = link.getAttribute('href');
-    if (linkHref === currentPage) {
-      if (link.classList.contains('nav-link')) {
-        link.classList.add('active'); // За десктоп стила ти
-      } else {
-        // Премахваме сивото и слагаме розовото в мобилното меню
-        link.classList.remove('text-white/40');
+  links.forEach((link) => {
+    const href = link.getAttribute('href');
+    if (href === page) {
+      link.classList.add('active');
+      // If it's a mobile link, make it pink
+      if (link.classList.contains('mobile-link')) {
         link.classList.add('text-pink');
+        link.classList.remove('opacity-50');
       }
     }
   });
+}
 
-  // 2. ПРОВЕРКА НА COOKIES
-  const consent = localStorage.getItem('gg_consent');
-  const banner = document.getElementById('cookie-banner');
-  if (!consent && banner) {
-    banner.classList.remove('hidden');
+// Mobile Menu Toggle
+window.toggleMenu = function () {
+  const menu = document.getElementById('mobile-menu');
+  const isHidden = menu.classList.contains('hidden');
+
+  if (isHidden) {
+    menu.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  } else {
+    menu.classList.add('hidden');
+    document.body.style.overflow = '';
   }
+};
 
-  // 3. ТАКТИЛНА ОБРАТНА ВРЪЗКА
-  const interactiveElements = document.querySelectorAll('button, a, .nav-link, .pill-tab');
-  interactiveElements.forEach((el) => {
-    el.addEventListener('click', hapticFeedback);
+/* -------------------------------------------------------------------------- */
+/* 3. INTERACTIONS                                                            */
+/* -------------------------------------------------------------------------- */
+function initInteractions() {
+  // Haptic Feedback
+  const clickables = document.querySelectorAll('button, a');
+  clickables.forEach((el) => {
+    el.addEventListener('click', () => {
+      if (navigator.vibrate) navigator.vibrate(15);
+    });
   });
 
-  // 4. ТАЙМЕР (Ако съществува функцията в същия файл или външно)
-  if (typeof startCountdown === 'function') {
-    startCountdown();
+  // Accordion Logic
+  window.toggleAccordion = function (btn) {
+    const item = btn.closest('.accordion-item');
+    document.querySelectorAll('.accordion-item').forEach((other) => {
+      if (other !== item) other.classList.remove('active');
+    });
+    item.classList.toggle('active');
+  };
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. FORMS                                                                   */
+/* -------------------------------------------------------------------------- */
+function initForms() {
+  // Cookie Banner
+  if (!localStorage.getItem('gg_consent')) {
+    const banner = document.getElementById('cookie-banner');
+    if (banner) banner.classList.remove('hidden');
   }
-});
+}
+
+window.updateConsent = function (accepted) {
+  localStorage.setItem('gg_consent', accepted ? 'true' : 'false');
+  document.getElementById('cookie-banner').classList.add('hidden');
+  const status = accepted ? 'granted' : 'denied';
+  if (typeof gtag !== 'undefined') {
+    gtag('consent', 'update', { ad_storage: status, analytics_storage: status });
+  }
+};
