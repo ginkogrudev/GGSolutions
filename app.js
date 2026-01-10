@@ -14,30 +14,20 @@ function initThemeSystem() {
   const STORAGE_KEY = 'gg_theme_pref';
   const pillContainer = document.getElementById('theme-pill');
 
-  // 1. Determine Theme (LocalStorage > Random A/B/C Test)
+  // 1. Determine Theme
   let theme = localStorage.getItem(STORAGE_KEY);
-
   if (!theme) {
     const rand = Math.random();
     if (rand < 0.33) theme = 'dark';
     else if (rand < 0.66) theme = 'light';
     else theme = 'soft';
-
     localStorage.setItem(STORAGE_KEY, theme);
-
-    // Track the experiment
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'experiment_impression', {
-        event_category: 'Theme_Test',
-        event_label: theme,
-      });
-    }
   }
 
-  // 2. Apply Theme (Attributes for CSS)
+  // 2. Apply Theme
   document.documentElement.setAttribute('data-theme', theme);
 
-  // 3. Render the Switcher Pill (if container exists in Nav)
+  // 3. Render Pill
   if (pillContainer) {
     pillContainer.innerHTML = `
             <div class="flex items-center gap-1 glass px-2 py-1 rounded-full transition-all duration-300">
@@ -55,11 +45,10 @@ function initThemeSystem() {
   }
 }
 
-// Global function to switch manually
 window.setTheme = function (newTheme) {
   localStorage.setItem('gg_theme_pref', newTheme);
   document.documentElement.setAttribute('data-theme', newTheme);
-  initThemeSystem(); // Re-render pill to update active state
+  initThemeSystem();
 };
 
 /* -------------------------------------------------------------------------- */
@@ -68,14 +57,12 @@ window.setTheme = function (newTheme) {
 function initNavigation() {
   const path = window.location.pathname;
   const page = path.split('/').pop() || 'index.html';
-
   const links = document.querySelectorAll('.nav-link, .mobile-link');
 
   links.forEach((link) => {
     const href = link.getAttribute('href');
     if (href === page) {
       link.classList.add('active');
-      // If it's a mobile link, make it pink
       if (link.classList.contains('mobile-link')) {
         link.classList.add('text-pink');
         link.classList.remove('opacity-50');
@@ -84,12 +71,9 @@ function initNavigation() {
   });
 }
 
-// Mobile Menu Toggle
 window.toggleMenu = function () {
   const menu = document.getElementById('mobile-menu');
-  const isHidden = menu.classList.contains('hidden');
-
-  if (isHidden) {
+  if (menu.classList.contains('hidden')) {
     menu.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
   } else {
@@ -102,81 +86,80 @@ window.toggleMenu = function () {
 /* 3. INTERACTIONS                                                            */
 /* -------------------------------------------------------------------------- */
 function initInteractions() {
-  // Haptic Feedback
   const clickables = document.querySelectorAll('button, a');
   clickables.forEach((el) => {
     el.addEventListener('click', () => {
       if (navigator.vibrate) navigator.vibrate(15);
     });
   });
-
-  // Accordion Logic
-  window.toggleAccordion = function (btn) {
-    const item = btn.closest('.accordion-item');
-    document.querySelectorAll('.accordion-item').forEach((other) => {
-      if (other !== item) other.classList.remove('active');
-    });
-    item.classList.toggle('active');
-  };
 }
 
 /* -------------------------------------------------------------------------- */
-/* 4. FORMS                                                                   */
+/* 4. FORMS & MODAL LOGIC (THE FIX)                                           */
 /* -------------------------------------------------------------------------- */
 
-/* --- MODAL LOGIC --- */
-
-// Open the Modal
+// 1. Open Modal
 window.openApplicationModal = function () {
   const modal = document.getElementById('application-modal');
-  modal.classList.remove('hidden');
-  document.body.style.overflow = 'hidden'; // Stop background scrolling
+  if (modal) {
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  } else {
+    console.error('Modal not found! Make sure the modal HTML is in the file.');
+  }
 };
 
-// Close the Modal
+// 2. Close Modal
 window.closeApplicationModal = function () {
   const modal = document.getElementById('application-modal');
-  modal.classList.add('hidden');
-  document.body.style.overflow = ''; // Restore scrolling
+  if (modal) {
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
 };
 
-// Handle Form Submission (The Magic)
+// 3. Handle Form Submission (Connected to Google Sheets)
 window.handleFormSubmit = function (e) {
-  e.preventDefault(); // Stop page reload
+  e.preventDefault();
 
   const btn = document.getElementById('submit-btn');
-  const originalText = btn.innerText;
+  const form = document.getElementById('piggy-form');
 
-  // 1. Show Loading State
+  // Loading State
   btn.innerText = 'ОБРАБОТВАНЕ...';
+  btn.disabled = true;
   btn.classList.add('opacity-75', 'cursor-wait');
 
-  // 2. Capture Data (Ready for Excel/Sheets later)
+  // Capture Data
   const formData = new FormData(e.target);
   const data = Object.fromEntries(formData.entries());
-  console.log('Captured Lead:', data); // This is where we will hook up Google Sheets
 
-  // 3. Simulate Server Delay & Show Success
-  setTimeout(() => {
-    document.getElementById('piggy-form').classList.add('hidden');
-    document.getElementById('form-success').classList.remove('hidden');
-    // Optional: Send data to Google Sheets here
-  }, 1500);
+  // --- GOOGLE SHEETS CONNECTION ---
+  // 👇 PASTE YOUR DEPLOYED GOOGLE SCRIPT URL BETWEEN THE QUOTES 👇
+  const SCRIPT_URL =
+    'https://script.google.com/macros/s/AKfycbzJwe9JRMmshldmQMiN8ytQkcXw2DKMFaU4Fy6aN2amw_QfXhgGvPkWx-ecSqu992-Irg/exec';
+
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+    .then(() => {
+      // Success
+      form.classList.add('hidden');
+      document.getElementById('form-success').classList.remove('hidden');
+    })
+    .catch((error) => {
+      console.error('Error!', error.message);
+      btn.innerText = 'ГРЕШКА! ОПИТАЙ ОТНОВО';
+      btn.disabled = false;
+    });
 };
 
 function initForms() {
-  // Cookie Banner
   if (!localStorage.getItem('gg_consent')) {
     const banner = document.getElementById('cookie-banner');
     if (banner) banner.classList.remove('hidden');
   }
 }
-
-window.updateConsent = function (accepted) {
-  localStorage.setItem('gg_consent', accepted ? 'true' : 'false');
-  document.getElementById('cookie-banner').classList.add('hidden');
-  const status = accepted ? 'granted' : 'denied';
-  if (typeof gtag !== 'undefined') {
-    gtag('consent', 'update', { ad_storage: status, analytics_storage: status });
-  }
-};
