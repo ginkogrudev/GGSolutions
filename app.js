@@ -137,7 +137,7 @@ window.handleFormSubmit = function (e) {
   // --- GOOGLE SHEETS CONNECTION ---
   // 👇 PASTE YOUR DEPLOYED GOOGLE SCRIPT URL BETWEEN THE QUOTES 👇
   const SCRIPT_URL =
-    'https://script.google.com/macros/s/AKfycbyWJiVVJqwTpZE8QWsbUK0xPhtO7wP_fMssBTpRim_F4w-VQpFofXm0YXDmNCOwign4ew/exec';
+    'https://script.google.com/a/macros/ginkogrudev.com/s/AKfycbzwakeBKu5_W1seVW3uRUZpZUu2gcY8ehNfyLSjAlHYUe3gr7PXoQA7R8Net0qSIpIQ/exec';
 
   fetch(SCRIPT_URL, {
     method: 'POST',
