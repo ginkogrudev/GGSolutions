@@ -1,10 +1,13 @@
 // GG SOLUTIONS - CORE ENGINE 2026 (FINAL CLEAN VERSION)
 
+// 👇 THIS IS YOUR CORRECT SCRIPT URL (Leads 2.0)
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwpxHzdkBouslhSv3GyfF8Oe8MhqCfLBs-_Vv0O2ZoNu9yvzQbF0WYy2c7vVUkp9E8AmQ/exec"; 
+
 document.addEventListener('DOMContentLoaded', () => {
   initThemeSystem();
   initNavigation();
   initInteractions();
-  initForms();
+  initCookieBanner(); // Checks if we need to show the banner
 });
 
 /* -------------------------------------------------------------------------- */
@@ -95,79 +98,109 @@ function initInteractions() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 4. FORMS & MODAL LOGIC (THE FIX)                                           */
+/* 4. FORMS & ANALYTICS 2.0 (THE CONNECTED VERSION)                           */
 /* -------------------------------------------------------------------------- */
 
-// 1. Open Modal
-window.openApplicationModal = function () {
-  const modal = document.getElementById('application-modal');
-  if (modal) {
-    modal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  } else {
-    console.error('Modal not found! Make sure the modal HTML is in the file.');
-  }
-};
+// This function must be attached to the form via onsubmit="handleFormSubmit(event)"
+window.handleFormSubmit = function(e) {
+    e.preventDefault(); // Stop the page from reloading
 
-// 2. Close Modal
-window.closeApplicationModal = function () {
-  const modal = document.getElementById('application-modal');
-  if (modal) {
-    modal.classList.add('hidden');
-    document.body.style.overflow = '';
-  }
-};
+    const form = e.target;
+    const submitBtn = document.getElementById("submit-btn");
+    const originalText = submitBtn.innerText;
 
-// 3. Handle Form Submission (Connected to Google Sheets)
-window.handleFormSubmit = function (e) {
-  e.preventDefault();
+    // 1. UI Loading State
+    submitBtn.disabled = true;
+    submitBtn.innerText = "⏳ Обработва се...";
+    submitBtn.classList.add("opacity-75", "cursor-not-allowed");
 
-  const btn = document.getElementById('submit-btn');
-  const form = document.getElementById('piggy-form');
+    // 2. Gather Data
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => data[key] = value);
 
-  // Loading State
-  btn.innerText = 'ОБРАБОТВАНЕ...';
-  btn.disabled = true;
-  btn.classList.add('opacity-75', 'cursor-wait');
-
-  // Capture Data
-  const formData = new FormData(e.target);
-  const data = Object.fromEntries(formData.entries());
-
-  // --- GOOGLE SHEETS CONNECTION ---
-  // 👇 PASTE YOUR DEPLOYED GOOGLE SCRIPT URL BETWEEN THE QUOTES 👇
-  const SCRIPT_URL =
-    'https://script.google.com/a/macros/ginkogrudev.com/s/AKfycbzwakeBKu5_W1seVW3uRUZpZUu2gcY8ehNfyLSjAlHYUe3gr7PXoQA7R8Net0qSIpIQ/exec';
-
-  fetch(SCRIPT_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-  })
-    .then(() => {
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'generate_lead', {
-          event_category: 'Form',
-          event_label: 'Piggy_Application',
-          value: 100, // We assign a theoretical value (e.g., 100лв) to the lead
-        });
-      }
-      // Success
-      form.classList.add('hidden');
-      document.getElementById('form-success').classList.remove('hidden');
+    // 3. Send to Google Sheets
+    fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors", 
+        headers: {
+            "Content-Type": "text/plain;charset=utf-8", // Crucial for Apps Script
+        },
+        body: JSON.stringify(data),
     })
+    .then(() => {
+        // Success!
+        console.log("🐷 Data sent to Piggy Bank (Sheets)");
+        
+        // 4. Analytics 2.0 Event (GTM)
+        if(typeof window.dataLayer !== 'undefined') {
+            window.dataLayer.push({
+                'event': 'lead_submitted_challenge',
+                'user_email': data.email,
+                'revenue_goal': data.revenue_goal
+            });
+        }
 
+        // 5. Show Success Screen
+        form.reset();
+        document.getElementById("piggy-form").classList.add("hidden");
+        document.getElementById("form-success").classList.remove("hidden");
+    })
     .catch((error) => {
-      console.error('Error!', error.message);
-      btn.innerText = 'ГРЕШКА! ОПИТАЙ ОТНОВО';
-      btn.disabled = false;
+        console.error("Error:", error);
+        alert("Опа! Нещо се обърка. Моля опитай пак или ми пиши директно.");
+        
+        // Reset button
+        submitBtn.disabled = false;
+        submitBtn.innerText = originalText;
+        submitBtn.classList.remove("opacity-75", "cursor-not-allowed");
     });
 };
 
-function initForms() {
+/* -------------------------------------------------------------------------- */
+/* 5. MODAL LOGIC                                                             */
+/* -------------------------------------------------------------------------- */
+
+window.openApplicationModal = function() {
+    const modal = document.getElementById('application-modal');
+    if(modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+};
+
+window.closeApplicationModal = function() {
+    const modal = document.getElementById('application-modal');
+    if(modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+};
+
+// Close modal on escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+        window.closeApplicationModal();
+    }
+});
+
+/* -------------------------------------------------------------------------- */
+/* 6. COOKIE BANNER LOGIC (Added Missing Functions)                           */
+/* -------------------------------------------------------------------------- */
+
+function initCookieBanner() {
   if (!localStorage.getItem('gg_consent')) {
     const banner = document.getElementById('cookie-banner');
     if (banner) banner.classList.remove('hidden');
   }
 }
+
+// You must add onclick="acceptCookies()" to your 'Accept' button in HTML
+window.acceptCookies = function() {
+    localStorage.setItem('gg_consent', 'true');
+    const banner = document.getElementById('cookie-banner');
+    if (banner) banner.classList.add('hidden');
+    
+    // Optional: Trigger GTM consent update here if needed
+    console.log("Cookies accepted.");
+};
