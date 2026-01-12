@@ -26,40 +26,10 @@
       gtag('js', new Date());
       gtag('config', 'G-GSSHL2D8TJ');
     </script>
-
-    <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = '2.0';
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-
-      // 👇 REPLACE THIS WITH YOUR REAL PIXEL ID BEFORE LAUNCH
-      fbq('init', 'YOUR_PIXEL_ID_HERE');
-      fbq('track', 'PageView');
-    </script>
-    <noscript>
-      <img
-        height="1"
-        width="1"
-        style="display: none"
-        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"
-      />
-    </noscript>
   </head>
 
   <body class="antialiased bg-black text-white selection:bg-pink selection:text-white">
+    
     <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10 transition-all duration-300">
       <div class="max-w-7xl mx-auto px-6 nav-container justify-between">
         <a href="index.html" class="flex items-center gap-3 group">
@@ -170,7 +140,7 @@
               </div>
 
               <p>
-                Аз инвестирам време и неврви. Ти идваш да пием едно виртуално кафе и да видим какво работи и какво не.
+                Аз инвестирам време и нерви. Ти идваш да пием едно виртуално кафе и да видим какво работи и какво не.
                 Така може да се фокусираме върху това което наистина кара телфона да звъни и клинетите да идват при теб.
               </p>
             </div>
@@ -182,7 +152,7 @@
             >
               <div class="text-5xl font-[900] text-white/10">01</div>
               <div>
-                <h3 class="text-xl font-bold uppercase text-white">Одит & План - Диагноза</h3>
+                <h3 class="text-xl font-bold uppercase text-white">Одит & План</h3>
                 <p class="text-sm text-gray-400 mt-1">Анализираме дупките в бизнеса ти за 24 часа.</p>
               </div>
             </div>
@@ -306,8 +276,42 @@
       </div>
     </section>
 
-    <section class="py-24 px-6">
-      <div class="max-w-4xl mx-auto glass p-10 md:p-16 rounded-[3rem] border-pink/30 text-center relative z-10">
+    <section class="py-16 px-6">
+      <div
+        class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12 glass p-8 rounded-3xl border border-white/5 relative overflow-hidden"
+      >
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-pink/20 blur-[100px] pointer-events-none"></div>
+
+        <div class="w-full md:w-1/2 flex justify-center relative z-10">
+          <div
+            class="w-48 h-64 bg-zinc-900 flex items-center justify-center rounded-xl border border-pink/30 rotate-[-3deg] shadow-2xl text-center group hover:rotate-0 transition duration-300"
+          >
+            <div>
+              <div class="text-4xl mb-2">📄</div>
+              <div class="font-[900] uppercase text-xl leading-none text-white">FREE<br />GUIDE</div>
+              <div class="text-[10px] text-pink font-bold mt-2">v1.0</div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 text-center md:text-left relative z-10">
+          <h3 class="text-2xl font-[900] uppercase italic mb-4 text-white">НЕ СИ ГОТОВ ДА ЗАПОЧНЕШ?</h3>
+          <p class="text-sm text-silver mb-6">
+            Вземи безплатния списък: <strong>"5-те неща, които трябва да оправиш, преди да пуснеш реклама".</strong>
+          </p>
+          
+          <button 
+             onclick="window.openApplicationModal()"
+             class="btn-primary w-full py-3 text-sm flex items-center justify-center gap-2"
+          >
+            <span>📥 ИЗПРАТИ МИ PDF</span>
+          </button>
+          <p class="text-[9px] text-gray-600 mt-2 text-center">Ще го получиш на имейла си веднага.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 px-6 relative">
+      <div class="max-w-4xl mx-auto text-center">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink/10 border border-pink/20 mb-8">
           <span class="w-2 h-2 rounded-full bg-pink animate-pulse"></span>
           <span class="text-[10px] font-black uppercase tracking-widest text-pink">Нова Група: Януари 2026</span>
@@ -317,30 +321,6 @@
           АЗ ЩЕ СВЪРША <span class="text-pink">ТРУДНАТА</span> РАБОТА. <br />
           ТИ ЩЕ ВЗЕМЕШ РЕЗУЛТАТИТЕ.
         </h2>
-
-        <p class="text-lg text-silver mb-10 max-w-2xl mx-auto leading-relaxed">
-          Стартирам нова група за 30-дневното предизвикателство. Целта е проста: Да научиш как да използваш сайта си, за
-          да докараш <strong class="text-white">3-5 реални нови клиента</strong> пред вратата ти.
-        </p>
-
-        <div class="grid md:grid-cols-2 gap-6 text-left mb-12">
-          <div class="bg-black/40 p-6 rounded-2xl border border-white/10">
-            <p class="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2">МОЯТА ЧАСТ</p>
-            <p class="text-white font-bold text-sm">
-              ✅ Техническата настройка<br />
-              ✅ Рекламните стратегии<br />
-              ✅ Анализ на данните
-            </p>
-          </div>
-          <div class="bg-pink/10 p-6 rounded-2xl border border-pink/20">
-            <p class="text-[10px] font-black uppercase tracking-widest text-pink mb-2">ТВОЯТА ЧАСТ</p>
-            <p class="text-white font-bold text-sm">
-              🤝 Твоят стил и бранд<br />
-              🤝 Обратна връзка<br />
-              🤝 Желание за растеж
-            </p>
-          </div>
-        </div>
 
         <a
           href="30DayChallenge.html"
@@ -355,7 +335,7 @@
       <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         <div>
           <div class="text-xl font-[900] uppercase">GG <span class="text-pink">SOLUTIONS</span></div>
-          <p class="text-[10px] tracking-[0.3em] text-gray-600 uppercase mt-2">Design. Build. Grow.</p>
+          <p class="text--[10px] tracking-[0.3em] text-gray-600 uppercase mt-2">Design. Build. Grow.</p>
         </div>
 
         <div class="flex gap-8 text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase">
@@ -375,15 +355,91 @@
           <p class="text-[10px] text-gray-400">Това ни помага да разберем кое съдържание работи.</p>
         </div>
         <div class="flex gap-4">
-          <button onclick="updateConsent(false)" class="text-xs font-bold text-gray-500 hover:text-white transition">
+          <button onclick="document.getElementById('cookie-banner').classList.add('hidden')" class="text-xs font-bold text-gray-500 hover:text-white transition">
             ОТКАЗВАМ
           </button>
           <button
-            onclick="updateConsent(true)"
+            onclick="acceptCookies()"
             class="bg-pink text-white text-xs font-black px-6 py-3 rounded-xl hover:scale-105 transition shadow-pink"
           >
             ПРИЕМАМ ВСИЧКО
           </button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="application-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center px-4">
+      <div class="absolute inset-0 bg-black/95 backdrop-blur-md transition-opacity" onclick="closeApplicationModal()"></div>
+
+      <div class="relative z-10 w-full max-w-2xl bg-[#0a0a0a] border border-pink/30 rounded-[2.5rem] shadow-[0_0_50px_rgba(236,72,153,0.15)] overflow-hidden flex flex-col max-h-[90vh]">
+        <div class="p-8 pb-0 flex justify-between items-start">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink/10 border border-pink/20 mb-4">
+              <span class="w-1.5 h-1.5 rounded-full bg-pink animate-pulse"></span>
+              <span class="text-[9px] font-black uppercase tracking-widest text-pink">Въпростник v1.0</span>
+            </div>
+            <h2 class="text-3xl font-[900] uppercase italic text-white leading-none">КАНДИДАТСТВАНЕ</h2>
+          </div>
+          <button onclick="closeApplicationModal()" class="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition text-white">✕</button>
+        </div>
+
+        <div class="p-8 overflow-y-auto custom-scrollbar">
+          <form id="piggy-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="space-y-1">
+                <label class="text-[10px] font-black uppercase tracking-widest text-pink pl-3">Твоето Име *</label>
+                <input type="text" name="name" required placeholder="Иван Иванов" class="w-full bg-zinc-900/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-pink transition placeholder-white/20 font-bold" />
+              </div>
+              <div class="space-y-1">
+                <label class="text-[10px] font-black uppercase tracking-widest text-pink pl-3">Телефон *</label>
+                <input type="tel" name="phone" required placeholder="088..." class="w-full bg-zinc-900/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-pink transition placeholder-white/20 font-bold" />
+              </div>
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-[10px] font-black uppercase tracking-widest text-pink pl-3">Email за връзка *</label>
+              <input type="email" name="email" required placeholder="ivan@business.bg" class="w-full bg-zinc-900/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-pink transition placeholder-white/20 font-bold" />
+            </div>
+
+            <div class="h-px bg-white/5 w-full my-4"></div>
+
+            <div class="space-y-1">
+              <label class="text-[10px] font-black uppercase tracking-widest text-white/50 pl-3">Име на бизнеса *</label>
+              <input type="text" name="business" required placeholder="Пример: Салон за красота 'Визия'" class="w-full bg-zinc-900/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-pink transition placeholder-white/20 font-bold" />
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-[10px] font-black uppercase tracking-widest text-white/50 pl-3">Сайт / Facebook / Instagram</label>
+              <input type="text" name="socials" placeholder="https://..." class="w-full bg-zinc-900/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-pink transition placeholder-white/20 font-medium" />
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-[10px] font-black uppercase tracking-widest text-white/50 pl-3">Цел за оборот (Месечно)</label>
+              <select name="revenue_goal" class="w-full bg-zinc-900/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-pink transition font-bold appearance-none cursor-pointer bg-black">
+                <option value="" disabled selected>Избери цел...</option>
+                <option value="Start (0-2k)">Искам първите си клиенти (0 - 2к)</option>
+                <option value="Grow (2k-10k)">Искам да напълня графика (2к - 10к)</option>
+                <option value="Scale (10k+)">Искам да скалирам (10к+)</option>
+              </select>
+            </div>
+
+            <button type="submit" id="submit-btn" class="w-full py-5 bg-pink rounded-xl text-white font-[900] uppercase tracking-widest text-lg shadow-[0_0_30px_rgba(255,45,85,0.3)] hover:scale-[1.02] transition active:scale-95 mt-4">
+              Изпрати Кандидатурата 🚀
+            </button>
+          </form>
+
+          <div id="form-success" class="hidden text-center py-10">
+            <div class="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-green-500/20">
+              <span class="text-4xl">✅</span>
+            </div>
+            <h3 class="text-3xl font-[900] text-white uppercase italic mb-4">Данните са приети!</h3>
+            <p class="text-silver mb-8 max-w-sm mx-auto">
+              Сега имаш достъп до моя личен календар за финалното интервю.
+            </p>
+            <a href="https://calendar.app.google/wP8mT6d4zxK4PNGx6" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-[900] uppercase rounded-xl hover:bg-gray-200 transition">
+              <span>🗓️ Запази Час Сега</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
