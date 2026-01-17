@@ -8,14 +8,13 @@
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐷</text></svg>"
     />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSSHL2D8TJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-
-      // 2. Consent Mode v2 (Задължително за ЕС)
+      function gtag() { dataLayer.push(arguments); }
       gtag('consent', 'default', {
         analytics_storage: 'denied',
         ad_storage: 'denied',
@@ -23,117 +22,107 @@
         ad_personalization: 'denied',
         wait_for_update: 500,
       });
-
-      // 3. Конфигурация - Вече с правилния ID
       gtag('js', new Date());
       gtag('config', 'G-GSSHL2D8TJ');
     </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
+    
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="antialiased">
+  <body class="antialiased selection:bg-pink selection:text-white">
+
     <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10 transition-all duration-300">
       <div class="max-w-7xl mx-auto px-6 nav-container justify-between">
         <a href="index.html" class="flex items-center gap-3 group">
-          <span class="text-2xl group-hover:scale-110 transition-transform">🐷</span>
-          <span
-            class="font-[900] uppercase tracking-tighter text-xl text-white group-hover:text-pink transition-colors"
-          >
+          <span class="text-3xl group-hover:scale-110 transition-transform">🐷</span>
+          <span class="font-[900] uppercase tracking-tighter text-xl text-white group-hover:text-pink transition-colors">
             GG <span class="text-pink">Solutions</span>
           </span>
         </a>
-        <div class="hidden md:flex items-center gap-8 text-xs font-[800] tracking-[0.15em] uppercase text-silver">
+        
+        <div class="hidden md:flex items-center gap-8 text-xs font-[800] tracking-[0.15em] uppercase text-gray-400">
           <a href="index.html" class="hover:text-white transition-colors">Начало</a>
           <a href="calculator.html" class="text-pink transition-colors">Калкулатор</a>
-          <a href="oborota.html" class="hover:text-white transition-colors">Oborota</a>
           <a href="30DayChallenge.html" class="hover:text-pink transition-colors flex items-center gap-2">
             30-Day Challenge
-            <span class="bg-pink text-white text-[9px] px-1.5 py-0.5 rounded-full animate-pulse">BETA</span>
+            <span class="bg-pink text-white text-[9px] px-2 py-0.5 rounded-full animate-pulse">LIVE</span>
           </a>
         </div>
+
         <button onclick="toggleMenu()" class="md:hidden text-white hover:text-pink transition">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
-          </svg>
+          <i class="fas fa-bars text-2xl"></i>
         </button>
       </div>
     </nav>
 
-    <div
-      id="mobile-menu"
-      class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8"
-    >
-      <button onclick="toggleMenu()" class="absolute top-8 right-8 text-white/50 uppercase text-xs tracking-widest">
-        Затвори ✕
+    <div id="mobile-menu" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8">
+      <button onclick="toggleMenu()" class="absolute top-8 right-8 text-white/50 uppercase text-xs tracking-widest p-4">
+        <i class="fas fa-times text-2xl"></i>
       </button>
       <a href="index.html" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white">Начало</a>
       <a href="calculator.html" class="text-3xl font-[900] uppercase italic text-pink">Калкулатор</a>
-      <a href="oborota.html" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white">Oborota App</a>
-      <a href="30DayChallenge.html" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white"
-        >30-Day Challenge</a
-      >
+      <a href="30DayChallenge.html" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white">Challenge</a>
     </div>
 
-    <section class="relative min-h-[90vh] flex items-center justify-center px-6 py-8 md:py-16 mx-auto overflow-hidden">
-      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 max-w-6xl w-full">
+    <section class="relative min-h-[90vh] flex items-center justify-center px-6 pt-32 pb-16 mx-auto overflow-hidden">
+      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16 max-w-6xl w-full">
+        
         <div class="w-full md:w-2/5 flex justify-center order-1 md:order-2">
           <div class="relative group">
-            <div class="absolute inset-0 bg-pink/20 blur-[60px] md:blur-[100px] rounded-full"></div>
-            <img
-              src="imgs/DemoCalc.png"
-              class="relative w-full max-w-[220px] sm:max-w-[280px] md:max-w-[380px] drop-shadow-pink-neon transition-transform duration-500 hover:scale-105"
-              alt="Piggy Calc"
-            />
+            <div class="absolute inset-0 bg-[#E91E63] blur-[80px] opacity-20 rounded-full animate-pulse"></div>
+            
+            <video 
+                poster="imgs/DemoCalc.png" 
+                autoplay 
+                loop 
+                muted 
+                playsinline 
+                class="relative w-full max-w-[240px] md:max-w-[380px] rounded-[2.5rem] border-[4px] border-zinc-800 shadow-[0_0_40px_rgba(233,30,99,0.2)] transform transition duration-500 hover:scale-105"
+            >
+                <source src="vids/demo.mp4" type="video/mp4">
+                <img src="imgs/DemoCalc.png" alt="Piggy Calc Demo">
+            </video>
           </div>
         </div>
 
-        <div class="w-full md:w-3/5 space-y-6 text-center md:text-left order-2 md:order-1">
-          <h1
-            class="text-[11vw] sm:text-[9vw] md:text-8xl font-black uppercase italic leading-[0.9] md:leading-[0.85] tracking-tighter"
-          >
+        <div class="w-full md:w-3/5 space-y-8 text-center md:text-left order-2 md:order-1">
+          <h1 class="text-[11vw] sm:text-[9vw] md:text-8xl font-black uppercase italic leading-[0.9] md:leading-[0.85] tracking-tighter">
             <span class="text-white">СМЯТАЙ ЛЕВА</span><br />
             <span class="text-white">ИЛИ ЕВРО С</span>
             <br />
-            <span class="text-pink drop-shadow-pink-neon">РОЗОВИЯ</span><br />
+            <span class="text-pink drop-shadow-neon">РОЗОВИЯ</span><br />
             <span class="text-white">КАЛКУЛАТОР.</span>
           </h1>
 
-          <div
-            class="flex flex-col md:flex-row md:flex-wrap justify-center md:justify-start gap-y-3 md:gap-x-6 font-black text-lg md:text-xl uppercase tracking-widest italic border-t border-white/10 pt-6"
-          >
-            <p class="flex items-center justify-center md:justify-start gap-2">
-              <span class="text-white">БЕЗ</span> <span class="text-pink">ДРАМИ.</span>
-            </p>
-            <p class="flex items-center justify-center md:justify-start gap-2">
-              <span class="text-white">БЕЗ</span> <span class="text-pink">ИЗМАМИ.</span>
-            </p>
-            <p class="flex items-center justify-center md:justify-start gap-2">
-              <span class="text-white">БЕЗ</span> <span class="text-pink">РЕКЛАМИ.</span>
-            </p>
+          <div class="flex flex-col md:flex-row md:flex-wrap justify-center md:justify-start gap-y-3 md:gap-x-6 font-black text-lg md:text-xl uppercase tracking-widest italic border-t border-white/10 pt-6">
+             <p class="flex items-center justify-center md:justify-start gap-2 text-gray-400">
+               <i class="fas fa-check text-pink"></i> Без Драми
+             </p>
+             <p class="flex items-center justify-center md:justify-start gap-2 text-gray-400">
+               <i class="fas fa-check text-pink"></i> Без Измами
+             </p>
+             <p class="flex items-center justify-center md:justify-start gap-2 text-gray-400">
+               <i class="fas fa-check text-pink"></i> Без Реклами
+             </p>
           </div>
 
-          <div class="flex flex-col sm:flex-row gap-6 pt-4">
+          <div class="flex flex-col sm:flex-row gap-6 pt-4 justify-center md:justify-start">
             <a
               href="https://github.com/ginkogrudev/EuroCalculator/releases/tag/v1.0.1"
-              class="btn-hero px-10 py-5 text-xl text-center min-w-[260px]"
-              onclick="gtag('event', 'conversion', { 
-      'event_category': 'Download', 
-      'event_label': 'APK Download' 
-    });"
+              class="btn-primary px-10 py-5 text-xl min-w-[260px] flex items-center justify-center gap-3"
+              onclick="gtag('event', 'conversion', { 'event_category': 'Download', 'event_label': 'APK Download Hero' });"
             >
-              ИЗТЕГЛИ ПРИЛОЖЕНИЕТО (APK)
+              <i class="fab fa-android text-2xl"></i> ИЗТЕГЛИ APP
             </a>
 
             <a
               href="https://ginkogrudev.github.io/EuroCalculator/"
-              class="btn-neon-secondary px-10 py-5 text-xl text-center min-w-[260px]"
-              onclick="gtag('event', 'conversion', { 
-      'event_category': 'Engagement', 
-      'event_label': 'Live Demo Web' 
-    });"
+              class="btn-secondary px-10 py-5 text-xl min-w-[260px] flex items-center justify-center gap-3"
+              onclick="gtag('event', 'conversion', { 'event_category': 'Engagement', 'event_label': 'Live Demo Web Hero' });"
             >
-              ПРОБВАЙ СЕГА (WEB)
+              <i class="fas fa-globe text-2xl"></i> ОНЛАЙН ВЕРСИЯ
             </a>
           </div>
         </div>
@@ -143,60 +132,105 @@
     <section class="max-w-6xl px-6 py-20 mx-auto border-t border-white/5">
       <div class="text-center mb-16">
         <h2 class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter">
-          ЕДИН ИНСТРУМЕНТ. <span class="text-pink">ДВА СВЯТА.</span>
+          ТВОЯТ КАЛКУЛАТОР. <span class="text-pink drop-shadow-neon">ТВОИТЕ ПРАВИЛА.</span>
         </h2>
+        <p class="text-gray-400 mt-4 text-xl max-w-2xl mx-auto">
+          Един инструмент, който се адаптира към теб. Смени режима с едно докосване.
+        </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8">
-        <div
-          class="glass p-1 border border-white/10 rounded-[3rem] hover:border-pink/40 transition-all duration-500 group overflow-hidden relative"
-        >
-          <div class="p-10 flex flex-col h-full">
-            <span class="text-pink font-black text-xs tracking-[0.4em] uppercase mb-4">За теб</span>
-            <h3 class="text-4xl font-black uppercase italic mb-6">КЛИЕНТ МОД</h3>
-            <p class="text-white/70 text-lg mb-8 flex-grow">
-              Не позволявай на сложните сметки да развалят пазаруването ти. Виж точно колко трябва да платиш и колко
-              ресто да получиш, без да държиш опашката.
-            </p>
-            <div class="flex items-center gap-4">
-              <div class="flex -space-x-2">
-                <div
-                  class="w-10 h-10 rounded-full border-2 border-zinc-900 bg-pink shadow-[0_0_15px_rgba(255,45,85,0.4)]"
-                ></div>
-                <div class="w-10 h-10 rounded-full border-2 border-zinc-900 bg-blue-500"></div>
-                <div class="w-10 h-10 rounded-full border-2 border-zinc-900 bg-emerald-500"></div>
-              </div>
-              <span class="text-[10px] font-black uppercase tracking-widest text-white/40">Избери своя цвят</span>
+      <div class="glass p-1 rounded-[3rem] border border-white/10 hover:border-pink/50 transition-colors duration-500 relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-32 bg-[#E91E63] blur-[120px] opacity-20 rounded-full"></div>
+        
+        <div class="p-8 md:p-12 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div>
+                <h3 class="text-3xl font-black uppercase italic mb-6">ПЪЛНА СВОБОДА</h3>
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4">
+                        <div class="bg-pink/20 p-3 rounded-xl text-pink"><i class="fas fa-sync-alt text-xl"></i></div>
+                        <div>
+                            <strong class="block text-white text-lg uppercase font-bold">Два Режима</strong>
+                            <p class="text-gray-400 text-sm">Превключвай мигновено между "Клиент" (за пазаруване) и "Бизнес" (за работа).</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="bg-blue-500/20 p-3 rounded-xl text-blue-400"><i class="fas fa-palette text-xl"></i></div>
+                        <div>
+                            <strong class="block text-white text-lg uppercase font-bold">5+ Цветови Теми</strong>
+                            <p class="text-gray-400 text-sm">Омръзна ти розовото? Смени на Синьо, Зелено или Оранжево.</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
-          </div>
-        </div>
 
-        <div
-          class="glass p-1 border border-white/10 rounded-[3rem] hover:border-pink/40 transition-all duration-500 group relative"
-        >
-          <div class="p-10 flex flex-col h-full">
-            <span class="text-pink font-black text-xs tracking-[0.4em] uppercase mb-4">За бизнеса</span>
-            <h3 class="text-4xl font-black uppercase italic mb-6">БИЗНЕС МОД</h3>
-            <p class="text-white/70 text-lg mb-8 flex-grow">
-              Прецизност, която вдъхва доверие. Обслужвай клиенти в пъти по-бързо и елиминирай риска от грешки в оборота
-              при прехода към еврото.
-            </p>
-            <div class="flex gap-3">
-              <span
-                class="bg-white/5 px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-tighter border border-white/10"
-                >Haptic Feedback</span
-              >
-              <span
-                class="bg-white/5 px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-tighter border border-white/10"
-                >No Ads</span
-              >
+            <div class="flex flex-col items-center justify-center gap-6 bg-white/5 p-8 rounded-3xl border border-white/5">
+                <div class="flex -space-x-4 mb-2">
+                    <div class="w-16 h-16 rounded-full border-4 border-[#1a1a1a] bg-[#E91E63] relative z-40 shadow-xl"></div>
+                    <div class="w-16 h-16 rounded-full border-4 border-[#1a1a1a] bg-blue-500 relative z-30 shadow-xl"></div>
+                    <div class="w-16 h-16 rounded-full border-4 border-[#1a1a1a] bg-emerald-500 relative z-20 shadow-xl"></div>
+                    <div class="w-16 h-16 rounded-full border-4 border-[#1a1a1a] bg-orange-500 relative z-10 shadow-xl"></div>
+                </div>
+                <div class="text-xs font-black uppercase tracking-[0.2em] text-gray-500">
+                    <i class="fas fa-fingerprint mr-2"></i> Персонализирай изживяването
+                </div>
             </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <footer class="px-6 py-20 border-t border-white/5 bg-zinc-950/50">
+    <section id="screenshots" class="max-w-7xl px-6 py-20 mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-black uppercase italic text-gray-700">ГАЛЕРИЯ</h2>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="aspect-[9/16] bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center text-gray-600 overflow-hidden transition hover:border-pink/50 group">
+                <i class="fas fa-image text-4xl group-hover:text-pink transition"></i>
+            </div>
+            <div class="aspect-[9/16] bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center text-gray-600 overflow-hidden transition hover:border-pink/50 group">
+                <i class="fas fa-image text-4xl group-hover:text-pink transition"></i>
+            </div>
+            <div class="aspect-[9/16] bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center text-gray-600 overflow-hidden transition hover:border-pink/50 group">
+                <i class="fas fa-image text-4xl group-hover:text-pink transition"></i>
+            </div>
+            <div class="aspect-[9/16] bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center text-gray-600 overflow-hidden transition hover:border-pink/50 group">
+                <i class="fas fa-image text-4xl group-hover:text-pink transition"></i>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-6xl px-6 py-24 mx-auto border-t border-white/5">
+        <div class="glass p-12 rounded-[3rem] border border-white/10 text-center relative overflow-hidden">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-pink blur-[100px] opacity-10 w-full h-full pointer-events-none"></div>
+            
+            <h2 class="text-3xl md:text-5xl font-black uppercase italic mb-8 relative z-10">
+                СПРИ ДА ГУБИШ <span class="text-pink drop-shadow-neon">ВРЕМЕ.</span>
+            </h2>
+            <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto relative z-10">
+                Свали приложението сега или го пробвай директно в браузъра. Безплатно завинаги.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
+                <a
+                  href="https://github.com/ginkogrudev/EuroCalculator/releases/tag/v1.0.1"
+                  class="btn-primary px-12 py-5 text-xl shadow-[0_0_30px_rgba(233,30,99,0.4)]"
+                  onclick="gtag('event', 'conversion', { 'event_category': 'Download', 'event_label': 'APK Download Bottom' });"
+                >
+                  <i class="fab fa-android mr-3"></i> СВАЛИ APK
+                </a>
+
+                <a
+                  href="https://ginkogrudev.github.io/EuroCalculator/"
+                  class="btn-secondary px-12 py-5 text-xl border-white/20 bg-black/40 hover:bg-pink/20"
+                  onclick="gtag('event', 'conversion', { 'event_category': 'Engagement', 'event_label': 'Live Demo Web Bottom' });"
+                >
+                  <i class="fas fa-globe mr-3"></i> WEB ВЕРСИЯ
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="px-6 py-20 border-t border-white/5 bg-black/20">
       <div class="max-w-6xl mx-auto text-center md:text-left">
         <div class="grid items-center grid-cols-1 gap-12 mb-16 md:grid-cols-2">
           <div>
@@ -204,7 +238,7 @@
             <p class="text-xs tracking-[0.3em] text-gray-500 uppercase mb-6">
               Дигитални инструменти за българския бизнес
             </p>
-            <a href="https://revolut.me/ginkogrudev" target="_blank" class="btn-primary !py-3 !px-6 text-sm">
+            <a href="https://revolut.me/ginkogrudev" target="_blank" class="btn-secondary !py-3 !px-6 !text-xs !border-white/10 hover:!border-pink">
               <span>ПОЧЕРПИ ЕДНА БИРА 🍺</span>
             </a>
           </div>
@@ -213,31 +247,6 @@
               <a href="https://github.com/ginkogrudev/GGSolutions" class="transition hover:text-pink">Source Code</a>
               <a href="mailto:contact@ggsolutions.bg" class="transition hover:text-pink">Контакт</a>
             </div>
-            <p class="text-[10px] text-gray-700 uppercase tracking-[0.4em]">© 2026 GG SOLUTIONS | YAMBOL, BULGARIA</p>
+            <p class="text-[10px] text-gray-700 uppercase tracking-[0.4em]">© 2026 GG SOLUTIONS</p>
           </div>
         </div>
-      </div>
-    </footer>
-    <div
-      id="cookie-banner"
-      class="fixed bottom-6 left-6 right-6 z-[100] glass p-6 rounded-[2rem] border-pink/30 hidden"
-    >
-      <div class="flex flex-col items-center justify-between max-w-6xl gap-6 mx-auto md:flex-row">
-        <div class="text-left">
-          <p class="text-pink font-black uppercase text-[10px] tracking-[0.3em] mb-1">Privacy First</p>
-          <p class="text-sm font-medium">Използваме анализи за по-добро изживяване. Съгласен ли си? 🐷</p>
-        </div>
-        <div class="flex items-center gap-4">
-          <button onclick="updateConsent(true)" class="btn-primary !py-3 !px-8 !text-xs">ПРИЕМАМ</button>
-          <button
-            onclick="updateConsent(false)"
-            class="text-[10px] font-bold uppercase opacity-50 hover:opacity-100 transition"
-          >
-            Отказ
-          </button>
-        </div>
-      </div>
-    </div>
-    <script src="app.js"></script>
-  </body>
-</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПриТаня | Партньорски Панел</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --brand-pink: #E91E63;
+            --brand-pink-hover: #c2185b;
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- DASHBOARD HEADER (THE MONEY) --- */
+        .dashboard-header {
+            background: linear-gradient(180deg, #2d1b22 0%, var(--bg-dark) 100%);
+            padding: 20px;
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 5px;
+        }
+
+        .stat-value.revenue { color: #fff; }
+        .stat-value.commission { color: var(--brand-pink); }
+
+        /* --- ORDER LIST --- */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--text-muted);
+            border-left: 3px solid var(--brand-pink);
+            padding-left: 10px;
+        }
+
+        .order-card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .order-card:hover {
+            border-color: #555;
+        }
+
+        /* Order Header */
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #333;
+        }
+
+        .order-id {
+            font-weight: bold;
+            color: var(--text-muted);
+        }
+
+        .order-badge {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--warning);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .order-badge.completed {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        /* Order Items */
+        .order-items {
+            margin-bottom: 20px;
+        }
+
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .item-qty {
+            color: var(--brand-pink);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* --- ACTION AREA (THE LOGIC) --- */
+        .action-area {
+            background: #151515;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px dashed #444;
+        }
+
+        .input-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .price-input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="number"] {
+            flex: 1;
+            background: #252525;
+            border: 1px solid #444;
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: var(--brand-pink);
+        }
+
+        .btn-complete {
+            background-color: var(--success);
+            color: #000;
+            border: none;
+            padding: 0 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s;
+        }
+        
+        .btn-complete:disabled {
+            background-color: #333;
+            color: #666;
+            cursor: not-allowed;
+        }
+
+        /* The Ghost Commission Text */
+        .commission-preview {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #555;
+            text-align: right;
+            transition: color 0.3s;
+        }
+
+        .commission-preview.active {
+            color: var(--brand-pink);
+        }
+
+        /* Footer */
+        .footer-note {
+            text-align: center;
+            color: #444;
+            font-size: 0.8rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-header">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Оборот (Месец)</div>
+                <div class="stat-value revenue" id="totalRevenue">0.00 лв.</div>
+            </div>
+            <div class="stat-card" style="border-color: var(--brand-pink);">
+                <div class="stat-label">Комисионна (10%)</div>
+                <div class="stat-value commission" id="totalCommission">0.00 лв.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <div class="section-title">Чакащи Поръчки (2)</div>
+
+        <div class="order-card" id="order-104">
+            <div class="order-header">
+                <span class="order-id">#104 • Иван Петров</span>
+                <span class="order-badge">Нова</span>
+            </div>
+            
+            <div class="order-items">
+                <div class="item-row">
+                    <span><span class="item-qty">2.0 кг</span> Свински Врат</span>
+                </div>
+                <div class="item-row">
+                    <span><span class="item-qty">0.5 кг</span> Луканка</span>
+                </div>
+                <div class="item-row" style="color: #888; font-size: 0.9rem; margin-top:5px;">
+                    <i class="fas fa-phone-alt"></i> 088 123 4567
+                </div>
+            </div>
+
+            <div class="action-area">
+                <label class="input-label">Въведи точна цена след теглене:</label>
+                <div class="price-input-group">
+                    <input type="number" placeholder="0.00" step="0.01" oninput="calculateCommission(this, 'comm-104', 'btn-104')">
+                    <button class="btn-complete" id="btn-104" onclick="completeOrder(this, 'order-104')" disabled>
+                        <i class="fas fa-check"></i> Готово
+                    </button>
+                </div>
+                <div class="commission-preview" id="comm-104">Маркетинг такса: 0.00 лв.</div>
+            </div>
+        </div>
+
+        <div class="order-card" id="order-103">
+            <div class="order-header">
+                <span class="order-id">#103 • Мария Георгиева</span>
+                <span class="order-badge">Нова</span>
+            </div>
+            
+            <div class="order-items">
+                <div class="item-row">
+                    <span><span class="item-qty">1 бр.</span> Пърлено Пиле</span>
+                </div>
+                <div class="item-row" style="color: #888; font-size: 0.9rem; margin-top:5px;">
+                    <i class="fas fa-phone-alt"></i> 089 999 8888
+                </div>
+            </div>
+
+            <div class="action-area">
+                <label class="input-label">Въведи точна цена след теглене:</label>
+                <div class="price-input-group">
+                    <input type="number" placeholder="0.00" step="0.01" oninput="calculateCommission(this, 'comm-103', 'btn-103')">
+                    <button class="btn-complete" id="btn-103" onclick="completeOrder(this, 'order-103')" disabled>
+                        <i class="fas fa-check"></i> Готово
+                    </button>
+                </div>
+                <div class="commission-preview" id="comm-103">Маркетинг такса: 0.00 лв.</div>
+            </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 40px; border-color: #333;">Завършени (Днес)</div>
+        
+        <div class="order-card" style="opacity: 0.6;">
+            <div class="order-header">
+                <span class="order-id">#102 • Стоян Колев</span>
+                <span class="order-badge completed">Завършена</span>
+            </div>
+            <div class="order-items">
+                <div class="item-row">
+                    <span><span class="item-qty">3 кг</span> Ребра</span>
+                </div>
+            </div>
+            <div style="text-align: right; font-weight: bold; color: var(--success);">
+                Крайна сума: 42.00 лв. <span style="font-size:0.8rem; color:#666;">(Такса: 4.20 лв.)</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-note">
+        Powered by PriTanya Digital System
+    </div>
+
+    <script>
+        // Global Totals
+        let currentRevenue = 42.00;
+        let currentCommission = 4.20;
+
+        function updateHeader() {
+            document.getElementById('totalRevenue').innerText = currentRevenue.toFixed(2) + ' лв.';
+            document.getElementById('totalCommission').innerText = currentCommission.toFixed(2) + ' лв.';
+        }
+
+        // Initialize with the static completed order
+        updateHeader();
+
+        // 1. Calculate the 10% fee as they type
+        function calculateCommission(input, previewId, btnId) {
+            const price = parseFloat(input.value);
+            const previewEl = document.getElementById(previewId);
+            const btnEl = document.getElementById(btnId);
+
+            if (price > 0) {
+                const commission = price * 0.10; // The 10% Magic
+                previewEl.innerText = `Маркетинг такса (10%): ${commission.toFixed(2)} лв.`;
+                previewEl.classList.add('active');
+                btnEl.disabled = false;
+            } else {
+                previewEl.innerText = 'Маркетинг такса: 0.00 лв.';
+                previewEl.classList.remove('active');
+                btnEl.disabled = true;
+            }
+        }
+
+        // 2. Complete the order
+        function completeOrder(btn, cardId) {
+            const card = document.getElementById(cardId);
+            const input = card.querySelector('input');
+            const price = parseFloat(input.value);
+            const commission = price * 0.10;
+
+            // Update Globals
+            currentRevenue += price;
+            currentCommission += commission;
+            updateHeader();
+
+            // Visual Feedback
+            btn.innerHTML = '<i class="fas fa-check-circle"></i> Запазено';
+            card.style.borderColor = '#10b981';
+            
+            // Move to bottom or hide input (Simulated)
+            setTimeout(() => {
+                card.style.opacity = '0.6';
+                card.querySelector('.action-area').innerHTML = `
+                    <div style="text-align: right; font-weight: bold; color: #10b981;">
+                        Крайна сума: ${price.toFixed(2)} лв. 
+                        <span style="font-size:0.8rem; color:#666; display:block;">(Такса: ${commission.toFixed(2)} лв.)</span>
+                    </div>
+                `;
+                // Change badge
+                card.querySelector('.order-badge').classList.add('completed');
+                card.querySelector('.order-badge').innerText = 'Завършена';
+            }, 500);
+        }
+    </script>
+</body>
+</html>

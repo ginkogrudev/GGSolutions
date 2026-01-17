@@ -103,3 +103,46 @@ body::before {
   pointer-events: none;
   z-index: -1;
 }
+
+/* --- ADD THIS TO style.css --- */
+
+/* Secondary Button (Transparent/Outline) */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: white !important;
+  background-color: transparent;
+  border: 2px solid hsla(var(--border) / 0.2);
+  border-radius: 1rem;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: hsl(var(--primary));
+  color: hsl(var(--primary)) !important;
+  background-color: hsla(var(--primary) / 0.1);
+  box-shadow: 0 0 30px hsla(var(--primary) / 0.2);
+}
+
+/* Text Glow Utility */
+.drop-shadow-neon {
+  text-shadow: 0 0 20px hsla(var(--primary) / 0.6);
+}
+
+/* Image Glow Utility */
+.img-glow {
+  filter: drop-shadow(0 0 30px hsla(var(--primary) / 0.3));
+  transition: transform 0.5s ease;
+}
+.img-glow:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+/* Selection Color (Pink Highlight) */
+::selection {
+  background-color: hsl(var(--primary));
+  color: white;
+}

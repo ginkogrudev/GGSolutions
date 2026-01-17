@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="bg" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ginko Grudev | Partner OS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --brand-pink: #E91E63; --bg-dark: #0f0f0f; --bg-card: #1a1a1a; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg-dark); color: white; overflow: hidden; }
+        
+        /* Sidebar Navigation */
+        .sidebar-link {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 16px; margin-bottom: 4px;
+            border-radius: 8px; color: #888; cursor: pointer;
+            transition: all 0.2s;
+        }
+        .sidebar-link:hover { background: rgba(255,255,255,0.05); color: white; }
+        .sidebar-link.active { background: rgba(233, 30, 99, 0.1); color: var(--brand-pink); border-left: 3px solid var(--brand-pink); }
+        .sidebar-link i { width: 20px; text-align: center; }
+
+        /* Main Content Area */
+        .content-section { display: none; animation: fadeIn 0.3s ease; height: 100vh; overflow-y: auto; padding-bottom: 100px; }
+        .content-section.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--brand-pink); }
+    </style>
+</head>
+<body class="flex h-screen">
+
+    <aside class="w-64 bg-[#141414] border-r border-gray-800 flex-shrink-0 flex flex-col hidden md:flex">
+        <div class="p-6 border-b border-gray-800">
+            <div class="font-bold text-xl tracking-tight">Ginko<span class="text-[#E91E63]">Grudev</span></div>
+            <div class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Partner OS v1.0</div>
+        </div>
+
+        <nav class="p-4 flex-1">
+            <div class="text-xs font-bold text-gray-600 mb-3 px-2 uppercase">Start Here</div>
+            <div class="sidebar-link active" onclick="showTab('welcome')">
+                <i class="fas fa-flag-checkered"></i> <span>Добре дошъл</span>
+            </div>
+            <div class="sidebar-link" onclick="showTab('roadmap')">
+                <i class="fas fa-map-marked-alt"></i> <span>30-Дневен План</span>
+            </div>
+
+            <div class="text-xs font-bold text-gray-600 mt-6 mb-3 px-2 uppercase">Tools</div>
+            <div class="sidebar-link" onclick="showTab('calculator')">
+                <i class="fas fa-calculator"></i> <span>The Profit Closer</span>
+            </div>
+            <div class="sidebar-link" onclick="showTab('assets')">
+                <i class="fas fa-folder-open"></i> <span>Ресурси & Книги</span>
+            </div>
+
+            <div class="text-xs font-bold text-gray-600 mt-6 mb-3 px-2 uppercase">Community</div>
+            <a href="https://discord.com" target="_blank" class="sidebar-link">
+                <i class="fab fa-discord"></i> <span>Winners Circle</span>
+            </a>
+        </nav>
+
+        <div class="p-4 border-t border-gray-800">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-pink-600 flex items-center justify-center font-bold">P</div>
+                <div>
+                    <div class="text-sm font-bold text-white">Partner Mode</div>
+                    <div class="text-xs text-green-500">● Active</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="flex-1 bg-[#0f0f0f] relative">
+        
+        <div class="md:hidden p-4 border-b border-gray-800 flex justify-between items-center bg-[#141414]">
+            <div class="font-bold">Partner <span class="text-[#E91E63]">OS</span></div>
+            <button onclick="document.querySelector('aside').classList.toggle('hidden'); document.querySelector('aside').classList.add('absolute', 'z-50', 'h-full');"><i class="fas fa-bars"></i></button>
+        </div>
+
+        <div id="welcome" class="content-section active p-8 max-w-4xl mx-auto">
+            <h1 class="text-3xl font-bold mb-2">Начало на Операцията</h1>
+            <p class="text-gray-400 mb-8">Гледай това видео преди да направиш каквото и да е друго.</p>
+            
+            <div class="aspect-video bg-black rounded-xl border border-gray-800 flex items-center justify-center mb-8 shadow-2xl relative group cursor-pointer">
+                <div class="w-16 h-16 bg-[#E91E63] rounded-full flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform">
+                    <i class="fas fa-play ml-1"></i>
+                </div>
+                <div class="absolute bottom-4 left-4 bg-black/80 px-3 py-1 rounded text-xs">03:45 • Orientation Protocol</div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-[#1a1a1a] p-6 rounded-xl border border-gray-800">
+                    <h3 class="font-bold text-lg mb-2 text-white">1. Твоята Цел</h3>
+                    <p class="text-gray-400 text-sm">Ние не просто правим сайт. Ние инсталираме система за привличане на клиенти. Твоята цел тази седмица е да следваш "Launchpad" протокола.</p>
+                </div>
+                <div class="bg-[#1a1a1a] p-6 rounded-xl border border-gray-800">
+                    <h3 class="font-bold text-lg mb-2 text-white">2. Първа Стъпка</h3>
+                    <p class="text-gray-400 text-sm">Отиди в таб "30-Дневен План" и маркирай Ден 1 като завършен. Аз вече съм активирал твоя Google профил.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="roadmap" class="content-section p-8 max-w-4xl mx-auto">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h1 class="text-3xl font-bold text-white">30-Дневен План</h1>
+                    <p class="text-gray-400">Твоят път от "Невидим" до "Лидер на пазара".</p>
+                </div>
+                <div class="text-right hidden md:block">
+                    <div class="text-2xl font-bold text-[#E91E63]">Week 1</div>
+                    <div class="text-sm text-gray-500">The Quick Win</div>
+                </div>
+            </div>
+
+            <div class="border-l-2 border-gray-800 ml-3 pl-8 pb-10 relative">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#E91E63] shadow-[0_0_10px_#E91E63]"></div>
+                <h3 class="text-xl font-bold text-white mb-2">Ден 1: Launchpad Activation</h3>
+                <p class="text-gray-400 mb-4">Получаване на достъп до сайта и Google Maps.</p>
+                <button class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded text-sm transition">
+                    <i class="fas fa-check mr-2"></i> Маркирай като готово
+                </button>
+            </div>
+
+            <div class="border-l-2 border-gray-800 ml-3 pl-8 pb-10 relative">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-600"></div>
+                <h3 class="text-xl font-bold text-gray-300 mb-2">Ден 3: Reputation Audit</h3>
+                <p class="text-gray-500 mb-4">Използвай скрипта за събиране на 5 ревюта от стари клиенти.</p>
+                <div class="bg-[#1a1a1a] p-4 rounded border border-gray-800 text-sm text-gray-400 font-mono">
+                    "Здравей [Име], опитвам се да подобря присъствието си в Google..."
+                </div>
+            </div>
+
+             <div class="border-l-2 border-gray-800 ml-3 pl-8 pb-10 relative">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-600"></div>
+                <h3 class="text-xl font-bold text-gray-300 mb-2">Ден 8: The Profit Closer</h3>
+                <p class="text-gray-500">Настройка на калкулатора за продажби.</p>
+            </div>
+        </div>
+
+        <div id="calculator" class="content-section p-0 h-full">
+            <div class="w-full h-full flex flex-col items-center justify-center text-center p-8">
+                <i class="fas fa-tools text-5xl text-gray-700 mb-4"></i>
+                <h2 class="text-2xl font-bold text-gray-500">Зареди Калкулатора Тук</h2>
+                <p class="text-gray-600">Тук ще iframe-нем твоя `calculator.html` файл, за да е всичко на едно място.</p>
+                </div>
+        </div>
+
+        <div id="assets" class="content-section p-8 max-w-4xl mx-auto">
+            <h1 class="text-3xl font-bold mb-6">CEO Mindset Protocol</h1>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-[#1a1a1a] p-6 rounded-xl border border-gray-800 hover:border-[#E91E63] transition group">
+                    <div class="text-[#E91E63] text-3xl mb-4"><i class="fas fa-brain"></i></div>
+                    <h3 class="font-bold text-xl text-white mb-2">The $100M Offer Notes</h3>
+                    <p class="text-gray-400 text-sm mb-6">Моите лични бележки и диаграми от методологията на Alex Hormozi.</p>
+                    <a href="#" class="text-white font-bold text-sm border-b border-[#E91E63] pb-1 group-hover:text-[#E91E63] transition">
+                        Свали PDF <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <div class="bg-[#1a1a1a] p-6 rounded-xl border border-gray-800 hover:border-[#E91E63] transition group">
+                    <div class="text-[#E91E63] text-3xl mb-4"><i class="fas fa-users-cog"></i></div>
+                    <h3 class="font-bold text-xl text-white mb-2">Influence & Persuasion</h3>
+                    <p class="text-gray-400 text-sm mb-6">Психологическите принципи на Cialdini, адаптирани за българския пазар.</p>
+                    <a href="#" class="text-white font-bold text-sm border-b border-[#E91E63] pb-1 group-hover:text-[#E91E63] transition">
+                        Свали PDF <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // Simple Tab Switcher Logic
+        function showTab(tabId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(el => el.classList.remove('active'));
+            // Remove active class from links
+            document.querySelectorAll('.sidebar-link').forEach(el => el.classList.remove('active'));
+            
+            // Show selected
+            document.getElementById(tabId).classList.add('active');
+            // Highlight link (this is a basic way, ideally use IDs on links)
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

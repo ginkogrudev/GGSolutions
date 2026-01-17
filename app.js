@@ -1,13 +1,24 @@
 // GG SOLUTIONS - CORE ENGINE 2026 (FINAL CLEAN VERSION)
 
-// 👇 THIS IS YOUR CORRECT SCRIPT URL (Leads 2.0)
+// 👇 1. GOOGLE SCRIPT URL (DO NOT TOUCH)
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwpxHzdkBouslhSv3GyfF8Oe8MhqCfLBs-_Vv0O2ZoNu9yvzQbF0WYy2c7vVUkp9E8AmQ/exec"; 
+
+// 👇 2. SOCIAL MEDIA LINKS (UPDATE THESE)
+const SOCIAL_CONFIG = {
+    facebook:  "https://facebook.com/YOUR_PAGE",
+    github:    "https://github.com/YOUR_PROFILE",
+    linkedin:  "https://linkedin.com/in/YOUR_PROFILE",
+    instagram: "https://instagram.com/YOUR_PROFILE",
+    youtube:   "https://youtube.com/c/YOUR_CHANNEL"
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   initThemeSystem();
   initNavigation();
   initInteractions();
-  initCookieBanner(); // Checks if we need to show the banner
+  initCookieBanner();
+  initSocials();           // 👈 NEW: Renders buttons
+  initAnalyticsTracking(); // 👈 NEW: Tracks everything
 });
 
 /* -------------------------------------------------------------------------- */
@@ -124,7 +135,7 @@ window.handleFormSubmit = function(e) {
         method: "POST",
         mode: "no-cors", 
         headers: {
-            "Content-Type": "text/plain;charset=utf-8", // Crucial for Apps Script
+            "Content-Type": "text/plain;charset=utf-8", 
         },
         body: JSON.stringify(data),
     })
@@ -132,7 +143,7 @@ window.handleFormSubmit = function(e) {
         // Success!
         console.log("🐷 Data sent to Piggy Bank (Sheets)");
         
-        // 4. Analytics 2.0 Event (GTM)
+        // 4. Analytics 2.0 Event (Specific Form Success)
         if(typeof window.dataLayer !== 'undefined') {
             window.dataLayer.push({
                 'event': 'lead_submitted_challenge',
@@ -177,7 +188,6 @@ window.closeApplicationModal = function() {
     }
 };
 
-// Close modal on escape key
 document.addEventListener('keydown', function(event) {
     if (event.key === "Escape") {
         window.closeApplicationModal();
@@ -185,7 +195,7 @@ document.addEventListener('keydown', function(event) {
 });
 
 /* -------------------------------------------------------------------------- */
-/* 6. COOKIE BANNER LOGIC (Added Missing Functions)                           */
+/* 6. COOKIE BANNER LOGIC                                                     */
 /* -------------------------------------------------------------------------- */
 
 function initCookieBanner() {
@@ -195,12 +205,80 @@ function initCookieBanner() {
   }
 }
 
-// You must add onclick="acceptCookies()" to your 'Accept' button in HTML
 window.acceptCookies = function() {
     localStorage.setItem('gg_consent', 'true');
     const banner = document.getElementById('cookie-banner');
     if (banner) banner.classList.add('hidden');
-    
-    // Optional: Trigger GTM consent update here if needed
     console.log("Cookies accepted.");
 };
+
+/* -------------------------------------------------------------------------- */
+/* 7. SOCIAL BUTTONS INJECTOR (NEW)                                           */
+/* -------------------------------------------------------------------------- */
+function initSocials() {
+    const mount = document.getElementById('socials-mount');
+    if (!mount) return;
+
+    // Define the buttons
+    const buttons = [
+        { icon: 'fa-facebook',  link: SOCIAL_CONFIG.facebook,  color: 'hover:text-blue-500' },
+        { icon: 'fa-instagram', link: SOCIAL_CONFIG.instagram, color: 'hover:text-pink-500' },
+        { icon: 'fa-linkedin',  link: SOCIAL_CONFIG.linkedin,  color: 'hover:text-blue-700' },
+        { icon: 'fa-github',    link: SOCIAL_CONFIG.github,    color: 'hover:text-gray-400' },
+        { icon: 'fa-youtube',   link: SOCIAL_CONFIG.youtube,   color: 'hover:text-red-600' }
+    ];
+
+    // Build HTML
+    let html = `<div class="flex gap-6 justify-center items-center text-2xl text-gray-400">`;
+    buttons.forEach(btn => {
+        html += `
+            <a href="${btn.link}" target="_blank" rel="noopener noreferrer" 
+               class="transition-transform hover:-translate-y-1 duration-300 ${btn.color}">
+               <i class="fab ${btn.icon}"></i>
+            </a>
+        `;
+    });
+    html += `</div>`;
+
+    // Inject
+    mount.innerHTML = html;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 8. GLOBAL TRACKING (THE LISTENER)                                          */
+/* -------------------------------------------------------------------------- */
+function initAnalyticsTracking() {
+    const gtag = window.gtag || function(){ (window.dataLayer = window.dataLayer || []).push(arguments); };
+
+    document.addEventListener('click', function(e) {
+        const link = e.target.closest('a');
+        
+        if (link) {
+            const href = link.href.toLowerCase();
+
+            // A. TRACK PHONE CALLS
+            if (href.includes('tel:')) {
+                gtag('event', 'contact', { 'method': 'phone', 'value': 20.00 });
+                console.log('📞 Call Tracked');
+            }
+
+            // B. TRACK SOCIAL CLICKS (Dynamic Check)
+            const socials = ['facebook', 'instagram', 'linkedin', 'github', 'youtube'];
+            const matchedSocial = socials.find(s => href.includes(s));
+            
+            if (matchedSocial) {
+                gtag('event', 'social_click', {
+                    'platform': matchedSocial,
+                    'destination': href
+                });
+                console.log(`📱 ${matchedSocial} Click Tracked`);
+            }
+            
+            // C. TRACK CHECKOUT/START
+            if (href.includes('#order-form') || href.includes('#signup')) {
+                gtag('event', 'begin_checkout', { 'method': 'anchor_link' });
+                console.log('🚀 Checkout Started');
+            }
+        }
+    });
+}
