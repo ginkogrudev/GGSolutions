@@ -98,14 +98,14 @@ window.manageCookies = function() {
 /* 5. FAQ ACCORDION (FIXED LOGIC)                                             */
 /* -------------------------------------------------------------------------- */
 window.toggleFaq = function(element) {
-    // FIX: Look INSIDE the clicked container for the answer
-    // Structure: <div onclick> ... <div class="hidden">Answer</div> </div>
-    const answer = element.querySelector('.hidden') || element.querySelector('[class*="text-gray-400"]'); 
-    const icon = element.querySelector('span');
-    
-    if (!answer) return; // Guard clause
+    // Target the answer div which is inside the clicked element
+    // HTML structure: <div onclick> <header>...</header> <div class="hidden">...</div> </div>
+    // The answer is the last element child
+    const answer = element.lastElementChild;
+    const icon = element.querySelector('span'); // The '+' icon
 
-    // Toggle logic
+    if (!answer) return; // Safety check
+
     if (answer.classList.contains('hidden')) {
         answer.classList.remove('hidden');
         if (icon) {
@@ -120,7 +120,6 @@ window.toggleFaq = function(element) {
         }
     }
 };
-
 /* -------------------------------------------------------------------------- */
 /* 6. PRICING CURRENCY SWITCHER                                               */
 /* -------------------------------------------------------------------------- */

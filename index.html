@@ -33,7 +33,7 @@
         <div class="hidden md:flex items-center gap-8 text-xs font-[800] tracking-[0.15em] uppercase text-[#a1a1aa]">
           <a href="portfolio.html" class="hover:text-white transition-colors">Портфолио</a>
           <a href="#offer" class="hover:text-white transition-colors">Цени</a>
-          <a href="calculator.html" class="text-[#E91E63] transition-colors hover:underline">Free Tools</a>
+          <a href="#free-resources" class="text-[#E91E63] transition-colors hover:underline">Free Tools</a>
         </div>
 
         <button onclick="openContactModal()" class="hidden md:inline-flex bg-[#25D366] hover:bg-[#128C7E] text-white text-xs font-black px-6 py-3 rounded-xl transition shadow-[0_0_20px_rgba(37,211,102,0.3)]">
@@ -50,12 +50,13 @@
       <button onclick="toggleMenu()" class="absolute top-8 right-8 text-white/50 uppercase text-xs tracking-widest p-4">✕</button>
       <a href="portfolio.html" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white">Портфолио</a>
       <a href="#offer" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white">Цени</a>
-      <a href="calculator.html" class="text-3xl font-[900] uppercase italic text-[#E91E63]">Free Tools</a>
+      <a href="#free-resources" class="text-3xl font-[900] uppercase italic text-[#E91E63]">Free Tools</a>
       <button onclick="openContactModal()" class="text-xl font-bold uppercase text-[#25D366] border border-[#25D366] px-8 py-3 rounded-xl">Свържи се</button>
     </div>
 
     <section class="min-h-screen flex items-center justify-center px-6 relative pt-32 pb-20 overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-b from-[#E91E63]/5 to-transparent pointer-events-none"></div>
+      
       <div class="max-w-5xl mx-auto text-center relative z-10">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 animate-fade-in-down">
           <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
@@ -68,23 +69,19 @@
         </h1>
 
         <p class="text-lg md:text-2xl text-[#a1a1aa] font-medium mb-12 max-w-3xl mx-auto leading-relaxed">
-          Взимаме добри бизнеси и ги изритваме в 21 век. <br>
-          <span class="text-white border-b border-[#E91E63]">При Таня:</span> От 0 до #1 в Google за 14 дни.
+          Взимаме добри бизнеси и ги правим доминантни. <br>
+          <span class="text-white border-b border-[#E91E63]">Pri Tanya:</span> От 0 до #1 в Google за 14 дни.
         </p>
 
-        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-          <a href="#offer" class="btn-primary px-10 py-5 text-xl shadow-[0_0_30px_rgba(236,72,153,0.4)] flex items-center gap-3 bg-[#E91E63] hover:bg-[#c2185b] rounded-xl font-black transition-transform hover:scale-105">
-            <span>ВИЖ СИСТЕМИТЕ</span> ⬇️
+        <div class="flex flex-col items-center justify-center">
+          <a href="https://calendar.app.google/wP8mT6d4zxK4PNGx6" target="_blank" class="btn-primary px-12 py-6 text-xl shadow-[0_0_40px_rgba(236,72,153,0.4)] flex items-center gap-3 bg-[#E91E63] hover:bg-[#c2185b] rounded-xl font-black transition-transform hover:scale-105">
+            <span>ЗАПАЗИ ЧАС (FREE)</span> <i class="fas fa-calendar-check"></i>
           </a>
-          <a href="calculator.html" class="px-10 py-5 text-xl font-bold text-white border-2 border-white/10 rounded-xl hover:bg-white/5 transition flex items-center gap-3">
-            <span>🎁</span> EURO CALC
-          </a>
-        </div>
-        
-        <div class="mt-8">
-            <a href="https://classroom.google.com/c/NzkzMzQwNTA1MTA4?cjc=mtj7fb5p" target="_blank" class="text-[10px] text-gray-500 hover:text-[#E91E63] transition font-bold uppercase tracking-widest border-b border-transparent hover:border-[#E91E63]">
-                Влез в Безплатната Академия 🎓
-            </a>
+          <div class="mt-6 flex gap-4 text-[10px] text-gray-500 uppercase tracking-widest font-bold">
+             <span class="flex items-center gap-1"><i class="fas fa-check text-green-500"></i> Безплатен одит</span>
+             <span class="flex items-center gap-1"><i class="fas fa-check text-green-500"></i> Без ангажимент</span>
+          </div>
+          <a href="portfolio.html" class="mt-8 text-xs text-gray-500 hover:text-white border-b border-white/20 pb-1 uppercase tracking-widest">Виж Портфолиото →</a>
         </div>
       </div>
     </section>
@@ -161,7 +158,7 @@
         </div>
     </section>
 
-  <section id="offer" class="py-24 px-6 bg-[#0a0a0a] relative overflow-hidden">
+    <section id="offer" class="py-24 px-6 bg-[#0a0a0a] relative overflow-hidden">
         <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
         <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#E91E63]/10 blur-[120px] rounded-full pointer-events-none"></div>
 
@@ -170,20 +167,21 @@
                 <h2 class="text-4xl md:text-6xl font-[900] uppercase italic text-white mb-6">
                     ИНВЕСТИЦИЯ В <span class="text-[#E91E63]">ДОМИНАЦИЯ</span>
                 </h2>
-                <p class="text-gray-400 text-sm max-w-xl mx-auto">
-                    Цените са изчислени по официалния фиксинг на БНБ: 1 EUR = 1.95583 BGN. <br>
-                    <span class="text-white font-bold border-b border-white/20 pb-0.5">Възможност за разсрочено плащане (Split Payments).</span>
-                </p>
+                <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-8 border border-white/10 inline-block px-4 py-2 rounded-lg bg-black/50">
+                    <p class="mb-1">Фиксинг: 1 EUR = 1.95583 BGN</p>
+                    <p class="text-[#E91E63]">✓ Възможност за разсрочено плащане</p>
+                </div>
                 
-                <div class="mt-8 inline-flex bg-white/5 p-1 rounded-xl border border-white/10">
-                    <button onclick="switchCurrency('BGN')" id="btn-bgn" class="px-6 py-2 rounded-lg bg-[#E91E63] text-white font-bold text-xs uppercase tracking-widest shadow-lg transition">BGN 🇧🇬</button>
-                    <button onclick="switchCurrency('EUR')" id="btn-eur" class="px-6 py-2 rounded-lg text-gray-500 font-bold text-xs uppercase tracking-widest hover:text-white transition">EUR 🇪🇺</button>
+                <div class="block">
+                    <div class="inline-flex bg-white/5 p-1 rounded-xl border border-white/10">
+                        <button onclick="switchCurrency('BGN')" id="btn-bgn" class="px-6 py-2 rounded-lg bg-[#E91E63] text-white font-bold text-xs uppercase tracking-widest shadow-lg transition">BGN 🇧🇬</button>
+                        <button onclick="switchCurrency('EUR')" id="btn-eur" class="px-6 py-2 rounded-lg text-gray-500 font-bold text-xs uppercase tracking-widest hover:text-white transition">EUR 🇪🇺</button>
+                    </div>
                 </div>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-6 items-center">
-                
-                <div class="p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:border-white/20 transition group h-full flex flex-col">
+            <div class="grid md:grid-cols-3 gap-6 items-stretch">
+                <div class="p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:border-white/20 transition group flex flex-col">
                     <h3 class="text-lg font-bold uppercase text-gray-400 mb-2">Rapid Launch</h3>
                     <div class="flex items-baseline gap-1 mb-2">
                         <span class="text-4xl font-[900] text-white price-text" data-bgn="1,950 лв" data-eur="€997">1,950 лв</span>
@@ -197,12 +195,12 @@
                         <li class="flex gap-3"><i class="fas fa-check text-white"></i> Authority Copywriting</li>
                         <li class="flex gap-3 opacity-50"><i class="fas fa-times"></i> <span class="line-through">Google Maps Rank</span></li>
                     </ul>
-                    <button onclick="openContactModal()" class="w-full py-4 rounded-xl border border-white/10 text-white font-bold hover:bg-white hover:text-black transition uppercase tracking-widest text-xs">
+                    <button onclick="openContactModal()" class="w-full py-4 rounded-xl border border-white/10 text-white font-bold hover:bg-white hover:text-black transition uppercase tracking-widest text-xs mt-auto">
                         Старт
                     </button>
                 </div>
 
-                <div class="p-8 rounded-3xl border-2 border-[#E91E63] bg-[#111] relative transform md:-translate-y-4 shadow-[0_0_50px_rgba(233,30,99,0.15)] h-full flex flex-col">
+                <div class="p-8 rounded-3xl border-2 border-[#E91E63] bg-[#111] relative transform md:-translate-y-4 shadow-[0_0_50px_rgba(233,30,99,0.15)] flex flex-col">
                     <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#E91E63] text-white px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
                         Най-Избиран
                     </div>
@@ -218,23 +216,23 @@
                         <p class="text-[10px] text-[#E91E63] font-bold uppercase tracking-widest mb-1">🔥 ГОДИШЕН ПЛАН:</p>
                         <p class="text-sm text-white font-bold leading-tight">
                             Плати 9, вземи 12 месеца.<br>
-                            <span class="text-gray-400 text-xs">+ Priority Edits (Промени на момента)</span>
+                            <span class="text-gray-400 text-[10px]">+ On-Demand Edits (Безплатно)</span>
                         </p>
                     </div>
                     
                     <ul class="space-y-4 text-sm text-white font-medium mb-8 flex-grow">
                         <li class="flex gap-3"><i class="fas fa-check-circle text-[#E91E63]"></i> <strong>Всичко от Launch</strong></li>
-                        <li class="flex gap-3"><i class="fas fa-check-circle text-[#E91E63]"></i> <strong>Google Maps (#1-3 Rank) Там където изилизаш на картата</strong></li>
-                        <li class="flex gap-3"><i class="fas fa-check-circle text-[#E91E63]"></i> <strong>Скриптове как да отговаряте бързо на ревеюта независимо от оценката</strong></li>
+                        <li class="flex gap-3"><i class="fas fa-check-circle text-[#E91E63]"></i> <strong>Google Maps (#1 Rank)</strong></li>
+                        <li class="flex gap-3"><i class="fas fa-check-circle text-[#E91E63]"></i> <strong>Review Automation</strong></li>
                         <li class="flex gap-3"><i class="fas fa-check-circle text-[#E91E63]"></i> <strong>Piggy Calc Лиценз</strong></li>
-                        <li class="flex gap-3"><i class="fas fa-check-circle text-[#E91E63]"></i> <strong>12-Месечен План</strong></li>
+                        <li class="flex gap-3"><i class="fas fa-check-circle text-[#E91E63]"></i> <strong>3-Месечен План</strong></li>
                     </ul>
-                    <button onclick="openContactModal()" class="w-full py-5 rounded-xl bg-[#E91E63] text-white font-[900] hover:bg-[#c2185b] transition uppercase tracking-widest shadow-lg hover:scale-[1.02]">
+                    <button onclick="openContactModal()" class="w-full py-5 rounded-xl bg-[#E91E63] text-white font-[900] hover:bg-[#c2185b] transition uppercase tracking-widest shadow-lg hover:scale-[1.02] mt-auto">
                         ИСКАМ ДОМИНАЦИЯ
                     </button>
                 </div>
 
-                <div class="p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:border-purple-500/30 transition group h-full flex flex-col">
+                <div class="p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:border-purple-500/30 transition group flex flex-col">
                     <h3 class="text-lg font-bold uppercase text-purple-400 mb-2">Revenue</h3>
                     <div class="flex items-baseline gap-1 mb-2">
                         <span class="text-4xl font-[900] text-white price-text" data-bgn="6,500 лв" data-eur="€3,323">6,500 лв</span>
@@ -248,131 +246,118 @@
                         <li class="flex gap-3"><i class="fas fa-check text-purple-400"></i> <strong>Custom Apps (Oborota)</strong></li>
                         <li class="flex gap-3"><i class="fas fa-check text-purple-400"></i> <strong>Sales CRM Setup</strong></li>
                     </ul>
-                    <button onclick="openContactModal()" class="w-full py-4 rounded-xl border border-white/10 text-white font-bold hover:bg-white hover:text-black transition uppercase tracking-widest text-xs">
+                    <button onclick="openContactModal()" class="w-full py-4 rounded-xl border border-white/10 text-white font-bold hover:bg-white hover:text-black transition uppercase tracking-widest text-xs mt-auto">
                         КАНДИДАТСТВАЙ
                     </button>
                 </div>
-
             </div>
 
             <div class="mt-24 max-w-4xl mx-auto">
-                <div class="bg-zinc-900/80 border border-white/10 rounded-[2rem] p-8 md:p-12 relative overflow-hidden">
+                <div class="bg-[#111] border border-white/10 rounded-[2rem] p-8 md:p-12 relative overflow-hidden shadow-2xl">
                     <div class="absolute -right-20 -top-20 w-64 h-64 bg-green-500/10 rounded-full blur-[80px]"></div>
-                    
                     <h4 class="text-2xl font-[900] uppercase italic text-white mb-8 text-center">🧮 МАТЕМАТИКАТА НА УСПЕХА</h4>
-                    
-                    <div class="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-                        <div class="flex-1">
-                            <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Среден Клиент (LTV)</p>
+                    <div class="grid md:grid-cols-3 gap-8 text-center items-center">
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-2">1. Стойност на клиент</p>
                             <p class="text-3xl font-[900] text-white">500 лв</p>
-                            <p class="text-xs text-gray-600 mt-1">Приход от 1 клиент/год.</p>
+                            <p class="text-[10px] text-gray-500 mt-2">(Примерна печалба/год)</p>
                         </div>
-                        
-                        <div class="text-2xl text-gray-600 font-black">×</div>
-                        
-                        <div class="flex-1">
-                            <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Нови Клиенти</p>
-                            <p class="text-3xl font-[900] text-green-400">1 / мес</p>
-                            <p class="text-xs text-gray-600 mt-1">Минимален резултат</p>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-2">2. Нови Клиенти</p>
+                            <p class="text-3xl font-[900] text-green-400">+1 / мес</p>
+                            <p class="text-[10px] text-gray-500 mt-2">(Минимален резултат)</p>
                         </div>
-                        
-                        <div class="text-2xl text-gray-600 font-black">=</div>
-                        
-                        <div class="flex-1 bg-white/5 p-4 rounded-xl border border-white/10">
-                            <p class="text-[10px] text-green-500 uppercase tracking-widest mb-1 font-bold">Годишен Приход</p>
-                            <p class="text-4xl font-[900] text-white">6,000 лв</p>
-                            <p class="text-xs text-gray-400 mt-2">Цена на системата: <span class="text-red-400 line-through">3,850 лв</span></p>
-                            <p class="text-xs font-bold text-green-400 mt-1">PROFIT: 2,150 лв (Още първата година)</p>
+                        <div class="p-4 rounded-xl bg-green-900/20 border border-green-500/30 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-green-500/10 animate-pulse"></div>
+                            <p class="text-[10px] text-green-400 uppercase tracking-widest mb-2 font-bold relative z-10">3. Резултат (Година 1)</p>
+                            <p class="text-4xl font-[900] text-white relative z-10">6,000 лв</p>
+                            <p class="text-[10px] text-gray-400 mt-2 relative z-10">Инвестиция: 3,850 лв | <span class="text-white font-bold">Profit: 2,150 лв</span></p>
                         </div>
                     </div>
-                    
-                    <p class="text-center text-gray-500 text-xs mt-8 italic">
-                        *Това е сметката при само 1 нов клиент на месец. Представете си ако са 5.
+                    <p class="text-center text-gray-500 text-[10px] uppercase tracking-widest mt-8">
+                        *Всичко след 8-мия месец е чиста печалба за вашия бизнес.
                     </p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="mt-16 text-center">
-                <p class="text-gray-500 text-xs uppercase tracking-widest mb-2">Нашата Гаранция</p>
-                <p class="text-white text-lg max-w-2xl mx-auto leading-relaxed">
-                    Ако до 30 дни не видите резултат, връщаме 100% от Setup таксата. <br>
-                    Рискът е изцяло наш. Вие не губите нищо.
-                </p>
+    <section id="free-resources" class="py-16 px-6 border-t border-white/5 bg-[#050505]">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-gray-500 font-black uppercase tracking-[0.2em] mb-8 text-sm">🎁 БЕЗПЛАТНИ РЕСУРСИ</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="calculator.html" class="group block p-6 rounded-2xl border border-white/10 hover:border-[#E91E63]/50 hover:bg-[#E91E63]/5 transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-3xl">🐷</span>
+                        <span class="text-[#E91E63] font-bold text-xs uppercase tracking-widest group-hover:underline">Отвори Инструмента</span>
+                    </div>
+                    <h4 class="text-white font-bold text-lg mb-2 text-left">Piggy Calc (Euro/BGN)</h4>
+                    <p class="text-gray-400 text-sm text-left">Калкулатор за ROI и валутни разлики. Вижте колко губите от такси.</p>
+                </a>
+                
+                <a href="https://classroom.google.com/c/NzkzMzQwNTA1MTA4?cjc=mtj7fb5p" target="_blank" class="group block p-6 rounded-2xl border border-white/10 hover:border-[#E91E63]/50 hover:bg-[#E91E63]/5 transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-3xl">🎓</span>
+                        <span class="text-[#E91E63] font-bold text-xs uppercase tracking-widest group-hover:underline">Влез в Класната Стая</span>
+                    </div>
+                    <h4 class="text-white font-bold text-lg mb-2 text-left">GG Academy (Free)</h4>
+                    <p class="text-gray-400 text-sm text-left">Безплатни уроци как да управлявате дигиталния си филиал.</p>
+                </a>
             </div>
         </div>
     </section>
 
-  <section id="faq" class="py-20 px-6 border-t border-white/5 bg-[#0a0a0a]">
+    <section id="faq" class="py-20 px-6 border-t border-white/5 bg-[#0a0a0a]">
         <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-[900] uppercase italic text-center mb-16 text-white">
-                ЧЕСТО ЗАДАВАНИ <span class="text-[#E91E63]">ВЪПРОСИ</span>
-            </h2>
-            
+            <h2 class="text-3xl font-[900] uppercase italic text-center mb-12 text-white">ВЪПРОСИ</h2>
             <div class="space-y-4">
-                
                 <div class="bg-white/5 rounded-2xl p-6 cursor-pointer hover:bg-white/10 transition group" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="font-bold text-white text-lg">💸 Защо сте по-скъпи от "момчето във Facebook"?</h4>
-                        <span class="text-2xl text-[#E91E63] group-hover:rotate-45 transition duration-300">+</span>
+                    <div class="flex justify-between items-center pointer-events-none"> 
+                        <h4 class="font-bold text-white text-sm md:text-lg">💸 Защо сте по-скъпи от "момчето във Facebook"?</h4>
+                        <span class="text-2xl text-[#E91E63] transition duration-300 transform origin-center">+</span>
                     </div>
-                    <div class="hidden text-gray-400 text-sm mt-4 leading-relaxed border-t border-white/10 pt-4">
+                    <div class="hidden text-gray-400 text-sm mt-4 leading-relaxed border-t border-white/10 pt-4 pointer-events-none">
                         <p class="mb-2"><strong class="text-white">Защото "евтиното" винаги излиза скъпо.</strong></p>
-                        "Момчето" ви прави сайт и изчезва. Ако сайтът не носи клиенти, той е РАЗХОД (Liability). Ние изграждаме <strong>Актив (Asset)</strong>. 
+                        "Момчето" ви прави сайт и изчезва. Ако сайтът не носи клиенти, той е РАЗХОД. Ние изграждаме <strong>Актив</strong>. 
                         Нашата система е създадена да се изплати сама. Разликата е, че ние ви носим пари, а те ви губят време.
                     </div>
                 </div>
-
                 <div class="bg-white/5 rounded-2xl p-6 cursor-pointer hover:bg-white/10 transition group" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="font-bold text-white text-lg">🛡️ Какво става, ако не проработи?</h4>
-                        <span class="text-2xl text-[#E91E63] group-hover:rotate-45 transition duration-300">+</span>
+                    <div class="flex justify-between items-center pointer-events-none">
+                        <h4 class="font-bold text-white text-sm md:text-lg">🛡️ Какво става, ако не проработи?</h4>
+                        <span class="text-2xl text-[#E91E63] transition duration-300 transform origin-center">+</span>
                     </div>
-                    <div class="hidden text-gray-400 text-sm mt-4 leading-relaxed border-t border-white/10 pt-4">
+                    <div class="hidden text-gray-400 text-sm mt-4 leading-relaxed border-t border-white/10 pt-4 pointer-events-none">
                         <p class="mb-2"><strong class="text-white">Вие не плащате нищо.</strong></p>
                         Толкова сме уверени в системата си. Имате 30-дневна "Pay for Performance" гаранция. 
-                        Ако до 30 дни не видите резултат или просто не ви хареса, връщаме 100% от Setup таксата. Рискът е изцяло мой, не ваш.
+                        Ако до 30 дни не видите резултат или просто не ви хареса, връщаме 100% от Началната таксата.
                     </div>
                 </div>
-
                 <div class="bg-white/5 rounded-2xl p-6 cursor-pointer hover:bg-white/10 transition group" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="font-bold text-white text-lg">👨‍💻 Голяма агенция ли сте?</h4>
-                        <span class="text-2xl text-[#E91E63] group-hover:rotate-45 transition duration-300">+</span>
+                    <div class="flex justify-between items-center pointer-events-none">
+                        <h4 class="font-bold text-white text-sm md:text-lg">👨‍💻 Голяма агенция ли сте?</h4>
+                        <span class="text-2xl text-[#E91E63] transition duration-300 transform origin-center">+</span>
                     </div>
-                    <div class="hidden text-gray-400 text-sm mt-4 leading-relaxed border-t border-white/10 pt-4">
+                    <div class="hidden text-gray-400 text-sm mt-4 leading-relaxed border-t border-white/10 pt-4 pointer-events-none">
                         <p class="mb-2"><strong class="text-white">По-добре. Ние сме "One Man Army".</strong></p>
                         В големите агенции плащате за офиси и ви прехвърлят на стажанти. Тук говорите директно с архитекта на системата - с мен. 
-                        Получавате личния ми телефон, директен достъп във Viber и реакции на момента. Без секретарки, без "ще ви върнем обаждане". Това е VIP обслужване.
+                        Получавате личния ми телефон, директен достъп във Viber и реакции на момента.
                     </div>
                 </div>
-
                 <div class="bg-white/5 rounded-2xl p-6 cursor-pointer hover:bg-white/10 transition group" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="font-bold text-white text-lg">📅 Защо да плащам всеки месец?</h4>
-                        <span class="text-2xl text-[#E91E63] group-hover:rotate-45 transition duration-300">+</span>
+                    <div class="flex justify-between items-center pointer-events-none">
+                        <h4 class="font-bold text-white text-sm md:text-lg">📅 Защо да плащам всеки месец?</h4>
+                        <span class="text-2xl text-[#E91E63] transition duration-300 transform origin-center">+</span>
                     </div>
-                    <div class="hidden text-gray-400 text-sm mt-4 leading-relaxed border-t border-white/10 pt-4">
+                    <div class="hidden text-gray-400 text-sm mt-4 leading-relaxed border-t border-white/10 pt-4 pointer-events-none">
                         <p class="mb-2"><strong class="text-white">Защото конкуренцията не спи.</strong></p>
-                        Google променя правилата всеки месец. Ако спрете да се адаптирате, потъвате назад. Месечната такса е вашата застраховка, че сте винаги #1, винаги онлайн и винаги продавате. Плюс това, хостингът, домейните и техническата поддръжка са наша грижа.
+                        Google променя правилата всеки месец. Ако спрете да се адаптирате, потъвате назад. Месечната такса е вашата застраховка, че сте винаги #1. Плюс това, хостингът и техническата поддръжка са наша грижа.
                     </div>
                 </div>
-
-                <div class="bg-white/5 rounded-2xl p-6 cursor-pointer hover:bg-white/10 transition group" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="font-bold text-white text-lg">⏳ Нямам време да се занимавам...</h4>
-                        <span class="text-2xl text-[#E91E63] group-hover:rotate-45 transition duration-300">+</span>
-                    </div>
-                    <div class="hidden text-gray-400 text-sm mt-4 leading-relaxed border-t border-white/10 pt-4">
-                        <p class="mb-2"><strong class="text-white">Точно затова сме тук.</strong></p>
-                        Ние не искаме времето ви. Искаме да ви го освободим. Вие си гледате бизнеса, ние се грижим телефоните да звънят. Вашата единствена работа е да кажете "Да" и да ни изпратите снимки. Ние поемаме останалото.
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    
     <section class="py-24 px-6 text-center">
         <h2 class="text-4xl md:text-5xl font-[900] uppercase italic text-white mb-8">ГОТОВ ЛИ СИ?</h2>
         <a href="https://calendar.app.google/wP8mT6d4zxK4PNGx6" target="_blank" class="btn-primary px-12 py-6 text-xl shadow-[0_0_40px_rgba(236,72,153,0.4)] inline-flex items-center gap-4 bg-[#E91E63] hover:bg-[#c2185b] rounded-xl font-black text-white transition hover:scale-105">
@@ -380,32 +365,68 @@
         </a>
     </section>
 
-    <section class="py-20 px-6 bg-gradient-to-b from-black to-[#111]">
-        <div class="max-w-4xl mx-auto bg-zinc-900 rounded-[2.5rem] border border-white/10 p-10 flex flex-col md:flex-row items-center gap-10">
-            <div class="w-full md:w-2/3">
-                <div class="inline-block text-green-500 border border-green-500/20 px-3 py-1 rounded-full text-[10px] font-black uppercase mb-4">Partner Program</div>
-                <h3 class="text-3xl font-[900] uppercase italic text-white mb-2">ПРЕПОРЪЧАЙ И СПЕЧЕЛИ</h3>
-                <p class="text-gray-400 text-sm">Познаваш ли собственик на бизнес? Свържи ни.</p>
+    <footer class="bg-[#050505] border-t border-white/10 pt-20 pb-10 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="flex items-center gap-3 mb-6">
+                        <span class="text-3xl">🐷</span>
+                        <span class="font-[900] uppercase text-xl text-white">GG <span class="text-[#E91E63]">Solutions</span></span>
+                    </a>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        Ние не продаваме уебсайтове. Ние изграждаме дигитални продавачи, които носят пари на бизнеса ви 24/7.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://facebook.com/ginkogrudev" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-[#E91E63] transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/ginkogrudev" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-[#E91E63] transition"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/in/ginkogrudev" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-[#E91E63] transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Навигация</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-[#E91E63] transition">Начало</a></li>
+                        <li><a href="portfolio.html" class="hover:text-[#E91E63] transition">Портфолио</a></li>
+                        <li><a href="#offer" class="hover:text-[#E91E63] transition">Цени & Пакети</a></li>
+                        <li><a href="calculator.html" class="hover:text-[#E91E63] transition">Безплатни Инструменти</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Ресурси</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Често Задавани Въпроси</a></li>
+                        <li><a href="#" class="hover:text-white transition">Общи Условия</a></li>
+                        <li><a href="#" class="hover:text-white transition">Политика за Поверителност</a></li>
+                        <li><a href="#" class="hover:text-white transition">Бисквитки</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Контакти</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-[#E91E63]"></i>
+                            <span>Ямбол, България<br></span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-[#E91E63]"></i>
+                            <span>+359 89 563 4188</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-[#E91E63]"></i>
+                            <span>ginko@ggsolutions.bg</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="w-full md:w-1/3 text-center">
-                <div class="text-4xl font-[900] text-white mb-1">300 лв</div>
-                <p class="text-[10px] text-gray-500 uppercase font-bold mb-4">Кеш за теб веднага</p>
-                <button onclick="openContactModal()" class="block w-full py-3 bg-white text-black font-[900] uppercase rounded-xl hover:bg-gray-200 transition text-sm">СТАНИ ПАРТНЬОР</button>
+
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[10px] text-gray-600 uppercase tracking-[0.2em]">© 2026 GG SOLUTIONS. ALL RIGHTS RESERVED.</p>
+                <p class="text-[10px] text-gray-700 uppercase tracking-widest">Designed by Ginko Grudev</p>
             </div>
         </div>
-    </section>
-
-
-    <footer class="px-6 py-12 bg-black text-center border-t border-white/5">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-xl font-[900] uppercase mb-4">GG <span class="text-[#E91E63]">SOLUTIONS</span></div>
-        <div class="flex justify-center gap-8 text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase mb-8">
-          <a href="https://github.com/ginkogrudev" target="_blank" class="hover:text-white transition">GitHub</a>
-          <a href="mailto:contact@ggsolutions.bg" class="hover:text-white transition">Email</a>
-          <a href="calculator.html" class="hover:text-white transition">Tools</a>
-        </div>
-        <p class="text-[10px] text-gray-700 uppercase tracking-[0.4em]">© 2026 YAMBOL, BULGARIA</p>
-      </div>
     </footer>
 
     <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[200] hidden bg-[#141414] border-t border-[#E91E63]/30 p-6 shadow-2xl">
@@ -427,19 +448,19 @@
             <h2 class="text-3xl font-[900] uppercase italic text-white mb-2">ДАЙ ДА ДЕЙСТВАМЕ</h2>
             <p class="text-gray-400 text-sm mb-8">Избери как ти е най-удобно:</p>
             <div class="space-y-4">
-                <a href="tel:+359899936646" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white hover:text-black transition group">
+                <a href="tel:+359895634188" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white hover:text-black transition group">
                     <i class="fas fa-phone text-xl group-hover:scale-110 transition"></i>
                     <span class="font-bold uppercase tracking-widest">Обади се</span>
                 </a>
-                <a href="viber://chat?number=%2B359899936646" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-[#7360f2]/20 border border-[#7360f2]/50 text-[#7360f2] hover:bg-[#7360f2] hover:text-white transition group">
+                <a href="viber://chat?number=%2B359895634188" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-[#7360f2]/20 border border-[#7360f2]/50 text-[#7360f2] hover:bg-[#7360f2] hover:text-white transition group">
                     <i class="fab fa-viber text-2xl group-hover:scale-110 transition"></i>
                     <span class="font-bold uppercase tracking-widest">Viber</span>
                 </a>
-                <a href="https://wa.me/359899936646" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-[#25D366]/20 border border-[#25D366]/50 text-[#25D366] hover:bg-[#25D366] hover:text-black transition group">
+                <a href="https://wa.me/359895634188" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-[#25D366]/20 border border-[#25D366]/50 text-[#25D366] hover:bg-[#25D366] hover:text-black transition group">
                     <i class="fab fa-whatsapp text-2xl group-hover:scale-110 transition"></i>
                     <span class="font-bold uppercase tracking-widest">WhatsApp</span>
                 </a>
-                <a href="mailto:contact@ggsolutions.bg" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#E91E63] hover:text-[#E91E63] transition group">
+                <a href="mailto:gino@ggsolutions.bg" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#E91E63] hover:text-[#E91E63] transition group">
                     <i class="far fa-envelope text-xl group-hover:scale-110 transition"></i>
                     <span class="font-bold uppercase tracking-widest">Email</span>
                 </a>
@@ -449,32 +470,5 @@
     </div>
 
     <script src="app.js"></script>
-    
-    <script>
-    function switchCurrency(curr) {
-        const prices = document.querySelectorAll('.price-text');
-        const subs = document.querySelectorAll('.price-sub');
-        const btnBgn = document.getElementById('btn-bgn');
-        const btnEur = document.getElementById('btn-eur');
-
-        if(curr === 'BGN') {
-            btnBgn.classList.add('bg-[#E91E63]', 'text-white');
-            btnBgn.classList.remove('text-gray-500');
-            btnEur.classList.remove('bg-[#E91E63]', 'text-white');
-            btnEur.classList.add('text-gray-500');
-            
-            prices.forEach(el => el.innerText = el.getAttribute('data-bgn'));
-            subs.forEach(el => el.innerText = el.getAttribute('data-bgn'));
-        } else {
-            btnEur.classList.add('bg-[#E91E63]', 'text-white');
-            btnEur.classList.remove('text-gray-500');
-            btnBgn.classList.remove('bg-[#E91E63]', 'text-white');
-            btnBgn.classList.add('text-gray-500');
-            
-            prices.forEach(el => el.innerText = el.getAttribute('data-eur'));
-            subs.forEach(el => el.innerText = el.getAttribute('data-eur'));
-        }
-    }
-    </script>
   </body>
 </html>
