@@ -1,4 +1,4 @@
-// GG SOLUTIONS - CORE ENGINE 2026 (CLEAN SWEEP VERSION)
+// GG SOLUTIONS - CORE ENGINE 2026 (FINAL PRODUCTION)
 
 document.addEventListener('DOMContentLoaded', () => {
     initThemeSystem();
@@ -95,23 +95,62 @@ window.manageCookies = function() {
 };
 
 /* -------------------------------------------------------------------------- */
-/* 5. FAQ ACCORDION                                                           */
+/* 5. FAQ ACCORDION (FIXED LOGIC)                                             */
 /* -------------------------------------------------------------------------- */
 window.toggleFaq = function(element) {
-    const answer = element.nextElementSibling;
-    const icon = element.querySelector('span:last-child');
+    // FIX: Look INSIDE the clicked container for the answer
+    // Structure: <div onclick> ... <div class="hidden">Answer</div> </div>
+    const answer = element.querySelector('.hidden') || element.querySelector('[class*="text-gray-400"]'); 
+    const icon = element.querySelector('span');
     
+    if (!answer) return; // Guard clause
+
+    // Toggle logic
     if (answer.classList.contains('hidden')) {
         answer.classList.remove('hidden');
-        icon.innerText = '-';
+        if (icon) {
+            icon.innerText = '-';
+            icon.classList.add('text-[#E91E63]');
+        }
     } else {
         answer.classList.add('hidden');
-        icon.innerText = '+';
+        if (icon) {
+            icon.innerText = '+';
+            icon.classList.remove('text-[#E91E63]');
+        }
     }
 };
 
 /* -------------------------------------------------------------------------- */
-/* 6. INTERACTIONS & ANALYTICS                                                */
+/* 6. PRICING CURRENCY SWITCHER                                               */
+/* -------------------------------------------------------------------------- */
+window.switchCurrency = function(curr) {
+    const prices = document.querySelectorAll('.price-text');
+    const subs = document.querySelectorAll('.price-sub');
+    const btnBgn = document.getElementById('btn-bgn');
+    const btnEur = document.getElementById('btn-eur');
+
+    if(curr === 'BGN') {
+        btnBgn.classList.add('bg-[#E91E63]', 'text-white');
+        btnBgn.classList.remove('text-gray-500');
+        btnEur.classList.remove('bg-[#E91E63]', 'text-white');
+        btnEur.classList.add('text-gray-500');
+        
+        prices.forEach(el => el.innerText = el.getAttribute('data-bgn'));
+        subs.forEach(el => el.innerText = el.getAttribute('data-bgn'));
+    } else {
+        btnEur.classList.add('bg-[#E91E63]', 'text-white');
+        btnEur.classList.remove('text-gray-500');
+        btnBgn.classList.remove('bg-[#E91E63]', 'text-white');
+        btnBgn.classList.add('text-gray-500');
+        
+        prices.forEach(el => el.innerText = el.getAttribute('data-eur'));
+        subs.forEach(el => el.innerText = el.getAttribute('data-eur'));
+    }
+};
+
+/* -------------------------------------------------------------------------- */
+/* 7. INTERACTIONS & ANALYTICS                                                */
 /* -------------------------------------------------------------------------- */
 function initInteractions() {
     // Vibrate on mobile clicks
