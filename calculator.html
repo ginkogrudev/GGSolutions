@@ -3,250 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Euro Calc | GG Solutions</title>
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐷</text></svg>"
-    />
-    
+    <title>Free Tools | Piggy Calc</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐷</text></svg>" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSSHL2D8TJ"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css" />
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
-      gtag('consent', 'default', {
-        analytics_storage: 'denied',
-        ad_storage: 'denied',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied',
-        wait_for_update: 500,
-      });
-      gtag('js', new Date());
-      gtag('config', 'G-GSSHL2D8TJ');
+      gtag('consent', 'default', { 'ad_storage': 'denied', 'analytics_storage': 'denied', 'wait_for_update': 500 });
     </script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
-    
-    <link rel="stylesheet" href="style.css" />
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NHVVXHGB');</script>
   </head>
-  <body class="antialiased selection:bg-pink selection:text-white">
+  <body class="antialiased bg-black text-white selection:bg-[#E91E63] selection:text-white">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHVVXHGB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10 transition-all duration-300">
-      <div class="max-w-7xl mx-auto px-6 nav-container justify-between">
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="index.html" class="flex items-center gap-3 group">
           <span class="text-3xl group-hover:scale-110 transition-transform">🐷</span>
-          <span class="font-[900] uppercase tracking-tighter text-xl text-white group-hover:text-pink transition-colors">
-            GG <span class="text-pink">Solutions</span>
-          </span>
+          <span class="font-[900] uppercase text-xl text-white group-hover:text-[#E91E63] transition-colors">GG <span class="text-[#E91E63]">Solutions</span></span>
         </a>
         
-        <div class="hidden md:flex items-center gap-8 text-xs font-[800] tracking-[0.15em] uppercase text-gray-400">
-          <a href="index.html" class="hover:text-white transition-colors">Начало</a>
-          <a href="calculator.html" class="text-pink transition-colors">Калкулатор</a>
-          <a href="30DayChallenge.html" class="hover:text-pink transition-colors flex items-center gap-2">
-            30-Day Challenge
-            <span class="bg-pink text-white text-[9px] px-2 py-0.5 rounded-full animate-pulse">LIVE</span>
-          </a>
+        <div class="hidden md:flex items-center gap-8 text-xs font-[800] tracking-[0.15em] uppercase text-[#a1a1aa]">
+          <a href="portfolio.html" class="hover:text-white transition-colors">Портфолио</a>
+          <a href="index.html#offer" class="hover:text-white transition-colors">Цени</a>
+          <a href="calculator.html" class="text-[#E91E63] transition-colors">Free Tools</a>
         </div>
 
-        <button onclick="toggleMenu()" class="md:hidden text-white hover:text-pink transition">
-          <i class="fas fa-bars text-2xl"></i>
-        </button>
+        <a href="index.html" class="text-xs font-bold uppercase text-gray-400 hover:text-white transition md:hidden">← Назад</a>
       </div>
     </nav>
 
-    <div id="mobile-menu" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8">
-      <button onclick="toggleMenu()" class="absolute top-8 right-8 text-white/50 uppercase text-xs tracking-widest p-4">
-        <i class="fas fa-times text-2xl"></i>
-      </button>
-      <a href="index.html" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white">Начало</a>
-      <a href="calculator.html" class="text-3xl font-[900] uppercase italic text-pink">Калкулатор</a>
-      <a href="30DayChallenge.html" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white">Challenge</a>
+    <section class="min-h-screen flex items-center justify-center px-6 pt-32 pb-20">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block border border-[#E91E63] px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-[#E91E63] mb-6">Free Tool</div>
+            <h1 class="text-5xl font-[900] uppercase italic text-white mb-8">PIGGY <span class="text-[#E91E63]">CALC</span></h1>
+            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Инструментът, който спасява касиерите от грешки при преминаването към Еврото. Напълно безплатен.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-20">
+                <a href="https://ginkogrudev.github.io/EuroCalculator/" class="btn-primary px-8 py-4 bg-[#E91E63] rounded-xl font-bold text-white hover:bg-[#c2185b] transition shadow-lg flex items-center gap-2 justify-center">
+                    <i class="fas fa-globe"></i> ОТВОРИ WEB ВЕРСИЯ
+                </a>
+                <a href="https://github.com/ginkogrudev/EuroCalculator/releases/tag/v1.0.1" class="px-8 py-4 border border-white/20 rounded-xl font-bold text-white hover:bg-white/10 transition flex items-center gap-2 justify-center">
+                    <i class="fab fa-android"></i> СВАЛИ ЗА ANDROID
+                </a>
+            </div>
+
+            <div class="relative group inline-block">
+                <div class="absolute -inset-1 bg-gradient-to-r from-[#E91E63] to-purple-600 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                <img src="imgs/DemoCalc.png" class="relative rounded-[2rem] border-4 border-zinc-900 mx-auto w-64 md:w-80 transition duration-500 shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[200] hidden bg-[#141414] border-t border-[#E91E63]/30 p-6 shadow-2xl">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-center md:text-left max-w-2xl">
+          <p class="text-white font-bold text-sm mb-1">🍪 Бисквитки за Растеж</p>
+          <p class="text-xs text-gray-400">Използваме анализи за по-добро изживяване.</p>
+        </div>
+        <div class="flex gap-3">
+          <button onclick="manageCookies()" class="text-xs font-bold text-gray-400 hover:text-white border border-gray-600 px-4 py-3 rounded-lg transition">НАСТРОЙКИ</button>
+          <button onclick="acceptAllCookies()" class="bg-[#E91E63] text-white text-xs font-black px-6 py-3 rounded-lg hover:scale-105 transition shadow-lg">ПРИЕМАМ</button>
+        </div>
+      </div>
     </div>
 
-    <section class="relative min-h-[90vh] flex items-center justify-center px-6 pt-32 pb-16 mx-auto overflow-hidden">
-      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16 max-w-6xl w-full">
-        
-        <div class="w-full md:w-2/5 flex justify-center order-1 md:order-2">
-          <div class="relative group">
-            <div class="absolute inset-0 bg-[#E91E63] blur-[80px] opacity-20 rounded-full animate-pulse"></div>
-            
-            <video 
-                poster="imgs/DemoCalc.png" 
-                autoplay 
-                loop 
-                muted 
-                playsinline 
-                class="relative w-full max-w-[240px] md:max-w-[380px] rounded-[2.5rem] border-[4px] border-zinc-800 shadow-[0_0_40px_rgba(233,30,99,0.2)] transform transition duration-500 hover:scale-105"
-            >
-                <source src="vids/demo.mp4" type="video/mp4">
-                <img src="imgs/DemoCalc.png" alt="Piggy Calc Demo">
-            </video>
-          </div>
-        </div>
-
-        <div class="w-full md:w-3/5 space-y-8 text-center md:text-left order-2 md:order-1">
-          <h1 class="text-[11vw] sm:text-[9vw] md:text-8xl font-black uppercase italic leading-[0.9] md:leading-[0.85] tracking-tighter">
-            <span class="text-white">СМЯТАЙ ЛЕВА</span><br />
-            <span class="text-white">ИЛИ ЕВРО С</span>
-            <br />
-            <span class="text-pink drop-shadow-neon">РОЗОВИЯ</span><br />
-            <span class="text-white">КАЛКУЛАТОР.</span>
-          </h1>
-
-          <div class="flex flex-col md:flex-row md:flex-wrap justify-center md:justify-start gap-y-3 md:gap-x-6 font-black text-lg md:text-xl uppercase tracking-widest italic border-t border-white/10 pt-6">
-             <p class="flex items-center justify-center md:justify-start gap-2 text-gray-400">
-               <i class="fas fa-check text-pink"></i> Без Драми
-             </p>
-             <p class="flex items-center justify-center md:justify-start gap-2 text-gray-400">
-               <i class="fas fa-check text-pink"></i> Без Измами
-             </p>
-             <p class="flex items-center justify-center md:justify-start gap-2 text-gray-400">
-               <i class="fas fa-check text-pink"></i> Без Реклами
-             </p>
-          </div>
-
-          <div class="flex flex-col sm:flex-row gap-6 pt-4 justify-center md:justify-start">
-            <a
-              href="https://github.com/ginkogrudev/EuroCalculator/releases/tag/v1.0.1"
-              class="btn-primary px-10 py-5 text-xl min-w-[260px] flex items-center justify-center gap-3"
-              onclick="gtag('event', 'conversion', { 'event_category': 'Download', 'event_label': 'APK Download Hero' });"
-            >
-              <i class="fab fa-android text-2xl"></i> ИЗТЕГЛИ APP
-            </a>
-
-            <a
-              href="https://ginkogrudev.github.io/EuroCalculator/"
-              class="btn-secondary px-10 py-5 text-xl min-w-[260px] flex items-center justify-center gap-3"
-              onclick="gtag('event', 'conversion', { 'event_category': 'Engagement', 'event_label': 'Live Demo Web Hero' });"
-            >
-              <i class="fas fa-globe text-2xl"></i> ОНЛАЙН ВЕРСИЯ
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="max-w-6xl px-6 py-20 mx-auto border-t border-white/5">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter">
-          ТВОЯТ КАЛКУЛАТОР. <span class="text-pink drop-shadow-neon">ТВОИТЕ ПРАВИЛА.</span>
-        </h2>
-        <p class="text-gray-400 mt-4 text-xl max-w-2xl mx-auto">
-          Един инструмент, който се адаптира към теб. Смени режима с едно докосване.
-        </p>
-      </div>
-
-      <div class="glass p-1 rounded-[3rem] border border-white/10 hover:border-pink/50 transition-colors duration-500 relative overflow-hidden">
-        <div class="absolute top-0 right-0 p-32 bg-[#E91E63] blur-[120px] opacity-20 rounded-full"></div>
-        
-        <div class="p-8 md:p-12 grid md:grid-cols-2 gap-12 items-center relative z-10">
-            <div>
-                <h3 class="text-3xl font-black uppercase italic mb-6">ПЪЛНА СВОБОДА</h3>
-                <ul class="space-y-6">
-                    <li class="flex items-start gap-4">
-                        <div class="bg-pink/20 p-3 rounded-xl text-pink"><i class="fas fa-sync-alt text-xl"></i></div>
-                        <div>
-                            <strong class="block text-white text-lg uppercase font-bold">Два Режима</strong>
-                            <p class="text-gray-400 text-sm">Превключвай мигновено между "Клиент" (за пазаруване) и "Бизнес" (за работа).</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-4">
-                        <div class="bg-blue-500/20 p-3 rounded-xl text-blue-400"><i class="fas fa-palette text-xl"></i></div>
-                        <div>
-                            <strong class="block text-white text-lg uppercase font-bold">5+ Цветови Теми</strong>
-                            <p class="text-gray-400 text-sm">Омръзна ти розовото? Смени на Синьо, Зелено или Оранжево.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="flex flex-col items-center justify-center gap-6 bg-white/5 p-8 rounded-3xl border border-white/5">
-                <div class="flex -space-x-4 mb-2">
-                    <div class="w-16 h-16 rounded-full border-4 border-[#1a1a1a] bg-[#E91E63] relative z-40 shadow-xl"></div>
-                    <div class="w-16 h-16 rounded-full border-4 border-[#1a1a1a] bg-blue-500 relative z-30 shadow-xl"></div>
-                    <div class="w-16 h-16 rounded-full border-4 border-[#1a1a1a] bg-emerald-500 relative z-20 shadow-xl"></div>
-                    <div class="w-16 h-16 rounded-full border-4 border-[#1a1a1a] bg-orange-500 relative z-10 shadow-xl"></div>
-                </div>
-                <div class="text-xs font-black uppercase tracking-[0.2em] text-gray-500">
-                    <i class="fas fa-fingerprint mr-2"></i> Персонализирай изживяването
-                </div>
-            </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="screenshots" class="max-w-7xl px-6 py-20 mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-black uppercase italic text-gray-700">ГАЛЕРИЯ</h2>
-        </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="aspect-[9/16] bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center text-gray-600 overflow-hidden transition hover:border-pink/50 group">
-                <i class="fas fa-image text-4xl group-hover:text-pink transition"></i>
-            </div>
-            <div class="aspect-[9/16] bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center text-gray-600 overflow-hidden transition hover:border-pink/50 group">
-                <i class="fas fa-image text-4xl group-hover:text-pink transition"></i>
-            </div>
-            <div class="aspect-[9/16] bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center text-gray-600 overflow-hidden transition hover:border-pink/50 group">
-                <i class="fas fa-image text-4xl group-hover:text-pink transition"></i>
-            </div>
-            <div class="aspect-[9/16] bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center text-gray-600 overflow-hidden transition hover:border-pink/50 group">
-                <i class="fas fa-image text-4xl group-hover:text-pink transition"></i>
-            </div>
-        </div>
-    </section>
-
-    <section class="max-w-6xl px-6 py-24 mx-auto border-t border-white/5">
-        <div class="glass p-12 rounded-[3rem] border border-white/10 text-center relative overflow-hidden">
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-pink blur-[100px] opacity-10 w-full h-full pointer-events-none"></div>
-            
-            <h2 class="text-3xl md:text-5xl font-black uppercase italic mb-8 relative z-10">
-                СПРИ ДА ГУБИШ <span class="text-pink drop-shadow-neon">ВРЕМЕ.</span>
-            </h2>
-            <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto relative z-10">
-                Свали приложението сега или го пробвай директно в браузъра. Безплатно завинаги.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
-                <a
-                  href="https://github.com/ginkogrudev/EuroCalculator/releases/tag/v1.0.1"
-                  class="btn-primary px-12 py-5 text-xl shadow-[0_0_30px_rgba(233,30,99,0.4)]"
-                  onclick="gtag('event', 'conversion', { 'event_category': 'Download', 'event_label': 'APK Download Bottom' });"
-                >
-                  <i class="fab fa-android mr-3"></i> СВАЛИ APK
-                </a>
-
-                <a
-                  href="https://ginkogrudev.github.io/EuroCalculator/"
-                  class="btn-secondary px-12 py-5 text-xl border-white/20 bg-black/40 hover:bg-pink/20"
-                  onclick="gtag('event', 'conversion', { 'event_category': 'Engagement', 'event_label': 'Live Demo Web Bottom' });"
-                >
-                  <i class="fas fa-globe mr-3"></i> WEB ВЕРСИЯ
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="px-6 py-20 border-t border-white/5 bg-black/20">
-      <div class="max-w-6xl mx-auto text-center md:text-left">
-        <div class="grid items-center grid-cols-1 gap-12 mb-16 md:grid-cols-2">
-          <div>
-            <div class="mb-4 text-2xl font-black uppercase">GG <span class="text-pink">SOLUTIONS</span></div>
-            <p class="text-xs tracking-[0.3em] text-gray-500 uppercase mb-6">
-              Дигитални инструменти за българския бизнес
-            </p>
-            <a href="https://revolut.me/ginkogrudev" target="_blank" class="btn-secondary !py-3 !px-6 !text-xs !border-white/10 hover:!border-pink">
-              <span>ПОЧЕРПИ ЕДНА БИРА 🍺</span>
-            </a>
-          </div>
-          <div class="flex flex-col items-center gap-6 md:items-end">
-            <div class="flex gap-8 text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase">
-              <a href="https://github.com/ginkogrudev/GGSolutions" class="transition hover:text-pink">Source Code</a>
-              <a href="mailto:contact@ggsolutions.bg" class="transition hover:text-pink">Контакт</a>
-            </div>
-            <p class="text-[10px] text-gray-700 uppercase tracking-[0.4em]">© 2026 GG SOLUTIONS</p>
-          </div>
-        </div>
+    <script src="app.js"></script>
+  </body>
+</html>
