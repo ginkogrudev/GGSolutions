@@ -186,12 +186,3 @@ body::before {
 .animate-fade-in-down {
   animation: fadeInDown 0.8s ease-out forwards;
 }
-
-/* ... existing styles ... */
-
-/* UTILITY CLASSES */
-.hidden {
-  display: none !important;
-}
-
-/* ... rest of your styles ... */
