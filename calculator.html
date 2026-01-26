@@ -197,7 +197,7 @@
         </div>
     </section>
 
-    <footer class="bg-[#050505] border-t border-white/10 pt-20 pb-10 px-6">
+   <footer class="bg-[#050505] border-t border-white/10 pt-20 pb-10 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-12 mb-16 text-center md:text-left">
                 <div class="md:col-span-1">
@@ -205,59 +205,83 @@
                         <span class="text-3xl">🐷</span>
                         <span class="font-[900] uppercase text-xl text-white">GG <span class="text-[#E91E63]">Solutions</span></span>
                     </a>
-                    <p class="text-white/60 text-sm leading-relaxed mb-6 font-medium">
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
                         Ние не продаваме уебсайтове. Ние изграждаме дигитални активи.
                     </p>
-                    <div class="flex justify-center md:justify-start gap-4">
-                        <a href="https://facebook.com/ginkogrudev" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-[#E91E63] transition"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://instagram.com/ginkogrudev" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-[#E91E63] transition"><i class="fab fa-instagram"></i></a>
-                        <a href="https://linkedin.com/in/ginkogrudev" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-[#E91E63] transition"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Навигация</h4>
-                    <ul class="space-y-4 text-sm text-white/60 font-medium">
-                        <li><a href="index.html" class="hover:text-[#E91E63] transition">Начало</a></li>
-                        <li><a href="portfolio.html" class="hover:text-[#E91E63] transition">Портфолио</a></li>
-                        <li><a href="index.html#offer" class="hover:text-[#E91E63] transition">Цени & Пакети</a></li>
-                        <li><a href="calculator.html" class="hover:text-[#E91E63] transition">Tools</a></li>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition">Начало</a></li>
+                        <li><a href="portfolio.html" class="hover:text-white transition">Портфолио</a></li>
+                        <li><a href="index.html#offer" class="hover:text-white transition">Цени</a></li>
+                        <li><a href="calculator.html" class="hover:text-white transition">Tools</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Ресурси</h4>
-                    <ul class="space-y-4 text-sm text-white/60 font-medium">
-                        <li><a href="#" class="hover:text-white">Често Задавани Въпроси</a></li>
-                        <li><a href="#" class="hover:text-white">Общи Условия</a></li>
-                        <li><a href="#" class="hover:text-white">Поверителност</a></li>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Често Задавани Въпроси</a></li>
+                        <li><a href="#" class="hover:text-white transition">Общи Условия</a></li>
+                        <li><a href="#" class="hover:text-white transition">Поверителност</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Контакти</h4>
-                    <ul class="space-y-4 text-sm text-white/60 font-medium">
-                        <li class="flex items-start justify-center md:justify-start gap-3">
-                            <i class="fas fa-map-marker-alt mt-1 text-[#E91E63]"></i>
-                            <span>Ямбол, България</span>
-                        </li>
-                        <li class="flex items-center justify-center md:justify-start gap-3">
-                            <i class="fas fa-phone text-[#E91E63]"></i>
-                            <span>+359 89 563 4188</span>
-                        </li>
-                        <li class="flex items-center justify-center md:justify-start gap-3">
-                            <i class="fas fa-envelope text-[#E91E63]"></i>
-                            <span>ginko@ginkogrudev.com</span>
-                        </li>
-                    </ul>
+                    <div class="flex flex-col gap-3 items-center md:items-start">
+                        <a href="tel:+359895634188" class="flex items-center gap-3 px-4 py-2 rounded-lg bg-white/5 hover:bg-[#E91E63] hover:text-white transition group border border-white/10 w-fit">
+                            <i class="fas fa-phone text-[#E91E63] group-hover:text-white"></i>
+                            <span class="text-sm font-bold text-gray-300 group-hover:text-white">+359 89 563 4188</span>
+                        </a>
+                        
+                        <a href="viber://chat?number=%2B359895634188" class="flex items-center gap-3 px-4 py-2 rounded-lg bg-white/5 hover:bg-[#7360f2] hover:text-white transition group border border-white/10 w-fit">
+                            <i class="fab fa-viber text-[#7360f2] group-hover:text-white"></i>
+                            <span class="text-sm font-bold text-gray-300 group-hover:text-white">Viber Chat</span>
+                        </a>
+
+                        <a href="mailto:ginko@ginkogrudev.com" class="flex items-center gap-3 px-4 py-2 rounded-lg bg-white/5 hover:bg-white hover:text-black transition group border border-white/10 w-fit">
+                            <i class="fas fa-envelope text-gray-500 group-hover:text-black"></i>
+                            <span class="text-sm font-bold text-gray-300 group-hover:text-black">ginko@ginkogrudev.com</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <div class="border-t border-white/5 pt-8 text-center">
-                <p class="text-[10px] text-white/40 uppercase tracking-[0.2em] font-bold">© 2026 GG SOLUTIONS. ALL RIGHTS RESERVED.</p>
+                <p class="text-[10px] text-gray-600 uppercase tracking-[0.2em]">© 2026 GG SOLUTIONS. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
     </footer>
+
+    <div id="contact-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center px-4">
+        <div class="absolute inset-0 bg-black/95 backdrop-blur-md" onclick="closeContactModal()"></div>
+        <div class="relative z-10 w-full max-w-md bg-[#1a1a1a] border border-white/10 rounded-[2rem] p-8 text-center shadow-2xl">
+            <h2 class="text-3xl font-[900] uppercase italic text-white mb-2">ДАЙ ДА ДЕЙСТВАМЕ</h2>
+            <p class="text-gray-400 text-sm mb-8">Избери как ти е най-удобно:</p>
+            <div class="space-y-4">
+                <a href="tel:+359895634188" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white hover:text-black transition group">
+                    <i class="fas fa-phone text-xl group-hover:scale-110 transition"></i>
+                    <span class="font-bold uppercase tracking-widest">Обади се</span>
+                </a>
+                <a href="viber://chat?number=%2B359895634188" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-[#7360f2]/20 border border-[#7360f2]/50 text-[#7360f2] hover:bg-[#7360f2] hover:text-white transition group">
+                    <i class="fab fa-viber text-2xl group-hover:scale-110 transition"></i>
+                    <span class="font-bold uppercase tracking-widest">Viber</span>
+                </a>
+                <a href="https://wa.me/359895634188" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-[#25D366]/20 border border-[#25D366]/50 text-[#25D366] hover:bg-[#25D366] hover:text-black transition group">
+                    <i class="fab fa-whatsapp text-2xl group-hover:scale-110 transition"></i>
+                    <span class="font-bold uppercase tracking-widest">WhatsApp</span>
+                </a>
+                <a href="mailto:ginko@ginkogrudev.com" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#E91E63] hover:text-[#E91E63] transition group">
+                    <i class="far fa-envelope text-xl group-hover:scale-110 transition"></i>
+                    <span class="font-bold uppercase tracking-widest">Email</span>
+                </a>
+            </div>
+            <button onclick="closeContactModal()" class="mt-8 text-xs text-gray-500 hover:text-white uppercase tracking-widest">Затвори</button>
+        </div>
+    </div>
 
     <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[200] hidden bg-[#141414] border-t border-[#E91E63]/30 p-6 shadow-2xl">
       <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">

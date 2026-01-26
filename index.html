@@ -372,7 +372,7 @@
         </a>
     </section>
 
-    <footer class="bg-[#050505] border-t border-white/10 pt-20 pb-10 px-6">
+   <footer class="bg-[#050505] border-t border-white/10 pt-20 pb-10 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-12 mb-16 text-center md:text-left">
                 <div class="md:col-span-1">
@@ -384,23 +384,47 @@
                         Ние не продаваме уебсайтове. Ние изграждаме дигитални активи.
                     </p>
                 </div>
+
                 <div>
                     <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Навигация</h4>
                     <ul class="space-y-4 text-sm text-gray-400">
-                        <li><a href="index.html" class="hover:text-white">Начало</a></li>
-                        <li><a href="portfolio.html" class="hover:text-white">Портфолио</a></li>
-                        <li><a href="#offer" class="hover:text-white">Цени</a></li>
-                        <li><a href="calculator.html" class="hover:text-white">Tools</a></li>
+                        <li><a href="index.html" class="hover:text-white transition">Начало</a></li>
+                        <li><a href="portfolio.html" class="hover:text-white transition">Портфолио</a></li>
+                        <li><a href="#offer" class="hover:text-white transition">Цени</a></li>
+                        <li><a href="calculator.html" class="hover:text-white transition">Tools</a></li>
                     </ul>
                 </div>
+
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Ресурси</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Често Задавани Въпроси</a></li>
+                        <li><a href="#" class="hover:text-white transition">Общи Условия</a></li>
+                        <li><a href="#" class="hover:text-white transition">Поверителност</a></li>
+                    </ul>
+                </div>
+
                 <div>
                     <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Контакти</h4>
-                    <ul class="space-y-4 text-sm text-gray-400">
-                        <li>ginko@ginkogrudev.com</li>
-                        <li>+359 89 563 4188</li>
-                    </ul>
+                    <div class="flex flex-col gap-3 items-center md:items-start">
+                        <a href="tel:+359895634188" class="flex items-center gap-3 px-4 py-2 rounded-lg bg-white/5 hover:bg-[#E91E63] hover:text-white transition group border border-white/10 w-fit">
+                            <i class="fas fa-phone text-[#E91E63] group-hover:text-white"></i>
+                            <span class="text-sm font-bold text-gray-300 group-hover:text-white">+359 89 563 4188</span>
+                        </a>
+                        
+                        <a href="viber://chat?number=%2B359895634188" class="flex items-center gap-3 px-4 py-2 rounded-lg bg-white/5 hover:bg-[#7360f2] hover:text-white transition group border border-white/10 w-fit">
+                            <i class="fab fa-viber text-[#7360f2] group-hover:text-white"></i>
+                            <span class="text-sm font-bold text-gray-300 group-hover:text-white">Viber Chat</span>
+                        </a>
+
+                        <a href="mailto:ginko@ginkogrudev.com" class="flex items-center gap-3 px-4 py-2 rounded-lg bg-white/5 hover:bg-white hover:text-black transition group border border-white/10 w-fit">
+                            <i class="fas fa-envelope text-gray-500 group-hover:text-black"></i>
+                            <span class="text-sm font-bold text-gray-300 group-hover:text-black">ginko@ginkogrudev.com</span>
+                        </a>
+                    </div>
                 </div>
             </div>
+
             <div class="border-t border-white/5 pt-8 text-center">
                 <p class="text-[10px] text-gray-600 uppercase tracking-[0.2em]">© 2026 GG SOLUTIONS. ALL RIGHTS RESERVED.</p>
             </div>
