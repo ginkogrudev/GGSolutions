@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="bg" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Портфолио | GG Solutions</title>
+    <title>Portfolio | GG Solutions</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐷</text></svg>" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -32,45 +32,26 @@
           <span class="text-3xl group-hover:scale-110 transition-transform">🐷</span>
           <span class="font-[900] uppercase text-xl text-white group-hover:text-[#E91E63] transition-colors">GG <span class="text-[#E91E63]">Solutions</span></span>
         </a>
-        
         <div class="hidden md:flex items-center gap-8 text-xs font-[800] tracking-[0.15em] uppercase text-[#a1a1aa]">
           <a href="portfolio-en.html" class="text-white transition-colors">Portfolio</a>
           <a href="index-en.html#offer" class="hover:text-white transition-colors">Pricing</a>
           <a href="calculator.html" class="text-[#E91E63] transition-colors hover:underline">Free Tools</a>
-           <a href="portfolio-en.html" class="text-white border border-white/20 px-2 py-1 rounded hover:bg-white/10 transition" title="English Version">EN EN</a>
+           <a href="portfolio.html" class="text-white border border-white/20 px-2 py-1 rounded hover:bg-white/10 transition" title="Bulgarian Version">BG 🇧🇬</a>
         </div>
-
         <button onclick="openContactModal()" class="hidden md:inline-flex bg-[#E91E63] hover:bg-[#c2185b] text-white text-xs font-black px-6 py-3 rounded-xl transition shadow-[0_0_20px_rgba(233,30,99,0.3)]">
             <i class="fas fa-comment-dots text-lg mr-2"></i> LET'S TALK
         </button>
-
-        <button onclick="toggleMenu()" class="md:hidden text-white hover:text-[#E91E63] transition">
-          <i class="fas fa-bars text-2xl"></i>
-        </button>
+        <a href="index-en.html" class="text-xs font-bold uppercase text-gray-400 hover:text-white transition md:hidden">← Back</a>
       </div>
     </nav>
-
-    <div id="mobile-menu" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8">
-      <button onclick="toggleMenu()" class="absolute top-8 right-8 text-white/50 uppercase text-xs tracking-widest p-4">✕</button>
-      
-      <a href="index-en.html" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white">Home</a>
-      <a href="portfolio-en.html" class="text-3xl font-[900] uppercase italic text-white">Portfolio</a>
-      <a href="index-en.html#offer" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white">Pricing</a>
-      
-      <a href="portfolio-en.html" class="text-xl font-bold uppercase text-white border border-white/20 px-4 py-2 rounded-xl">EN English</a>
-      
-      <button onclick="openContactModal()" class="text-xl font-bold uppercase text-white bg-[#E91E63] px-8 py-3 rounded-xl shadow-[0_0_20px_rgba(233,30,99,0.4)]">
-          Contact Me
-      </button>
-    </div>
 
     <section class="pt-32 pb-12 px-6 text-center relative overflow-hidden">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#E91E63]/10 blur-[120px] rounded-full pointer-events-none"></div>
         <h1 class="text-5xl md:text-8xl font-[900] uppercase italic text-white mb-6 relative z-10">
-            НАШАТА <span class="text-[#E91E63]">ГАЛЕРИЯ</span>
+            OUR <span class="text-[#E91E63]">VAULT</span>
         </h1>
         <p class="text-xl text-gray-400 max-w-2xl mx-auto relative z-10">
-            Дигитални активи, които не просто изглеждат както ти искаш, а работят за теб.
+            Digital assets that don't just look good. They print money.
         </p>
     </section>
 
@@ -80,19 +61,19 @@
             <div class="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div class="border-r border-white/5 last:border-0">
                     <p class="text-4xl font-[900] text-white mb-1">30</p>
-                    <p class="text-[10px] font-black uppercase tracking-widest text-[#E91E63]">Дни</p>
+                    <p class="text-[10px] font-black uppercase tracking-widest text-[#E91E63]">Days</p>
                 </div>
                 <div class="border-r border-white/5 last:border-0">
                     <p class="text-4xl font-[900] text-white mb-1">5</p>
-                    <p class="text-[10px] font-black uppercase tracking-widest text-gray-500">Стартирани Проекта</p>
+                    <p class="text-[10px] font-black uppercase tracking-widest text-gray-500">Active Projects</p>
                 </div>
                 <div class="border-r border-white/5 last:border-0">
                     <p class="text-4xl font-[900] text-white mb-1">50+</p>
-                    <p class="text-[10px] font-black uppercase tracking-widest text-green-500">Телефонни Разговори</p>
+                    <p class="text-[10px] font-black uppercase tracking-widest text-green-500">Calls Generated</p>
                 </div>
                 <div>
                     <p class="text-4xl font-[900] text-white mb-1">€5,650</p>
-                    <p class="text-[10px] font-black uppercase tracking-widest text-yellow-500">Генериран Оборот</p>
+                    <p class="text-[10px] font-black uppercase tracking-widest text-yellow-500">Revenue Generated</p>
                 </div>
             </div>
         </div>
@@ -116,7 +97,7 @@
                     <div class="w-2 h-2 rounded-full bg-white/30"></div>
                 </div>
                 <div class="absolute top-6 left-6 bg-black/60 backdrop-blur px-4 py-2 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest pointer-events-none">
-                    Дигитална Витрина
+                    Digital Storefront
                 </div>
                 <div class="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-black/50 to-transparent pointer-events-none flex items-center justify-end pr-4">
                     <i class="fas fa-chevron-right text-white/50 animate-pulse"></i>
@@ -129,22 +110,22 @@
                         <h2 class="text-4xl font-[900] uppercase text-white">Pri Tanya</h2>
                         <span class="bg-green-500/20 text-green-400 text-[10px] font-black px-3 py-1 rounded-full">#1 RANK</span>
                     </div>
-                    <p class="text-gray-400 text-lg font-medium">Месарница • Ямбол</p>
+                    <p class="text-gray-400 text-lg font-medium">Butcher Shop • Local Market</p>
                 </div>
 
                 <div class="space-y-8 flex-grow">
                     <div class="border-l-4 border-red-500/50 pl-6">
                         <p class="text-[10px] font-black uppercase tracking-widest text-red-400 mb-1">THE PROBLEM</p>
-                        <p class="text-gray-300 leading-relaxed">Нова локация. Клиентите не ги намираха. Стари клиенти звъняха на грешен телефон.</p>
+                        <p class="text-gray-300 leading-relaxed">New location. Invisible to customers. Old clients were calling the wrong number.</p>
                     </div>
                     <div class="border-l-4 border-green-500 pl-6">
                         <p class="text-[10px] font-black uppercase tracking-widest text-green-400 mb-1">THE FIX</p>
-                        <p class="text-gray-300 leading-relaxed">Пълна дигитална трансформация. Нов сайт. Google Maps верификация. Професионални снимки.</p>
+                        <p class="text-gray-300 leading-relaxed">Full digital transformation. New custom site. Google Maps Verification. Professional Photography.</p>
                     </div>
                     <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
                         <p class="text-[10px] font-black uppercase tracking-widest text-white mb-2">KEY RESULT</p>
                         <p class="text-3xl font-[900] text-green-400 mb-1">#1 Rank</p>
-                        <p class="text-xs text-gray-500">В Google Maps за 14 дни</p>
+                        <p class="text-xs text-gray-500">On Google Maps in 14 Days</p>
                     </div>
                 </div>
 
@@ -186,22 +167,22 @@
                         <h2 class="text-4xl font-[900] uppercase text-white">Sheyretov</h2>
                         <span class="bg-blue-500/20 text-blue-400 text-[10px] font-black px-3 py-1 rounded-full">SPEED</span>
                     </div>
-                    <p class="text-gray-400 text-lg font-medium">Събития • Бургас</p>
+                    <p class="text-gray-400 text-lg font-medium">Events • Burgas</p>
                 </div>
 
                 <div class="space-y-8 flex-grow">
                     <div class="border-l-4 border-red-500/50 pl-6">
                         <p class="text-[10px] font-black uppercase tracking-widest text-red-400 mb-1">THE PROBLEM</p>
-                        <p class="text-gray-300 leading-relaxed">Нямаха портфолио освен Facebook страница, което да покажат на момента.</p>
+                        <p class="text-gray-300 leading-relaxed">No portfolio. Client had a high-stakes meeting and only a Facebook page to show.</p>
                     </div>
                     <div class="border-l-4 border-blue-500 pl-6">
                         <p class="text-[10px] font-black uppercase tracking-widest text-blue-400 mb-1">THE FIX</p>
-                        <p class="text-gray-300 leading-relaxed">Speed Launch пакет. Модерен, тъмен сайт с галерия, оптимизиран за мобилни устройства.</p>
+                        <p class="text-gray-300 leading-relaxed">Speed Launch Package. Modern, dark-themed site with gallery, fully mobile responsive.</p>
                     </div>
                     <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
                         <p class="text-[10px] font-black uppercase tracking-widest text-white mb-2">KEY RESULT</p>
-                        <p class="text-3xl font-[900] text-blue-400 mb-1">30 Часа</p>
-                        <p class="text-xs text-gray-500">Време от старт до готов сайт</p>
+                        <p class="text-3xl font-[900] text-blue-400 mb-1">30 Hours</p>
+                        <p class="text-xs text-gray-500">From concept to live deployment</p>
                     </div>
                 </div>
 
@@ -236,7 +217,7 @@
                     <div class="w-2 h-2 rounded-full bg-white/30"></div>
                 </div>
                 <div class="absolute top-6 left-6 bg-black/60 backdrop-blur px-4 py-2 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest">
-                    Физически Продукт
+                    Physical Product
                 </div>
             </div>
             
@@ -246,28 +227,28 @@
                         <h2 class="text-4xl font-[900] uppercase text-white">Mighty Boxes</h2>
                         <span class="bg-yellow-500/20 text-yellow-400 text-[10px] font-black px-3 py-1 rounded-full">SALES</span>
                     </div>
-                    <p class="text-gray-400 text-lg font-medium">Physical Product • Doorstep-Delivery</p>
+                    <p class="text-gray-400 text-lg font-medium">Physical Product • Doorstep Delivery</p>
                 </div>
 
                 <div class="space-y-8 flex-grow">
                     <div class="border-l-4 border-red-500/50 pl-6">
                         <p class="text-[10px] font-black uppercase tracking-widest text-red-400 mb-1">THE PROBLEM</p>
-                        <p class="text-gray-300 leading-relaxed">Опитен отбор с нов продукт на пазара. Много стари, клиенти с 0 маркетинг освен уста на уста и една обява в Ало.бг. Нула трафик.</p>
+                        <p class="text-gray-300 leading-relaxed">Experienced team, new product. Zero digital presence beyond word-of-mouth. Zero traffic.</p>
                     </div>
                     <div class="border-l-4 border-yellow-500 pl-6">
                         <p class="text-[10px] font-black uppercase tracking-widest text-yellow-400 mb-1">THE FIX</p>
-                        <p class="text-gray-300 leading-relaxed">Агресивен маркетинг. Лендинг страница + 30 автоматизирани обяви в Alo.bg.</p>
+                        <p class="text-gray-300 leading-relaxed">Aggressive marketing. High-conversion landing page + 30 automated classified ads.</p>
                     </div>
                     <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
                         <p class="text-[10px] font-black uppercase tracking-widest text-white mb-2">KEY RESULT</p>
                         <p class="text-3xl font-[900] text-yellow-400 mb-1">€5,650</p>
-                        <p class="text-xs text-gray-500">Генериран оборот за 30 дни, с 17 обаждания</p>
+                        <p class="text-xs text-gray-500">Revenue in 30 days | 17 Qualified Leads</p>
                     </div>
                 </div>
 
                 <div class="flex gap-4 mt-8">
                     <button onclick="openContactModal()" class="flex-1 btn-primary py-4 bg-[#E91E63] text-white font-[900] rounded-xl hover:bg-[#c2185b] transition text-center shadow-[0_0_30px_rgba(233,30,99,0.3)]">
-                        ИСКАМ РЕЗУЛТАТИ
+                        I WANT RESULTS
                     </button>
                 </div>
             </div>
@@ -299,17 +280,17 @@
                         <h2 class="text-4xl font-[900] uppercase text-white">Metal Delivery</h2>
                         <span class="bg-purple-500/20 text-purple-400 text-[10px] font-black px-3 py-1 rounded-full">SYSTEM</span>
                     </div>
-                    <p class="text-gray-400 text-lg font-medium">Logistic • Europe</p>
+                    <p class="text-gray-400 text-lg font-medium">Logistics • Europe</p>
                 </div>
                 <div class="space-y-8 flex-grow">
                     <div class="border-l-4 border-red-500/50 pl-6">
                         <p class="text-[10px] font-black uppercase tracking-widest text-red-400 mb-1">THE PROBLEM</p>
-                        <p class="text-gray-300 leading-relaxed">Сложна логистика. Поръчките се губеха. Сложни сметки между различни отбори.</p>
+                        <p class="text-gray-300 leading-relaxed">Complex logistics. Lost orders. Manual calculations between different teams.</p>
                     </div>
                     <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
                         <p class="text-[10px] font-black uppercase tracking-widest text-white mb-2">KEY RESULT</p>
-                        <p class="text-3xl font-[900] text-purple-400 mb-1">Върешни системи</p>
-                        <p class="text-xs text-gray-500">Автоматично смятане на тонаж и цена</p>
+                        <p class="text-3xl font-[900] text-purple-400 mb-1">Internal Systems</p>
+                        <p class="text-xs text-gray-500">Automated Tonnage & Price Calculation</p>
                     </div>
                 </div>
                 <div class="flex gap-4 mt-8">
@@ -328,7 +309,7 @@
                     </div>
                 </div>
                 <div class="absolute top-6 left-6 bg-black/60 backdrop-blur px-4 py-2 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest">
-                    ЛОКАЛЕН БРАНДИНГ
+                    Local Branding
                 </div>
             </div>
             
@@ -338,17 +319,17 @@
                         <h2 class="text-4xl font-[900] uppercase text-white">KDA Academy</h2>
                         <span class="bg-orange-500/20 text-orange-400 text-[10px] font-black px-3 py-1 rounded-full">BRAND</span>
                     </div>
-                    <p class="text-gray-400 text-lg font-medium">Dog Training • Локален Бизнес</p>
+                    <p class="text-gray-400 text-lg font-medium">Dog Training • Local Business</p>
                 </div>
                 <div class="space-y-8 flex-grow">
                     <div class="border-l-4 border-red-500/50 pl-6">
                         <p class="text-[10px] font-black uppercase tracking-widest text-red-400 mb-1">THE PROBLEM</p>
-                        <p class="text-gray-300 leading-relaxed">Нов Бранд Липса но Доверие</p>
+                        <p class="text-gray-300 leading-relaxed">New Brand. Lack of Trust in the Market.</p>
                     </div>
                     <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
                         <p class="text-[10px] font-black uppercase tracking-widest text-white mb-2">KEY RESULT</p>
                         <p class="text-3xl font-[900] text-orange-400 mb-1">Premium</p>
-                        <p class="text-xs text-gray-500">Визия, която продава високия клас услуга</p>
+                        <p class="text-xs text-gray-500">Visuals that justify high-ticket service</p>
                     </div>
                 </div>
                 <div class="flex gap-4 mt-8">
@@ -365,36 +346,36 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-12 mb-16 text-center md:text-left">
                 <div class="md:col-span-1">
-                    <a href="index.html" class="flex items-center justify-center md:justify-start gap-3 mb-6">
+                    <a href="index-en.html" class="flex items-center justify-center md:justify-start gap-3 mb-6">
                         <span class="text-3xl">🐷</span>
                         <span class="font-[900] uppercase text-xl text-white">GG <span class="text-[#E91E63]">Solutions</span></span>
                     </a>
                     <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                        Ние не продаваме уебсайтове. Ние изграждаме дигитални активи.
+                        We don't sell websites. We build digital assets.
                     </p>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Навигация</h4>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Navigation</h4>
                     <ul class="space-y-4 text-sm text-gray-400">
-                        <li><a href="index.html" class="hover:text-white transition">Начало</a></li>
-                        <li><a href="portfolio.html" class="hover:text-white transition">Портфолио</a></li>
-                        <li><a href="index.html#offer" class="hover:text-white transition">Цени</a></li>
+                        <li><a href="index-en.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="portfolio-en.html" class="hover:text-white transition">Portfolio</a></li>
+                        <li><a href="index-en.html#offer" class="hover:text-white transition">Pricing</a></li>
                         <li><a href="calculator.html" class="hover:text-white transition">Tools</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Ресурси</h4>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Resources</h4>
                     <ul class="space-y-4 text-sm text-gray-400">
-                        <li><a href="#" class="hover:text-white transition">Често Задавани Въпроси</a></li>
-                        <li><a href="#" class="hover:text-white transition">Общи Условия</a></li>
-                        <li><a href="#" class="hover:text-white transition">Поверителност</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Контакти</h4>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Contact</h4>
                     <div class="flex flex-col gap-3 items-center md:items-start">
                         <a href="tel:+359895634188" class="flex items-center gap-3 px-4 py-2 rounded-lg bg-white/5 hover:bg-[#E91E63] hover:text-white transition group border border-white/10 w-fit">
                             <i class="fas fa-phone text-[#E91E63] group-hover:text-white"></i>
@@ -423,12 +404,12 @@
     <div id="contact-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center px-4">
         <div class="absolute inset-0 bg-black/95 backdrop-blur-md" onclick="closeContactModal()"></div>
         <div class="relative z-10 w-full max-w-md bg-[#1a1a1a] border border-white/10 rounded-[2rem] p-8 text-center shadow-2xl">
-            <h2 class="text-3xl font-[900] uppercase italic text-white mb-2">ДАЙ ДА ДЕЙСТВАМЕ</h2>
-            <p class="text-gray-400 text-sm mb-8">Избери как ти е най-удобно:</p>
+            <h2 class="text-3xl font-[900] uppercase italic text-white mb-2">LET'S GET TO WORK</h2>
+            <p class="text-gray-400 text-sm mb-8">Choose what works for you:</p>
             <div class="space-y-4">
                 <a href="tel:+359895634188" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white hover:text-black transition group">
                     <i class="fas fa-phone text-xl group-hover:scale-110 transition"></i>
-                    <span class="font-bold uppercase tracking-widest">Обади се</span>
+                    <span class="font-bold uppercase tracking-widest">Call Me</span>
                 </a>
                 <a href="viber://chat?number=%2B359895634188" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-[#7360f2]/20 border border-[#7360f2]/50 text-[#7360f2] hover:bg-[#7360f2] hover:text-white transition group">
                     <i class="fab fa-viber text-2xl group-hover:scale-110 transition"></i>
@@ -443,7 +424,7 @@
                     <span class="font-bold uppercase tracking-widest">Email</span>
                 </a>
             </div>
-            <button onclick="closeContactModal()" class="mt-8 text-xs text-gray-500 hover:text-white uppercase tracking-widest">Затвори</button>
+            <button onclick="closeContactModal()" class="mt-8 text-xs text-gray-500 hover:text-white uppercase tracking-widest">Close</button>
         </div>
     </div>
 

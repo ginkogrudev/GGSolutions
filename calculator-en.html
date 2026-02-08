@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="bg" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Free Tools & Resources | GG Solutions</title>
-    <meta name="description" content="Безплатни инструменти за бизнеса: Евро Калкулатор, ROI Анализ и Маркетинг Академия.">
+    <meta name="description" content="Free business tools: Euro Calculator, ROI Analysis, and Marketing Academy.">
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐷</text></svg>" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,7 +25,7 @@
 
     <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10 transition-all duration-300">
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-3 group">
+        <a href="index-en.html" class="flex items-center gap-3 group">
           <span class="text-3xl group-hover:scale-110 transition-transform">🐷</span>
           <span class="font-[900] uppercase tracking-tighter text-xl text-white group-hover:text-[#E91E63] transition-colors">
             GG <span class="text-[#E91E63]">Solutions</span>
@@ -33,14 +33,14 @@
         </a>
         
         <div class="hidden md:flex items-center gap-8 text-xs font-[800] tracking-[0.15em] uppercase text-white/70">
-          <a href="portfolio.html" class="hover:text-white transition-colors">Портфолио</a>
-          <a href="index.html#offer" class="hover:text-white transition-colors">Цени</a>
+          <a href="portfolio-en.html" class="hover:text-white transition-colors">Portfolio</a>
+          <a href="index-en.html#offer" class="hover:text-white transition-colors">Pricing</a>
           <a href="calculator.html" class="text-white transition-colors">Free Tools</a>
-          <a href="calculator-en.html" class="text-white border border-white/20 px-2 py-1 rounded hover:bg-white/10 transition" title="English Version">EN 🇬🇧</a>
+          <a href="calculator.html" class="text-white border border-white/20 px-2 py-1 rounded hover:bg-white/10 transition" title="Bulgarian Version">BG 🇧🇬</a>
         </div>
 
         <button onclick="openContactModal()" class="hidden md:inline-flex bg-[#E91E63] hover:bg-[#c2185b] text-white text-xs font-black px-6 py-3 rounded-xl transition shadow-[0_0_20px_rgba(233,30,99,0.3)]">
-            <i class="fas fa-comment-dots text-lg mr-2"></i> ПИШИ МИ
+            <i class="fas fa-comment-dots text-lg mr-2"></i> LET'S TALK
         </button>
 
         <button onclick="toggleMenu()" class="md:hidden text-white hover:text-[#E91E63] transition">
@@ -51,13 +51,13 @@
 
     <div id="mobile-menu" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8">
       <button onclick="toggleMenu()" class="absolute top-8 right-8 text-white/50 uppercase text-xs tracking-widest p-4">✕</button>
-      <a href="portfolio.html" class="text-3xl font-[900] uppercase italic text-white/80 hover:text-white">Портфолио</a>
-      <a href="index.html#offer" class="text-3xl font-[900] uppercase italic text-white/80 hover:text-white">Цени</a>
-      <a href="calculator.html" class="text-3xl font-[900] uppercase italic text-white">Free Tools</a>
+      <a href="portfolio-en.html" class="text-3xl font-[900] uppercase italic text-white/80 hover:text-white">Portfolio</a>
+      <a href="index-en.html#offer" class="text-3xl font-[900] uppercase italic text-white/80 hover:text-white">Pricing</a>
+      <a href="calculator-en.html" class="text-3xl font-[900] uppercase italic text-white">Free Tools</a>
       
-      <a href="calculator-en.html" class="text-xl font-bold uppercase text-white border border-white/20 px-4 py-2 rounded-xl">🇬🇧 English</a>
+      <a href="calculator.html" class="text-xl font-bold uppercase text-white border border-white/20 px-4 py-2 rounded-xl">🇧🇬 Bulgarian</a>
       
-      <button onclick="openContactModal()" class="text-xl font-bold uppercase text-white bg-[#E91E63] px-8 py-3 rounded-xl shadow-[0_0_20px_rgba(233,30,99,0.4)]">Свържи се</button>
+      <button onclick="openContactModal()" class="text-xl font-bold uppercase text-white bg-[#E91E63] px-8 py-3 rounded-xl shadow-[0_0_20px_rgba(233,30,99,0.4)]">Contact Me</button>
     </div>
     
     <section class="pt-32 pb-20 px-6 border-b border-white/5 relative overflow-hidden bg-[#050505]">
@@ -69,16 +69,16 @@
             <h1 class="text-5xl md:text-7xl font-[900] uppercase italic text-white mb-6">PIGGY <span class="text-[#E91E63]">CALC</span></h1>
             
             <p class="text-lg text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
-                Инструментът, който спасява касиерите от грешки при преминаването към Еврото. <br>
-                <span class="text-white border-b border-[#E91E63]">Напълно безплатен.</span>
+                The tool that saves cashiers from headaches during the Euro transition. <br>
+                <span class="text-white border-b border-[#E91E63]">Completely Free.</span>
             </p>
             
             <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
                 <a href="https://ginkogrudev.github.io/EuroCalculator/" target="_blank" class="btn-primary px-8 py-4 bg-[#E91E63] rounded-xl font-bold text-white hover:bg-[#c2185b] transition shadow-[0_0_30px_rgba(233,30,99,0.4)] flex items-center gap-2 justify-center">
-                    <i class="fas fa-globe"></i> ОТВОРИ WEB ВЕРСИЯ
+                    <i class="fas fa-globe"></i> OPEN WEB VERSION
                 </a>
                 <a href="https://github.com/ginkogrudev/EuroCalculator/releases/tag/v1.0.1" target="_blank" class="px-8 py-4 border border-white/20 rounded-xl font-bold text-white hover:bg-white/10 hover:border-white transition flex items-center gap-2 justify-center">
-                    <i class="fab fa-android"></i> СВАЛИ ЗА ANDROID
+                    <i class="fab fa-android"></i> DOWNLOAD FOR ANDROID
                 </a>
             </div>
 
@@ -95,9 +95,9 @@
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <div class="inline-block border border-green-500 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-green-500 mb-6 shadow-[0_0_15px_rgba(34,197,94,0.2)]">Tool #2</div>
-                <h2 class="text-4xl md:text-5xl font-[900] uppercase italic text-white mb-6">МАТЕМАТИКАТА НА <span class="text-green-500">ПЕЧАЛБАТА</span></h2>
+                <h2 class="text-4xl md:text-5xl font-[900] uppercase italic text-white mb-6">THE MATH OF <span class="text-green-500">PROFIT</span></h2>
                 <p class="text-white/80 text-sm max-w-2xl mx-auto font-medium">
-                    Сайтът не е разход. Сайтът е машина. Ето как се смята LTV (Lifetime Value).
+                    A website is not an expense. It's a machine. Here is how to calculate LTV (Lifetime Value).
                 </p>
             </div>
 
@@ -107,18 +107,18 @@
                     <div class="bg-white/5 p-6 rounded-2xl border border-white/10 flex items-center gap-6 hover:border-green-500/30 transition group">
                         <div class="bg-red-500/10 border border-red-500/20 p-4 rounded-xl text-red-500 text-2xl font-black w-16 h-16 flex items-center justify-center group-hover:scale-110 transition">-</div>
                         <div>
-                            <p class="text-[10px] text-white/60 uppercase tracking-widest font-bold">1. CAC (Цена за клиент)</p>
-                            <p class="text-white font-bold text-lg">30 лв</p>
-                            <p class="text-xs text-white/50">Разход за реклама за 1 продажба</p>
+                            <p class="text-[10px] text-white/60 uppercase tracking-widest font-bold">1. CAC (Cost Per Acquisition)</p>
+                            <p class="text-white font-bold text-lg">€15</p>
+                            <p class="text-xs text-white/50">Ad spend to get 1 sale</p>
                         </div>
                     </div>
                     
                     <div class="bg-white/5 p-6 rounded-2xl border border-white/10 flex items-center gap-6 hover:border-blue-500/30 transition group">
                         <div class="bg-blue-500/10 border border-blue-500/20 p-4 rounded-xl text-blue-500 text-2xl font-black w-16 h-16 flex items-center justify-center group-hover:scale-110 transition">+</div>
                         <div>
-                            <p class="text-[10px] text-white/60 uppercase tracking-widest font-bold">2. LTV (Стойност)</p>
-                            <p class="text-white font-bold text-lg">500 лв</p>
-                            <p class="text-xs text-white/50">Среден приход от 1 клиент (за 1 год)</p>
+                            <p class="text-[10px] text-white/60 uppercase tracking-widest font-bold">2. LTV (Lifetime Value)</p>
+                            <p class="text-white font-bold text-lg">€250</p>
+                            <p class="text-xs text-white/50">Average revenue from 1 client (1 year)</p>
                         </div>
                     </div>
                     
@@ -127,8 +127,8 @@
                         <div class="bg-green-500 p-4 rounded-xl text-black text-2xl font-black w-16 h-16 flex items-center justify-center relative z-10 group-hover:scale-110 transition">=</div>
                         <div class="relative z-10">
                             <p class="text-[10px] text-green-400 uppercase tracking-widest font-bold">3. REAL PROFIT</p>
-                            <p class="text-white font-black text-2xl">470 лв</p>
-                            <p class="text-xs text-green-400">Чиста печалба от ЕДИН клиент</p>
+                            <p class="text-white font-black text-2xl">€235</p>
+                            <p class="text-xs text-green-400">Net profit from ONE client</p>
                         </div>
                     </div>
                 </div>
@@ -136,27 +136,27 @@
                 <div class="bg-[#111] p-8 md:p-10 rounded-[2.5rem] border border-white/10 text-center shadow-2xl relative group hover:border-white/20 transition">
                     <div class="absolute top-4 right-4 text-[10px] text-white/40 font-mono">AGENCY_OS_V1</div>
                     
-                    <h3 class="text-xl font-[900] text-white mb-8 uppercase italic">Ако доведем само 1 клиент/мес:</h3>
+                    <h3 class="text-xl font-[900] text-white mb-8 uppercase italic">If we bring just 1 client/month:</h3>
                     
                     <div class="space-y-4 mb-8">
                         <div class="flex justify-between text-sm border-b border-white/10 pb-3">
-                            <span class="text-white/60">Инвестиция (Takeover):</span>
-                            <span class="text-red-400 font-mono font-bold">3,850 лв</span>
+                            <span class="text-white/60">Investment (Takeover):</span>
+                            <span class="text-red-400 font-mono font-bold">€1,968</span>
                         </div>
                         <div class="flex justify-between text-sm border-b border-white/10 pb-3">
-                            <span class="text-white/60">Нови Клиенти (x12):</span>
+                            <span class="text-white/60">New Clients (x12):</span>
                             <span class="text-white font-mono font-bold">12</span>
                         </div>
                         <div class="flex justify-between text-sm border-b border-white/10 pb-3">
-                            <span class="text-white/60">Приход (LTV):</span>
-                            <span class="text-green-400 font-mono font-bold">6,000 лв</span>
+                            <span class="text-white/60">Revenue (LTV):</span>
+                            <span class="text-green-400 font-mono font-bold">€3,000</span>
                         </div>
                     </div>
                     
                     <div class="bg-[#E91E63] text-white p-6 rounded-2xl transform group-hover:scale-105 transition duration-300 shadow-[0_0_40px_rgba(233,30,99,0.3)]">
-                        <p class="text-[10px] font-black uppercase tracking-widest mb-1">КРАЕН РЕЗУЛТАТ (ГОДИНА 1)</p>
-                        <p class="text-4xl font-[900]">+2,150 лв</p>
-                        <p class="text-[10px] font-bold mt-1 opacity-80">Следващите години е 100% печалба.</p>
+                        <p class="text-[10px] font-black uppercase tracking-widest mb-1">NET RESULT (YEAR 1)</p>
+                        <p class="text-4xl font-[900]">+€1,032</p>
+                        <p class="text-[10px] font-bold mt-1 opacity-80">Next years are 100% profit.</p>
                     </div>
                 </div>
             </div>
@@ -174,29 +174,29 @@
             </h2>
             
             <p class="text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed relative z-10 font-medium">
-                Знанието не трябва да е скъпо. Влезте в нашата Google Classroom и научете как да управлявате дигиталния си бизнес. Безплатно.
+                Knowledge shouldn't be expensive. Join our Google Classroom and learn how to manage your digital business. For free.
             </p>
             
             <div class="grid md:grid-cols-3 gap-4 mb-12 relative z-10 text-left">
                 <div class="bg-black/60 backdrop-blur p-6 rounded-2xl border border-white/10 hover:border-blue-400/50 transition group/card">
                     <span class="text-blue-400 text-2xl block mb-3 group-hover/card:scale-110 transition"><i class="fas fa-video"></i></span>
-                    <p class="text-white font-bold text-sm uppercase">Видео Уроци</p>
-                    <p class="text-white/50 text-xs mt-1">Кратки и ясни видеа</p>
+                    <p class="text-white font-bold text-sm uppercase">Video Lessons</p>
+                    <p class="text-white/50 text-xs mt-1">Short & clear</p>
                 </div>
                 <div class="bg-black/60 backdrop-blur p-6 rounded-2xl border border-white/10 hover:border-blue-400/50 transition group/card">
                     <span class="text-blue-400 text-2xl block mb-3 group-hover/card:scale-110 transition"><i class="fas fa-file-alt"></i></span>
-                    <p class="text-white font-bold text-sm uppercase">Чеклисти</p>
-                    <p class="text-white/50 text-xs mt-1">Стъпка по стъпка</p>
+                    <p class="text-white font-bold text-sm uppercase">Checklists</p>
+                    <p class="text-white/50 text-xs mt-1">Step-by-step guides</p>
                 </div>
                 <div class="bg-black/60 backdrop-blur p-6 rounded-2xl border border-white/10 hover:border-blue-400/50 transition group/card">
                     <span class="text-blue-400 text-2xl block mb-3 group-hover/card:scale-110 transition"><i class="fas fa-users"></i></span>
-                    <p class="text-white font-bold text-sm uppercase">Общност</p>
-                    <p class="text-white/50 text-xs mt-1">Въпроси и отговори</p>
+                    <p class="text-white font-bold text-sm uppercase">Community</p>
+                    <p class="text-white/50 text-xs mt-1">Q&A Support</p>
                 </div>
             </div>
             
             <a href="https://classroom.google.com/c/NzkzMzQwNTA1MTA4?cjc=mtj7fb5p" target="_blank" class="relative z-10 btn-primary px-10 py-5 bg-[#E91E63] text-white hover:bg-[#c2185b] rounded-xl font-black transition text-lg inline-flex items-center gap-3 shadow-[0_0_40px_rgba(233,30,99,0.4)] hover:scale-105">
-                <i class="fab fa-google"></i> ВЛЕЗ В КЛАСНАТА СТАЯ
+                <i class="fab fa-google"></i> ENTER CLASSROOM
             </a>
         </div>
     </section>
@@ -205,36 +205,36 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-12 mb-16 text-center md:text-left">
                 <div class="md:col-span-1">
-                    <a href="index.html" class="flex items-center justify-center md:justify-start gap-3 mb-6">
+                    <a href="index-en.html" class="flex items-center justify-center md:justify-start gap-3 mb-6">
                         <span class="text-3xl">🐷</span>
                         <span class="font-[900] uppercase text-xl text-white">GG <span class="text-[#E91E63]">Solutions</span></span>
                     </a>
                     <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                        Ние не продаваме уебсайтове. Ние изграждаме дигитални активи.
+                        We don't sell websites. We build digital assets.
                     </p>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Навигация</h4>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Navigation</h4>
                     <ul class="space-y-4 text-sm text-gray-400">
-                        <li><a href="index.html" class="hover:text-white transition">Начало</a></li>
-                        <li><a href="portfolio.html" class="hover:text-white transition">Портфолио</a></li>
-                        <li><a href="index.html#offer" class="hover:text-white transition">Цени</a></li>
+                        <li><a href="index-en.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="portfolio-en.html" class="hover:text-white transition">Portfolio</a></li>
+                        <li><a href="index-en.html#offer" class="hover:text-white transition">Pricing</a></li>
                         <li><a href="calculator.html" class="hover:text-white transition">Tools</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Ресурси</h4>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Resources</h4>
                     <ul class="space-y-4 text-sm text-gray-400">
-                        <li><a href="#" class="hover:text-white transition">Често Задавани Въпроси</a></li>
-                        <li><a href="#" class="hover:text-white transition">Общи Условия</a></li>
-                        <li><a href="#" class="hover:text-white transition">Поверителност</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Контакти</h4>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 text-sm">Contact</h4>
                     <div class="flex flex-col gap-3 items-center md:items-start">
                         <a href="tel:+359895634188" class="flex items-center gap-3 px-4 py-2 rounded-lg bg-white/5 hover:bg-[#E91E63] hover:text-white transition group border border-white/10 w-fit">
                             <i class="fas fa-phone text-[#E91E63] group-hover:text-white"></i>
@@ -263,12 +263,12 @@
     <div id="contact-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center px-4">
         <div class="absolute inset-0 bg-black/95 backdrop-blur-md" onclick="closeContactModal()"></div>
         <div class="relative z-10 w-full max-w-md bg-[#1a1a1a] border border-white/10 rounded-[2rem] p-8 text-center shadow-2xl">
-            <h2 class="text-3xl font-[900] uppercase italic text-white mb-2">ДАЙ ДА ДЕЙСТВАМЕ</h2>
-            <p class="text-gray-400 text-sm mb-8">Избери как ти е най-удобно:</p>
+            <h2 class="text-3xl font-[900] uppercase italic text-white mb-2">LET'S GET TO WORK</h2>
+            <p class="text-white/60 text-sm mb-8">Choose what works for you:</p>
             <div class="space-y-4">
                 <a href="tel:+359895634188" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white hover:text-black transition group">
                     <i class="fas fa-phone text-xl group-hover:scale-110 transition"></i>
-                    <span class="font-bold uppercase tracking-widest">Обади се</span>
+                    <span class="font-bold uppercase tracking-widest">Call Me</span>
                 </a>
                 <a href="viber://chat?number=%2B359895634188" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-[#7360f2]/20 border border-[#7360f2]/50 text-[#7360f2] hover:bg-[#7360f2] hover:text-white transition group">
                     <i class="fab fa-viber text-2xl group-hover:scale-110 transition"></i>
@@ -283,47 +283,7 @@
                     <span class="font-bold uppercase tracking-widest">Email</span>
                 </a>
             </div>
-            <button onclick="closeContactModal()" class="mt-8 text-xs text-gray-500 hover:text-white uppercase tracking-widest">Затвори</button>
-        </div>
-    </div>
-
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[200] hidden bg-[#141414] border-t border-[#E91E63]/30 p-6 shadow-2xl">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <div class="text-center md:text-left max-w-2xl">
-          <p class="text-white font-bold text-sm mb-1">🍪 Бисквитки за Растеж</p>
-          <p class="text-xs text-white/60">Използваме анализи за по-добро изживяване.</p>
-        </div>
-        <div class="flex gap-3">
-          <button onclick="manageCookies()" class="text-xs font-bold text-white/60 hover:text-white border border-white/20 px-4 py-3 rounded-lg transition">НАСТРОЙКИ</button>
-          <button onclick="acceptAllCookies()" class="bg-[#E91E63] text-white text-xs font-black px-6 py-3 rounded-lg hover:scale-105 transition shadow-lg">ПРИЕМАМ</button>
-        </div>
-      </div>
-    </div>
-
-    <div id="contact-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center px-4">
-        <div class="absolute inset-0 bg-black/95 backdrop-blur-md" onclick="closeContactModal()"></div>
-        <div class="relative z-10 w-full max-w-md bg-[#1a1a1a] border border-white/10 rounded-[2rem] p-8 text-center shadow-2xl">
-            <h2 class="text-3xl font-[900] uppercase italic text-white mb-2">ДАЙ ДА ДЕЙСТВАМЕ</h2>
-            <p class="text-white/60 text-sm mb-8">Избери как ти е най-удобно:</p>
-            <div class="space-y-4">
-                <a href="tel:+359895634188" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white hover:text-black transition group">
-                    <i class="fas fa-phone text-xl group-hover:scale-110 transition"></i>
-                    <span class="font-bold uppercase tracking-widest">Обади се</span>
-                </a>
-                <a href="viber://chat?number=%2B359895634188" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-[#7360f2]/20 border border-[#7360f2]/50 text-[#7360f2] hover:bg-[#7360f2] hover:text-white transition group">
-                    <i class="fab fa-viber text-2xl group-hover:scale-110 transition"></i>
-                    <span class="font-bold uppercase tracking-widest">Viber</span>
-                </a>
-                <a href="https://wa.me/359895634188" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-[#25D366]/20 border border-[#25D366]/50 text-[#25D366] hover:bg-[#25D366] hover:text-black transition group">
-                    <i class="fab fa-whatsapp text-2xl group-hover:scale-110 transition"></i>
-                    <span class="font-bold uppercase tracking-widest">WhatsApp</span>
-                </a>
-                <a href="mailto:ginko@ginkogrudev.com" class="flex items-center justify-center gap-4 w-full py-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#E91E63] hover:text-[#E91E63] transition group">
-                    <i class="far fa-envelope text-xl group-hover:scale-110 transition"></i>
-                    <span class="font-bold uppercase tracking-widest">Email</span>
-                </a>
-            </div>
-            <button onclick="closeContactModal()" class="mt-8 text-xs text-white/40 hover:text-white uppercase tracking-widest">Затвори</button>
+            <button onclick="closeContactModal()" class="mt-8 text-xs text-white/40 hover:text-white uppercase tracking-widest">Close</button>
         </div>
     </div>
 
