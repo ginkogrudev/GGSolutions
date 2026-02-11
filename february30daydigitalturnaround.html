@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="bg" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30-Дневна Машина за Клиенти | GG Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background-color: #050505; color: white; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        
+        /* Custom Checkbox Styling */
+        .goal-checkbox:checked + div {
+            border-color: #E91E63;
+            background-color: rgba(233, 30, 99, 0.1);
+            color: white;
+        }
+        
+        /* Slot Styling */
+        .time-slot.selected {
+            background-color: #E91E63;
+            border-color: #E91E63;
+            color: white;
+            transform: scale(1.05);
+        }
+    </style>
+  </head>
+
+  <body class="antialiased selection:bg-[#E91E63] selection:text-white">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="index.html" class="text-2xl font-black italic hover:text-[#E91E63] transition flex items-center gap-2">
+            <span>🐷</span> GG Solutions
+        </a>
+        <div class="flex items-center gap-4">
+            <a href="index.html" class="hidden md:inline-block text-xs font-bold text-gray-400 hover:text-white uppercase tracking-widest mr-4">Кои сме ние?</a>
+            <a href="#booking-engine" class="bg-[#E91E63] text-white text-xs font-black px-6 py-3 rounded-xl hover:bg-[#c2185b] transition shadow-lg">СТАРТИРАЙ РАСТЕЖ</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="pt-32 pb-12 px-6 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#E91E63]/10 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 border border-red-500/50 bg-red-500/10 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-red-400 mb-6 animate-pulse">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span> Остават 5 места за Февруари
+            </div>
+            <h1 class="text-4xl md:text-7xl font-[900] uppercase italic mb-8 leading-tight">
+                ЩЕ ТИ ДОВЕДА <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-purple-600">НОВИ КЛИЕНТИ</span> <br> ЗА 30 ДНИ.
+            </h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10 font-medium">Без месечни такси. Без празни приказки. Само резултати.</p>
+            <a href="#booking-engine" class="bg-white text-black px-10 py-4 rounded-xl font-black text-lg hover:scale-105 transition shadow-lg inline-flex items-center gap-2">ЗАПАЗИ ЧАС СЕГА <i class="fas fa-arrow-down"></i></a>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-[#111] border-y border-white/5">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-2xl font-bold uppercase text-gray-500 mb-8">ТОВА ЛИ Е ТВОЯТ БИЗНЕС В МОМЕНТА?</h2>
+            <div class="relative inline-block rounded-3xl overflow-hidden border-4 border-[#E91E63] shadow-[0_0_50px_rgba(233,30,99,0.2)] mb-8 transform hover:scale-[1.02] transition duration-500">
+                <img src="https://media.tenor.com/6MLe.gif" alt="Ghost Town Tumbleweed" class="w-full max-w-lg mx-auto object-cover opacity-90">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+                    <p class="text-white font-[900] text-xl uppercase italic">"Чакам клиентите да ме намерят..."</p>
+                </div>
+            </div>
+            <p class="text-gray-400 max-w-lg mx-auto">Разчитате на случайността? Това е стратегия за оцеляване, не за растеж. <br>Време е да инсталираме <strong>система</strong>.</p>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-[900] uppercase italic text-center mb-16">КАК РАБОТИ <span class="text-[#E91E63]">МАШИНАТА</span>?</h2>
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-[#E91E63]/0 via-[#E91E63]/30 to-[#E91E63]/0 -translate-y-1/2 z-0"></div>
+                <div class="glass p-8 rounded-3xl relative z-10 text-center hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 bg-[#050505] border border-[#E91E63] rounded-full flex items-center justify-center text-2xl font-black text-[#E91E63] mx-auto mb-6 shadow-[0_0_20px_rgba(233,30,99,0.2)]">1</div>
+                    <h3 class="text-xl font-bold uppercase mb-2">Одит & Оферта</h3>
+                    <p class="text-sm text-gray-400">Анализираме бизнеса ти в Ямбол. Намираме "пробивите", откъдето изтичат пари.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl relative z-10 text-center hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 bg-[#050505] border border-[#E91E63] rounded-full flex items-center justify-center text-2xl font-black text-[#E91E63] mx-auto mb-6 shadow-[0_0_20px_rgba(233,30,99,0.2)]">2</div>
+                    <h3 class="text-xl font-bold uppercase mb-2">Изграждане</h3>
+                    <p class="text-sm text-gray-400">За 7 дни пускаме новия ти сайт, Google Maps профил и система за записване.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl relative z-10 text-center hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 bg-[#050505] border border-[#E91E63] rounded-full flex items-center justify-center text-2xl font-black text-[#E91E63] mx-auto mb-6 shadow-[0_0_20px_rgba(233,30,99,0.2)]">3</div>
+                    <h3 class="text-xl font-bold uppercase mb-2">Растеж</h3>
+                    <p class="text-sm text-gray-400">Ти получаваш обаждания. Ние следим резултатите. Плащаш само за свършена работа.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-[#0a0a0a] border-y border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-[900] uppercase italic text-center mb-16">ИНВЕСТИЦИЯТА</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <div class="glass p-8 rounded-3xl border border-white/10 opacity-70 hover:opacity-100 transition">
+                    <h3 class="text-xl font-black uppercase text-gray-400 mb-2">Старт</h3>
+                    <p class="text-3xl font-[900] text-white mb-6">€850</p>
+                    <ul class="space-y-3 text-sm text-gray-400 mb-8">
+                        <li><i class="fas fa-check text-white mr-2"></i> Уебсайт (Едностраничен)</li>
+                        <li><i class="fas fa-check text-white mr-2"></i> Google Maps Профил</li>
+                        <li><i class="fas fa-check text-white mr-2"></i> Basic SEO</li>
+                    </ul>
+                    <a href="#booking-engine" class="block w-full text-center py-3 border border-white/20 rounded-xl text-white font-bold hover:bg-white hover:text-black transition">Запази Одит</a>
+                </div>
+
+                <div class="bg-[#111] p-8 rounded-3xl border-2 border-[#E91E63] shadow-[0_0_40px_rgba(233,30,99,0.2)] transform md:scale-110 relative z-10">
+                    <div class="absolute top-0 right-0 bg-[#E91E63] text-white text-[10px] font-black px-3 py-1 rounded-bl-xl rounded-tr-xl uppercase tracking-widest">Best Value</div>
+                    <h3 class="text-xl font-black uppercase text-[#E91E63] mb-2">Takeover</h3>
+                    <p class="text-4xl font-[900] text-white mb-6">€2,000</p>
+                    <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#E91E63] mr-2"></i> <strong>Multi-Page Уебсайт</strong></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#E91E63] mr-2"></i> <strong>Автоматизация (Резервации)</strong></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#E91E63] mr-2"></i> <strong>Google Ads Кампания (Setup)</strong></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#E91E63] mr-2"></i> <strong>CRM Система</strong></li>
+                    </ul>
+                    <a href="#booking-engine" class="block w-full text-center py-4 bg-[#E91E63] rounded-xl text-white font-black hover:bg-[#c2185b] transition shadow-lg">ИСКАМ ТОЗИ ПАКЕТ</a>
+                    <p class="text-center text-[10px] text-gray-500 mt-4 uppercase font-bold">+ €50/мес. поддръжка</p>
+                </div>
+
+                <div class="glass p-8 rounded-3xl border border-white/10 opacity-70 hover:opacity-100 transition">
+                    <h3 class="text-xl font-black uppercase text-purple-400 mb-2">Partner</h3>
+                    <p class="text-3xl font-[900] text-white mb-6">Custom</p>
+                    <ul class="space-y-3 text-sm text-gray-400 mb-8">
+                        <li><i class="fas fa-check text-white mr-2"></i> Всичко от Takeover</li>
+                        <li><i class="fas fa-check text-white mr-2"></i> Управление на Реклами</li>
+                        <li><i class="fas fa-check text-white mr-2"></i> Месечни Консултации</li>
+                        <li><i class="fas fa-check text-white mr-2"></i> Content Creation</li>
+                    </ul>
+                    <a href="#booking-engine" class="block w-full text-center py-3 border border-white/20 rounded-xl text-white font-bold hover:bg-white hover:text-black transition">Запази Одит</a>
+                    <p class="text-center text-[10px] text-gray-500 mt-4 uppercase font-bold">€300/мес. ангажимент</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-[#050505] border-t border-white/5 relative">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-[900] uppercase italic text-center mb-16">
+                НЕ СЛУШАЙ МЕН.<br>
+                <span class="text-blue-500">ГЛЕДАЙ РЕЗУЛТАТИТЕ.</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <div class="glass p-6 rounded-3xl border border-white/10 hover:border-green-500/50 transition group">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 aspect-video">
+                        <img src="imgs/PortfolioImgs/PriTanyaWebsite.png" class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 right-3 bg-green-500 text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
+                            #1 Google Rank
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-black text-white mb-2">Месарница "При Таня"</h3>
+                    <p class="text-gray-400 text-sm mb-4">От "никой не знае къде сме" до #1 в Google Maps за 14 дни.</p>
+                </div>
+
+                <div class="glass p-6 rounded-3xl border border-white/10 hover:border-yellow-500/50 transition group">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 aspect-video">
+                        <img src="imgs/PortfolioImgs/MightyBoxesHero.png" class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 right-3 bg-yellow-500 text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
+                            €5,650 Оборот
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-black text-white mb-2">Mighty Boxes</h3>
+                    <p class="text-gray-400 text-sm mb-4">Стартиране на нов продукт от нулата. Генериран оборот за 30 дни.</p>
+                </div>
+
+                <div class="glass p-6 rounded-3xl border border-white/10 hover:border-blue-500/50 transition group">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 aspect-video">
+                        <img src="imgs/PortfolioImgs/DrOhBoliCalendar.png" class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 right-3 bg-blue-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
+                            Спестени 1200лв/год
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-black text-white mb-2">Д-р Ох Боли</h3>
+                    <p class="text-gray-400 text-sm mb-4">Пълна автоматизация на графика без месечни такси за софтуер.</p>
+                </div>
+
+                <div class="glass p-6 rounded-3xl border border-white/10 hover:border-purple-500/50 transition group">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 aspect-video">
+                        <img src="imgs/PortfolioImgs/SheyretoSoundHero.png" class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 right-3 bg-purple-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
+                            Speed Launch
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-black text-white mb-2">Sheyretov Sound</h3>
+                    <p class="text-gray-400 text-sm mb-4">От "имам само Facebook" до професионален сайт за 30 часа.</p>
+                </div>
+
+            </div>
+            
+            <div class="mt-16 text-center">
+                <p class="text-xl text-white font-medium mb-4">"Не вярвам на снимки."</p>
+                <p class="text-gray-400 max-w-2xl mx-auto mb-8">Разбирам те. Затова първата ни среща е <strong>одит</strong>, а не продажба. Аз поемам риска.</p>
+                <a href="#booking-engine" class="text-[#E91E63] font-black uppercase tracking-widest hover:text-white transition border-b-2 border-[#E91E63] hover:border-white pb-1 text-lg">Убедих се. Искам час →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking-engine" class="py-24 px-6 relative overflow-hidden bg-[#111] border-y border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-[900] uppercase italic text-white mb-4">ИЗБЕРИ ЧАС ЗА <span class="text-[#E91E63]">СТРАТЕГИЯ</span></h2>
+                <p class="text-gray-400">15 минути. Безплатно. Без "Sales Pitch". Просто план.</p>
+            </div>
+            <div class="bg-[#050505] border border-white/10 rounded-[2.5rem] p-6 md:p-10 shadow-2xl relative">
+                <div id="step-time">
+                    <h3 class="text-white font-bold uppercase tracking-widest mb-6 border-b border-white/10 pb-4">📅 1. Кога си свободен?</h3>
+                    <div class="grid md:grid-cols-3 gap-4 mb-8" id="days-container"></div>
+                    <h4 class="text-white/60 text-xs font-bold uppercase mb-4">Свободни часове:</h4>
+                    <div class="grid grid-cols-3 md:grid-cols-4 gap-3 mb-8" id="slots-container"></div>
+                    <button onclick="nextStep()" id="btn-next-1" class="w-full bg-white/10 text-gray-500 cursor-not-allowed font-black uppercase py-4 rounded-xl transition" disabled>Продължи напред →</button>
+                </div>
+                <div id="step-details" class="hidden">
+                    <button onclick="prevStep()" class="text-gray-500 text-xs uppercase font-bold mb-6 hover:text-white">← Назад към календара</button>
+                    <h3 class="text-white font-bold uppercase tracking-widest mb-6 border-b border-white/10 pb-4">📝 2. Малко детайли</h3>
+                    <div class="space-y-4 mb-8">
+                        <div><label class="text-xs text-gray-400 font-bold uppercase block mb-2">Твоето Име</label><input type="text" id="input-name" class="w-full bg-white/5 border border-white/20 rounded-xl p-4 text-white focus:border-[#E91E63] outline-none transition" placeholder="Иван Иванов"></div>
+                        <div><label class="text-xs text-gray-400 font-bold uppercase block mb-2">Твоят Бизнес (Сайт или Име)</label><input type="text" id="input-business" class="w-full bg-white/5 border border-white/20 rounded-xl p-4 text-white focus:border-[#E91E63] outline-none transition" placeholder="Ivan's Gym / ivan.com"></div>
+                        <div>
+                            <label class="text-xs text-gray-400 font-bold uppercase block mb-3">Какво искаш да постигнеш? (Избери)</label>
+                            <div class="grid md:grid-cols-2 gap-3">
+                                <label class="cursor-pointer"><input type="checkbox" class="goal-checkbox hidden" value="Повече Клиенти"><div class="border border-white/20 rounded-lg p-3 text-sm text-gray-300 hover:border-white transition text-center select-none">🚀 Повече Клиенти</div></label>
+                                <label class="cursor-pointer"><input type="checkbox" class="goal-checkbox hidden" value="Нов Уебсайт"><div class="border border-white/20 rounded-lg p-3 text-sm text-gray-300 hover:border-white transition text-center select-none">💻 Нов Уебсайт</div></label>
+                                <label class="cursor-pointer"><input type="checkbox" class="goal-checkbox hidden" value="Google Реклама"><div class="border border-white/20 rounded-lg p-3 text-sm text-gray-300 hover:border-white transition text-center select-none">📈 Google Реклама</div></label>
+                                <label class="cursor-pointer"><input type="checkbox" class="goal-checkbox hidden" value="Одит на бизнеса"><div class="border border-white/20 rounded-lg p-3 text-sm text-gray-300 hover:border-white transition text-center select-none">🔍 Одит на бизнеса</div></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <button onclick="bookOnWhatsApp()" class="bg-[#25D366] hover:bg-[#128C7E] text-white font-black uppercase py-4 rounded-xl transition flex items-center justify-center gap-2 shadow-lg"><i class="fab fa-whatsapp text-xl"></i> Потвърди във WhatsApp</button>
+                        <button onclick="bookOnViber()" class="bg-[#7360f2] hover:bg-[#5f4bc6] text-white font-black uppercase py-4 rounded-xl transition flex items-center justify-center gap-2 shadow-lg"><i class="fab fa-viber text-xl"></i> Потвърди във Viber</button>
+                    </div>
+                    <p class="text-center text-gray-500 text-xs mt-4">Ще се отвори чат с попълнените данни.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-white/5 text-gray-600 text-xs uppercase tracking-widest"><a href="index.html" class="hover:text-white transition">© 2026 GG Solutions | Yambol</a></footer>
+
+    <script>
+        let selectedDate = null;
+        let selectedTime = null;
+        const myPhone = "359895634188"; // YOUR PHONE NUMBER
+
+        const daysContainer = document.getElementById('days-container');
+        const slotsContainer = document.getElementById('slots-container');
+        const weekDays = ['Неделя', 'Понеделник', 'Вторник', 'Сряда', 'Четвъртък', 'Петък', 'Събота'];
+        const months = ['Яну', 'Фев', 'Март', 'Апр'];
+
+        for (let i = 0; i < 3; i++) {
+            const d = new Date();
+            d.setDate(d.getDate() + i + 1);
+            const dateStr = `${d.getDate()} ${months[d.getMonth()]}`;
+            const dayName = weekDays[d.getDay()];
+            const btn = document.createElement('button');
+            btn.className = `p-4 rounded-xl border border-white/10 bg-white/5 hover:border-[#E91E63] transition text-left group day-card`;
+            btn.innerHTML = `<div class="text-[#E91E63] text-xs font-black uppercase mb-1">${i === 0 ? 'УТРЕ' : dayName}</div><div class="text-white text-xl font-bold">${dateStr}</div>`;
+            btn.onclick = () => selectDate(btn, dateStr);
+            daysContainer.appendChild(btn);
+        }
+
+        function selectDate(btn, date) {
+            document.querySelectorAll('.day-card').forEach(b => b.classList.remove('border-[#E91E63]', 'bg-[#E91E63]/10'));
+            btn.classList.add('border-[#E91E63]', 'bg-[#E91E63]/10');
+            selectedDate = date; selectedTime = null;
+            document.getElementById('btn-next-1').disabled = true;
+            document.getElementById('btn-next-1').className = "w-full bg-white/10 text-gray-500 cursor-not-allowed font-black uppercase py-4 rounded-xl transition";
+            
+            const times = ['10:00', '11:30', '14:00', '16:30', '18:00'];
+            slotsContainer.innerHTML = '';
+            times.forEach(time => {
+                const taken = Math.random() > 0.7; 
+                const tBtn = document.createElement('button');
+                tBtn.className = taken ? `p-3 rounded-lg border border-white/5 bg-white/5 text-gray-600 line-through cursor-not-allowed` : `p-3 rounded-lg border border-white/20 bg-white/5 text-white hover:border-[#E91E63] hover:text-[#E91E63] transition time-slot`;
+                tBtn.innerText = time;
+                if(!taken) tBtn.onclick = () => selectTime(tBtn, time);
+                slotsContainer.appendChild(tBtn);
+            });
+        }
+
+        function selectTime(btn, time) {
+            document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+            selectedTime = time;
+            const nextBtn = document.getElementById('btn-next-1');
+            nextBtn.disabled = false;
+            nextBtn.className = "w-full bg-[#E91E63] hover:bg-[#c2185b] text-white font-black uppercase py-4 rounded-xl transition shadow-lg";
+            nextBtn.innerText = `Запази за ${selectedDate} в ${selectedTime} →`;
+        }
+
+        function nextStep() { document.getElementById('step-time').classList.add('hidden'); document.getElementById('step-details').classList.remove('hidden'); }
+        function prevStep() { document.getElementById('step-details').classList.add('hidden'); document.getElementById('step-time').classList.remove('hidden'); }
+
+        function getMessage() {
+            const name = document.getElementById('input-name').value || "Непознат";
+            const business = document.getElementById('input-business').value || "Бизнес";
+            const goals = Array.from(document.querySelectorAll('.goal-checkbox:checked')).map(cb => cb.value);
+            const goalsStr = goals.length > 0 ? goals.join(", ") : "Консултация";
+            return `Здравей! Казвам се ${name}. Имам бизнес: ${business}. Целта ми е: ${goalsStr}. Искам да запазя час за стратегия за ${selectedDate} в ${selectedTime}.`.trim();
+        }
+        function bookOnWhatsApp() { const msg = encodeURIComponent(getMessage()); window.open(`https://wa.me/${myPhone}?text=${msg}`, '_blank'); }
+        function bookOnViber() { const msg = encodeURIComponent(getMessage()); window.open(`viber://chat?number=%2B${myPhone}&draft=${msg}`, '_blank'); }
+    </script>
+  </body>
+</html>
