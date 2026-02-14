@@ -201,6 +201,27 @@ function initInteractions() {
     });
 }
 
+/* -------------------------------------------------------------------------- */
+/* 8. PREMIUM SCROLL ANIMATIONS                                               */
+/* -------------------------------------------------------------------------- */
+function initScrollReveals() {
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 }); // Triggers when 10% of the element is visible
+
+    reveals.forEach(reveal => observer.observe(reveal));
+}
+// Add to DOMContentLoaded:
+document.addEventListener('DOMContentLoaded', () => {
+    // ... your other inits ...
+    initScrollReveals(); 
+});
+
 function initAnalyticsTracking() {
     // Delegated Event Listener for all clicks
     document.addEventListener('click', function(e) {

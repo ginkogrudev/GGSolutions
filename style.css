@@ -171,6 +171,20 @@ body::before {
     scrollbar-width: none;
 }
 
+/* The Premium Reveal Animation */
+.reveal { 
+    opacity: 0; 
+    transform: translateY(40px); 
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+.reveal.active { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+
 /* ANIMATIONS */
 @keyframes fadeInDown {
   from {
