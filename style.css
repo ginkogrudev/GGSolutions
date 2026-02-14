@@ -1,202 +1,102 @@
-/* GG SOLUTIONS - PURE DARK (LEAN VERSION) */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* GG SOLUTIONS - CORE STYLES (FINAL PRODUCTION) */
 
-:root {
-  /* --- BRAND IDENTITY --- */
-  --p-h: 349;
-  --p-s: 100%;
-  --p-l: 59%;
-  --primary: var(--p-h) var(--p-s) var(--p-l);
-
-  /* --- DARK THEME ONLY --- */
-  --bg-1: 240 10% 4%; /* Deepest Black */
-  --bg-2: 240 6% 11%; /* Card Background (Slightly lighter) */
-
-  /* HIGH CONTRAST TEXT */
-  --text-1: 0 0% 100%; /* Pure White (Headings) */
-  --text-2: 240 5% 85%; /* Platinum (Body - Super Readable) */
-  --text-muted: 240 5% 50%;
-
-  --border: 0 0% 100%;
-}
-
-/* --- GLOBAL STYLES --- */
+/* 1. GLOBALS & TYPOGRAPHY */
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: hsl(var(--bg-1));
-  color: hsl(var(--text-1));
-  overflow-x: hidden; /* Prevents scrollbar jumping */
+    background-color: #050505; /* Deep pure black */
+    color: white;
+    overflow-x: hidden; /* Prevents horizontal scroll jumping */
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased; /* Makes text look sharper */
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: -0.03em; /* Tighter letter spacing for punchy look */
-  color: hsl(var(--text-1));
+/* Tighter letter spacing for that premium, punchy agency look */
+h1, h2, h3, h4 {
+    letter-spacing: -0.03em; 
 }
 
-p,
-li {
-  color: hsl(var(--text-2));
-  font-weight: 500;
-  line-height: 1.6;
+p, li {
+    line-height: 1.6;
 }
 
-.text-pink {
-  color: hsl(var(--primary)) !important;
-}
-.bg-pink {
-  background-color: hsl(var(--primary)) !important;
-}
-
-/* NAVBAR CONSISTENCY */
-.nav-container {
-  height: 80px;
-  display: flex;
-  align-items: center;
-}
-
-/* PREMIUM GLASS EFFECT */
-.glass {
-  background: hsla(var(--bg-2) / 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid hsla(var(--border) / 0.1);
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5); /* Deep shadow */
-}
-
-/* --- BUTTONS --- */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  color: white !important;
-  background-color: hsl(var(--primary));
-  border-radius: 1rem;
-  text-transform: uppercase;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 20px hsla(var(--primary) / 0.4); /* Neon Glow */
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 40px hsla(var(--primary) / 0.6);
-}
-
-/* --- GRID PATTERN (Subtle) --- */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* --- ADD THIS TO style.css --- */
-
-/* Secondary Button (Transparent/Outline) */
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  color: white !important;
-  background-color: transparent;
-  border: 2px solid hsla(var(--border) / 0.2);
-  border-radius: 1rem;
-  text-transform: uppercase;
-  transition: all 0.2s ease;
-}
-
-.btn-secondary:hover {
-  border-color: hsl(var(--primary));
-  color: hsl(var(--primary)) !important;
-  background-color: hsla(var(--primary) / 0.1);
-  box-shadow: 0 0 30px hsla(var(--primary) / 0.2);
-}
-
-/* Text Glow Utility */
-.drop-shadow-neon {
-  text-shadow: 0 0 20px hsla(var(--primary) / 0.6);
-}
-
-/* Image Glow Utility */
-.img-glow {
-  filter: drop-shadow(0 0 30px hsla(var(--primary) / 0.3));
-  transition: transform 0.5s ease;
-}
-.img-glow:hover {
-  transform: scale(1.05) rotate(-2deg);
-}
-
-/* Selection Color (Pink Highlight) */
+/* Highlight Selection (When user drags cursor over text) */
 ::selection {
-  background-color: hsl(var(--primary));
-  color: white;
+    background-color: #E91E63;
+    color: white;
 }
 
-/* Custom Scrollbar for Project Images */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 8px;
-}
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: #1a1a1a;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 4px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* HIDE SCROLLBAR (For Carousels) */
-.hide-scroll::-webkit-scrollbar {
-    display: none;
-}
-.hide-scroll {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+/* 2. THE BACKGROUND GRID (The "Hacker" Aesthetic) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: -1;
 }
 
-/* The Premium Reveal Animation */
+/* 3. PREMIUM UI COMPONENTS */
+/* The Glassmorphism Effect */
+.glass {
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Primary Button Glow (The Money Button) */
+.btn-primary {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 20px rgba(233, 30, 99, 0.3); /* Soft pink glow */
+}
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 40px rgba(233, 30, 99, 0.6); /* Intense glow on hover */
+}
+
+/* 4. UTILITIES */
+/* Hide Scrollbars completely for clean carousels */
+.hide-scroll::-webkit-scrollbar { display: none; }
+.hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Custom Checkbox specific to your form */
+.goal-checkbox:checked + div {
+    border-color: #E91E63;
+    background-color: rgba(233, 30, 99, 0.1);
+    color: white;
+}
+
+/* 5. THE "APPLE-STYLE" REVEAL ANIMATIONS */
+/* Base state: Hidden and pushed down */
 .reveal { 
     opacity: 0; 
-    transform: translateY(40px); 
+    transform: translateY(30px) scale(0.98); 
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); 
+    will-change: opacity, transform; /* Hardware acceleration */
 }
+
+/* Active state: Visible and in position */
 .reveal.active { 
     opacity: 1; 
-    transform: translateY(0); 
+    transform: translateY(0) scale(1); 
 }
+
+/* Delays for staggered grid loading */
 .delay-100 { transition-delay: 100ms; }
 .delay-200 { transition-delay: 200ms; }
 .delay-300 { transition-delay: 300ms; }
 
-/* ANIMATIONS */
+/* Hero Section Intro Animation */
 @keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
-
 .animate-fade-in-down {
-  animation: fadeInDown 0.8s ease-out forwards;
+    animation: fadeInDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
