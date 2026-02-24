@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="bg">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 | Прасето избяга! | GG Solutions</title>
+    <title>404 | System Malfunction | GG Solutions</title>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSSHL2D8TJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-
+      function gtag() { dataLayer.push(arguments); }
       gtag('consent', 'default', {
         analytics_storage: 'denied',
         ad_storage: 'denied',
@@ -19,7 +16,6 @@
         ad_personalization: 'denied',
         wait_for_update: 500,
       });
-
       gtag('js', new Date());
       gtag('config', 'G-GSSHL2D8TJ');
     </script>
@@ -27,143 +23,88 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GSSHL2D8TJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    
+    <style>
+        .glass { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px); }
+        .text-pink { color: #E91E63; }
+        .bg-pink { background-color: #E91E63; }
+        .border-pink { border-color: #E91E63; }
+    </style>
+</head>
 
-  gtag('config', 'G-GSSHL2D8TJ');
-</script>
-  </head>
+<body class="bg-[#050505] text-white font-['Montserrat'] min-h-screen flex flex-col justify-between selection:bg-[#E91E63] selection:text-white">
 
-  <body class="bg-black text-white font-['Montserrat'] min-h-screen flex flex-col justify-between">
     <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10 transition-all duration-300">
-      <div class="max-w-7xl mx-auto px-6 nav-container justify-between">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="index.html" class="flex items-center gap-3 group">
-          <span class="text-2xl group-hover:scale-110 transition-transform">🐷</span>
-          <span
-            class="font-[900] uppercase tracking-tighter text-xl text-white group-hover:text-pink transition-colors"
-          >
-            GG <span class="text-pink">Solutions</span>
+          <span class="text-2xl group-hover:rotate-12 transition-transform">🐷</span>
+          <span class="font-[900] uppercase tracking-tighter text-xl text-white group-hover:text-[#E91E63] transition-colors">
+            GG <span class="text-[#E91E63]">Solutions</span>
           </span>
         </a>
-        <div class="hidden md:flex items-center gap-8 text-xs font-[800] tracking-[0.15em] uppercase text-silver">
-          <a href="index.html" class="text-pink transition-colors">Начало</a>
-          <a href="calculator.html" class="hover:text-white transition-colors">Калкулатор</a>
-          <a href="oborota.html" class="hover:text-white transition-colors">Oborota</a>
-          <a href="30DayChallenge.html" class="hover:text-pink transition-colors flex items-center gap-2">
-            30-Day Challenge
-            <span class="bg-pink text-white text-[9px] px-1.5 py-0.5 rounded-full animate-pulse">BETA</span>
-          </a>
+        <div class="hidden md:flex items-center gap-8 text-xs font-[800] tracking-[0.15em] uppercase text-gray-400">
+          <a href="index.html" class="hover:text-white transition-colors">Начало</a>
+          <a href="portfolio.html" class="hover:text-white transition-colors">Портфолио</a>
+          <a href="about.html" class="hover:text-white transition-colors">За Нас</a>
+          <a href="gg-tools-for-business.html" class="text-[#E91E63] transition-colors hover:underline">Безплатни Инструменти</a>
         </div>
-        <button onclick="toggleMenu()" class="md:hidden text-white hover:text-pink transition">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
-          </svg>
-        </button>
       </div>
     </nav>
 
-    <div
-      id="mobile-menu"
-      class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8"
-    >
-      <button onclick="toggleMenu()" class="absolute top-8 right-8 text-white/50 uppercase text-xs tracking-widest">
-        Затвори ✕
-      </button>
-      <a href="index.html" class="text-3xl font-[900] uppercase italic text-pink">Начало</a>
-      <a href="calculator.html" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white"
-        >Калкулатор</a
-      >
-      <a href="oborota.html" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white">Oborota App</a>
-      <a href="30DayChallenge.html" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white"
-        >30-Day Challenge</a
-      >
-    </div>
-    <main class="flex flex-col items-center justify-center flex-grow p-6 text-center">
-      <div class="text-[120px] mb-6 animate-bounce select-none">🐷</div>
-      <h1
-        class="text-7xl md:text-9xl font-white italic uppercase tracking-tighter mb-4 text-pink drop-shadow-[0_10px_30px_rgba(255,45,85,0.3)]"
-      >
-        404
-      </h1>
+    <main class="flex flex-col items-center justify-center flex-grow p-6 text-center mt-20 relative overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#E91E63]/10 blur-[120px] rounded-full pointer-events-none"></div>
 
-      <div class="mb-12">
-        <h2 class="mb-2 text-2xl font-black uppercase md:text-3xl">ПРАСЕТО ИЗБЯГА!</h2>
-        <p class="text-lg opacity-70">Пращаме нашия програмист да го гони!<br />Върни се в безопасност през портала:</p>
-      </div>
+      <div class="relative z-10">
+          <div class="text-[100px] md:text-[150px] mb-4 animate-bounce select-none leading-none">🐷</div>
+          
+          <h1 class="text-8xl md:text-9xl font-[900] italic uppercase tracking-tighter mb-2 text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-600">
+            404
+          </h1>
+          
+          <h2 class="text-2xl md:text-4xl font-black uppercase text-[#E91E63] mb-6 tracking-widest">
+              ПРАСЕТО ИЗБЯГА!
+          </h2>
+          
+          <p class="text-gray-400 text-lg md:text-xl max-w-xl mx-auto mb-12 leading-relaxed">
+            Страницата, която търсиш, вече не съществува. Вероятно сме я оптимизирали толкова добре, че е станала невидима.
+          </p>
 
-      <div class="grid w-full max-w-4xl grid-cols-1 gap-6 px-4 mx-auto md:grid-cols-3">
-        <a
-          href="index.html"
-          class="btn-secondary-action px-12 py-5 text-center text-lg font-black !text-white transition bg-pink rounded-2xl hover:scale-105 shadow-[0_0_20px_rgba(255,45,85,0.4)]"
-        >
-          КЪМ НАЧАЛОТО
-        </a>
+          <div class="grid w-full max-w-4xl grid-cols-1 gap-6 px-4 mx-auto md:grid-cols-3">
+            <a href="index.html" class="group relative px-8 py-5 bg-white/5 border border-white/10 hover:border-[#E91E63] rounded-2xl transition overflow-hidden">
+                <div class="relative z-10">
+                    <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">Безопасна зона</p>
+                    <p class="text-lg font-black text-white group-hover:text-[#E91E63] transition">КЪМ НАЧАЛОТО</p>
+                </div>
+            </a>
 
-        <a
-          href="calculator.html"
-          class="btn-secondary-action px-12 py-5 text-center text-lg font-black !text-white transition bg-pink rounded-2xl hover:scale-105 shadow-[0_0_20px_rgba(255,45,85,0.4)]"
-        >
-          ЕВРО КАЛКУЛАТОР
-        </a>
+            <a href="portfolio.html" class="group relative px-8 py-5 bg-white/5 border border-white/10 hover:border-[#E91E63] rounded-2xl transition overflow-hidden">
+                <div class="relative z-10">
+                    <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">Виж резултатите</p>
+                    <p class="text-lg font-black text-white group-hover:text-[#E91E63] transition">ПОРТФОЛИО</p>
+                </div>
+            </a>
 
-        <a
-          href="oborota.html"
-          class="btn-secondary-action px-12 py-5 text-center text-lg font-black !text-white transition bg-pink rounded-2xl hover:scale-105 shadow-[0_0_20px_rgba(255,45,85,0.4)]"
-        >
-          ПРИЛОЖЕНИЕ ОБОРОТА
-        </a>
+            <a href="index.html#war-chest" class="group relative px-8 py-5 bg-[#E91E63] hover:bg-[#c2185b] rounded-2xl transition shadow-[0_0_30px_rgba(233,30,99,0.3)] hover:scale-105">
+                <div class="relative z-10">
+                    <p class="text-xs text-white/70 uppercase tracking-widest font-bold mb-1">Вземи подарък</p>
+                    <p class="text-lg font-black text-white">БЕЗПЛАТНИ КНИГИ</p>
+                </div>
+            </a>
+          </div>
       </div>
     </main>
 
-    <div id="socials-mount"></div>
-
-    <footer class="px-6 py-20 border-t border-white/5 bg-zinc-950/50">
-      <div class="max-w-6xl mx-auto text-center md:text-left">
-        <div class="grid items-center grid-cols-1 gap-12 mb-16 md:grid-cols-2">
-          <div>
-            <div class="mb-4 text-2xl font-black uppercase">GG <span class="text-pink">SOLUTIONS</span></div>
-            <p class="text-xs tracking-[0.3em] text-gray-500 uppercase mb-6">
-              Дигитални инструменти за българския бизнес
-            </p>
-            <a
-              href="https://revolut.me/ginkogrudev"
-              target="_blank"
-              class="inline-flex items-center gap-3 px-8 py-4 font-black text-white transition shadow-lg bg-pink rounded-2xl hover:scale-105 shadow-pink/20"
-            >
-              <span>ПОЧЕРПИ ЕДНА БИРА 🍺</span>
-            </a>
-          </div>
-          <div class="flex flex-col items-center gap-6 md:items-end">
-            <div class="flex gap-8 text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase">
-              <a href="https://github.com/ginkogrudev/GGSolutions" class="hover:text-pink">Source Code</a>
-              <a href="mailto:contact@ggsolutions.bg" class="hover:text-pink">Контакт</a>
-            </div>
-            <p class="text-[10px] text-gray-700 uppercase tracking-[0.4em]">© 2026 GG SOLUTIONS | YAMBOL, BULGARIA</p>
-          </div>
+    <footer class="px-6 py-12 border-t border-white/5 bg-[#050505] relative z-10">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+        <div>
+           <p class="text-[10px] text-gray-600 uppercase tracking-[0.4em]">© 2026 GG SOLUTIONS</p>
+        </div>
+        <div class="flex gap-6 text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase">
+           <a href="index.html" class="hover:text-[#E91E63] transition">Home</a>
+           <a href="mailto:contact@ggsolutions.bg" class="hover:text-[#E91E63] transition">Contact</a>
         </div>
       </div>
     </footer>
 
-    <div
-      id="cookie-banner"
-      class="fixed bottom-6 left-6 right-6 z-[100] glass p-6 rounded-[2rem] border-pink/30 hidden"
-    >
-      <div class="flex flex-col items-center justify-between max-w-6xl gap-6 mx-auto md:flex-row">
-        <div class="text-left">
-          <p class="text-pink font-black uppercase text-[10px] tracking-[0.3em] mb-1">Privacy Check</p>
-          <p class="text-sm font-medium">Да пуснем ли прасенцето да те следи? 🐷</p>
-        </div>
-        <div class="flex items-center gap-4">
-          <button onclick="updateConsent(true)" class="btn-primary !py-3 !px-8 !text-[10px]">ПРИЕМАМ</button>
-          <button onclick="updateConsent(false)" class="text-[10px] font-bold uppercase opacity-50">Отказ</button>
-        </div>
-      </div>
-    </div>
-
-    <script src="app.js"></script>
-  </body>
+</body>
 </html>
