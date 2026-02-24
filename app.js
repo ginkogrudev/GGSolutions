@@ -73,6 +73,59 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* -------------------------------------------------------------------------- */
+/* 8. LEAD MAGNET ENGINE (GOOGLE SHEETS CONNECTION)                           */
+/* -------------------------------------------------------------------------- */
+// YOUR NEW DEPLOYMENT URL
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwmApxTFdqfK2h9Ip-yDkfAS7yC0wqi8bTJYFFjCZRoYd3dQi49cWIrpicyPJeH82zKUg/exec'; 
+const form = document.forms['lead-magnet-form'];
+
+/* -------------------------------------------------------------------------- */
+/* Form Submission Handling*/
+/* -------------------------------------------------------------------------- */
+
+if (form) {
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        
+        const btn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const spinner = document.getElementById('btn-spinner');
+        const successMsg = document.getElementById('success-msg');
+        
+        // 1. Loading State
+        btn.disabled = true;
+        btn.classList.add('opacity-50', 'cursor-not-allowed');
+        btnText.innerText = 'ИЗПРАЩАНЕ...';
+        spinner.classList.remove('hidden');
+
+        // 2. Send Data
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                // 3. Success State
+                form.reset();
+                btn.classList.add('hidden'); // Hide button entirely
+                successMsg.classList.remove('hidden'); // Show success msg
+                
+                // Analytics Event (Optional)
+                if(typeof gtag === 'function') {
+                    gtag('event', 'generate_lead', {
+                        'event_category': 'engagement',
+                        'event_label': 'War Chest Download'
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                // Reset Button on Error
+                btn.disabled = false;
+                btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                btnText.innerText = 'ГРЕШКА! ОПИТАЙ ПАК';
+                spinner.classList.add('hidden');
+            });
+    });
+}
+
+/* -------------------------------------------------------------------------- */
 /* 3. PREMIUM SCROLL REVEALS (The "Apple" Effect)                           */
 /* -------------------------------------------------------------------------- */
 function initScrollReveals() {
