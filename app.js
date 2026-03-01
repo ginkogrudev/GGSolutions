@@ -126,6 +126,28 @@ if (form) {
 }
 
 /* -------------------------------------------------------------------------- */
+/* 9. DYNAMIC TIME & DATES (Set and Forget)                                   */
+/* -------------------------------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Calculate Agency Age (Assuming started Jan 2026)
+    const startDate = new Date('2026-01-01');
+    const now = new Date();
+    const ageInMonths = (now.getFullYear() - startDate.getFullYear()) * 12 + (now.getMonth() - startDate.getMonth()) + 1;
+    
+    // Find any element with id="agency-age" and update it
+    const ageElements = document.querySelectorAll('.agency-age');
+    ageElements.forEach(el => el.innerText = ageInMonths);
+
+    // 2. Get Current Month Name (e.g., "March")
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const currentMonth = monthNames[now.getMonth()];
+    
+    // Find any element with class="current-month" and update it
+    const monthElements = document.querySelectorAll('.current-month');
+    monthElements.forEach(el => el.innerText = currentMonth);
+});
+
+/* -------------------------------------------------------------------------- */
 /* 3. PREMIUM SCROLL REVEALS (The "Apple" Effect)                           */
 /* -------------------------------------------------------------------------- */
 function initScrollReveals() {
