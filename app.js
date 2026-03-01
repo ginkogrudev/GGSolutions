@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initInteractions();
     initCookieBanner();
-    initScrollReveals(); // This needs to fire immediately
+    initScrollReveals();
     initAnalyticsTracking();
+    initLeadMagnet(); // СТАРТИРАМЕ ДВИГАТЕЛЯ ЗА ЛИЙДОВЕ
+    initAutoScrollGalleries(); // СТАРТИРАМЕ АВТОМАТИЧНИТЕ ГАЛЕРИИ
     
     // Safety Net for Google Analytics
     window.gtag = window.gtag || function(){ (window.dataLayer = window.dataLayer || []).push(arguments); };
@@ -15,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
 /* 1. NAVIGATION LOGIC                                                        */
 /* -------------------------------------------------------------------------- */
 function initNavigation() {
-    // Auto-close mobile menu when a link is clicked
     const menuLinks = document.querySelectorAll('#mobile-menu a');
     menuLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -32,10 +33,10 @@ window.toggleMenu = function() {
     if (menu) {
         if (menu.classList.contains('hidden')) {
             menu.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Lock background scrolling
+            document.body.style.overflow = 'hidden';
         } else {
             menu.classList.add('hidden');
-            document.body.style.overflow = ''; // Unlock background scrolling
+            document.body.style.overflow = '';
         }
     }
 };
@@ -47,14 +48,13 @@ window.openContactModal = function() {
     const modal = document.getElementById('contact-modal');
     const menu = document.getElementById('mobile-menu');
     
-    // If mobile menu is open, close it first
     if (menu && !menu.classList.contains('hidden')) {
         toggleMenu(); 
     }
 
     if (modal) {
         modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // Lock scroll
+        document.body.style.overflow = 'hidden';
         if(typeof gtag === 'function') gtag('event', 'open_contact_modal');
     }
 };
@@ -63,88 +63,12 @@ window.closeContactModal = function() {
     const modal = document.getElementById('contact-modal');
     if (modal) {
         modal.classList.add('hidden');
-        document.body.style.overflow = ''; // Unlock scroll
+        document.body.style.overflow = '';
     }
 };
 
-// Close modal on Escape Key
 document.addEventListener('keydown', (e) => {
     if (e.key === "Escape") window.closeContactModal();
-});
-
-/* -------------------------------------------------------------------------- */
-/* 8. LEAD MAGNET ENGINE (GOOGLE SHEETS CONNECTION)                           */
-/* -------------------------------------------------------------------------- */
-// YOUR NEW DEPLOYMENT URL
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwmApxTFdqfK2h9Ip-yDkfAS7yC0wqi8bTJYFFjCZRoYd3dQi49cWIrpicyPJeH82zKUg/exec'; 
-const form = document.forms['lead-magnet-form'];
-
-/* -------------------------------------------------------------------------- */
-/* Form Submission Handling*/
-/* -------------------------------------------------------------------------- */
-
-if (form) {
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        
-        const btn = document.getElementById('submit-btn');
-        const btnText = document.getElementById('btn-text');
-        const spinner = document.getElementById('btn-spinner');
-        const successMsg = document.getElementById('success-msg');
-        
-        // 1. Loading State
-        btn.disabled = true;
-        btn.classList.add('opacity-50', 'cursor-not-allowed');
-        btnText.innerText = 'ИЗПРАЩАНЕ...';
-        spinner.classList.remove('hidden');
-
-        // 2. Send Data
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                // 3. Success State
-                form.reset();
-                btn.classList.add('hidden'); // Hide button entirely
-                successMsg.classList.remove('hidden'); // Show success msg
-                
-                // Analytics Event (Optional)
-                if(typeof gtag === 'function') {
-                    gtag('event', 'generate_lead', {
-                        'event_category': 'engagement',
-                        'event_label': 'War Chest Download'
-                    });
-                }
-            })
-            .catch(error => {
-                console.error('Error!', error.message);
-                // Reset Button on Error
-                btn.disabled = false;
-                btn.classList.remove('opacity-50', 'cursor-not-allowed');
-                btnText.innerText = 'ГРЕШКА! ОПИТАЙ ПАК';
-                spinner.classList.add('hidden');
-            });
-    });
-}
-
-/* -------------------------------------------------------------------------- */
-/* 9. DYNAMIC TIME & DATES (Set and Forget)                                   */
-/* -------------------------------------------------------------------------- */
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Calculate Agency Age (Assuming started Jan 2026)
-    const startDate = new Date('2026-01-01');
-    const now = new Date();
-    const ageInMonths = (now.getFullYear() - startDate.getFullYear()) * 12 + (now.getMonth() - startDate.getMonth()) + 1;
-    
-    // Find any element with id="agency-age" and update it
-    const ageElements = document.querySelectorAll('.agency-age');
-    ageElements.forEach(el => el.innerText = ageInMonths);
-
-    // 2. Get Current Month Name (e.g., "March")
-    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    const currentMonth = monthNames[now.getMonth()];
-    
-    // Find any element with class="current-month" and update it
-    const monthElements = document.querySelectorAll('.current-month');
-    monthElements.forEach(el => el.innerText = currentMonth);
 });
 
 /* -------------------------------------------------------------------------- */
@@ -152,27 +76,18 @@ document.addEventListener('DOMContentLoaded', () => {
 /* -------------------------------------------------------------------------- */
 function initScrollReveals() {
     const reveals = document.querySelectorAll('.reveal');
-    
-    // Intersection Observer setup
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15 // Fires when 15% of the element is visible
-    };
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Add the active class to trigger CSS transition
                 entry.target.classList.add('active');
-                // Optional: Stop observing once revealed so it doesn't animate out and in repeatedly
                 observer.unobserve(entry.target); 
             }
         });
     }, observerOptions);
 
     reveals.forEach(reveal => {
-        // Ensure starting state is clean
         reveal.classList.remove('active');
         observer.observe(reveal);
     });
@@ -182,22 +97,18 @@ function initScrollReveals() {
 /* 4. FAQ ACCORDION LOGIC                                                     */
 /* -------------------------------------------------------------------------- */
 window.toggleFaq = function(element) {
-    // Find the content div (it should have the class 'faq-content')
     const content = element.querySelector('.faq-content') || element.nextElementSibling;
-    
-    if (!content || content.tagName !== 'DIV') return; // Safety exit
+    if (!content || content.tagName !== 'DIV') return;
 
-    const icon = element.querySelector('span'); // The '+' icon
+    const icon = element.querySelector('span');
 
     if (content.classList.contains('hidden')) {
-        // OPEN
         content.classList.remove('hidden');
         if (icon) {
             icon.classList.add('rotate-45'); 
             icon.classList.add('text-[#E91E63]');
         }
     } else {
-        // CLOSE
         content.classList.add('hidden');
         if (icon) {
             icon.classList.remove('rotate-45');
@@ -218,24 +129,19 @@ window.switchCurrency = function(curr) {
     if(!btnBgn || !btnEur) return;
 
     if(curr === 'BGN') {
-        // UI Update
         btnBgn.classList.add('bg-[#E91E63]', 'text-white');
         btnBgn.classList.remove('text-gray-500', 'bg-transparent');
         btnEur.classList.remove('bg-[#E91E63]', 'text-white');
         btnEur.classList.add('text-gray-500', 'bg-transparent');
         
-        // Data Update
         prices.forEach(el => { if(el.getAttribute('data-bgn')) el.innerText = el.getAttribute('data-bgn'); });
         if(subs) subs.forEach(el => { if(el.getAttribute('data-bgn')) el.innerText = el.getAttribute('data-bgn'); });
-        
     } else {
-        // UI Update
         btnEur.classList.add('bg-[#E91E63]', 'text-white');
         btnEur.classList.remove('text-gray-500', 'bg-transparent');
         btnBgn.classList.remove('bg-[#E91E63]', 'text-white');
         btnBgn.classList.add('text-gray-500', 'bg-transparent');
         
-        // Data Update
         prices.forEach(el => { if(el.getAttribute('data-eur')) el.innerText = el.getAttribute('data-eur'); });
         if(subs) subs.forEach(el => { if(el.getAttribute('data-eur')) el.innerText = el.getAttribute('data-eur'); });
     }
@@ -271,7 +177,6 @@ window.manageCookies = function() {
 /* 7. TRACKING & INTERACTIONS                                                 */
 /* -------------------------------------------------------------------------- */
 function initInteractions() {
-    // Haptic feedback for mobile users
     const interactiveElements = document.querySelectorAll('button, a, .glass');
     interactiveElements.forEach(el => {
         el.addEventListener('click', () => {
@@ -287,15 +192,103 @@ function initAnalyticsTracking() {
         
         const href = link.href.toLowerCase();
 
-        // Contact Tracking
         if (href.includes('tel:')) gtag('event', 'contact', { 'method': 'phone_call' });
         if (href.includes('viber')) gtag('event', 'contact', { 'method': 'viber' });
         if (href.includes('wa.me') || href.includes('whatsapp')) gtag('event', 'contact', { 'method': 'whatsapp' });
         if (href.includes('mailto')) gtag('event', 'contact', { 'method': 'email' });
         
-        // Conversion Tracking (High Value)
         if (href.includes('calendar.app.google') || href.includes('calendly')) {
             gtag('event', 'begin_checkout', { 'item_name': 'Strategy Call' });
+        }
+    });
+}
+
+/* -------------------------------------------------------------------------- */
+/* 8. LEAD MAGNET ENGINE (BULLETPROOF VERSION)                                */
+/* -------------------------------------------------------------------------- */
+function initLeadMagnet() {
+    const form = document.forms['lead-magnet-form'];
+    if (!form) return; // Ако няма форма на страницата, не прави нищо.
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyTBxC1lm5wgVR1sr-ZAxnp0I5x2-oyKkx-MDE1MNHYMV8DEjthrIOIujGfYGh0aJT6-g/exec'; 
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        
+        const btn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const spinner = document.getElementById('btn-spinner');
+        const successMsg = document.getElementById('success-msg');
+        
+        // State: Loading
+        btn.disabled = true;
+        btn.classList.add('opacity-50', 'cursor-not-allowed');
+        btnText.innerText = 'ИЗПРАЩАНЕ...';
+        spinner.classList.remove('hidden');
+
+        // State: Sending (с mode: 'no-cors' за да не бъде блокирано от Google Redirect)
+        fetch(scriptURL, { 
+            method: 'POST', 
+            body: new FormData(form),
+            mode: 'no-cors' 
+        })
+        .then(() => {
+            // State: Success
+            form.reset();
+            btn.classList.add('hidden'); 
+            successMsg.classList.remove('hidden'); 
+            
+            if(typeof gtag === 'function') {
+                gtag('event', 'generate_lead', {
+                    'event_category': 'engagement',
+                    'event_label': 'War Chest Download'
+                });
+            }
+        })
+        .catch(error => {
+            // State: Error
+            console.error('Fetch Error:', error.message);
+            btn.disabled = false;
+            btn.classList.remove('opacity-50', 'cursor-not-allowed');
+            btnText.innerText = 'ГРЕШКА! ОПИТАЙ ПАК';
+            spinner.classList.add('hidden');
+        });
+    });
+}
+
+/* -------------------------------------------------------------------------- */
+/* 9. DYNAMIC TIME & DATES                                                    */
+/* -------------------------------------------------------------------------- */
+// (Преместено горе в DOMContentLoaded за консистентност)
+document.addEventListener('DOMContentLoaded', () => {
+    const startDate = new Date('2026-01-01');
+    const now = new Date();
+    const ageInMonths = (now.getFullYear() - startDate.getFullYear()) * 12 + (now.getMonth() - startDate.getMonth()) + 1;
+    
+    document.querySelectorAll('.agency-age').forEach(el => el.innerText = ageInMonths);
+
+    const monthNames = ["Януари", "Февруари", "Март", "Април", "Май", "Юни", "Юли", "Август", "Септември", "Октомври", "Ноември", "Декември"];
+    document.querySelectorAll('.current-month').forEach(el => el.innerText = monthNames[now.getMonth()]);
+});
+
+/* -------------------------------------------------------------------------- */
+/* 10. AUTO-SCROLL PORTFOLIO GALLERIES                                        */
+/* -------------------------------------------------------------------------- */
+function initAutoScrollGalleries() {
+    const galleries = document.querySelectorAll('.hide-scroll');
+    
+    galleries.forEach(gallery => {
+        if (gallery.children.length > 1) {
+            let currentIndex = 0;
+            
+            setInterval(() => {
+                currentIndex++;
+                if (currentIndex >= gallery.children.length) currentIndex = 0; 
+                
+                const targetSlide = gallery.children[currentIndex];
+                gallery.scrollTo({ left: targetSlide.offsetLeft, behavior: 'smooth' });
+                
+            }, 3500);
         }
     });
 }
