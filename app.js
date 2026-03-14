@@ -185,20 +185,47 @@ function initInteractions() {
     });
 }
 
+/* -------------------------------------------------------------------------- */
+/* 7. TRACKING & INTERACTIONS (THE DATA ENGINE)                               */
+/* -------------------------------------------------------------------------- */
 function initAnalyticsTracking() {
     document.addEventListener('click', function(e) {
         const link = e.target.closest('a');
-        if (!link) return;
-        
-        const href = link.href.toLowerCase();
+        const btn = e.target.closest('a, button');
 
-        if (href.includes('tel:')) gtag('event', 'contact', { 'method': 'phone_call' });
-        if (href.includes('viber')) gtag('event', 'contact', { 'method': 'viber' });
-        if (href.includes('wa.me') || href.includes('whatsapp')) gtag('event', 'contact', { 'method': 'whatsapp' });
-        if (href.includes('mailto')) gtag('event', 'contact', { 'method': 'email' });
-        
-        if (href.includes('calendar.app.google') || href.includes('calendly')) {
-            gtag('event', 'begin_checkout', { 'item_name': 'Strategy Call' });
+        // 1. ПРОСЛЕДЯВАНЕ НА КОНТАКТИ И КАЛЕНДАР (The Conversion Actions)
+        if (link) {
+            const href = link.href.toLowerCase();
+
+            if (href.includes('tel:')) gtag('event', 'contact', { 'method': 'phone_call' });
+            if (href.includes('viber')) gtag('event', 'contact', { 'method': 'viber' });
+            if (href.includes('wa.me') || href.includes('whatsapp')) gtag('event', 'contact', { 'method': 'whatsapp' });
+            if (href.includes('mailto')) gtag('event', 'contact', { 'method': 'email' });
+            
+            // High-Intent Calendar Clicks
+            if (href.includes('calendar.app.google') || href.includes('calendly')) {
+                gtag('event', 'begin_checkout', { 'item_name': 'Strategy Call' });
+            }
+        }
+
+        // 2. ПРОСЛЕДЯВАНЕ НА ЦЕНИ И ПАКЕТИ (Pricing Intent Data)
+        if (btn) {
+            const text = btn.innerText?.toLowerCase() || '';
+            
+            // Minimum / Foundation Package Clicks
+            if (text.includes('минимум') || text.includes('rapid launch')) {
+                gtag('event', 'select_item', { item_name: 'Minimum Package', currency: 'EUR', value: 1000 });
+            }
+            
+            // Growth Package Clicks
+            if (text.includes('growth') || text.includes('takeover')) {
+                gtag('event', 'select_item', { item_name: 'Growth Package', currency: 'EUR', value: 2000 });
+            }
+            
+            // Domination / Partner Package Clicks
+            if (text.includes('domination') || text.includes('партньор')) {
+                gtag('event', 'select_item', { item_name: 'Domination Package', currency: 'EUR', value: 3500 });
+            }
         }
     });
 }
