@@ -22,11 +22,26 @@
 </script>
 
 <!-- Step 2: GTM (handles GA4, ads, everything else) -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NHVVXHGB');</script>
+<script>
+  let gtmLoaded = false;
+  function loadGTM() {
+    if (gtmLoaded) return;
+    gtmLoaded = true;
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NHVVXHGB');
+  }
+  
+  // Зареждаме тракинга само когато потребителят реално направи нещо (скрол, клик, докосване)
+  ['scroll', 'mousemove', 'touchstart', 'click'].forEach(function(event) {
+    window.addEventListener(event, loadGTM, { once: true });
+  });
+  
+  // Застраховка: Ако потребителят само зяпа и не пипа нищо 3 секунди, зареждаме го принудително
+  setTimeout(loadGTM, 10000);
+</script>
 
 <!-- Step 3: NO standalone gtag.js needed — GTM handles it -->
 </head>
