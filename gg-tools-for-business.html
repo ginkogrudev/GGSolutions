@@ -7,9 +7,16 @@
     <meta name="description" content="Безплатни инструменти за бизнеса: Евро Калкулатор, ROI Анализ и Маркетинг Академия.">
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐷</text></svg>" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+    <!-- Preconnect hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <!-- Critical CSS: Compiled Tailwind (replaces render-blocking CDN) -->
+    <link rel="stylesheet" href="tailwind.min.css" />
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     <link rel="stylesheet" href="style.css" />
     
    <!-- Step 1: Consent Default (MUST be first) -->
@@ -37,7 +44,6 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NHVVXHGB');
   }
-  
   // Зареждаме тракинга само когато потребителят реално направи нещо (скрол, клик, докосване)
   ['scroll', 'mousemove', 'touchstart', 'click'].forEach(function(event) {
     window.addEventListener(event, loadGTM, { once: true });
@@ -75,14 +81,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <i class="fas fa-comment-dots text-lg mr-2"></i> ПИШИ МИ
         </button>
 
-        <button onclick="toggleMenu()" class="md:hidden text-white hover:text-[#E91E63] transition">
+        <button onclick="toggleMenu()" class="md:hidden text-white hover:text-[#E91E63] transition" aria-label="Отвори менюто">
           <i class="fas fa-bars text-2xl"></i>
         </button>
       </div>
     </nav>
 
+    <main>
     <div id="mobile-menu" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8">
-      <button onclick="toggleMenu()" class="absolute top-8 right-8 text-white/50 uppercase text-xs tracking-widest p-4">✕</button>
+      <button onclick="toggleMenu()" class="absolute top-8 right-8 text-white/50 uppercase text-xs tracking-widest p-4"><span aria-hidden="true">✕</span><span class="sr-only">Затвори менюто</span></button>
       <a href="portfolio.html" class="text-3xl font-[900] uppercase italic text-white/80 hover:text-white">Портфолио</a>
       <a href="index.html#offer" class="text-3xl font-[900] uppercase italic text-white/80 hover:text-white">Цени</a>
       <a href="calculator.html" class="text-3xl font-[900] uppercase italic text-white">Free Tools</a>

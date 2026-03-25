@@ -4,9 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Case Study | GG Solutions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+    <!-- Preconnect hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <!-- Critical CSS: Compiled Tailwind (replaces render-blocking CDN) -->
+    <link rel="stylesheet" href="tailwind.min.css" />
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     <link rel="stylesheet" href="style.css" />
     <!-- Step 2: GTM (handles GA4, ads, everything else) -->
 <script>
@@ -41,6 +48,7 @@
         </div>
     </nav>
 
+    <main>
     <section class="pt-32 relative flex flex-col items-center text-center px-6">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#E91E63]/10 blur-[120px] rounded-full pointer-events-none"></div>
         
@@ -156,6 +164,8 @@
             </a>
         </div>
     </section>
+
+    </main>
 
     <footer class="bg-[#050505] border-t border-white/10 py-8 text-center">
         <p class="text-[10px] text-gray-600 uppercase tracking-[0.2em]">© 2026 GG SOLUTIONS.</p>

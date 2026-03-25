@@ -4,9 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>За Нас | GG Solutions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Preconnect hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <!-- Critical CSS: Compiled Tailwind (replaces render-blocking CDN) -->
+    <link rel="stylesheet" href="tailwind.min.css" />
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     <link rel="stylesheet" href="style.css" />
     <!-- Step 1: Consent Default (MUST be first) -->
 <script>
@@ -64,11 +71,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </nav>
 
+    <main>
     <section class="pt-40 pb-20 px-6 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E91E63]/10 blur-[120px] rounded-full pointer-events-none"></div>
         
         <div class="max-w-5xl mx-auto text-center relative z-10">
-            <h3 class="text-[#E91E63] font-black uppercase tracking-[0.3em] text-xs mb-6">Кои сме ние?</h3>
+            <p class="text-[#E91E63] font-black uppercase tracking-[0.3em] text-xs mb-6">Кои сме ние?</p>
             <h1 class="text-5xl md:text-8xl font-[900] uppercase italic text-white mb-8 leading-[0.9]">
                 Малък Екип.<br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-purple-600">Големи Резултати.</span>
@@ -86,7 +94,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="relative group">
                 <div class="absolute inset-0 bg-[#E91E63] rounded-[2rem] rotate-3 group-hover:rotate-6 transition duration-500 opacity-20"></div>
                 <div class="relative bg-black border border-white/10 rounded-[2rem] overflow-hidden aspect-[4/5] grayscale group-hover:grayscale-0 transition duration-500">
-                    <img src="imgs/logo.png" alt="Ginko Grudev" class="w-full h-full object-cover opacity-80 group-hover:opacity-100">
+                    <img src="imgs/logo.png" alt="Ginko Grudev" class="w-full h-full object-cover opacity-80 group-hover:opacity-100" width="415" height="410" fetchpriority="high">
                     
                     <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black to-transparent">
                         <p class="text-2xl font-black uppercase italic text-white">Гинко Грудев</p>
@@ -168,6 +176,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </a>
         </div>
     </section>
+
+    </main>
 
     <footer class="bg-[#050505] border-t border-white/10 py-8 text-center">
         <p class="text-[10px] text-gray-600 uppercase tracking-[0.2em]">© 2026 GG SOLUTIONS.</p>

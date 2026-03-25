@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio | GG Solutions</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐷</text></svg>" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+    <!-- Preconnect hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <!-- Critical CSS: Compiled Tailwind (replaces render-blocking CDN) -->
+    <link rel="stylesheet" href="tailwind.min.css" />
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     <link rel="stylesheet" href="style.css" />
     
     <style>
@@ -49,14 +56,7 @@
   // Застраховка: Ако потребителят само зяпа и не пипа нищо 3 секунди, зареждаме го принудително
   setTimeout(loadGTM, 10000);
 </script>
-<!-- Step 3: NO standalone gtag.js needed — GTM handles it -->script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-GSSHL2D8TJ');
-</script>
+<!-- Step 3: NO standalone gtag.js needed — GTM handles it -->
   </head>
 
   <body class="antialiased bg-black text-white selection:bg-[#E91E63] selection:text-white">
@@ -82,6 +82,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </nav>
 
+    <main>
     <section class="pt-32 pb-12 px-6 text-center relative overflow-hidden">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#E91E63]/10 blur-[120px] rounded-full pointer-events-none"></div>
         <h1 class="text-5xl md:text-8xl font-[900] uppercase italic text-white mb-6 relative z-10">

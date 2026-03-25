@@ -31,27 +31,23 @@
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐷</text></svg>" />
     
-    <!-- Preconnect hints for critical third-party origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.transparenttextures.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-    <!-- Critical CSS: Compiled Tailwind (replaces render-blocking CDN script) -->
     <link rel="stylesheet" href="tailwind.min.css" />
     <link rel="stylesheet" href="style.css" />
 
-    <!-- Google Fonts with font-display: swap enforced via URL parameter -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,900&display=swap" rel="stylesheet"/>
 
-    <!-- FontAwesome: loaded async (non-render-blocking) -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css?display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css?display=swap"></noscript>
     
-    <!-- Step 1: Consent Default (MUST be first) -->
-<script>
+    <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   gtag('consent', 'default', {
@@ -63,7 +59,6 @@
   });
 </script>
 
-<!-- Step 2: GTM (handles GA4, ads, everything else) -->
 <script>
   let gtmLoaded = false;
   function loadGTM() {
@@ -84,14 +79,11 @@
   // Застраховка: Ако потребителят само зяпа и не пипа нищо 3 секунди, зареждаме го принудително
   setTimeout(loadGTM, 10000);
 </script>
-<!-- Step 3: NO standalone gtag.js needed — GTM handles it -->
-    
 </head>
 
   
 <body class="antialiased bg-black text-white selection:bg-[#E91E63] selection:text-white">
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHVVXHGB"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHVVXHGB"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10 transition-all duration-300">
@@ -114,14 +106,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <i class="fas fa-comment-dots text-lg mr-2"></i> ПИШИ МИ
         </button>
 
-        <button onclick="toggleMenu()" class="md:hidden text-white hover:text-[#E91E63] transition">
+        <button onclick="toggleMenu()" aria-label="Отвори мобилно меню" class="md:hidden text-white hover:text-[#E91E63] transition">
           <i class="fas fa-bars text-2xl"></i>
         </button>
       </div>
     </nav>
 
+    <main>
     <div id="mobile-menu" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8">
-      <button onclick="toggleMenu()" class="absolute top-8 right-8 text-white/50 uppercase text-xs tracking-widest p-4">✕</button>
+      <button onclick="toggleMenu()" aria-label="Затвори мобилно меню" class="absolute top-8 right-8 text-white/50 uppercase text-xs tracking-widest p-4">✕</button>
       <a href="portfolio.html" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white">Портфолио</a>
       <a href="#offer" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white">Цени</a>
       <a href="gg-tools-for-business.html" class="text-3xl font-[900] uppercase italic text-[#E91E63]">Free Tools</a>
@@ -201,22 +194,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <div class="grid md:grid-cols-4 gap-6">
                 <div class="glass p-8 rounded-3xl border-t border-white/10 hover:-translate-y-2 transition duration-300 reveal delay-100">
-                    <div class="text-4xl mb-4">💰</div>
+                    <div class="text-4xl mb-4" aria-hidden="true">💰</div>
                     <h4 class="text-white font-black uppercase tracking-widest text-sm mb-2">Генерирате Пари</h4>
                     <p class="text-xs text-gray-400 leading-relaxed">Вече имате продукт, който се продава. Правите 5к - 10к лв/мес. Търсите скалиране.</p>
                 </div>
                 <div class="glass p-8 rounded-3xl border-t border-white/10 hover:-translate-y-2 transition duration-300 reveal delay-200">
-                    <div class="text-4xl mb-4">👥</div>
+                    <div class="text-4xl mb-4" aria-hidden="true">👥</div>
                     <h4 class="text-white font-black uppercase tracking-widest text-sm mb-2">Имате Екип</h4>
                     <p class="text-xs text-gray-400 leading-relaxed">Имате 3-5+ служители. Не сте "one-man show" и имате капацитет да поемете нов обем работа.</p>
                 </div>
                 <div class="glass p-8 rounded-3xl border-t border-white/10 hover:-translate-y-2 transition duration-300 reveal delay-300">
-                    <div class="text-4xl mb-4">📈</div>
+                    <div class="text-4xl mb-4" aria-hidden="true">📈</div>
                     <h4 class="text-white font-black uppercase tracking-widest text-sm mb-2">Готови за Реклама</h4>
                     <p class="text-xs text-gray-400 leading-relaxed">Разбирате, че сайтът е двигател, но рекламата (Google/FB) е горивото. Готови сте да инвестирате.</p>
                 </div>
                 <div class="glass p-8 rounded-3xl border-t border-white/10 border-[#E91E63]/30 hover:-translate-y-2 transition duration-300 reveal delay-300 shadow-[0_0_30px_rgba(233,30,99,0.1)]">
-                    <div class="text-4xl mb-4">🤝</div>
+                    <div class="text-4xl mb-4" aria-hidden="true">🤝</div>
                     <h4 class="text-[#E91E63] font-black uppercase tracking-widest text-sm mb-2">Long-Term</h4>
                     <p class="text-xs text-gray-400 leading-relaxed">Искате дигитален партньор за години напред, а не просто някой, който "да ви пусне сайт и да изчезне".</p>
                 </div>
@@ -226,10 +219,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 <div class="w-full md:w-1/3 lg:w-1/4 mx-auto md:mx-0 relative rounded-2xl overflow-hidden aspect-[9/16] shadow-[0_0_50px_rgba(233,30,99,0.2)] border-2 border-[#E91E63] group bg-black">
                     
-                    <!-- Lite YouTube Facade: saves ~500KB+ initial load -->
                     <div id="yt-facade" class="absolute top-0 left-0 w-full h-full cursor-pointer bg-black flex items-center justify-center" onclick="loadYouTubePlayer(this)" aria-label="Play video">
                         <img src="https://i.ytimg.com/vi/J0GlBQi9mB4/hqdefault.jpg" alt="GG Solutions Video Thumbnail" class="absolute inset-0 w-full h-full object-cover" loading="lazy" width="480" height="360" />
-                        <svg class="relative z-10 w-16 h-16 text-red-600 drop-shadow-lg" viewBox="0 0 68 48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.5c-2.9.8-4.6 3.3-5.4 6.2C.1 13-.1 24 .1 24s-.2 11 1.4 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.5c2.9-.8 4.6-3.3 5.4-6.2C67.9 35 68 24 68 24s.1-11-1.5-16.3z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg>
+                        <svg class="relative z-10 w-16 h-16 text-red-600 drop-shadow-lg" viewBox="0 0 68 48" aria-hidden="true"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.5c-2.9.8-4.6 3.3-5.4 6.2C.1 13-.1 24 .1 24s-.2 11 1.4 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.5c2.9-.8 4.6-3.3 5.4-6.2C67.9 35 68 24 68 24s.1-11-1.5-16.3z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg>
                     </div>
                     <script>
                     function loadYouTubePlayer(facade){
@@ -279,7 +271,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             
             <div class="w-full md:w-7/12">
-                <h3 class="text-[#E91E63] font-black uppercase tracking-[0.2em] text-xs mb-4">Какво може да направи един обикновен човек?</h3>
+                <p class="text-[#E91E63] font-black uppercase tracking-[0.2em] text-xs mb-4 block">Какво може да направи един обикновен човек?</p>
                 <h2 class="text-3xl md:text-5xl font-[900] uppercase italic text-white mb-8 leading-tight">
                     Повечето програмисти не разбират от <span class="text-[#E91E63]">продажби</span>. Повечето търговци не могат да <span class="text-[#E91E63]">програмират</span>.
                 </h2>
@@ -312,7 +304,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section id="proof" class="py-24 px-6 bg-[#111] border-y border-white/5 relative z-10">
         <div class="max-w-[90rem] mx-auto">
             <div class="text-center mb-16 reveal">
-                <h3 class="text-[#E91E63] font-black uppercase tracking-[0.2em] text-xs mb-4">Нашият Арсенал</h3>
+                <p class="text-[#E91E63] font-black uppercase tracking-[0.2em] text-xs mb-4 block">Нашият Арсенал</p>
                 <h2 class="text-4xl md:text-6xl font-[900] uppercase italic text-white">
                     ИЗБЕРЕТЕ СИ <span class="text-[#E91E63]">РЕЗУЛТАТ</span>
                 </h2>
@@ -399,7 +391,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section id="process" class="py-24 px-6 bg-[#050505] border-y border-white/5 relative overflow-hidden">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16 reveal">
-                <h3 class="text-[#E91E63] font-black uppercase tracking-[0.2em] text-xs mb-4">Как работи машината</h3>
+                <p class="text-[#E91E63] font-black uppercase tracking-[0.2em] text-xs mb-4 block">Как работи машината</p>
                 <h2 class="text-3xl md:text-5xl font-[900] uppercase italic text-white leading-tight">
                     От 0 до <span class="text-[#E91E63]">Работеща Онлайн Витрина за 14 дни.</span>
                 </h2>
@@ -436,7 +428,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16 reveal">
-                <h3 class="text-[#E91E63] font-black uppercase tracking-[0.2em] text-xs mb-4">Инвестицията</h3>
+                <p class="text-[#E91E63] font-black uppercase tracking-[0.2em] text-xs mb-4 block">Инвестицията</p>
                 <h2 class="text-3xl md:text-5xl font-[900] uppercase italic text-white leading-tight">
                     Бизнес в кутия. <span class="text-[#E91E63]">Без скрити такси.</span>
                 </h2>
@@ -604,11 +596,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <section id="free-resources" class="py-16 px-6 border-t border-white/5 bg-[#050505]">
         <div class="max-w-4xl mx-auto text-center">
-            <h3 class="text-gray-500 font-black uppercase tracking-[0.2em] mb-8 text-sm">🎁 БЕЗПЛАТНИ РЕСУРСИ</h3>
+            <p class="text-gray-500 font-black uppercase tracking-[0.2em] mb-8 text-sm">🎁 БЕЗПЛАТНИ РЕСУРСИ</p>
             <div class="grid md:grid-cols-2 gap-6">
                 <a href="calculator.html" class="group block p-6 rounded-2xl border border-white/10 hover:border-[#E91E63]/50 hover:bg-[#E91E63]/5 transition">
                     <div class="flex items-center justify-between mb-4">
-                        <span class="text-3xl">🐷</span>
+                        <span class="text-3xl" aria-hidden="true">🐷</span>
                         <span class="text-[#E91E63] font-bold text-xs uppercase tracking-widest group-hover:underline">Отвори Приложението</span>
                     </div>
                     <h4 class="text-white font-bold text-lg mb-2 text-left">Piggy Calc (Euro/BGN)</h4>
@@ -617,7 +609,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 <a href="https://classroom.google.com/c/NzkzMzQwNTA1MTA4?cjc=mtj7fb5p" target="_blank" class="group block p-6 rounded-2xl border border-white/10 hover:border-[#E91E63]/50 hover:bg-[#E91E63]/5 transition">
                     <div class="flex items-center justify-between mb-4">
-                        <span class="text-3xl">🎓</span>
+                        <span class="text-3xl" aria-hidden="true">🎓</span>
                         <span class="text-[#E91E63] font-bold text-xs uppercase tracking-widest group-hover:underline">Влез в Класната Програмата</span>
                     </div>
                     <h4 class="text-white font-bold text-lg mb-2 text-left">GG Academy (Free)</h4>
@@ -711,50 +703,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </a>
         </div>
     </section>
-    <!--
-    <section id="war-chest" class="py-20 px-6 bg-[#E91E63]/5 border-t border-[#E91E63]/20 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-[#E91E63]/10 blur-[100px] rounded-full pointer-events-none"></div>
-        
-        <div class="max-w-4xl mx-auto relative z-10 glass rounded-[3rem] p-8 md:p-16 text-center border-2 border-[#E91E63]/30 shadow-[0_0_50px_rgba(233,30,99,0.15)] reveal">
-            
-            <div class="w-20 h-20 bg-[#050505] border border-[#E91E63] rounded-full flex items-center justify-center text-4xl mx-auto mb-8 shadow-[0_0_30px_rgba(233,30,99,0.3)]">
-                📚
-            </div>
-
-            <h2 class="text-3xl md:text-5xl font-[900] uppercase italic text-white mb-4">
-                Искате да мислите като <span class="text-[#E91E63]">1% от бизнесите?</span>
-            </h2>
-            <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-                Въведете имейла си по-долу и ще ви изпратя моя таен <strong>"War Chest"</strong> – списък с над 40+ книги за продажби, преговори, системи и лидерство които изграждат империи. Напълно безплатно.
-            </p>
-
-            <form id="lead-magnet-form" name="lead-magnet-form" class="max-w-md mx-auto flex flex-col gap-4">
-                <div class="relative">
-                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <i class="fas fa-envelope text-gray-500"></i>
-                    </div>
-                    <input 
-                        type="email" 
-                        name="email" 
-                        placeholder="Въведете най-добрия си имейл..." 
-                        required
-                        class="w-full bg-[#050505] border border-white/20 text-white rounded-xl py-4 pl-12 pr-4 focus:outline-none focus:border-[#E91E63] transition shadow-inner"
-                    >
-                </div>
-
-                <button type="submit" id="submit-btn" class="w-full bg-[#E91E63] text-white font-black uppercase tracking-widest py-4 rounded-xl hover:bg-[#c2185b] transition shadow-[0_0_20px_rgba(233,30,99,0.4)] hover:scale-[1.02] flex justify-center items-center gap-2">
-                    <span id="btn-text">ИЗПРАТИ МИ СПИСЪКА</span>
-                    <i id="btn-spinner" class="fas fa-spinner fa-spin hidden"></i>
-                </button>
-                
-                <div id="success-msg" class="hidden text-green-400 text-sm font-bold mt-2 bg-green-500/10 py-3 rounded-lg border border-green-500/20">
-                    <i class="fas fa-check-circle"></i> Успех! Проверете си пощата за линка към Google Drive <i class="fa fa-google" aria-hidden="true"></i>.
-                </div>
-            </form>
-            
-        </div>
-    </section>
-    -->
+    </main>
 
    <footer class="bg-[#050505] border-t border-white/10 pt-20 pb-10 px-6">
         <div class="max-w-7xl mx-auto">

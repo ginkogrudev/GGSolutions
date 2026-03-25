@@ -26,11 +26,17 @@
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐷</text></svg>" />
     
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="style.css" />
+    <!-- Preconnect hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <!-- Critical CSS: Compiled Tailwind (replaces render-blocking CDN) -->
+    <link rel="stylesheet" href="tailwind.min.css" />
     
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="style.css" />
     <!-- Step 1: Consent Default (MUST be first) -->
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -91,14 +97,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <i class="fas fa-comment-dots text-lg mr-2"></i> LET'S TALK
         </button>
 
-        <button onclick="toggleMenu()" class="md:hidden text-white hover:text-[#E91E63] transition">
+        <button onclick="toggleMenu()" class="md:hidden text-white hover:text-[#E91E63] transition" aria-label="Open menu">
           <i class="fas fa-bars text-2xl"></i>
         </button>
       </div>
     </nav>
 
+    <main>
     <div id="mobile-menu" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8">
-      <button onclick="toggleMenu()" class="absolute top-8 right-8 text-white/50 uppercase text-xs tracking-widest p-4">✕</button>
+      <button onclick="toggleMenu()" class="absolute top-8 right-8 text-white/50 uppercase text-xs tracking-widest p-4"><span aria-hidden="true">✕</span><span class="sr-only">Close menu</span></button>
       <a href="index-en.html" class="text-3xl font-[900] uppercase italic text-white">Home</a>
       <a href="portfolio-en.html" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white">Portfolio</a>
       <a href="#offer" class="text-3xl font-[900] uppercase italic text-gray-500 hover:text-white">Pricing</a>
@@ -209,7 +216,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             <div class="w-full md:w-5/12 relative">
                 <div class="absolute inset-0 bg-[#E91E63]/20 blur-[80px] rounded-full"></div>
-                <img src="imgs/logo.png" alt="Ginko Grudev" class="relative z-10 w-full max-w-xs mx-auto drop-shadow-[0_0_30px_rgba(233,30,99,0.3)] grayscale hover:grayscale-0 transition duration-500">
+                <img src="imgs/logo.png" alt="Ginko Grudev" class="relative z-10 w-full max-w-xs mx-auto drop-shadow-[0_0_30px_rgba(233,30,99,0.3)] grayscale hover:grayscale-0 transition duration-500" width="415" height="410" fetchpriority="high">
                 
                 <div class="absolute -bottom-6 md:-right-6 right-10 bg-black/80 backdrop-blur-md border border-[#E91E63]/30 p-5 rounded-2xl shadow-2xl hover:scale-105 transition">
                     <p class="text-[#E91E63] font-black text-3xl">5+</p>
@@ -218,7 +225,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             
             <div class="w-full md:w-7/12">
-                <h3 class="text-[#E91E63] font-black uppercase tracking-[0.2em] text-xs mb-4">The System Architect</h3>
+                <p class="text-[#E91E63] font-black uppercase tracking-[0.2em] text-xs mb-4 block">The System Architect</h3>
                 <h2 class="text-3xl md:text-5xl font-[900] uppercase italic text-white mb-8 leading-tight">
                     Most coders can't <span class="text-[#E91E63]">sell</span>. Most salespeople can't <span class="text-[#E91E63]">code</span>.
                 </h2>
@@ -537,6 +544,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </a>
         </div>
     </section>
+
+    </main>
 
     <footer class="bg-[#050505] border-t border-white/10 pt-20 pb-10 px-6">
         <div class="max-w-7xl mx-auto">
