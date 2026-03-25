@@ -31,10 +31,24 @@
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐷</text></svg>" />
     
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+    <!-- Preconnect hints for critical third-party origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+    <!-- Critical CSS: Compiled Tailwind (replaces render-blocking CDN script) -->
+    <link rel="stylesheet" href="tailwind.min.css" />
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Fonts with font-display: swap enforced via URL parameter -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+
+    <!-- FontAwesome: loaded async (non-render-blocking) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     
     <!-- Step 1: Consent Default (MUST be first) -->
 <script>
@@ -111,12 +125,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="max-w-5xl mx-auto text-center relative z-10">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 animate-fade-in-down">
           <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-          <span class="text-[10px] font-black uppercase tracking-widest text-[#a1a1aa]">Приемаме 5 нови партньора за Февруари</span>
+          <span class="text-[10px] font-black uppercase tracking-widest text-[#a1a1aa]">Приемаме 5 нови партньора за Април</span>
         </div>
 
         <h1 class="text-5xl md:text-8xl font-[900] uppercase italic leading-[0.95] tracking-tighter mb-8 text-white">
           Правим <br> твоята работа<br />
-        <span class="text-[#E91E63] drop-shadow-[0_0_30px_rgba(233,30,99,0.5)]">да работи за теб<br> 24 / 7</span>
+        <span class="text-[#E91E63] drop-shadow-[0_0_30px_rgba(233,30,99,0.5)]">да работи<br> за теб 24 / 7</span>
         </h1>
 
         <p class="text-lg md:text-2xl text-[#a1a1aa] font-medium mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -198,14 +212,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 <div class="w-full md:w-1/3 lg:w-1/4 mx-auto md:mx-0 relative rounded-2xl overflow-hidden aspect-[9/16] shadow-[0_0_50px_rgba(233,30,99,0.2)] border-2 border-[#E91E63] group bg-black">
                     
-                    <iframe 
-                        class="absolute top-0 left-0 w-full h-full" 
-                        src="https://www.youtube.com/embed/J0GlBQi9mB4?autoplay=1&mute=1&loop=1&playlist=J0GlBQi9mB4&controls=1&rel=0&modestbranding=1&playsinline=1" 
-                        title="GG Solutions Video" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+                    <!-- Lite YouTube Facade: saves ~500KB+ initial load -->
+                    <div id="yt-facade" class="absolute top-0 left-0 w-full h-full cursor-pointer bg-black flex items-center justify-center" onclick="loadYouTubePlayer(this)" aria-label="Play video">
+                        <img src="https://i.ytimg.com/vi/J0GlBQi9mB4/hqdefault.jpg" alt="GG Solutions Video Thumbnail" class="absolute inset-0 w-full h-full object-cover" loading="lazy" width="480" height="360" />
+                        <svg class="relative z-10 w-16 h-16 text-red-600 drop-shadow-lg" viewBox="0 0 68 48"><path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.5c-2.9.8-4.6 3.3-5.4 6.2C.1 13-.1 24 .1 24s-.2 11 1.4 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.5c2.9-.8 4.6-3.3 5.4-6.2C67.9 35 68 24 68 24s.1-11-1.5-16.3z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg>
+                    </div>
+                    <script>
+                    function loadYouTubePlayer(facade){
+                        var iframe=document.createElement('iframe');
+                        iframe.className='absolute top-0 left-0 w-full h-full';
+                        iframe.src='https://www.youtube.com/embed/J0GlBQi9mB4?autoplay=1&mute=1&loop=1&playlist=J0GlBQi9mB4&controls=1&rel=0&modestbranding=1&playsinline=1';
+                        iframe.title='GG Solutions Video';
+                        iframe.frameBorder='0';
+                        iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                        iframe.allowFullscreen=true;
+                        facade.parentNode.replaceChild(iframe,facade);
+                    }
+                    </script>
                     
                     <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent pointer-events-none"></div>
                     
@@ -233,7 +256,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             <div class="w-full md:w-5/12 relative">
                 <div class="absolute inset-0 bg-[#E91E63]/20 blur-[80px] rounded-full"></div>
-                <img src="imgs/logo.png" alt="Ginko Grudev" class="relative z-10 w-full max-w-xs mx-auto drop-shadow-[0_0_30px_rgba(233,30,99,0.3)] grayscale hover:grayscale-0 transition duration-500">
+                <img src="imgs/logo.png" alt="Ginko Grudev" class="relative z-10 w-full max-w-xs mx-auto drop-shadow-[0_0_30px_rgba(233,30,99,0.3)] grayscale hover:grayscale-0 transition duration-500" width="415" height="410" fetchpriority="high">
                 
                 <div class="absolute -bottom-6 md:-right-6 right-10 bg-black/80 backdrop-blur-md border border-[#E91E63]/30 p-5 rounded-2xl shadow-2xl hover:scale-105 transition">
                     <p class="text-[#E91E63] font-black text-3xl">5+</p>
@@ -262,7 +285,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
 
                 <div class="mt-8 flex items-center gap-4">
-                    <img src="imgs/logo.png" alt="Ginko Signature" class="w-12 h-12 rounded-full border-2 border-white/10">
+                    <img src="imgs/logo.png" alt="Ginko Signature" class="w-12 h-12 rounded-full border-2 border-white/10" width="415" height="410" loading="lazy">
                     <div>
                         <p class="text-white font-bold uppercase text-sm">Гинко Грудев</p>
                         <p class="text-xs text-gray-500 tracking-widest uppercase">Основател, GG Solutions</p>
@@ -285,7 +308,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] reveal">
-                    <img src="imgs/PortfolioImgs/MightyBoxesHero.png" alt="Mighty Boxes" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]">
+                    <img src="imgs/PortfolioImgs/MightyBoxesHero.webp" alt="Mighty Boxes" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]" loading="lazy" width="800" height="381">
                     <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center p-6 text-center border border-transparent group-hover:border-white/10 rounded-3xl">
                         <span class="bg-yellow-500 text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-4 shadow-[0_0_15px_rgba(234,179,8,0.4)]">€5,650 за 30 Дни</span>
                         <h3 class="text-2xl font-black text-white uppercase mb-2">Mighty Boxes</h3>
@@ -297,7 +320,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
 
                 <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] reveal delay-100">
-                    <img src="imgs/PortfolioImgs/PriTanyaWebsite.png" alt="Pri Tanya" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]">
+                    <img src="imgs/PortfolioImgs/PriTanyaWebsite.webp" alt="Pri Tanya" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]" loading="lazy" width="800" height="586">
                     <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center p-6 text-center border border-transparent group-hover:border-white/10 rounded-3xl">
                         <span class="bg-green-500 text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-4 shadow-[0_0_15px_rgba(34,197,94,0.4)]">#1 в Google Maps</span>
                         <h3 class="text-2xl font-black text-white uppercase mb-2">Месарница При Таня</h3>
@@ -310,7 +333,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
 
                 <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] reveal delay-200">
-                    <img src="imgs/PortfolioImgs/SheyretoSoundHero.png" alt="Sheyretov Sound" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]">
+                    <img src="imgs/PortfolioImgs/SheyretoSoundHero.webp" alt="Sheyretov Sound" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]" loading="lazy" width="800" height="339">
                     <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center p-6 text-center border border-transparent group-hover:border-white/10 rounded-3xl">
                         <span class="bg-blue-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-4 shadow-[0_0_15px_rgba(59,130,246,0.4)]">Готов за 30 Часа</span>
                         <h3 class="text-2xl font-black text-white uppercase mb-2">Sheyretov Sound</h3>
@@ -323,7 +346,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
 
                 <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] reveal">
-                    <img src="imgs/PortfolioImgs/dr-oh-boli-hero-website.png" alt="Dr Oh Boli" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]">
+                    <img src="imgs/PortfolioImgs/dr-oh-boli-hero-website.webp" alt="Dr Oh Boli" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]" loading="lazy" width="800" height="368">
                     <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center p-6 text-center border border-transparent group-hover:border-white/10 rounded-3xl">
                         <span class="bg-cyan-500 text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-4 shadow-[0_0_15px_rgba(6,182,212,0.4)]">Лесни записвания</span>
                         <h3 class="text-2xl font-black text-white uppercase mb-2">Д-р Ох Боли</h3>
@@ -336,7 +359,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
 
                 <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] reveal delay-100">
-                    <img src="imgs/PortfolioImgs/Metal-Delivery-Yambol-2026.png" alt="Metal Delivery" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]">
+                    <img src="imgs/PortfolioImgs/Metal-Delivery-Yambol-2026.webp" alt="Metal Delivery" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]" loading="lazy" width="800" height="518">
                     <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center p-6 text-center border border-transparent group-hover:border-white/10 rounded-3xl">
                         <span class="bg-purple-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-4 shadow-[0_0_15px_rgba(168,85,247,0.4)]">B2B Инфраструктура</span>
                         <h3 class="text-2xl font-black text-white uppercase mb-2">Metal Delivery</h3>
@@ -805,6 +828,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
   </body>
 </html>

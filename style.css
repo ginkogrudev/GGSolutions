@@ -11,7 +11,7 @@ body {
 
 /* Tighter letter spacing for that premium, punchy agency look */
 h1, h2, h3, h4 {
-    letter-spacing: -0.03em; 
+    letter-spacing: -0.03em;
 }
 
 p, li {
@@ -32,7 +32,7 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: 
+    background-image:
         linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 40px 40px;
@@ -74,17 +74,17 @@ body::before {
 
 /* 5. THE "APPLE-STYLE" REVEAL ANIMATIONS */
 /* Base state: Hidden and pushed down */
-.reveal { 
-    opacity: 0; 
-    transform: translateY(30px) scale(0.98); 
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); 
+.reveal {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform; /* Hardware acceleration */
 }
 
 /* Active state: Visible and in position */
-.reveal.active { 
-    opacity: 1; 
-    transform: translateY(0) scale(1); 
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 /* Delays for staggered grid loading */
