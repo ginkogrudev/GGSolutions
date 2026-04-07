@@ -1,0 +1,20 @@
+# ==========================================
+# GG SOLUTIONS - PRODUCTION ROBOTS.TXT
+# ==========================================
+
+# Правила за всички търсачки (Google, Bing и т.н.)
+User-agent: *
+Allow: /
+
+# ЗАЩИТА НА СОРС КОДА: 
+# Блокираме ботовете да индексират системни файлове, 
+# които виждам в дървото ти, за да не излизат в Google.
+Disallow: /.git/
+Disallow: /*.config.js$
+Disallow: /*.json$
+Disallow: /README.md
+Disallow: /LICENSE
+Disallow: /tailwind-input.css
+
+# THE MONEY MAP (Точният път до твоя sitemap)
+Sitemap: https://ginkogrudev.com/sitemap.xml
