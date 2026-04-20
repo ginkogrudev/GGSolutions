@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initInteractions();
-    initCookieBanner();
+    initGlobalCookieBanner(); // СТАРТИРАМЕ ДИНАМИЧНИЯ GDPR БАНЕР
     initScrollReveals();
     initAnalyticsTracking();
     initLeadMagnet(); // СТАРТИРАМЕ ДВИГАТЕЛЯ ЗА ЛИЙДОВЕ
@@ -11,6 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Safety Net for Google Analytics
     window.gtag = window.gtag || function(){ (window.dataLayer = window.dataLayer || []).push(arguments); };
+
+    // DYNAMIC TIME & DATES
+    const startDate = new Date('2026-01-01');
+    const now = new Date();
+    const ageInMonths = (now.getFullYear() - startDate.getFullYear()) * 12 + (now.getMonth() - startDate.getMonth()) + 1;
+    document.querySelectorAll('.agency-age').forEach(el => el.innerText = ageInMonths);
+
+    const monthNames = ["Януари", "Февруари", "Март", "Април", "Май", "Юни", "Юли", "Август", "Септември", "Октомври", "Ноември", "Декември"];
+    document.querySelectorAll('.current-month').forEach(el => el.innerText = monthNames[now.getMonth()]);
 });
 
 /* -------------------------------------------------------------------------- */
@@ -148,33 +157,72 @@ window.switchCurrency = function(curr) {
 };
 
 /* -------------------------------------------------------------------------- */
-/* 6. COOKIES & COMPLIANCE                                                    */
+/* 6. GLOBAL GDPR COOKIE INJECTOR & MANAGER (AUTO-DEPLOY)                     */
 /* -------------------------------------------------------------------------- */
-function initCookieBanner() {
-    if (!localStorage.getItem('gg_consent_mode')) {
-        const banner = document.getElementById('cookie-banner');
-        if (banner) banner.classList.remove('hidden');
+function initGlobalCookieBanner() {
+    const consentStatus = localStorage.getItem('gg_cookie_consent');
+
+    if (consentStatus === 'all') {
+        grantAnalyticsAccess();
+        return; 
+    }
+
+    if (consentStatus === 'essential') {
+        return;
+    }
+
+    const banner = document.createElement('div');
+    banner.id = 'dynamic-cookie-banner';
+    banner.className = 'fixed bottom-0 left-0 right-0 z-[200] bg-[#050505] border-t border-white/10 p-6 shadow-[0_-10px_40px_rgba(0,0,0,0.8)] animate-fade-in-up';
+    
+    banner.innerHTML = `
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-sm text-gray-400">
+          <p><strong class="text-white">Ние ценим вашата поверителност.</strong> Използваме бисквитки, за да анализираме трафика си и да подобрим вашето преживяване. Съгласно GDPR, вие имате контрол.</p>
+        </div>
+        <div class="flex gap-4 flex-shrink-0 w-full md:w-auto">
+          <button id="btn-essential-cookies" class="flex-1 md:flex-none px-6 py-3 rounded-xl border border-white/20 text-white text-xs font-bold uppercase tracking-widest hover:bg-white/10 transition">Само задължителни</button>
+          <button id="btn-accept-all-cookies" class="flex-1 md:flex-none px-6 py-3 rounded-xl bg-[#E91E63] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#c2185b] transition shadow-[0_0_15px_rgba(233,30,99,0.3)]">Приемам всички</button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(banner);
+
+    document.getElementById('btn-essential-cookies').addEventListener('click', () => {
+        handleConsentChoice('essential', banner);
+    });
+
+    document.getElementById('btn-accept-all-cookies').addEventListener('click', () => {
+        handleConsentChoice('all', banner);
+    });
+}
+
+function handleConsentChoice(choice, bannerElement) {
+    bannerElement.remove();
+    localStorage.setItem('gg_cookie_consent', choice);
+    
+    if (choice === 'all') {
+        grantAnalyticsAccess();
     }
 }
 
-window.acceptAllCookies = function() {
-    localStorage.setItem('gg_consent_mode', 'all');
-    const banner = document.getElementById('cookie-banner');
-    if(banner) banner.classList.add('hidden');
-    
-    if(typeof gtag === 'function') {
-        gtag('consent', 'update', { 'ad_storage': 'granted', 'analytics_storage': 'granted' });
+function grantAnalyticsAccess() {
+    if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted'
+        });
     }
-};
-
-window.manageCookies = function() {
-    localStorage.setItem('gg_consent_mode', 'essential');
-    const banner = document.getElementById('cookie-banner');
-    if(banner) banner.classList.add('hidden');
-};
+    // Сигнал към GTM за пускане на Microsoft Clarity и GA4
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({'event': 'consent_updated'});
+}
 
 /* -------------------------------------------------------------------------- */
-/* 7. TRACKING & INTERACTIONS                                                 */
+/* 7. HAPTIC FEEDBACK & MICRO-INTERACTIONS                                    */
 /* -------------------------------------------------------------------------- */
 function initInteractions() {
     const interactiveElements = document.querySelectorAll('button, a, .glass');
@@ -186,14 +234,14 @@ function initInteractions() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 7. TRACKING & INTERACTIONS (THE DATA ENGINE)                               */
+/* 8. ANALYTICS TRACKING ENGINE (THE DATA CAPTURE)                            */
 /* -------------------------------------------------------------------------- */
 function initAnalyticsTracking() {
     document.addEventListener('click', function(e) {
         const link = e.target.closest('a');
         const btn = e.target.closest('a, button');
 
-        // 1. ПРОСЛЕДЯВАНЕ НА КОНТАКТИ И КАЛЕНДАР (The Conversion Actions)
+        // 1. ПРОСЛЕДЯВАНЕ НА КОНТАКТИ И КАЛЕНДАР
         if (link) {
             const href = link.href.toLowerCase();
 
@@ -208,21 +256,16 @@ function initAnalyticsTracking() {
             }
         }
 
-        // 2. ПРОСЛЕДЯВАНЕ НА ЦЕНИ И ПАКЕТИ (Pricing Intent Data)
+        // 2. ПРОСЛЕДЯВАНЕ НА ЦЕНИ И ПАКЕТИ
         if (btn) {
             const text = btn.innerText?.toLowerCase() || '';
             
-            // Minimum / Foundation Package Clicks
             if (text.includes('минимум') || text.includes('rapid launch')) {
                 gtag('event', 'select_item', { item_name: 'Minimum Package', currency: 'EUR', value: 1000 });
             }
-            
-            // Growth Package Clicks
             if (text.includes('growth') || text.includes('takeover')) {
                 gtag('event', 'select_item', { item_name: 'Growth Package', currency: 'EUR', value: 2000 });
             }
-            
-            // Domination / Partner Package Clicks
             if (text.includes('domination') || text.includes('партньор')) {
                 gtag('event', 'select_item', { item_name: 'Domination Package', currency: 'EUR', value: 3500 });
             }
@@ -231,11 +274,11 @@ function initAnalyticsTracking() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 8. LEAD MAGNET ENGINE (BULLETPROOF VERSION)                                */
+/* 9. LEAD MAGNET ENGINE (BULLETPROOF VERSION)                                */
 /* -------------------------------------------------------------------------- */
 function initLeadMagnet() {
     const form = document.forms['lead-magnet-form'];
-    if (!form) return; // Ако няма форма на страницата, не прави нищо.
+    if (!form) return; 
 
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyTBxC1lm5wgVR1sr-ZAxnp0I5x2-oyKkx-MDE1MNHYMV8DEjthrIOIujGfYGh0aJT6-g/exec'; 
 
@@ -247,20 +290,17 @@ function initLeadMagnet() {
         const spinner = document.getElementById('btn-spinner');
         const successMsg = document.getElementById('success-msg');
         
-        // State: Loading
         btn.disabled = true;
         btn.classList.add('opacity-50', 'cursor-not-allowed');
         btnText.innerText = 'ИЗПРАЩАНЕ...';
         spinner.classList.remove('hidden');
 
-        // State: Sending (с mode: 'no-cors' за да не бъде блокирано от Google Redirect)
         fetch(scriptURL, { 
             method: 'POST', 
             body: new FormData(form),
             mode: 'no-cors' 
         })
         .then(() => {
-            // State: Success
             form.reset();
             btn.classList.add('hidden'); 
             successMsg.classList.remove('hidden'); 
@@ -273,7 +313,6 @@ function initLeadMagnet() {
             }
         })
         .catch(error => {
-            // State: Error
             console.error('Fetch Error:', error.message);
             btn.disabled = false;
             btn.classList.remove('opacity-50', 'cursor-not-allowed');
@@ -282,21 +321,6 @@ function initLeadMagnet() {
         });
     });
 }
-
-/* -------------------------------------------------------------------------- */
-/* 9. DYNAMIC TIME & DATES                                                    */
-/* -------------------------------------------------------------------------- */
-// (Преместено горе в DOMContentLoaded за консистентност)
-document.addEventListener('DOMContentLoaded', () => {
-    const startDate = new Date('2026-01-01');
-    const now = new Date();
-    const ageInMonths = (now.getFullYear() - startDate.getFullYear()) * 12 + (now.getMonth() - startDate.getMonth()) + 1;
-    
-    document.querySelectorAll('.agency-age').forEach(el => el.innerText = ageInMonths);
-
-    const monthNames = ["Януари", "Февруари", "Март", "Април", "Май", "Юни", "Юли", "Август", "Септември", "Октомври", "Ноември", "Декември"];
-    document.querySelectorAll('.current-month').forEach(el => el.innerText = monthNames[now.getMonth()]);
-});
 
 /* -------------------------------------------------------------------------- */
 /* 10. AUTO-SCROLL PORTFOLIO GALLERIES                                        */
